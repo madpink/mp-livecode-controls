@@ -1,0 +1,3986 @@
+widget pink.mad.ubercontrol
+
+metadata title is "MPUberControlPanel"
+metadata author is "MadPink"
+metadata version is "0.8.0"
+metadata description is "Allows for multiple configurable controls that can be dynamically switched"
+metadata preferredSize  is "420,230"
+metadata svgicon is  "M51.3,29.1V24c0-6.1,3.4-11.6,8.9-14.4L57.9,5c-7.2,3.6-11.7,10.9-11.7,19v7.1l1.2,1.2C48.7,31.5,50,30.3,51.3,29.1z M68.1,34.1c0.7,0.4,1.4,0.8,2,1.4c4.4-2.2,8.1-5.6,8.4-9.3c-5.1,2.8-9.3,4.2-12.1,4.9L68.1,34.1  C68.1,34.1,68.1,34.1,68.1,34.1z M28.8,33.3V33c-0.4-1.2-0.7-2.4-0.9-3.6l-8.2-2.7C21.7,28.9,24.9,31.8,28.8,33.3z M43.6,95c2.5,0,4.7-1.3,6-3.2c-0.5-1-0.8-2.2-0.8-3.4c-2.2-0.8-4-2.3-5.1-4.3c-1.5,2.6-4.1,4.4-7.1,4.8  C37.1,92.4,40.1,95,43.6,95z M58.5,95c3.6,0,6.5-2.6,7.1-6c-2.4-0.3-4.5-1.6-6-3.3c-1.8,2.1-4.5,3.4-7.4,3.4c-0.2,0-0.5,0-0.7,0C52,92.4,55,95,58.5,95z  M74.2,79.3c0-0.3,0-0.6-0.1-0.9c-0.3,0-0.5,0-0.8,0c-3.6,0-6.8-2-8.5-4.9c-0.8,1.4-1.9,2.6-3.3,3.4  c0.2,0.8,0.3,1.5,0.3,2.4c0,1.4-0.3,2.8-0.9,4c1.3,1.9,3.5,3.2,6,3.2C71,86.5,74.2,83.3,74.2,79.3z M59.3,79.3c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-3.6,0-6.8-2-8.5-4.9c-0.6,1-1.3,1.9-2.3,2.7  c-0.4,0.9-0.7,2-0.7,3.1c0,4,3.2,7.2,7.2,7.2C56.1,86.5,59.3,83.3,59.3,79.3z M35.1,86.5c4,0,7.2-3.2,7.2-7.2c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-2.4,0-4.7-0.9-6.4-2.4  c-1.4,1.2-3.1,2-5,2.3c0,0.3-0.1,0.6-0.1,0.9C27.9,83.3,31.2,86.5,35.1,86.5z M20.4,65.1c-0.6,1-0.9,2.3-0.9,3.5c0,4,3.2,7.2,7.2,7.2c1.8,0,3.4-0.6,4.7-1.7c-1.1-1.6-1.7-3.5-1.7-5.5  c0-1.2,0.2-2.3,0.6-3.4c-1.3-0.1-2.5-0.4-3.6-0.9c-1.3,0.6-2.7,1-4.2,1C21.7,65.3,21,65.3,20.4,65.1z M38.1,62.1c-1.3,1.4-3,2.5-5,3c-0.6,1.1-1,2.3-1,3.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.2-0.3-2.4-0.8-3.4  c-0.1,0-0.3,0-0.4,0C42.5,65.3,39.9,64.1,38.1,62.1z M80.6,68.7c0-1.5-0.5-2.9-1.3-4.1c-1.2,0.5-2.4,0.8-3.8,0.8c-2.5,0-4.7-0.9-6.4-2.4c-1.8,1.3-2.9,3.4-2.9,5.8  c0,4,3.2,7.2,7.2,7.2C77.3,75.9,80.6,72.7,80.6,68.7z M53.5,62c-2.6,1.1-4.4,3.7-4.4,6.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.3-2.5-0.9-3.5  c-0.6,0.1-1.2,0.2-1.8,0.2C57.9,65.3,55.3,64.1,53.5,62z M22.4,62.8c0.6,0,1.1-0.1,1.7-0.2c-1.8-1.8-3-4.3-3-7c0-1,0.2-2.1,0.5-3c-1.7-0.1-3.3-0.7-4.7-1.7  c-1.1,1.3-1.7,2.9-1.7,4.7C15.2,59.5,18.4,62.8,22.4,62.8z M23.7,55.6c0,4,3.2,7.2,7.2,7.2c2.3,0,4.4-1.1,5.7-2.9c-0.7-1.3-1-2.8-1-4.3c0-1.3,0.3-2.6,0.8-3.8  c-1.2,0.5-2.5,0.8-3.9,0.8c-1.8,0-3.6-0.5-5-1.4c-0.9,0.6-1.9,1-3,1.2C24,53.3,23.7,54.4,23.7,55.6z M82.7,55.6c0-1.4-0.4-2.7-1.1-3.8c-1.2,0.5-2.6,0.9-4,0.9c-2.6,0-4.9-1-6.7-2.6c-0.5,0.4-0.9,0.9-1.3,1.4  c0.6,1.3,1,2.7,1,4.2s-0.4,2.9-1,4.2c1.3,1.8,3.4,3,5.8,3C79.5,62.8,82.7,59.5,82.7,55.6z M54.5,52.1c0.4,1.1,0.6,2.2,0.6,3.4s-0.2,2.4-0.6,3.4c1.2,2.2,3.6,3.8,6.3,3.8c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.5-1-3.6  c-1.1,0.4-2.2,0.6-3.4,0.6c-2.7,0-5.2-1.1-7-2.9C55.8,50.3,55,51.1,54.5,52.1z M38.2,55.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.6-1-3.7c-1.1,0.4-2.3,0.7-3.6,0.7c-2.7,0-5.1-1.1-6.9-2.8  C39.3,51.1,38.2,53.2,38.2,55.6z M22.4,50c1,0,2-0.2,2.9-0.6c-1.6-1.7-2.6-4.1-2.6-6.6s1-4.9,2.6-6.6c-0.9-0.4-1.9-0.6-2.9-0.6c-4,0-7.2,3.2-7.2,7.2  C15.2,46.8,18.4,50,22.4,50z M37.7,37.9c-2.5-0.2-5-0.9-7.3-2c-3,0.9-5.2,3.6-5.2,6.9c0,4,3.2,7.2,7.2,7.2c2.7,0,5.1-1.5,6.3-3.8  c-0.4-1.1-0.6-2.2-0.6-3.4s0.2-2.4,0.6-3.4C38.5,38.8,38.2,38.4,37.7,37.9z M72.2,38.1c0.8,1.4,1.2,3,1.2,4.7s-0.5,3.3-1.2,4.7c1.3,1.5,3.3,2.5,5.4,2.5c4,0,7.2-3.2,7.2-7.2c0-4-3.2-7.2-7.2-7.2  C75.5,35.6,73.5,36.6,72.2,38.1z M63.7,50c4,0,7.2-3.2,7.2-7.2c0-2.9-1.8-5.5-4.3-6.6c-2.7,1-5.4,1.5-8.2,1.7c-0.5,0.5-0.8,1.1-1.1,1.7  c0.3,1,0.5,2.1,0.5,3.2c0,1.1-0.2,2.2-0.5,3.2C58.4,48.4,60.8,50,63.7,50z M47,36.5c-1.3,0.5-2.7,0.9-4.1,1.2c-1.3,1.3-2.2,3.1-2.2,5.1c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.9-0.8-3.7-2-5  C51.1,37.6,49,37.2,47,36.5z M49.1,34.3c0,0.1,0,0.1,0,0.2c5.2,1.4,10.8,1.3,16-0.5l-6.4-11.1C56.8,27.1,53,31.6,49.1,34.3z M45.6,34.3L31.3,19.9c-1.7,4.4-1.5,9.5,0.5,13.8C36.1,35.7,41.2,35.9,45.6,34.3z"
+
+constant kVersion is "0.9.1 beta"
+
+use com.livecode.math
+use com.livecode.canvas
+use com.livecode.widget
+use com.livecode.engine
+use com.livecode.foreign
+use com.livecode.mathfoundation
+use com.livecode.library.iconsvg
+use com.livecode.library.widgetutils
+use com.livecode.library.scriptitems
+
+/*
+-- TODO:
+
+update Documentation
+finish paintColors sliders
+
+change PIN PAD to a seperate button bar option
+--add a preset to auto fill in mData, mColumns, etc...
+--add an option for text entry result, or hidden options, or none
+
+--update all controls to be multicolumn::
+---for the time being, make columns=1 in all paints that don't work yet
+-sliders
+-up/down
+--button bar (FIXED HEIGHT and multiple columns )
+------- if bottom of a button's rect is > the bottom of mCurrentRect then send tp next column
+------- adjust width of buttons to columns
+
+--apply mControlObjectVertical options to:
+-SLIDERS
+-BUTTONBAR  --> problem with width in fixed size
+
+REMOVE FROM DOCUMENTATION:
+
+
+*/
+
+--SECTION:  PROPERTIES
+metadata foregroundColor.editor  is "com.livecode.pi.color"
+metadata foregroundColor.default is "255,255,255"
+metadata foregroundColor.section is "Colors"
+metadata foregroundColor.label is "Fore Color"
+
+metadata backgroundColor.editor  is "com.livecode.pi.color"
+metadata backgroundColor.default is "255,15,192"
+metadata backgroundColor.section is "Colors"
+metadata backgroundColor.label is "Back Color"
+
+metadata hiliteColor.editor  is "com.livecode.pi.color"
+metadata hiliteColor.default is "0,0,0"
+metadata hiliteColor.section is "Colors"
+metadata hiliteColor.label is "Hilite color"
+
+metadata borderColor.editor  is "com.livecode.pi.color"
+metadata borderColor.default is "255,205,255"
+metadata borderColor.section is "Colors"
+metadata borderColor.label is "Border color"
+
+metadata topColor.editor  is "com.livecode.pi.color"
+metadata topColor.default is "255,128,192"
+metadata topColor.section is "Colors"
+metadata topColor.label is "Top color"
+
+metadata bottomColor.editor  is "com.livecode.pi.color"
+metadata bottomColor.default is "255,0,128"
+metadata bottomColor.section is "Colors"
+metadata bottomColor.label is "Bottom color"
+
+metadata shadowColor.editor  is "com.livecode.pi.color"
+metadata shadowColor.default is "255,128,192"
+metadata shadowColor.section is "Colors"
+metadata shadowColor.label is "Shadow color"
+
+metadata focusColor.editor  is "com.livecode.pi.color"
+metadata focusColor.default is "255,0,128"
+metadata focusColor.section is "Colors"
+metadata focusColor.label is "Focus color"
+
+metadata textFont.editor is "com.livecode.pi.font"
+metadata textFont.default  is "Helvetica"
+
+metadata textSize.editor is "com.livecode.pi.number"
+metadata textSize.default  is "15"
+
+property manualRedraw  get mManualRedraw  set setManualRedraw
+metadata manualRedraw.editor  is "com.livecode.pi.boolean"
+metadata manualRedraw.default  is "false"
+metadata manualRedraw.label  is "Manual Redraw"
+metadata manualRedraw.section  is "Advanced"
+private variable mManualRedraw as Boolean
+private handler setManualRedraw(in pVal as Boolean)
+  put pVal into mManualRedraw
+  if mManualRedraw is false then
+     redraw all
+  end if
+end handler
+
+property forceRedraw  get mForceRedraw  set setForceRedraw
+metadata forceRedraw.editor  is "com.livecode.pi.boolean"
+metadata forceRedraw.default  is "false"
+metadata forceRedraw.label  is "Force Redraw"
+metadata forceRedraw.section  is "Advanced"
+private variable mForceRedraw as Boolean
+private handler setForceRedraw(in pVal as Boolean)
+   if pVal then
+      redraw all
+   end if
+  put false into mForceRedraw
+end handler
+
+property defaultChangeType  get mDefaultChangeType  set setDefaultChangeType
+metadata defaultChangeType.editor  is "com.livecode.pi.boolean"
+metadata defaultChangeType.default  is "true"
+metadata defaultChangeType.label  is "New Defaults - Changing Type"
+metadata defaultChangeType.section  is "Advanced"
+private variable mDefaultChangeType as Boolean
+private handler setDefaultChangeType(in pVal as Boolean)
+   --qzqz TODO:finish defaultChangeType
+   put pVal into mDefaultChangeType
+end handler
+
+property showMainSquare  get mShowMainSquare  set setShowMainSquare
+metadata showMainSquare.editor  is "com.livecode.pi.boolean"
+metadata showMainSquare.default  is "true"
+metadata showMainSquare.label  is "Show Working Area"
+metadata showMainSquare.section  is "Table"
+private variable mShowMainSquare as Boolean
+private handler setShowMainSquare(in pVal as Boolean)
+  put pVal into mAppData["showMainSquare"]
+  put pVal into mShowMainSquare
+  checkForRedraw()
+end handler
+
+property workingAreaOffsetW  get mWorkingAreaOffsetW  set setWorkingAreaOffsetW
+metadata workingAreaOffsetW.editor is "com.livecode.pi.number"
+metadata workingAreaOffsetW.default  is "0"
+metadata workingAreaOffsetW.label  is "Working Area Width Offset"
+metadata workingAreaOffsetW.section  is "Table"
+private variable mWorkingAreaOffsetW as Number
+private handler setWorkingAreaOffsetW(in pVal as Number)
+  put pVal into mAppData["showMainSquare"]
+  put pVal into mWorkingAreaOffsetW
+  checkForRedraw()
+end handler
+
+property workingAreaOffsetH  get mWorkingAreaOffsetH  set setWorkingAreaOffsetH
+metadata workingAreaOffsetH.editor is "com.livecode.pi.number"
+metadata workingAreaOffsetH.default  is "0"
+metadata workingAreaOffsetH.label  is "Working Area Height Offset"
+metadata workingAreaOffsetH.section  is "Table"
+private variable mWorkingAreaOffsetH as Number
+private handler setWorkingAreaOffsetH(in pVal as Number)
+  put pVal into mAppData["props"]["workingAreaOffsetH"]
+  put pVal into mWorkingAreaOffsetH
+  checkForRedraw()
+end handler
+
+property mainSquareColor  get mMainSquareColor  set setMainSquareColor
+metadata mainSquareColor.editor  is "com.livecode.pi.enum"
+metadata mainSquareColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata mainSquareColor.default  is "shadow"
+metadata mainSquareColor.label  is "Working Area Color"
+metadata mainSquareColor.section  is "Colors"
+private variable mMainSquareColor as String
+private handler setMainSquareColor(in pVal as String)
+  put pVal into mAppData["props"]["mainSquareColor"]
+  put pVal into mMainSquareColor
+  checkForRedraw()
+end handler
+
+property showTitle  get mShowTitle  set setshowTitle
+metadata showTitle.editor  is "com.livecode.pi.boolean"
+metadata showTitle.default  is "true"
+metadata showTitle.label  is "Show Title at Top"
+metadata showTitle.section  is "Table"
+private variable mShowTitle as Boolean
+private handler setshowTitle(in pVal as Boolean)
+  put pVal into mAppData["props"]["showTitle"]
+  put pVal into mShowTitle
+  checkForRedraw()
+end handler
+
+property titleText  get mTitleText  set setTitleText
+metadata titleText.editor  is "com.livecode.pi.text"
+metadata titleText.default  is "Settings"
+metadata titleText.label  is "Title Text"
+metadata titleText.section  is "Table"
+private variable mTitleText as String
+private handler setTitleText(in pVal as String)
+  put pVal into mAppData["props"]["titleText"]
+  put pVal into mTitleText
+  checkForRedraw()
+end handler
+
+property titleSize  get mTitleSize  set setTitleSize
+metadata titleSize.editor is "com.livecode.pi.number"
+metadata titleSize.default  is "2"
+metadata titleSize.label  is "Title rect offset"
+metadata titleSize.section  is "Text"
+private variable mTitleSize as Number
+private handler setTitleSize(in pVal as Number)
+  put pVal into mAppData["props"]["titleSize"]
+  put pVal into mTitleSize
+  checkForRedraw()
+end handler
+
+property titleTextSize  get mTitleTextSize  set settitleTextSize
+metadata titleTextSize.editor  is "com.livecode.pi.number"
+metadata titleTextSize.default  is "23"
+metadata titleTextSize.label  is "Title font size"
+metadata titleTextSize.section  is "Text"
+private variable mTitleTextSize as Number
+private handler settitleTextSize(in pVal as Number)
+  put pVal into mAppData["props"]["titleTextSize"]
+  put pVal into mTitleTextSize
+  checkForRedraw()
+end handler
+
+property titleTextFont  get mTitleTextFont  set settitleTextFont
+metadata titleTextFont.editor  is "com.livecode.pi.font"
+metadata titleTextFont.default  is "Arial"
+metadata titleTextFont.label  is "Title Font"
+metadata titleTextFont.section  is "Text"
+private variable mTitleTextFont as String
+private handler settitleTextFont(in pVal as String)
+  put pVal into mAppData["props"]["titleTextFont"]
+  put pVal into mTitleTextFont
+  checkForRedraw()
+end handler
+
+property titleTextColor  get mTitleTextColor  set setTitleTextColor
+metadata titleTextColor.editor  is "com.livecode.pi.enum"
+metadata titleTextColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata titleTextColor.default  is "border"
+metadata titleTextColor.label  is "Title Color"
+metadata titleTextColor.section  is "Colors"
+private variable mTitleTextColor as String
+private handler setTitleTextColor(in pVal as String)
+  put pVal into mAppData["props"]["titleTextColor"]
+  put pVal into mTitleTextColor
+  checkForRedraw()
+end handler
+
+property boxBorder  get mBorder  set setBorder
+metadata boxBorder.editor  is "com.livecode.pi.number"
+metadata boxBorder.default  is "5"
+metadata boxBorder.label  is "Border thickness"
+metadata boxBorder.section  is "Table"
+private variable mBorder as Number
+private handler setBorder(in pVal as Number)
+  put pVal into mAppData["props"]["boxBorder"]
+  put pVal into mBorder
+  checkForRedraw()
+end handler
+
+property boxRadius  get mRadius  set setRadius
+metadata boxRadius.editor  is "com.livecode.pi.number"
+metadata boxRadius.default  is "13"
+metadata boxRadius.label  is "Border and Box Radius"
+metadata boxRadius.section  is "Table"
+private variable mRadius as Number
+private handler setRadius(in pVal as Number)
+  put pVal into mAppData["props"]["boxRadius"]
+  put pVal into mRadius
+  checkForRedraw()
+end handler
+
+property overlayMode  get mOverlay  set setOverlay
+metadata overlayMode.editor  is "com.livecode.pi.boolean"
+metadata overlayMode.default  is "false"
+metadata overlayMode.label  is "Show as an Overlay"
+metadata overlayMode.section  is "Table"
+private variable mOverlay as Boolean
+private handler setOverlay(in pVal as Boolean)
+  put pVal into mAppData["props"]["overlayMode"]
+  put pVal into mOverlay
+  checkForRedraw()
+end handler
+
+property overlayAlign  get mOverlayAlign  set setOverlayAlign
+metadata overlayAlign.editor  is "com.livecode.pi.enum"
+metadata overlayAlign.options  is "top left,top center,top right,center left,center center,center right,bottom left,bottom center,bottom right"
+metadata overlayAlign.default  is "center center"
+metadata overlayAlign.label  is "Overlay Alignment"
+metadata overlayAlign.section  is "Table"
+private variable mOverlayAlign as String
+private handler setOverlayAlign(in pVal as String)
+  put pVal into mAppData["props"]["overlayAlign"]
+  put pVal into mOverlayAlign
+  checkForRedraw()
+end handler
+
+property overlayHeight  get mBoxHeight  set setBoxHeight
+metadata overlayHeight.editor  is "com.livecode.pi.number"
+metadata overlayHeight.default  is "200"
+metadata overlayHeight.label  is "Overlay-Box Height"
+metadata overlayHeight.section  is "Table"
+private variable mBoxHeight as Number
+
+private handler setBoxHeight(in pVal as Number)
+  put pVal into mAppData["props"]["overlayHeight"]
+  put pVal into mBoxHeight
+  checkForRedraw()
+end handler
+
+property overlayWidth  get mBoxWidth  set setBoxWidth
+metadata overlayWidth.editor  is "com.livecode.pi.number"
+metadata overlayWidth.default  is "300"
+metadata overlayWidth.label  is "Overlay-Box Width"
+metadata overlayWidth.section  is "Table"
+private variable mBoxWidth as Number
+
+private handler setBoxWidth(in pVal as Number)
+  put pVal into mAppData["props"]["overlayWidth"]
+  put pVal into mBoxWidth
+  checkForRedraw()
+end handler
+
+property overlayOffset  get mBoxOffset  set setOverlayOffset
+metadata overlayOffset.editor  is "com.livecode.pi.number"
+metadata overlayOffset.default  is "13"
+metadata overlayOffset.label  is "Overlay Offset from Edge"
+metadata overlayOffset.section  is "Table"
+private variable mBoxOffset as Number
+private handler setOverlayOffset(in pVal as Number)
+  put pVal into mAppData["props"]["overlayOffset"]
+  put pVal into mBoxOffset
+  checkForRedraw()
+end handler
+
+property overlayColor  get mOverlayColor  set setOverlayColor
+metadata overlayColor.editor  is "com.livecode.pi.enum"
+metadata overlayColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata overlayColor.default  is "bottom"
+metadata overlayColor.label  is "Overlay Color"
+metadata overlayColor.section  is "Colors"
+private variable mOverlayColor as String
+private handler setOverlayColor(in pVal as String)
+  put pVal into mAppData["props"]["overlayColor"]
+  put pVal into mOverlayColor
+  checkForRedraw()
+end handler
+
+property overlayOpacity  get mOverlayOpacity  set setOverlayOpacity
+metadata overlayOpacity.editor  is "com.livecode.pi.enum"
+metadata overlayOpacity.options  is "0,10,20,30,40,50,60,70,80,90,100"
+metadata overlayOpacity.default  is "0"
+metadata overlayOpacity.label  is "Overlay Opacity"
+metadata overlayOpacity.section  is "Colors"
+private variable mOverlayOpacity as Number
+private handler setOverlayOpacity(in pVal as Number)
+  put pVal into mAppData["props"]["overlayOpacity"]
+  put pVal into mOverlayOpacity
+  checkForRedraw()
+end handler
+
+property showBottomButtons  get mShowBottomButtons  set setShowBottonButtons
+metadata showBottomButtons.editor  is "com.livecode.pi.boolean"
+metadata showBottomButtons.default  is "true"
+metadata showBottomButtons.label  is "Show Bottom Buttons"
+metadata showBottomButtons.section  is "Table"
+private variable mShowBottomButtons as Boolean
+private handler setShowBottonButtons(in pVal as Boolean)
+  put pVal into mAppData["props"]["showBottomButtons"]
+  put pVal into mShowBottomButtons
+  checkForRedraw()
+end handler
+
+property bottomButtonTextSize  get mBottomButtonTextSize  set setBottomButtonTextSize
+metadata bottomButtonTextSize.editor  is "com.livecode.pi.number"
+metadata bottomButtonTextSize.default  is "13"
+metadata bottomButtonTextSize.label  is "Bottom Button Text Size"
+metadata bottomButtonTextSize.section  is "Text"
+private variable mBottomButtonTextSize as Number
+private handler setBottomButtonTextSize(in pVal as Number)
+  put pVal into mAppData["props"]["bottomButtonTextSize"]
+  put pVal into mBottomButtonTextSize
+  checkForRedraw()
+end handler
+
+property button1Text  get mButton1Text  set setButtonOne
+metadata button1Text.editor  is "com.livecode.pi.text"
+metadata button1Text.default  is "OK"
+metadata button1Text.label  is "Bottom Button 1 Text"
+metadata button1Text.section  is "Table"
+private variable mButton1Text as String
+private handler setButtonOne(in pVal as String)
+  put pVal into mAppData["props"]["button1Text"]
+  put pVal into mButton1Text
+  checkForRedraw()
+end handler
+
+property button2Text  get mButton2Text  set setButtonTwo
+metadata button2Text.editor  is "com.livecode.pi.text"
+metadata button2Text.default  is "Cancel"
+metadata button2Text.label  is "Bottom Button 2 Text"
+metadata button2Text.section  is "Table"
+private variable mButton2Text as String
+private handler setButtonTwo(in pVal as String)
+  put pVal into mAppData["props"]["button2Text"]
+  put pVal into mButton2Text
+  checkForRedraw()
+end handler
+
+property button3Text  get mButton3Text  set setButtonThree
+metadata button3Text.editor  is "com.livecode.pi.text"
+metadata button3Text.default  is "Other"
+metadata button3Text.label  is "Bottom Button 3 Text"
+metadata button3Text.section  is "Table"
+private variable mButton3Text as String
+private handler setButtonThree(in pVal as String)
+  put pVal into mAppData["props"]["button3Text"]
+  put pVal into mButton3Text
+  checkForRedraw()
+end handler
+
+property showButtons  get mShowButtons  set setShowButtons
+metadata showButtons.editor  is "com.livecode.pi.enum"
+metadata showButtons.options  is "1,2,3"
+metadata showButtons.default  is "2"
+metadata showButtons.label  is "Bottom Buttons-Number"
+metadata showButtons.section  is "Table"
+private variable mShowButtons as Number
+private handler setShowButtons(in pVal as Number)
+  put pVal into mAppData["props"]["showButtons"]
+  put pVal into mShowButtons
+  checkForRedraw()
+end handler
+
+property bottomButtonAlignment  get mBottomButtonAlignment  set setBottomButtonAlignment
+metadata bottomButtonAlignment.editor  is "com.livecode.pi.enum"
+metadata bottomButtonAlignment.options  is "Left,Right,Center"
+metadata bottomButtonAlignment.default  is "Right"
+metadata bottomButtonAlignment.label  is "Bottom Button Alignment"
+metadata bottomButtonAlignment.section  is "Table"
+private variable mBottomButtonAlignment as String
+private handler setBottomButtonAlignment(in pVal as String)
+  put pVal into mAppData["props"]["bottomButtonAlignment"]
+  put pVal into mBottomButtonAlignment
+  checkForRedraw()
+end handler
+
+property bottomButtonWidth  get mBottomButtonWidth  set setBottomButtonWidth
+metadata bottomButtonWidth.editor  is "com.livecode.pi.number"
+metadata bottomButtonWidth.default  is "60"
+metadata bottomButtonWidth.label  is "Bottom Button Width"
+metadata bottomButtonWidth.section  is "Table"
+private variable mBottomButtonWidth as Number
+private handler setBottomButtonWidth(in pVal as Number)
+  put pVal into mAppData["props"]["bottomButtonWidth"]
+  put pVal into mBottomButtonWidth
+  checkForRedraw()
+end handler
+
+property bottomButtonHeight  get mBottomButtonHeight  set setBottomButtonHeight
+metadata bottomButtonHeight.editor  is "com.livecode.pi.number"
+metadata bottomButtonHeight.default  is "30"
+metadata bottomButtonHeight.label  is "Bottom Button Height"
+metadata bottomButtonHeight.section  is "Table"
+private variable mBottomButtonHeight as Number
+private handler setBottomButtonHeight(in pVal as Number)
+  put pVal into mAppData["props"]["bottomButtonHeight"]
+  put pVal into mBottomButtonHeight
+  checkForRedraw()
+end handler
+
+property bottomButtonBuffer  get mBottomButtonBuffer  set setBottomButtonBuffer
+metadata bottomButtonBuffer.editor  is "com.livecode.pi.number"
+metadata bottomButtonBuffer.default  is "3"
+metadata bottomButtonBuffer.label  is "Bottom Button Buffer/Offset"
+metadata bottomButtonBuffer.section  is "Table"
+private variable mBottomButtonBuffer as Number
+private handler setBottomButtonBuffer(in pVal as Number)
+  put pVal into mAppData["props"]["bottomButtonBuffer"]
+  put pVal into mBottomButtonBuffer
+  checkForRedraw()
+end handler
+
+property bottomButtonBackColor  get mBottomButtonBackColor  set setBottomButtonBackColor
+metadata bottomButtonBackColor.editor  is "com.livecode.pi.enum"
+metadata bottomButtonBackColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata bottomButtonBackColor.default  is "back"
+metadata bottomButtonBackColor.label  is "Bottom Button Background Color"
+metadata bottomButtonBackColor.section  is "Colors"
+private variable mBottomButtonBackColor as String
+private handler setBottomButtonBackColor(in pVal as String)
+  put pVal into mAppData["props"]["bottomButtonBackColor"]
+  put pVal into mBottomButtonBackColor
+  checkForRedraw()
+end handler
+
+property bottomButtonTextColor  get mBottomButtonTextColor  set setBottomButtonTextColor
+metadata bottomButtonTextColor.editor  is "com.livecode.pi.enum"
+metadata bottomButtonTextColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata bottomButtonTextColor.default  is "fore"
+metadata bottomButtonTextColor.label  is "Bottom Button Text Color"
+metadata bottomButtonTextColor.section  is "Colors"
+private variable mBottomButtonTextColor as String
+private handler setBottomButtonTextColor(in pVal as String)
+  put pVal into mAppData["props"]["bottomButtonTextColor"]
+  put pVal into mBottomButtonTextColor
+  checkForRedraw()
+end handler
+
+property appData  get mAppData  set setAppData
+metadata appData.editor  is "com.livecode.pi.array"
+metadata appData.label  is "AppData for Debugging"
+metadata appData.section  is "Advanced"
+private variable mAppData as Array
+private handler setAppData(in pVal as Array)
+  put pVal into mAppData
+
+  if "updateprops" is among the keys of mAppData then
+    if mAppData["updateprops"] is not empty then
+       updateProperties()
+    end if
+  end if
+  --put the empty array into mAppData["props"]
+  --addAppDataProps()
+
+  put kVersion into mAppData["version"]
+end handler
+
+private variable mDebugCat as String
+private handler clearDebugInfo(in pDebug as String)
+   put pDebug into mDebugCat
+   put the empty array into mAppData[mDebugCat]
+   setAppData(mAppData)
+end handler
+private handler addDebugInfo(in pKey as String, in pValue)
+   --addDebugInfo("KEY",VALUE)
+   put pValue into mAppData[mDebugCat][pKey]
+   setAppData(mAppData)
+end handler
+
+-- property inputData 	   get mInputData           set setInputData
+-- metadata inputData.editor      is "com.livecode.pi.text"
+-- metadata inputData.default     is ""
+-- metadata inputData.label  is "Data through text"
+-- metadata inputData.section 		is "Contents"
+-- private variable mInputData as String
+
+/*
+!mydata;
+!1;
+=label;Test 1
+;1
+!2;
+=label;Test 2
+;2
+;mydata
+*/
+
+-- private handler setInputData(in pText as String)
+--    variable tResult as Array
+--    put ayaToArray(pText) into tResult
+--    setData(tResult["myData"])
+-- end handler
+
+property myData  get mData  set setData
+metadata myData.editor  is "com.livecode.pi.array"
+metadata myData.section  is "Contents"
+metadata myData.label  is "Data - Array for Configuration"
+private variable mData as Array
+private handler setData(in pVal as Array)
+  put pVal into mAppData["props"]["myData"]
+  put pVal into mData
+   if mControlType is not "Dialog Box" then
+      verifyDataComplete()
+   end if
+  redraw all
+end handler
+
+property controlType  get mControlType  set setControlType
+metadata controlType.editor  is "com.livecode.pi.enum"
+metadata controlType.options  is "Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Sliders,Switches"
+metadata controlType.default  is "Button Bar"
+metadata controlType.label  is "Control Types"
+metadata controlType.section  is "Basic"
+private variable mControlType as String
+private handler setControlType(in pVal as String)
+  put the empty array into mData
+  setData(mData)
+  put pVal into mAppData["props"]["controlType"]
+  put pVal into mControlType
+  if mDefaultChangeType then
+     if mControlType is "Button Bar" then
+        useDefaultButtonBarProps()
+     else if mControlType is "Switches" then
+        useDefaultSwitchesProps()
+     else if mControlType is "Numeric Up/Down" then
+        useDefaultUpDownProps()
+     else if mControlType is "Dialog Box" then
+        useDefaultDialogBoxProps()
+     else if mControlType is "Sliders" then
+       useDefaultSlidersProps()
+    else if mControlType is "Form Backdrop" then
+       --no props?
+     end if
+  end if
+  redraw all
+end handler
+
+property columnCount    get mColumns      set setColumns
+metadata columnCount.editor      is "com.livecode.pi.number"
+metadata columnCount.default     is "1"
+metadata columnCount.label  is "Number of Columns"
+metadata columnCount.section  is "Basic"
+private variable mColumns as Number
+private handler setColumns(in pVal as Number)
+  put pVal into mAppData["props"]["columnCount"]
+  put pVal into mColumns
+  checkForRedraw()
+end handler
+
+property controlBufferV       get mControlBufferV      set setControlBufferV
+metadata controlBufferV.editor      is "com.livecode.pi.number"
+metadata controlBufferV.default     is "2"
+metadata controlBufferV.label       is "Control Buffer Top/Bottom"
+metadata controlBufferV.section     is "Basic"
+private variable mControlBufferV as Number
+private handler setControlBufferV(in pVal as Number)
+  put pVal into mAppData["props"]["controlBufferV"]
+  put pVal into mControlBufferV
+  checkForRedraw()
+end handler
+
+property controlBufferH       get mControlBufferH      set setControlBufferH
+metadata controlBufferH.editor      is "com.livecode.pi.number"
+metadata controlBufferH.default     is "2"
+metadata controlBufferH.label       is "Control Buffer Left/Right"
+metadata controlBufferH.section     is "Basic"
+private variable mControlBufferH as Number
+private handler setControlBufferH(in pVal as Number)
+  put pVal into mAppData["props"]["controlBufferH"]
+  put pVal into mControlBufferH
+  checkForRedraw()
+end handler
+
+property controlRadius       get mControlRadius      set setControlRadius
+metadata controlRadius.editor      is "com.livecode.pi.number"
+metadata controlRadius.default     is "23"
+metadata controlRadius.label       is "Control Corner Radius"
+metadata controlRadius.section     is "Basic"
+private variable mControlRadius as Number
+private handler setControlRadius(in pVal as Number)
+  put pVal into mAppData["props"]["controlRadius"]
+  put pVal into mControlRadius
+  checkForRedraw()
+end handler
+
+property controlTextFont  get mControlTextFont  set setControlTextFont
+metadata controlTextFont.editor  is "com.livecode.pi.font"
+metadata controlTextFont.default  is "Arial"
+metadata controlTextFont.label  is "Control Label Font"
+metadata controlTextFont.section  is "Text"
+private variable mControlTextFont as String
+private handler setControlTextFont(in pVal as String)
+  put pVal into mAppData["props"]["controlTextFont"]
+  put pVal into mControlTextFont
+  checkForRedraw()
+end handler
+
+property controlTextSize       get mControlTextSize      set setControlTextSize
+metadata controlTextSize.editor      is "com.livecode.pi.number"
+metadata controlTextSize.default     is "13"
+metadata controlTextSize.label       is "Control Label/Text Font Size"
+metadata controlTextSize.section     is "Text"
+private variable mControlTextSize as Number
+private handler setControlTextSize(in pVal as Number)
+  put pVal into mAppData["props"]["controlTextSize"]
+  put pVal into mControlTextSize
+  checkForRedraw()
+end handler
+
+property controlTextColor  get mControlTextColor  set setcontrolTextColor
+metadata controlTextColor.editor  is "com.livecode.pi.enum"
+metadata controlTextColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata controlTextColor.default  is "fore"
+metadata controlTextColor.label  is "Control Text Color"
+metadata controlTextColor.section  is "Colors"
+private variable mControlTextColor as String
+private handler setcontrolTextColor(in pVal as String)
+  put pVal into mAppData["props"]["controlTextColor"]
+  put pVal into mControlTextColor
+  checkForRedraw()
+end handler
+
+property controlHiliteColor  get mControlHiliteColor  set setControlHiliteColor
+metadata controlHiliteColor.editor  is "com.livecode.pi.enum"
+metadata controlHiliteColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata controlHiliteColor.default  is "hilite"
+metadata controlHiliteColor.label  is "Control Hilited Color"
+metadata controlHiliteColor.section  is "Colors"
+private variable mControlHiliteColor as String
+private handler setControlHiliteColor(in pVal as String)
+  put pVal into mAppData["props"]["controlHiliteColor"]
+  put pVal into mControlHiliteColor
+  checkForRedraw()
+end handler
+
+property controlValueSize       get mControlValueSize      set setControlValueSize
+metadata controlValueSize.editor      is "com.livecode.pi.number"
+metadata controlValueSize.default     is "31"
+metadata controlValueSize.label       is "Control Value Font Size"
+metadata controlValueSize.section     is "Text"
+private variable mControlValueSize as Number
+private handler setControlValueSize(in pVal as Number)
+  put pVal into mAppData["props"]["controlValueSize"]
+  put pVal into mControlValueSize
+  checkForRedraw()
+end handler
+
+property controlTextWidth       get mControlTextWidth      set setControlTextWidth
+metadata controlTextWidth.editor      is "com.livecode.pi.number"
+metadata controlTextWidth.default     is "42"
+metadata controlTextWidth.label       is "Control Text Fixed Width"
+metadata controlTextWidth.section     is "Basic"
+private variable mControlTextWidth as Number
+private handler setControlTextWidth(in pVal as Number)
+  put pVal into mAppData["props"]["controlTextWidth"]
+  put pVal into mControlTextWidth
+  checkForRedraw()
+end handler
+
+property controlValueWidth       get mControlValueWidth      set setControlValueWidth
+metadata controlValueWidth.editor      is "com.livecode.pi.number"
+metadata controlValueWidth.default     is "31"
+metadata controlValueWidth.label       is "Control Value Fixed Width"
+metadata controlValueWidth.section     is "Basic"
+private variable mControlValueWidth as Number
+private handler setControlValueWidth(in pVal as Number)
+  put pVal into mAppData["props"]["controlValueWidth"]
+  put pVal into mControlValueWidth
+  checkForRedraw()
+end handler
+
+property controlValueFont  get mControlValueFont  set setControlValueFont
+metadata controlValueFont.editor  is "com.livecode.pi.font"
+metadata controlValueFont.default  is "Courier"
+metadata controlValueFont.label  is "Control Value Font"
+metadata controlValueFont.section  is "Text"
+private variable mControlValueFont as String
+private handler setControlValueFont(in pVal as String)
+  put pVal into mAppData["props"]["controlValueFont"]
+  put pVal into mControlValueFont
+  checkForRedraw()
+end handler
+
+property controlValueColor  get mControlValueColor  set setControlValueColor
+metadata controlValueColor.editor  is "com.livecode.pi.enum"
+metadata controlValueColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite"
+metadata controlValueColor.default  is "fore"
+metadata controlValueColor.label  is "Control Value Color"
+metadata controlValueColor.section  is "Colors"
+private variable mControlValueColor as String
+private handler setControlValueColor(in pVal as String)
+  put pVal into mAppData["props"]["controlValueColor"]
+  put pVal into mControlValueColor
+  checkForRedraw()
+end handler
+
+property controlTextAlign get mControlTextAlign	 set setControlTextAlign
+metadata controlTextAlign.editor is "com.livecode.pi.enum"
+metadata controlTextAlign.options is "top left,top center,top right,center left,center center,center right,bottom left,bottom center,bottom right,"
+metadata controlTextAlign.default is "center center"
+metadata controlTextAlign.label is "Control Text Alignment"
+metadata controlTextAlign.section is "Text"
+private variable mControlTextAlign as String
+private handler setControlTextAlign(in pVal as String)
+  put pVal into mAppData["props"]["controlValueColor"]
+  put pVal into mControlTextAlign
+  checkForRedraw()
+end handler
+
+property controlObjectColor  get mControlObjectColor  set setControlObjectColor
+metadata controlObjectColor.editor  is "com.livecode.pi.enum"
+metadata controlObjectColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata controlObjectColor.default  is "back"
+metadata controlObjectColor.label  is "Control Object Color"
+metadata controlObjectColor.section  is "Colors"
+private variable mControlObjectColor as String
+private handler setControlObjectColor(in pVal as String)
+  put pVal into mAppData["props"]["controlObjectColor"]
+  put pVal into mControlObjectColor
+  checkForRedraw()
+end handler
+
+property controlObjectVertical  get mControlObjectVertical  set setControlObjectVertical
+metadata controlObjectVertical.editor  is "com.livecode.pi.enum"
+metadata controlObjectVertical.options  is "Even spacing,Fixed spacing"
+metadata controlObjectVertical.default  is "Even spacing"
+metadata controlObjectVertical.label  is "Control Object Vertical Spacing"
+metadata controlObjectVertical.section  is "Basic"
+private variable mControlObjectVertical as String
+private handler setControlObjectVertical(in pVal as String)
+  put pVal into mAppData["props"]["controlObjectVertical"]
+  put pVal into mControlObjectVertical
+  checkForRedraw()
+end handler
+
+property controlObjectSize       get mControlObjectSize      set setControlObjectSize
+metadata controlObjectSize.editor      is "com.livecode.pi.number"
+metadata controlObjectSize.default     is "30"
+metadata controlObjectSize.label       is "Control Object Size"
+metadata controlObjectSize.section     is "Basic"
+private variable mControlObjectSize as Number
+private handler setControlObjectSize(in pVal as Number)
+  put pVal into mAppData["props"]["controlObjectSize"]
+  put pVal into mControlObjectSize
+  checkForRedraw()
+end handler
+
+property controlItemSpacing       get mControlItemSpacing      set setControlItemSpacing
+metadata controlItemSpacing.editor      is "com.livecode.pi.number"
+metadata controlItemSpacing.default     is "8"
+metadata controlItemSpacing.label       is "Control - Spacing Between"
+metadata controlItemSpacing.section     is "Basic"
+private variable mControlItemSpacing as Number
+private handler setControlItemSpacing(in pVal as Number)
+  put pVal into mAppData["props"]["controlItemSpacing"]
+  put pVal into mControlItemSpacing
+  checkForRedraw()
+end handler
+
+property controlIconA       get mControlIconA      set setControlIconA
+metadata controlIconA.editor      is "com.livecode.pi.text"
+metadata controlIconA.default     is "iconfam1:updown:plus"
+metadata controlIconA.label       is "Control - Icon A"
+metadata controlIconA.section     is "Basic"
+private variable mControlIconA as String
+private handler setControlIconA(in pVal as String)
+    put pVal into mAppData["props"]["controlIconA"]
+  put pVal into mControlIconA
+  checkForRedraw()
+end handler
+
+property controlIconB       get mControlIconB      set setControlIconB
+metadata controlIconB.editor      is "com.livecode.pi.text"
+metadata controlIconB.default     is "iconfam1:updown:minus"
+metadata controlIconB.label       is "Control - Icon B"
+metadata controlIconB.section     is "Basic"
+private variable mControlIconB as String
+private handler setControlIconB(in pVal as String)
+    put pVal into mAppData["props"]["controlIconB"]
+  put pVal into mControlIconB
+  checkForRedraw()
+end handler
+
+property controlIconColor  get mControlIconColor  set setControlIconColor
+metadata controlIconColor.editor  is "com.livecode.pi.enum"
+metadata controlIconColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite"
+metadata controlIconColor.default  is "fore"
+metadata controlIconColor.label  is "Control Icon Color"
+metadata controlIconColor.section  is "Colors"
+private variable mControlIconColor as String
+private handler setControlIconColor(in pVal as String)
+  put pVal into mAppData["props"]["controlIconColor"]
+  put pVal into mControlIconColor
+  checkForRedraw()
+end handler
+
+property controlText       get mControlText      set setControlText
+metadata controlText.editor      is "com.livecode.pi.text"
+metadata controlText.default     is "A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.qzqnqzqn-Douglas Adams"
+metadata controlText.label       is "Control Display Text"
+metadata controlText.section     is "Basic"
+private variable mControlText as String
+private handler setControlText(in pVal as String)
+  put pVal into mAppData["props"]["controlText"]
+  put pVal into mControlText
+  checkForRedraw()
+end handler
+
+property iconData       get mIconData      set setIconData
+metadata iconData.editor      is "com.livecode.pi.array"
+metadata iconData.label  is "Array of Icon Pathes"
+metadata iconData.section     is "Icons"
+private variable mIconData as Array
+private handler setIconData(in pVal as Array)
+    put pVal into mAppData["props"]["iconData"]
+  put pVal into mIconData
+  checkForRedraw()
+end handler
+
+private handler defaultIconData()
+   put the empty array into mIconData["updown"]
+   put "M 496 122 C 703 122 871 290 871 496 C 871 703 703 871 496 871 C 290 871 122 703 122 496 C 122 290 290 122 496 122 M 496 0 C 222 0 0 222 0 496 C 0 771 222 993 496 993 C 771 993 993 771 993 496 C 993 222 771 0 496 0 L 496 0 z M 436 557 L 309 557 C 276 557 249 530 249 496 C 249 463 276 436 309 436 L 436 436 L 557 436 L 684 436 C 717 436 744 463 744 496 C 744 530 717 557 684 557 L 557 557 L 436 557 z" into mIconData["updown"]["minus"]
+   put "M 496 122 C 703 122 871 290 871 496 C 871 703 703 871 496 871 C 290 871 122 703 122 496 C 122 290 290 122 496 122 M 496 0 C 222 0 0 222 0 496 C 0 771 222 993 496 993 C 771 993 993 771 993 496 C 993 222 771 0 496 0 L 496 0 z M 684 436 L 557 436 L 557 309 C 557 276 530 249 496 249 C 463 249 436 276 436 309 L 436 436 L 309 436 C 276 436 249 463 249 496 C 249 530 276 557 309 557 L 436 557 L 436 684 C 436 717 463 744 496 744 C 530 744 557 717 557 684 L 557 557 L 684 557 C 717 557 744 530 744 496 C 744 463 717 436 684 436 z" into mIconData["updown"]["plus"]
+   put "M 515 318 C 482 318 455 345 455 378 C 455 412 482 439 515 439 C 549 439 576 412 576 378 C 576 345 549 318 515 318 M 662 318 C 629 318 602 345 602 378 C 602 412 629 439 662 439 C 696 439 723 412 723 378 C 723 345 696 318 662 318 M 368 318 C 335 318 308 345 308 378 C 308 412 335 439 368 439 C 402 439 429 412 429 378 C 429 345 402 318 368 318 M 621 754 C 630 754 640 750 648 742 L 984 406 C 1000 391 1000 366 984 351 L 648 15 C 633 0 608 0 593 15 C 578 30 578 54 593 70 L 902 378 L 593 687 C 578 702 578 727 593 742 C 601 750 611 754 621 754 M 378 754 C 369 754 359 750 351 742 L 15 406 C 0 391 0 366 15 351 L 351 15 C 366 0 391 0 406 15 C 421 30 421 54 406 70 L 97 378 L 406 687 C 421 702 421 727 406 742 C 398 750 388 754 378 754" into mIconData["code"]
+   put the empty array into mIconData["switch"]
+   put "xxx" into mIconData["switch"]["checked"]
+   put "xxx" into mIconData["switch"]["unchecked"]
+   setIconData(mIconData)
+  checkForRedraw()
+end handler
+
+
+--SECTION:  BUTTON BAR PROPS/VARIABLES
+property buttonActionButton  get mAction
+metadata buttonActionButton.section is "Effects"
+metadata buttonActionButton.label  is "Selected Action Button"
+private variable mAction
+
+property buttonPinEntry  get mEntryValue
+metadata buttonPinEntry.section is "Effects"
+metadata buttonPinEntry.label  is "ButtonBar PIN Entry"
+private variable mEntryValue as String
+
+property pinPadResult  get mSecretNum
+metadata pinPadResult.section is "Effects"
+metadata pinPadResult.label  is "PIN Pad Result"
+private variable mSecretNum as String
+
+property buttonBarType get mButtonBarType	 set setBarType
+metadata buttonBarType.editor is "com.livecode.pi.enum"
+metadata buttonBarType.options is "Single,Multiple,Action,EntryPad"
+metadata buttonBarType.default is "Action"
+metadata buttonBarType.label is "ButtonBar Type"
+metadata buttonBarType.section is "Basic"
+private variable mButtonBarType as String
+private handler setBarType(in pText as String)
+	put pText into mButtonBarType
+   if pText is "EntryPad" then
+      pinPadDefaults()
+   end if
+  checkForRedraw()
+end handler
+
+property buttonBarStyle       get mButtonBarStyle      set setButtonBarStyle
+metadata buttonBarStyle.editor      is "com.livecode.pi.enum"
+metadata buttonBarStyle.options     is "Text,Icon,Icon Above Text,Icon Left,Icon Left Text Center"
+metadata buttonBarStyle.default     is "Icon Left"
+metadata buttonBarStyle.label       is "ButtonBar Appearance"
+metadata buttonBarStyle.section     is "Basic"
+private variable mButtonBarStyle as String
+private handler setButtonBarStyle(in pVal as String)
+    put pVal into mAppData["props"]["showMainSquare"]
+  put pVal into mButtonBarStyle
+  checkForRedraw()
+end handler
+
+
+--SECTION: DIALOG BOX PROPERTIES
+
+property dialogIconAlign get mDialogIconAlign	 set setDialogIconAlign
+metadata dialogIconAlign.editor is "com.livecode.pi.enum"
+metadata dialogIconAlign.options is "off,top,center,bottom"
+metadata dialogIconAlign.default is "top"
+metadata dialogIconAlign.label   is "DialogBox Position of the Icon"
+metadata dialogIconAlign.section is "Basic"
+private variable mDialogIconAlign as String
+
+private handler setDialogIconAlign(in pText as String)
+	put pText into mDialogIconAlign
+  checkForRedraw()
+end handler
+
+--SECTION: NUMERIC UP/DOWN PROPS
+
+property upDownLayout       get mUpDownLayout      set setUpDownLayout
+metadata upDownLayout.editor      is "com.livecode.pi.enum"
+metadata upDownLayout.options     is "plus/value/minus/label,plus/minus/value/label,value/plus/minus/label,minus/value/plus/label,minus/plus/value/label,value/minus/plus/label"
+metadata upDownLayout.default     is "plus/value/minus/label"
+metadata upDownLayout.label       is "Up/Down Value Layout"
+metadata upDownLayout.section     is "Basic"
+private variable mUpDownLayout as String
+
+private handler setUpDownLayout(in pVal as String)
+    put pVal into mAppData["props"]["showMainSquare"]
+  put pVal into mUpDownLayout
+  checkForRedraw()
+end handler
+
+--SECTION: SLIDERS PROPS
+
+property sliderShowValue       get mSliderShowValue      set setSliderShowValue
+metadata sliderShowValue.editor      is "com.livecode.pi.boolean"
+metadata sliderShowValue.default     is "true"
+metadata sliderShowValue.section     is "Basic"
+metadata sliderShowValue.label  is "Slider Show Value"
+private variable mSliderShowValue as Boolean
+private handler setSliderShowValue(in pVal as Boolean)
+    put pVal into mAppData["props"]["showMainSquare"]
+  put pVal into mSliderShowValue
+  checkForRedraw()
+end handler
+
+property sliderShowLabel      get mSliderShowLabel      set setSliderShowLabel
+metadata sliderShowLabel.editor      is "com.livecode.pi.boolean"
+metadata sliderShowLabel.default     is "true"
+metadata sliderShowLabel.section     is "Basic"
+metadata sliderShowLabel.label  is "Slider Show Label"
+private variable mSliderShowLabel as Boolean
+private handler setSliderShowLabel(in pVal as Boolean)
+    put pVal into mAppData["props"]["showMainSquare"]
+  put pVal into mSliderShowLabel
+  checkForRedraw()
+end handler
+
+property sliderType  get mSliderType  set setSliderType
+metadata sliderType.editor  is "com.livecode.pi.enum"
+metadata sliderType.options  is "Values,ColorRGB,ColorRGBA"
+metadata sliderType.default  is "Values"
+metadata sliderType.label  is "Slider Types"
+metadata sliderType.section  is "Basic"
+private variable mSliderType as String
+private handler setSliderType(in pVal as String)
+  put pVal into mAppData["props"]["showMainSquare"]
+  put pVal into mSliderType
+  put the empty array into mData
+  if mSliderType is "ColorRGB" or mSliderType is "ColorRGBA" then
+     variable tCount as Number
+     variable tCountK as Number
+     variable tKey as String
+     variable tValues as List
+     variable tKeys as List
+     put ["label","line","circle","min","max","value"] into tKeys
+     put ["R","hilite","hilite","0","255","255"] into tValues
+     repeat with tCount from 1 up to 3
+        put mkStr(tCount) into tKey
+        put the empty array into mData[tKey]
+        repeat with tCountK from 1 up to 6
+           put element tCountK of tValues into mData[tKey][element tCountK of tKeys]
+        end repeat
+     end repeat
+     put "G" into mData["2"]["label"]
+     put "B" into mData["3"]["label"]
+  end if
+  if mSliderType is "ColorRGBA" then
+     put mData["1"] into mData["4"]
+     put "A" into mData["4"]["label"]
+  end if
+  setData(mData)
+  if mDefaultChangeType then
+     useDefaultSlidersProps()
+  end if
+  checkForRedraw()
+end handler
+
+
+property includeClear       get mIncludeClear      set setIncludeClear
+metadata includeClear.editor      is "com.livecode.pi.boolean"
+metadata includeClear.default     is "true"
+metadata includeClear.section     is "Basic"
+private variable mIncludeClear as Boolean
+
+private handler setIncludeClear(in pVal as Boolean)
+    put pVal into mAppData["props"]["showMainSquare"]
+  put pVal into mIncludeClear
+  checkForRedraw()
+end handler
+
+property includeEnter       get mIncludeEnter      set setIncludeEnter
+metadata includeEnter.editor      is "com.livecode.pi.boolean"
+metadata includeEnter.default     is "true"
+metadata includeEnter.section     is "Basic"
+private variable mIncludeEnter as Boolean
+
+private handler setIncludeEnter(in pVal as Boolean)
+    put pVal into mAppData["props"]["showMainSquare"]
+  put pVal into mIncludeEnter
+  checkForRedraw()
+end handler
+
+--SECTION: FORM BACKDROP
+
+--SECTION:  SCRIPT VARIABLES
+private variable mCurrentRect as Rectangle
+private variable mBottomButtonLoc as List
+
+private variable mCountPerColumn as Number
+private variable mHigh as Number
+private variable mWide as Number
+private variable mLocList as List
+private variable mControlRect as Rectangle
+
+private variable mTimer as Number
+private variable mTimerCount as Number
+private variable mSelected as String
+private variable mStillDown as Boolean
+
+private variable mHandles as List
+private variable mCurrentColor as List
+
+--SECTION:  EVENT HANDLERS
+public handler OnCreate()
+   variable tData as Array
+   put the empty array into mAppData
+   put the empty array into mAppData["props"]
+   defaultIconData()
+end handler
+
+public handler OnOpen()
+  --post "if the script of me is empty then set script of me to base64Decode(\q"& kDefaultScript &"\q)"
+end handler
+
+public handler OnSave(out rProperties as Array)
+  put the empty array into rProperties
+  put mShowMainSquare into rProperties["showMainSquare"]
+  put mMainSquareColor into rProperties["mainSquareColor"]
+  put mWorkingAreaOffsetW into rProperties["workingAreaOffsetW"]
+  put mWorkingAreaOffsetH into rProperties["workingAreaOffsetH"]
+  put mBorder into rProperties["boxBorder"]
+  put mRadius into rProperties["boxRadius"]
+  put mData into rProperties["myData"]
+  put mAppData into rProperties["appData"]
+  put mControlType into rProperties["controlType"]
+  put mColumns into rProperties["columnCount"]
+  put mIconData into rProperties["iconData"]
+
+  --Title
+  put mTitleText into rProperties["titleText"]
+  put mShowTitle into rProperties["showTitle"]
+  put mTitleSize into rProperties["titleSize"]
+  put mTitleTextSize into rProperties["titleTextSize"]
+  put mTitleTextFont into rProperties["titleTextFont"]
+  put mTitleTextColor into rProperties["titleTextColor"]
+
+  --Bottom Buttons
+  put mShowBottomButtons into rProperties["showBottomButtons"]
+  put mShowButtons into rProperties["showButtons"]
+  put mBottomButtonTextSize into rProperties["bottomButtonTextSize"]
+  put mButton1Text into rProperties["buttonOne"]
+  put mButton2Text into rProperties["buttonTwo"]
+  put mButton3Text into rProperties["buttonThree"]
+  put mBottomButtonAlignment into rProperties["bottomButtonAlignment"]
+  put mBottomButtonWidth into rProperties["bottomButtonWidth"]
+  put mBottomButtonHeight into rProperties["bottomButtonHeight"]
+  put mBottomButtonBuffer into rProperties["bottomButtonBuffer"]
+  put mBottomButtonBackColor into rProperties["bottomButtonBackColor"]
+  put mBottomButtonTextColor into rProperties["bottomButtonTextColor"]
+
+  --Overlay
+  put mOverlay into rProperties["overlayMode"]
+  put mBoxHeight into rProperties["overlayHeight"]
+  put mBoxWidth into rProperties["overlayWidth"]
+  put mOverlayAlign into rProperties["overlayAlign"]
+  put mBoxOffset into rProperties["overlayOffset"]
+  put mOverlayColor into rProperties["overlayColor"]
+  put mOverlayOpacity into rProperties["overlayOpacity"]
+
+  --SHARED CONTROL PROPS
+  put mControlBufferH into rProperties["controlBufferH"]
+  put mControlBufferV into rProperties["controlBufferV"]
+  put mControlIconA into rProperties["controlIconA"]
+  put mControlIconB into rProperties["controlIconB"]
+  put mControlIconColor into rProperties["controlIconColor"]
+  put mControlItemSpacing into rProperties["controlItemSpacing"]
+  put mControlObjectColor into rProperties["controlObjectColor"]
+  put mControlObjectSize into rProperties["controlObjectSize"]
+  put mControlRadius into rProperties["controlRadius"]
+  put mControlText into rProperties["controlText"]
+  put mControlTextAlign into rProperties["controlTextAlign"]
+  put mControlTextColor into rProperties["controlTextColor"]
+  put mControlTextSize into rProperties["controlTextSize"]
+  put mControlValueColor into rProperties["controlValueColor"]
+  put mControlValueFont into rProperties["controlValueFont"]
+  put mControlValueSize into rProperties["controlValueSize"]
+  put mControlValueWidth into rProperties["controlValueWidth"]
+
+  --BUTTON BAR
+  put mButtonBarType into rProperties["buttonBarType"]
+  put mButtonBarStyle into rProperties["buttonBarStyle"]
+
+  --Dialog Box
+  put mDialogIconAlign into rProperties["dialogIconAlign"]
+
+  --Switches
+
+  --Numeric Up/Down
+  put mUpDownLayout into rProperties["upDownLayout"]
+
+  --SLIDERS
+  put mSliderShowValue into rProperties["sliderShowValue"]
+  put mSliderShowLabel into rProperties["sliderShowLabel"]
+  put mSliderType into rProperties["sliderType"]
+
+  put the empty array into mAppData["props"]
+  put rProperties into mAppData["props"]
+end handler
+
+public handler OnLoad(in pProperties as Array)
+   put the empty array into mAppData["props"]
+   put pProperties into mAppData["c"]
+
+  put pickProp("showMainSquare",true) into mShowMainSquare
+  put pickProp("mainSquareColor","shadow") into mMainSquareColor
+  put pickProp("workingAreaOffsetW",0) into mWorkingAreaOffsetW
+  put pickProp("workingAreaOffsetH",0) into mWorkingAreaOffsetH
+  put pickProp("boxBorder",5) into mBorder
+  put pickProp("boxRadius",13) into mRadius
+  put pickProp("myData",the empty array) into mData
+  put pickProp("appData",the empty array) into mAppData
+  put pickProp("controlType","Dialog Box") into mControlType
+  put pickProp("columnCount",1) into mColumns
+  put pickProp("iconData",defaultIconData()) into mIconData
+
+  --Title
+  put pickProp("titleText","Settings") into mTitleText
+  put pickProp("showTitle",true) into mShowTitle
+  put pickProp("titleSize",23) into mTitleSize
+  put pickProp("titleTextSize",23) into mTitleTextSize
+  put pickProp("titleTextFont","Arial") into mTitleTextFont
+  put pickProp("titleTextColor","border") into mTitleTextColor
+
+  --Bottom Buttons
+  put pickProp("showBottomButtons",true) into mShowBottomButtons
+  put pickProp("showButtons","2Buttons") into mShowButtons
+  put pickProp("bottomButtonTextSize",15) into mBottomButtonTextSize
+  put pickProp("buttonOne","Okay") into mButton1Text
+  put pickProp("buttonTwo","Cancel") into mButton2Text
+  put pickProp("buttonThree","Other") into mButton3Text
+  put pickProp("bottomButtonAlignment","Right") into mBottomButtonAlignment
+  put pickProp("bottomButtonWidth",60) into mBottomButtonWidth
+  put pickProp("bottomButtonHeight",30) into mBottomButtonHeight
+  put pickProp("bottomButtonBuffer",3) into mBottomButtonBuffer
+  put pickProp("bottomButtonBackColor","fore") into mBottomButtonBackColor
+  put pickProp("bottomButtonTextColor","back") into mBottomButtonTextColor
+
+  --Overlay
+  put pickProp("overlayMode",false) into mOverlay
+  put pickProp("overlayHeight",200) into mBoxHeight
+  put pickProp("overlayWidth",300) into mBoxWidth
+  put pickProp("overlayAlign","center center") into mOverlayAlign
+  put pickProp("overlayOffset",13) into mBoxOffset
+  put pickProp("overlayColor","bottom") into mOverlayColor
+  put pickProp("overlayOpacity",0) into mOverlayOpacity
+
+  --SHARED CONTROL PROPS
+  put pickProp("controlBufferH",2) into mControlBufferH
+  put pickProp("controlBufferV",2) into mControlBufferV
+  put pickProp("controlIconA","iconfam1:updown:plus") into mControlIconA
+  put pickProp("controlIconB","iconfam1:updown:minus") into mControlIconB
+  put pickProp("controlIconColor","fore") into mControlIconColor
+  put pickProp("controlItemSpacing",8) into mControlItemSpacing
+  put pickProp("controlObjectColor","fore") into mControlObjectColor
+  put pickProp("controlObjectSize",30) into mControlObjectSize
+  put pickProp("controlRadius",23) into mControlRadius
+  put pickProp("controlText","Leave the gun, take the cannoli") into mControlText
+  put pickProp("controlTextAlign","center center") into mControlTextAlign
+  put pickProp("controlTextColor","fore") into mControlTextColor
+  put pickProp("controlTextSize",13) into mControlTextSize
+  put pickProp("controlValueColor","fore") into mControlValueColor
+  put pickProp("controlValueFont","Courier") into mControlValueFont
+  put pickProp("controlValueSize",31) into mControlValueSize
+  put pickProp("controlValueWidth",31) into mControlValueWidth
+
+  --BUTTON BAR
+  put pickProp("buttonBarType","Action") into mButtonBarType
+  put pickProp("buttonBarStyle","Text") into mButtonBarStyle
+
+  --Dialog Box
+  put pickProp("dialogIconAlign","top") into mDialogIconAlign
+
+  --Switches
+
+  --Numeric Up/Down
+  put pickProp("upDownLayout","plus/value/minus/label") into mUpDownLayout
+
+  --SLIDERS
+  put pickProp("sliderShowValue",true) into mSliderShowValue
+  put pickProp("sliderShowLabel",true) into mSliderShowLabel
+  put pickProp("sliderType","Values") into mSliderType
+  put pickProp("sliderShowLabel",true) into mSliderShowLabel
+  --put pickProp("sliderButtonColor","border") into mSliderButtonColor
+  --put pickProp("sliderLineColor","border") into mSliderLineColor
+
+  --put pickProp["xxxxx","xxxxx"] into xxxxx
+  put the empty array into mAppData["props"]
+  put pProperties into mAppData["props"]
+end handler
+
+--SECTION: VERIFY
+
+private handler makeDefaultData()
+  put randomLabel() into mData["1"]
+  put randomLabel() into mData["2"]
+end handler
+
+private handler verifyDataComplete()
+   variable tCount as Number
+   repeat with tCount from 1 up to the number of elements in mData
+      if not (mData[mkStr(tCount)] is an array) then
+         put the empty array into mData[mkStr(tCount)]
+      end if
+      variable tCountK as Number
+      variable tKeys as List
+      variable tValues as List
+      if mControlType is "Button Bar" then
+         put ["label","show","clicktext","clickbutton","unclickedtext","unclickedbutton","show","clicked","icon","textsize","textfont","value"] into tKeys
+         put [randomLabel() ,"true","default","default","default","default","true","false","builtin:question sign","default","default",mkStr(tCount)] into tValues
+      else if mControlType is "Switches" then
+         put ["label","selected","value","uncheckedicon","labelcolor","back","checkedicon","textfont","textsize","unchecked","checked","iconchecked","iconunchecked"] into tKeys
+         put [randomLabel() ,"false",mkStr(tCount),"default","default","default","default","default","default","default","default","default","default","default"] into tValues
+      else if mControlType is "Numeric Up/Down" then
+         put ["label","min","num","max","step","value","iconplus","iconminus","short","valuecolor","textcolor","objectcolor","textsize","valuesize","textfont","valuefont"] into tKeys
+         put [randomLabel() ,"0",mkStr(tCount),"100","1","50","iconfam1:updown:plus","iconfam1:updown:minus","xval" & mkStr(tCount),"default","default","default","default","default","default","default"] into tValues
+      else if mControlType is "Sliders" then
+         put ["label","textfont","valuefont","textsize","valuesize","labelcolor","valuesize","valuecolor","linecolor","handlecolor","circle","min","max","value"] into tKeys
+         put [randomLabel() ,"default","default","default","default","default","default","default","default","default","default","0","100","50"] into tValues
+      else if mControlType is "Form Backdrop" then
+         put ["label","show","textcolor","textsize","textfont","size"] into tKeys
+         put [randomLabel() ,"true","default","default","default","1"] into tValues
+      end if
+
+      repeat with tCountK from 1 up to the number of elements in tKeys
+         if element tCountK of tKeys is not among the keys of mData[mkStr(tCount)] then
+            put element tCountK of tValues into mData[mkStr(tCount)][element tCountK of tKeys]
+         end if
+      end repeat
+   end repeat
+end handler
+
+private handler useDefaultButtonBarProps()
+   setControlIconA("builtin:question sign")
+   setRadius(23)
+end handler
+
+private handler useDefaultSwitchesProps()
+   put 13 into mControlRadius
+   setRadius(13)
+   put "builtin:ok sign" into mControlIconA
+   put "builtin:circle" into mControlIconB
+   setControlIconA("builtin:ok sign")
+   setControlIconB("builtin:circle")
+   setRadius(13)
+end handler
+
+private handler useDefaultUpDownProps()
+   put "iconfam1:updown:plus" into mControlIconA
+   put "iconfam1:updown:minus" into mControlIconB
+   setControlIconA("iconfam1:updown:plus")
+   setControlIconB("iconfam1:updown:minus")
+   put 23 into mControlRadius
+   setRadius(23)
+end handler
+
+private handler useDefaultDialogBoxProps()
+   put "builtin:question sign" into mControlIconA
+   setControlIconA("builtin:question sign")
+   put 23 into mControlRadius
+   setRadius(23)
+end handler
+
+private handler useDefaultSlidersProps()
+   put 13 into mControlRadius
+   setRadius(13)
+   put 54 into mControlValueWidth
+   setControlValueWidth(54)
+   put 54 into mControlValueWidth
+   setControlValueWidth(54)
+   put "builtin:circle" into mControlIconA
+   setControlIconA("builtin:circle")
+   put "Okay" into mButton1Text
+   put "Background" into mButton2Text
+   put 2 into mShowButtons
+end handler
+
+private handler pickProp(in pKey as String,in pValue)
+  variable tWork as String
+
+  if pKey is among the keys of mAppData["props"] then
+    return mAppData["props"][pKey]
+  else
+    put pValue into mAppData["props"][pKey]
+    return pValue
+  end if
+end handler
+
+--SECTION:  PAINT
+public handler OnPaint()
+
+  baseTitleAndButtons()
+
+  if mControlType is "Button Bar" then
+     paintButtonBar()
+  else if mControlType is "Dialog Box" then
+     paintDialogBox()
+  else if mControlType is "Switches" then
+     paintSwitches()
+  else if mControlType is "Numeric Up/Down" then
+     paintUpDown()
+  else if mControlType is "Sliders" then
+     paintSliders()
+  else if mControlType is "Form Backdrop" then
+     paintFormBackdrop()
+  end if
+
+  setAppData(mAppData)
+end handler
+
+public handler checkForRedraw()
+   if mManualRedraw is false then
+     redraw all
+   end if
+end handler
+
+
+--SECTIONL  PIN PAD
+
+private handler drawEntry()
+   variable tRect as Rectangle
+   variable tDigits as Number
+   variable tCircle as Number
+   variable tPath as Path
+   variable tRad as Number
+   variable tWide as Number
+   variable tWtest as Number
+   variable tLeft as Number
+
+   setPaint("hilite")
+
+   if mEntryValue is not empty then
+      put the number of chars in mEntryValue into tDigits
+      put the width of mCurrentRect into tWide
+      put (my width-tWide)/2 into tLeft
+      put tDigits * (mRadius*2) into tWtest
+      if tWtest > tWide then
+         put ((tWide-tDigits*2)/tDigits)/2 into mRadius
+      end if
+      repeat tDigits times
+         add 1 to tCircle
+         fill circle path centered at point [(mRadius*2)*tCircle,(the width of mCurrentRect/6)] with radius mRadius on this canvas
+      end repeat
+   end if
+end handler
+
+--SECTION:  FORM BACKDROP
+private handler paintFormBackdrop()
+   variable tTotal as Number
+   variable tHeight as Number
+   variable tRec as Number
+   variable tKey as String
+   variable tLabelRect as Rectangle
+
+   clearDebugInfo("debugform")
+
+   repeat with tRec from 1 up to (the number of elements in mData)
+      put mkStr(tRec) into tKey
+      add mkNum(mData[tKey]["size"]) to tTotal
+   end repeat
+
+   addDebugInfo("currRect",rectToFlatLine(mCurrentRect))
+
+   put (the height of mCurrentRect)/tTotal into tHeight
+   put mCurrentRect into tLabelRect
+
+   add mControlBufferV to the top of tLabelRect
+   subtract (mControlBufferV*2) from the height of tLabelRect
+   add mControlBufferH to the left of tLabelRect
+   subtract (mControlBufferH*2) from the width of tLabelRect
+
+   repeat with tRec from 1 up to (the number of elements in mData)
+      put mkStr(tRec) into tKey
+      set the height of tLabelRect to (tHeight * mkNum(mData[tKey]["size"]))
+      chooseAndSetPaint(mData[tKey]["textcolor"],mControlTextColor)
+      chooseAndSetFont("text", tKey, mControlTextFont, mControlTextSize)
+      mpWrapTextinRect(tLabelRect,mData[tKey]["label"],"center left")
+      push tLabelRect onto mLocList
+      set the top of tLabelRect to the bottom of tLabelRect
+   end repeat
+
+end handler
+
+--SECTION:  DIALOG BOX
+public handler paintDialogBox()
+   variable tTextRect as Rectangle
+
+   set the font of this canvas to font mControlTextFont at size mControlTextSize
+   put mCurrentRect into tTextRect
+   put borderAdjust(tTextRect,mBorder,1) into tTextRect
+   if mDialogIconAlign is not "off" then
+      setPaint(mControlIconColor)
+      subtract mControlObjectSize+(mBorder*4) from the width of tTextRect
+      add mControlObjectSize+(mBorder*2) to the left of tTextRect
+      dialogBoxSVG()
+   end if
+   setPaint(mControlTextColor)
+   mpWrapTextinRect(tTextRect,qzQ(mControlText),mControlTextAlign)
+end handler
+
+private handler dialogBoxSVG()
+   variable tIconRect as Rectangle
+   put rectangle [mBorder*2,mBorder*2,mBorder*2+mControlObjectSize,mBorder*2+mControlObjectSize] into tIconRect
+   set the left of tIconRect to the left of mCurrentRect+(mBorder*2)
+
+   if mDialogIconAlign is "bottom" then
+      set the bottom of tIconRect to the bottom of mCurrentRect - (mBorder*2)
+   else if mDialogIconAlign is "center" then
+      set the top of tIconRect to (the top of mCurrentRect + (the height of mCurrentRect/2) - (mControlObjectSize/2))
+   else if mDialogIconAlign is "top" then
+      set the top of tIconRect to (the top of mCurrentRect + (mBorder*2))
+   end if
+   displayIcon(tIconRect,mControlIconA)
+end handler
+
+--SECTION:  BUTTON BAR
+handler paintButtonBar()
+   variable tFont as Font
+   variable tCount as Number
+   variable tCurrColumn as Number
+   variable tCurrButton as Number
+	variable tKey as String
+   variable tText as String
+   variable tRect as Rectangle
+   variable tTextRect as Rectangle
+   variable tLeft as Number
+   variable tTop as Number
+   put [] into mLocList
+   put 1 into tCurrColumn
+   put 1 into tCurrButton
+   clearDebugInfo("debugbbar")
+   addDebugInfo("data",mData)
+   if mButtonBarType is "EntryPad" then
+      drawEntry()
+   end if
+   calcControlSize()
+
+   addDebugInfo("controlHeight",mControlObjectSize)
+   addDebugInfo("controlRect",rectToFlatLine(mControlRect))
+   addDebugInfo("currentRect",rectToFlatLine(mCurrentRect))
+   addDebugInfo("total",the number of elements in mData)
+
+   repeat with tCount from 1 up to the number of elements in mData
+      put mkStr(tCount) into tKey
+      if mData[tKey]["show"] is "false" then
+         push "skip" onto mLocList
+         next repeat
+      end if
+      addDebugInfo("count",tKey)
+
+      put the left of mCurrentRect + (mControlBufferH * tCurrColumn) into tLeft
+      add (tCurrColumn - 1) * the width of mControlRect to tLeft
+
+      set the left of mControlRect to tLeft
+      put the top of mCurrentRect + (mControlBufferV * tCurrButton) into tTop
+      add the height of mControlRect*(tCurrButton-1) to tTop
+      set the top of mControlRect to tTop
+      addDebugInfo("controlRect"&tKey,rectToFlatLine(mControlRect))
+      push mControlRect onto mLocList
+
+      setButtonPaint(tKey,"button")
+
+      fill rounded rectangle path of mControlRect with radius mControlRadius on this canvas
+
+      chooseAndSetFont("text", tKey, mControlTextFont, mControlTextSize)
+      setButtonPaint(tKey,"text")
+		put qzQ(mData[tKey]["label"]) into tText
+      if mButtonBarStyle is "Text" then
+         fill text tText at center of mControlRect on this canvas
+      else if mButtonBarStyle is "Icon Above Text" then
+         fill text tText at bottom of mControlRect on this canvas
+         put mControlRect into tRect
+         set the height of tRect to the height of mControlRect -20
+         displayIcon(tRect,mData[tKey]["icon"])
+      else if mButtonBarStyle is "Icon" then
+         displayIcon(mControlRect,mData[tKey]["icon"])
+      else if mButtonBarStyle is "Icon Left" or mButtonBarStyle is "Icon Left Text Center" then
+         put mControlRect into tRect
+         put mControlRect into tTextRect
+         add mControlBufferV to the top of tRect
+         subtract mControlBufferV*2 from the height of tRect
+         set the width of tRect to the height of tRect
+         add mControlBufferH to the left of tRect
+         add the width of tRect+(mControlBufferH*2) to the left of tTextRect
+         subtract the width of tRect+(mControlBufferH*3) from the width of tTextRect
+         displayIcon(tRect,mData[tKey]["icon"])
+      end if
+
+      if mButtonBarStyle is "Icon Left" then
+         fill text tText at left of tTextRect on this canvas
+      else if mButtonBarStyle is "Icon Left Text Center" then
+         fill text tText at center of tTextRect on this canvas
+      end if
+
+      if tCurrButton = mCountPerColumn then
+         put 1 into tCurrButton
+         add 1 to tCurrColumn
+      else
+         add 1 to tCurrButton
+      end if
+   end repeat
+end handler
+
+public handler getIconPath(in pIcon as String)
+   variable tPath as Path
+   variable tList as List
+   variable tFam as String
+   variable tCat as String
+   variable tIcon as String
+
+   split pIcon by ":" into tList
+
+   if element 1 of tList is "builtin" then
+      put path iconSVGPathFromName(element 2 of tList) into tPath
+   else if element 1 of tList is "icondata" then
+      put element 2 of tList into tIcon
+      put path mIconData[tIcon] into tPath
+   else if element 1 of tList is "iconfam1" then
+      put element 2 of tList into tFam
+      put element 3 of tList into tIcon
+      put path mIconData[tFam][tIcon] into tPath
+   else if element 1 of tList is "iconfam2" then
+      put element 2 of tList into tFam
+      put element 3 of tList into tCat
+      put element 4 of tList into tIcon
+      put path mIconData[tFam][tCat][tIcon] into tPath
+   else
+      put path pIcon into tPath
+   end if
+
+   return tPath
+end handler
+
+public handler displayIcon(in pRect,in pIcon)
+   variable tPath as Path
+   put getIconPath(pIcon) into tPath
+   constrainPathToRect(pRect, tPath)
+   fill tPath on this canvas
+end handler
+
+private handler setButtonPaint(in pKey as String,in pType as String)
+   if pType is "button" then
+      if mData[pKey]["clicked"] is "true" then
+         chooseAndSetPaint(mData[pKey]["clicktext"],mControlValueColor)
+		else
+		   chooseAndSetPaint(mData[pKey]["unclickedtext"],mControlObjectColor)
+		end if
+   else if pType is "text" then
+      if mData[pKey]["clicked"] is "true" and mButtonBarType is not "Action" then
+         chooseAndSetPaint(mData[pKey]["clickbutton"],mControlHiliteColor)
+      else
+         chooseAndSetPaint(mData[pKey]["unclickedbutton"],mControlTextColor)
+      end if
+   end if
+end handler
+
+private handler pinPadDefaults()
+   put 3 into mColumns
+   put "" into mEntryValue
+   put "Even Spacing" into mControlObjectVertical
+   put the empty array into mData
+   put "1\n " into mData["1"]["label"]
+   put "2\nABC" into mData["5"]["label"]
+   put "3\nDEF" into mData["9"]["label"]
+   put "4\nGHI" into mData["2"]["label"]
+   put "5\nJKL" into mData["6"]["label"]
+   put "6\nMNO" into mData["10"]["label"]
+   put "7\nPQRS" into mData["3"]["label"]
+   put "8\nTUV" into mData["7"]["label"]
+   put "9\nWXYZ" into mData["11"]["label"]
+   put "0\n " into mData["8"]["label"]
+
+   put "1 " into mData["1"]["value"]
+   put "2" into mData["5"]["value"]
+   put "3" into mData["9"]["value"]
+   put "4" into mData["2"]["value"]
+   put "5" into mData["6"]["value"]
+   put "6" into mData["10"]["value"]
+   put "7" into mData["3"]["value"]
+   put "8" into mData["7"]["value"]
+   put "9" into mData["11"]["value"]
+   put "false" into mData["4"]["show"]
+   put "0 " into mData["8"]["value"]
+   put "false" into mData["12"]["show"]
+   verifyDataComplete()
+end handler
+
+--SECTION:  SWITCHES
+
+private handler paintSwitches()
+   variable tCount as Number
+   variable tCurr as String
+   variable tRect as Rectangle
+   clearDebugInfo("debugswitch")
+
+   put [] into mLocList
+
+   calcControlSize()
+
+   set the top of mControlRect to the top of mCurrentRect
+   set the left of mControlRect to the left of mCurrentRect
+   repeat with tCount from 1 up to (the number of elements in mData)
+      put mkStr(tCount) into tCurr
+      createSwitch(tCurr)
+      push mControlRect onto mLocList
+      set the top of mControlRect to the bottom of mControlRect
+      add mControlItemSpacing to the top of mControlRect
+   end repeat
+end handler
+
+public handler createSwitch(in pCurr as String)
+   variable tIconRect as Rectangle
+   variable tTextRect as Rectangle
+   variable tIconPath as Path
+
+   put mControlRect into tIconRect
+   put mControlRect into tTextRect
+   set the height of tIconRect to mControlObjectSize
+   set the width of tIconRect to the height of tIconRect
+   add (the height of mControlRect - the height of tIconRect)/2 to the top of tIconRect
+
+   if mData[pCurr]["selected"] is "true" then
+      if mData[pCurr]["iconchecked"] is "default" then
+         put mControlIconA into mData[pCurr]["iconchecked"]
+      end if
+      chooseAndSetPaint(mData[pCurr]["checkedicon"],mControlHiliteColor)
+      put getIconPath(mData[pCurr]["iconchecked"]) into tIconPath
+   else
+      if mData[pCurr]["iconunchecked"] is "default" then
+         put mControlIconB into mData[pCurr]["iconunchecked"]
+      end if
+      chooseAndSetPaint(mData[pCurr]["uncheckedicon"],mControlIconColor)
+      put getIconPath(mData[pCurr]["iconunchecked"]) into tIconPath
+   end if
+
+   constrainPathToRect(tIconRect, tIconPath)
+   fill tIconPath on this canvas
+   subtract (the width of tIconRect)+5 from the width of tTextRect
+   set the left of tTextRect to the right of tIconRect+5
+
+   chooseAndSetFont("text", pCurr, mControlTextFont, mControlTextSize)
+   chooseAndSetPaint(mData[pCurr]["labelcolor"],mControlTextColor)
+   mpWrapTextinRect(tTextRect,mData[pCurr]["label"],"center left")
+end handler
+
+--SECTION: NUMERIC UP/DOWN
+
+private handler paintUpDown()
+   variable tCurr as String
+   variable tC as Number
+   variable tRect as Rectangle
+   variable tOrder as List
+   variable tNext as String
+   variable tItem as String
+   variable tWide as Number
+   variable tIconPath as Path
+   clearDebugInfo("debugupdown")
+
+   split mUpDownLayout by "/" into tOrder
+   put mCurrentRect into tRect
+
+   calcControlSize()
+   put mControlRect into tRect
+   add mControlBufferV to the top of tRect
+   add mControlBufferH to the left of tRect
+
+   repeat with tC from 1 up to the number of elements in mData
+      put mkStr(tC) into tCurr
+      repeat for each element tNext in tOrder
+         if tNext is "value" then
+            chooseAndSetPaint(mData[tCurr]["valuecolor"],mControlValueColor)
+            set the width of tRect to mControlValueWidth
+            chooseAndSetFont("value", tCurr, mControlValueFont, mControlValueSize)
+            fill text mData[tCurr]["value"] at center of tRect on this canvas
+            put mData[tCurr]["short"] into tItem
+         else if tNext is "label" then
+            chooseAndSetPaint(mData[tCurr]["textcolor"],mControlTextColor)
+            add 2 to the left of tRect
+            chooseAndSetFont("text", tCurr, mControlTextFont, mControlTextSize)
+            set the width of tRect to calcTextWidth(mData[tCurr]["label"])
+            fill text mData[tCurr]["label"] at center of tRect on this canvas
+         else
+            chooseAndSetPaint(mData[tCurr]["objectcolor"],mControlObjectColor)
+
+            set the width of tRect to mControlObjectSize
+            put getIconPath(mData[tCurr]["iconplus"]) into tIconPath
+            drawButton(tCurr,tNext,tRect)
+         end if
+         set the left of tRect to the right of tRect
+         add mControlItemSpacing to the left of tRect
+      end repeat
+      set the top of tRect to the bottom of tRect + mControlBufferV
+      set the left of tRect to the left of mControlRect + mControlBufferH
+   end repeat
+end handler
+
+private handler drawButton(in pKey as String,in pType as String,in pRect as Rectangle)
+   variable tIcon as String
+   variable tIconPath as Path
+   variable tValue as Number
+   variable tLowerLimit as Number
+   variable tUpperLimit as Number
+   variable tShowButton as Boolean
+   put mkNum(mData[pKey]["max"]) into tUpperLimit
+   put mkNum(mData[pKey]["min"]) into tLowerLimit
+   put mkNum(mData[pKey]["value"]) into tValue
+
+   if pType is "plus" then
+      if tValue < tUpperLimit then
+         put true into tShowButton
+         put mData[pKey]["iconplus"] into tIcon
+      end if
+   else if pType is "minus" then
+      if tValue > tLowerLimit then
+         put true into tShowButton
+         put mData[pKey]["iconminus"] into tIcon
+      end if
+   end if
+
+   if tShowButton then
+      displayIcon(pRect,tIcon)
+      put rectToArray(pRect) into mData[pKey]["loc" & pType]
+      put "false" into mData[pKey]["limit"]
+   else
+       put "true" into mData[pKey]["limit"]
+   end if
+end handler
+
+
+--SECTION: SLIDERS
+
+--qzqzqz
+public handler paintSliders()
+   variable tCount as Number
+   variable tRect as Rectangle
+   variable tX as Number
+   clearDebugInfo("debugslide")
+
+   put [] into mLocList
+   put [] into mHandles
+   put [] into mCurrentColor
+   -- if mSliderType is "ColorRGB" then
+   --    paintColors("rgb")
+   -- else if mSliderType is "ColorRGBA" then
+   --    paintColors("rgba")
+   -- end if
+   put the number of elements in mData into tCount
+
+   calcControlSize()
+   addDebugInfo("controlRect",rectToFlatLine(mControlRect))
+   addDebugInfo("currentRect",rectToFlatLine(mCurrentRect))
+
+   repeat with tX from 1 up to tCount
+      makeSlider(tX)
+   end repeat
+   setAppData(mAppData)
+end handler
+
+private handler makeSlider(in pX as Number)
+      variable tRect as Rectangle
+      variable tWide as Number
+      variable tLabelRect as Rectangle
+      variable tValueRect as Rectangle
+      variable tLineRect as Rectangle
+      variable tTop as Number
+      variable tText as String
+      variable tXaxis as Number
+      variable tYaxis as Number
+      variable tKey as String
+      variable tPath as Path
+      variable tSegment as Number
+
+      put mkStr(pX) into tKey
+      addDebugInfo("controlRect" & tKey,rectToFlatLine(mControlRect))
+
+      put mControlRect into tRect
+      -- put mCurrentRect into tRect
+      --set the height of tRect to mHigh
+      put mWide into tWide
+      if mSliderShowLabel then
+         chooseAndSetPaint(mData[tKey]["labelcolor"],mControlTextColor)
+         chooseAndSetFont("text", tKey, mControlTextFont, mControlTextSize)
+
+         put tRect into tLabelRect
+         set the width of tLabelRect to mControlTextWidth
+         subtract the width of tLabelRect from the width of tRect
+         set the left of tRect to the right of tLabelRect
+         put qzQ(mData[tKey]["label"]) into tText
+         mpWrapTextinRect(tLabelRect,tText,mControlTextAlign)
+         addDebugInfo("labelrect",rectToFlatLine(tLabelRect))
+      end if
+
+      if mSliderShowValue then
+         chooseAndSetPaint(mData[tKey]["valuecolor"],mControlValueColor)
+         chooseAndSetFont("value", tKey, mControlValueFont, mControlValueSize)
+         put tRect into tValueRect
+         set the width of tValueRect to mControlValueWidth
+         set the right of tValueRect to the right of mCurrentRect
+         subtract the width of tValueRect from the width of tRect
+         set the right of tRect to the left of tValueRect
+         put qzQ(mData[tKey]["value"]) into tText
+         mpWrapTextinRect(tValueRect,tText,mControlTextAlign)
+                  --Value align??
+      end if
+
+      chooseAndSetPaint(mData[tKey]["linecolor"],mControlObjectColor)
+
+      put tRect into tLineRect
+      set the height of tLineRect to mControlItemSpacing
+      put the top of tRect into tTop
+      add (the height of tRect/2) - (mControlItemSpacing/2) to tTop
+      set the top of tLineRect to tTop
+      fill rectangle path of tLineRect on this canvas
+
+      addDebugInfo("tRect" & tKey,rectToFlatLine(tRect))
+
+      set the top of mControlRect to the bottom of mControlRect
+      chooseAndSetPaint(mData[tKey]["handlecolor"],mControlIconColor)
+      put the top of tRect into tYaxis
+      add the height of tRect/2 to tYaxis
+
+		put mkNum(mData[tKey]["max"]) - mkNum(mData[tKey]["min"]) into tSegment
+      put the width of tLineRect/tSegment into tSegment
+
+		put mkNum(mData[tKey]["value"]) * tSegment into tXAxis
+		add the left of tLineRect to tXAxis
+
+      put circle path centered at point [tXaxis,tYAxis] with radius mControlRadius into tPath
+      fill tPath on this canvas
+      push the bounding box of tPath onto mHandles
+      push tRect onto mLocList
+end handler
+
+private handler paintColors(in pType as String)
+   variable tHeight as Number
+   variable tColorRect as Rectangle
+   if pType is "rgb" then
+      put the height of mCurrentRect/4 into tHeight
+   else
+      put the height of mCurrentRect/5 into tHeight
+   end if
+   put mCurrentRect into tColorRect
+   set the height of tColorRect to tHeight
+   put removeRectFromRect(mCurrentRect,tColorRect,"above") into mCurrentRect
+   setPaint("bottom")
+   fill rounded rectangle path of tColorRect with radius mRadius on this canvas
+   setPaint("top")
+   ---set the font of this canvas to my font
+   fill text mControlText at center of tColorRect on this canvas
+end handler
+
+--SECTION: BASE, TITLE, BUTTONS
+public handler baseTitleAndButtons()
+  variable tColor as Color
+  variable tPaint as Paint
+  variable tOverlayRect as Rectangle
+  put rectangle [0,0,my width,my height] into mCurrentRect
+
+  if mOverlay then
+     setPaint(mOverlayColor)
+     put the paint of this canvas into tPaint
+     put the color of tPaint into tColor
+     set the alpha of tColor to mOverlayOpacity/100
+     set the paint of this canvas to solid paint with tColor
+     fill rectangle path of mCurrentRect on this canvas
+     overlayAdjust()
+  end if
+
+  put mpDrawBase(my border paint,my background paint,mBorder,mRadius,mCurrentRect) into mCurrentRect
+
+  if mShowTitle then
+   displayTitle(mTitleTextColor)
+  end if
+  if mShowBottomButtons then
+    bottomButtons(mBottomButtonTextColor,mBottomButtonBackColor)
+  end if
+
+  add mWorkingAreaOffsetH to the top of mCurrentRect
+  subtract mWorkingAreaOffsetH*2 from the height of mCurrentRect
+  add mWorkingAreaOffsetW to the left of mCurrentRect
+  subtract mWorkingAreaOffsetW*2 from the width of mCurrentRect
+
+  if mShowMainSquare then
+    setPaint(mMainSquareColor)
+    fill rounded rectangle path of mCurrentRect with radius 23 on this canvas
+  end if
+end handler
+
+public handler borderAdjust(in pRect as Rectangle,in pBorder as Number,in pMult as Number)
+   add (pBorder*pMult) to the left of pRect
+   add (pBorder*pMult) to the top of pRect
+   subtract (pBorder*pMult)*2 from the width of pRect
+   subtract (pBorder*pMult)*2 from the height of pRect
+   return pRect
+end handler
+
+public handler overlayAdjust()
+   variable tAlign as List
+
+   set the height of mCurrentRect to mBoxHeight
+   set the width of mCurrentRect to mBoxWidth
+   split mOverlayAlign by " " into tAlign
+   if element 1 of tAlign is "center" then
+      set the top of mCurrentRect to (my height/2)-(mBoxHeight/2)
+   else if element 1 of tAlign is "bottom" then
+      set the bottom of mCurrentRect to my height
+      subtract mBoxOffset from the bottom of mCurrentRect
+   else if element 1 of tAlign is "top" then
+      add mBoxOffset to the top of mCurrentRect
+   end if
+   if element 2 of tAlign is "center" then
+      set the left of mCurrentRect to (my width/2)-(mBoxWidth/2)
+   else if element 2 of tAlign is "right" then
+      set the right of mCurrentRect to my width
+      subtract mBoxOffset from the width of mCurrentRect
+   else if element 2 of tAlign is "left" then
+      add mBoxOffset to the left of mCurrentRect
+   end if
+end handler
+
+private handler mpDrawBase(in pFore as Paint, in pBack as Paint, in pBorder as Number, in pRadius as Number,in pRect as Rectangle)
+  variable tRect as Rectangle
+
+  set the paint of this canvas to pBack
+  put pRect into tRect
+
+  fill rounded rectangle path of tRect with radius pRadius on this canvas
+  set the paint of this canvas to pFore
+  put adjustRect(tRect,3) into tRect
+
+  fill rounded rectangle path of tRect with radius pRadius on this canvas
+  set the paint of this canvas to pBack
+
+  put adjustRect(tRect,pBorder) into tRect
+  fill rounded rectangle path of tRect with radius pRadius on this canvas
+
+  put adjustRect(tRect,3) into tRect
+  return tRect
+end handler
+
+private handler displayTitle(in pColor)
+  variable tTItleRect as Rectangle
+  setPaint(pColor)
+  put mCurrentRect into tTItleRect
+  set the font of this canvas to font mTitleTextFont  at size mTitleTextSize
+  set the height of tTItleRect to calcTextHeight(mTitleText)
+  add mTitleSize to the top of tTItleRect
+  mpWrapTextinRect(tTItleRect,mTitleText,"center center")
+  add mTitleSize*2 to the height of tTItleRect
+  set the top of mCurrentRect to the bottom of tTItleRect
+  subtract the height of tTItleRect from the height of mCurrentRect
+end handler
+
+public handler bottomButtons(in pColorFore, in pColorBack)
+   variable tFont as Font
+   variable tAdjust as Number
+   variable tAdjustH as Number
+   variable tBottom as Number
+   variable tLeft as Number
+   variable tRight as Number
+   variable tCenter as Number
+   variable tHalf as Number
+   variable tLeftOfCenter as Number
+   variable tBottomRect as Rectangle
+   variable tOkayRect as Rectangle
+   variable tCancelRect as Rectangle
+   variable tThirdRect as Rectangle
+
+   put [] into mBottomButtonLoc
+
+   put mBorder into tAdjustH
+   put mBorder+7 into tAdjust
+
+   put my font into tFont
+   set the size of tFont to mBottomButtonTextSize
+   set the font of this canvas to tFont
+
+  put the bottom of mCurrentRect into tBottom
+  put the left of mCurrentRect into tLeft
+  put the right of mCurrentRect into tRight
+
+  put rectangle [0,0,0,0] into tOkayRect
+  if mBottomButtonAlignment is "Right" then
+    put rectangle [tRight-mBottomButtonWidth,tBottom-mBottomButtonHeight-tAdjustH,tRight,tBottom-tAdjustH] into tOkayRect
+  else if mBottomButtonAlignment is "Left" then
+    put rectangle [tLeft,tBottom-mBottomButtonHeight-tAdjustH,tLeft+mBottomButtonWidth,tBottom-tAdjustH] into tOkayRect
+  else if mBottomButtonAlignment is "Center" then
+     put the width of mCurrentRect/2 + tLeft into tCenter
+     put tCenter - mBottomButtonWidth/2 into tLeftOfCenter
+     put rectangle [tLeftOfCenter,tBottom-mBottomButtonHeight-tAdjustH,tLeftOfCenter+mBottomButtonWidth,tBottom-tAdjustH] into tOkayRect
+  end if
+
+  put tOkayRect into tCancelRect
+
+  put mCurrentRect into tBottomRect
+  set the height of tBottomRect to the height of tOkayRect+tAdjust
+
+  if mBottomButtonAlignment is "Right" then
+    set the right of tCancelRect to the left of tOkayRect-mBottomButtonBuffer
+  else if mBottomButtonAlignment is "Left" then
+    set the left of tCancelRect to the right of tOkayRect+mBottomButtonBuffer
+  end if
+
+  put tCancelRect into tThirdRect
+
+  if mBottomButtonAlignment is "Right" then
+    set the right of tThirdRect to the left of tCancelRect-mBottomButtonBuffer
+  else if mBottomButtonAlignment is "Left" then
+    set the left of tThirdRect to the right of tCancelRect+mBottomButtonBuffer
+  end if
+
+  if mBottomButtonAlignment is "Center" and mShowButtons = 2 then
+     set the right of tOkayRect to tCenter - mBottomButtonBuffer/2
+     set the left of tCancelRect to the right of tOkayRect + mBottomButtonBuffer
+  else if mBottomButtonAlignment is "Center" and mShowButtons = 3 then
+     set the right of tOkayRect to the left of tCancelRect - mBottomButtonBuffer
+     set the left of tThirdRect to the right of tCancelRect + mBottomButtonBuffer
+  end if
+
+  if mShowButtons >=1 then
+    setPaint(pColorFore)
+    fill rounded rectangle path of tOkayRect with radius 23 on this canvas
+    setPaint(pColorBack)
+    fill text mButton1Text at center of tOkayRect on this canvas
+  end if
+  if mShowButtons >=2 then
+    setPaint(pColorFore)
+  fill rounded rectangle path of tCancelRect with radius 23 on this canvas
+    setPaint(pColorBack)
+    fill text mButton2Text at center of tCancelRect on this canvas
+  end if
+  if mShowButtons = 3 then
+    setPaint(pColorFore)
+    fill rounded rectangle path of tThirdRect with radius 23 on this canvas
+    setPaint(pColorBack)
+    fill text mButton3Text at center of tThirdRect on this canvas
+  end if
+  subtract the height of tBottomRect from the height of mCurrentRect
+  push tOkayRect onto mBottomButtonLoc
+  push tCancelRect onto mBottomButtonLoc
+  push tThirdRect onto mBottomButtonLoc
+end handler
+
+private handler calcIconSize()
+
+end handler
+
+private handler calcControlSize()
+   if mControlObjectVertical is "Fixed spacing" then
+      put mCurrentRect into mControlRect
+      set the height of mControlRect to mControlObjectSize
+      add mControlItemSpacing to the top of mControlRect
+      add mControlItemSpacing to the left of mControlRect
+      subtract (mControlItemSpacing) from the width of mControlRect
+      set the top of mControlRect to the top of mCurrentRect
+   else
+      put the height of mCurrentRect into mHigh
+      put the width of mCurrentRect into mWide
+      put mCurrentRect into mControlRect
+
+      put the ceiling of (the number of elements in mData/mColumns) into mCountPerColumn
+
+      subtract mControlBufferV from mHigh
+      set the height of mControlRect to (mHigh/mCountPerColumn) - mControlBufferV
+
+      subtract mControlBufferH from mWide
+      set the width of mControlRect to (mWide/mColumns) - mControlBufferH
+   end if
+   addDebugInfo("controlRect",rectToFlatLine(mControlRect))
+end handler
+
+--SECTION:  USER INTERATION
+public handler OnMouseUp()
+  bottomButtonPressed()
+  if mControlType is "Button Bar" then
+     if mButtonBarType is "Action" then
+        schedule timer in .1 seconds
+     end if
+  else if mControlType is "Sliders" then
+     releaseSlider()
+  else if mControlType is "PIN Pad" then
+     selectPINpad()
+  end if
+  put false into mStillDown
+  redraw all
+  post "mouseUp" with [the click button]
+end handler
+
+public handler OnMouseMove()
+   variable tCurr as Number
+   if mControlType is "Sliders" then
+      if mStillDown then
+         adjustSlider(the x of the mouse position )
+         redraw all
+      end if
+   end if
+end handler
+
+public handler OnMouseDown()
+   if mControlType is "Button Bar" then
+      selectButtonBar()
+   else if mControlType is "Switches" then
+      selectSwitch()
+   else if mControlType is "Sliders" then
+      selectSlider()
+   else if mControlType is "Numeric Up/Down" then
+      selectUpDown()
+   end if
+   post "mouseDown" with [the click button]
+end handler
+
+public handler OnMouseRelease()
+  post "mouseRelease" with [the click button]
+end handler
+
+public handler OnMouseCancel()
+  post "mouseCancel"
+end handler
+
+public handler OnMouseLeave()
+  post "mouseLeave"
+end handler
+
+public handler OnMouseEnter()
+  post "mouseEnter"
+end handler
+
+public handler OnTimer()
+   if mControlType is "Button Bar" then
+      resetClicks()
+   end if
+
+   redraw all
+end handler
+
+public handler OnVisibilityChanged(in pVisible as Boolean)
+end handler
+
+public handler OnGeometryChanged()
+end handler
+
+public handler OnStartEditing()
+end handler
+
+--SECTOIN USER INTERATION: BOTTOM BUTTONS
+
+public handler bottomButtonPressed()
+  clearDebugInfo("debugbottom")
+  variable tPosition as Point
+  put the mouse position into tPosition
+  if mShowBottomButtons then
+   if tPosition is within element 1 of mBottomButtonLoc then
+      post "buttonPressed" to my script object with [1]
+   end if
+  end if
+  if mShowBottomButtons and mShowButtons >= 2 then
+     if tPosition is within element 2 of mBottomButtonLoc then
+       post "buttonPressed" to my script object with [2]
+    end if
+  end if
+  if mShowBottomButtons and mShowButtons = 3 then
+     if tPosition is within element 3 of mBottomButtonLoc then
+       post "buttonPressed" to my script object with [3]
+    end if
+  end if
+  --DELETE ??? subtract the height of mBottomRect from the height of mCurrentRect
+end handler
+
+public handler userAction()
+  --some sort of custom interaction
+  --put some data into mData that can be later read in the script
+  post "userAction"
+end handler
+
+
+--SECTION USER INTERACTION:  PIN PAD
+
+private handler selectPINpad()
+   -- variable tZ as Number
+   -- variable tRect as Rectangle
+   -- variable tPosition as Point
+   --
+   -- put the mouse position into tPosition
+   -- repeat with tZ from 1 up to 12
+   --    put arrayToRect(mData["buttonrect"][mkStr(tZ)]) into tRect
+   --    if tPosition is within tRect then
+   --       if tZ is 10 then
+   --          put "" into mEntryValue
+   --       else if tZ is 12 then
+   --          post "enterPressed" to my script object with [mEntryValue]
+   --       else if tZ is 10 then
+   --          put "0" after mEntryValue
+   --       else
+   --          put mkStr(tZ) after mEntryValue
+   --       end if
+   --       redraw all
+   --       exit repeat
+   --    end if
+   -- end repeat
+end handler
+
+--SECTION USER INTERATION: BUTTON BAR
+
+private handler selectButtonBar()
+   variable tPosition as Point
+   variable tRect as Rectangle
+   variable tCount as Number
+   variable tKey as String
+
+   put the mouse position into tPosition
+
+   repeat with tCount from 1 up to the number of elements in mData
+		put tCount formatted as string into tKey
+		if mData[tKey]["show"] is "false" then
+			next repeat
+		end if
+
+      put element tCount of mLocList into tRect
+
+      if mButtonBarType is "Multiple" then
+         if tPosition is within tRect then
+            if mData[tKey]["clicked"] is "true" then
+               put "false" into mData[tKey]["clicked"]
+            else
+               if "exclusive" is among the keys of mData[tKey] then
+                  resetClicks()
+               end if
+               put "true" into mData[tKey]["clicked"]
+               exit repeat
+            end if
+         else
+            if "exclusive" is among the keys of mData[tKey] then
+               put "false" into mData[tKey]["clicked"]
+            end if
+         end if
+      else if mButtonBarType is "Action" then
+         if tPosition is within tRect then
+            put tKey into mAction
+            put "true" into mData[tKey]["clicked"]
+            post "actionSelected" with [mAction]
+         end if
+      else if mButtonBarType is "Single" then
+         if tPosition is within tRect then
+            put tKey into mAction
+            put "true" into mData[tKey]["clicked"]
+         else
+            put "false" into mData[tKey]["clicked"]
+         end if
+      end if
+   end repeat
+   setAppData(mAppData)
+end handler
+
+public handler actionSelected()
+end handler
+
+public handler resetClicks()
+	variable tCount as Number
+	variable tKey as String
+	repeat with tCount from 1 up to the number of elements in mData
+		put tCount formatted as string into tKey
+		put "false" into mData[tKey]["clicked"]
+	end repeat
+end handler
+
+--SECTION: USER INTERACTION SLIDERS
+
+private handler selectSlider()
+   variable tLoc as Point
+   variable tX as Number
+   variable tSlideRect as Rectangle
+   variable tHandleRect as Rectangle
+
+   put the click position into tLoc
+
+   repeat with tX from 1 up to the number of elements in mData
+      put element tX of mLocList into tSlideRect
+      put element tX of mHandles into tHandleRect
+
+      if tLoc is within tSlideRect then
+         put mkStr(tX) into mSelected
+         adjustSlider(the x of the mouse position)
+      end if
+
+      if tLoc is within tHandleRect then
+         put true into mStillDown
+         put mkStr(tX) into mSelected
+      end if
+   end repeat
+
+end handler
+
+private handler releaseSlider()
+   if mStillDown then
+      put false into mStillDown
+   else
+
+   end if
+end handler
+
+private handler adjustSlider(in pX as Number)
+   variable tSlideRect as Rectangle
+   variable tHandleRect as Rectangle
+   variable tAdjustedRect as Rectangle
+   variable tSelected as Number
+   variable tValue as Number
+   variable tRange as Number
+   variable tFactor as Number
+
+   put mkNum(mSelected) into tSelected
+
+   put element tSelected of mLocList into tSlideRect
+   put element tSelected of mHandles into tHandleRect
+   put tSlideRect into tAdjustedRect
+   add the width of tHandleRect to the width of tAdjustedRect
+   add (the width of tHandleRect)/2 to the left of tAdjustedRect
+
+   if pX < the left of tSlideRect then
+      put mData[mSelected]["min"] into mData[mSelected]["value"]
+      if pX < the left of tAdjustedRect then
+         put false into mStillDown
+      end if
+   else if pX > the right of tSlideRect then
+      put mData[mSelected]["max"] into mData[mSelected]["value"]
+      if pX > the right of tAdjustedRect then
+         put false into mStillDown
+      end if
+   else
+      put mkNum(mData[mSelected]["max"]) - mkNum(mData[mSelected]["min"]) into tRange
+      put the width of tSlideRect/tRange into tFactor
+      subtract the left of tSlideRect from pX
+      put (pX/tFactor) into pX
+      round pX
+      put mkStr(pX) into mData[mSelected]["value"]
+   end if
+end handler
+
+
+--SECTION: USER INTERACTION SWITCHES
+
+public handler selectSwitch()
+   variable tCount as Number
+   variable tCurr as String
+   variable tRect as Rectangle
+   variable tPosition as Point
+
+   put the mouse position into tPosition
+
+   repeat with tCount from 1 up to (the number of elements in mData)
+      put mkStr(tCount) into tCurr
+      put element tCount of mLocList into tRect
+      if tPosition is within tRect then
+         if mData[tCurr]["selected"] is "true" then
+            put "false" into mData[tCurr]["selected"]
+         else
+            put "true" into mData[tCurr]["selected"]
+         end if
+         exit repeat
+      end if
+   end repeat
+end handler
+
+--SECTION: USER INTERACTION NUMERIC UPDOWN
+
+private handler selectUpDown()
+   variable tPosition as Point
+   variable tRect as Rectangle
+   variable tCurr as String
+   variable tC as Number
+   variable tDirections as List
+   variable tDirect as String
+   --
+   put ["plus","minus"] into tDirections
+   put the mouse position into tPosition
+
+   repeat with tC from 1 up to the number of elements in mData
+      put mkStr(tC) into tCurr
+      repeat for each element tDirect in tDirections
+         if mData[tCurr]["limit"] is not "true" then
+            put arrayToRect(mData[tCurr]["loc" & tDirect]) into tRect
+            if tPosition is within tRect then
+               put true into mStillDown
+               put 1 into mTimer
+               put 0 into mTimerCount
+               put tCurr into mSelected
+               put tDirect into mData[tCurr]["direct"]
+               incrementCount()
+               exit repeat
+            end if
+         end if
+      end repeat
+   end repeat
+end handler
+
+private handler incrementCount()
+   variable tNum as Number
+   variable tStep as Number
+   variable tLimit as Number
+
+   if mStillDown is true then
+      add 1 to mTimerCount
+      if mTimer = 1 then
+         put .6 into mTimer
+      else if mTimerCount > 60 then
+         put .02 into mTimer
+      else if mTimerCount > 30 then
+         put .05 into mTimer
+      else if mTimerCount > 10 then
+         put .1 into mTimer
+      else
+         put .25 into mTimer
+      end if
+
+      put mkNum(mData[mSelected]["value"]) into tNum
+      put mkNum(mData[mSelected]["step"]) into tStep
+      if mData[mSelected]["direct"] is "plus" then
+         put mkNum(mData[mSelected]["max"]) into tLimit
+         add tStep to tNum
+         if tNum >= tLimit then
+            put tLimit into tNum
+            put false into mStillDown
+         end if
+      else
+         put mkNum(mData[mSelected]["min"]) into tLimit
+         subtract tStep from tNum
+         if tNum <= tLimit then
+            put tLimit into tNum
+            put false into mStillDown
+         end if
+      end if
+
+      put mkStr(tNum) into mData[mSelected]["value"]
+      schedule timer in mTimer seconds
+      redraw all
+   end if
+end handler
+
+--SECTION:  LIBRARY OF HELPER HANDLERS
+
+public handler randomLabel()
+   variable tLabels as List
+   variable tRandNum as Number
+   put ["Bay leaf","Butter","Andouille","Tasso","Onions","Green Bell Peppers","Celery","Tomatoes","Rice","Cayenne Pepper","White Pepper","Salt","Dry Mustard","Thyme","Gumbo File","Black Pepper","Paprkia","Cumin","Garlic"] into tLabels
+   put the number of elements in tLabels into tRandNum
+   return element randomNumber(tRandNum) of tLabels
+end handler
+
+public handler randomNumber(in pMax as Number)
+   variable tNumber
+   put any number into tNumber
+   multiply tNumber by pMax
+   return the rounded of tNumber
+end handler
+
+public handler addAppDataProps()
+   put the empty array into mAppData["props"]
+
+   put mShowMainSquare into mAppData["props"]["showMainSquare"]
+   put mMainSquareColor into mAppData["props"]["mainSquareColor"]
+   put mWorkingAreaOffsetW into mAppData["props"]["workingAreaOffsetW"]
+   put mWorkingAreaOffsetH into mAppData["props"]["workingAreaOffsetH"]
+   put mBorder into mAppData["props"]["boxBorder"]
+   put mRadius into mAppData["props"]["boxRadius"]
+   put mData into mAppData["props"]["myData"]
+   put mAppData into mAppData["props"]["appData"]
+   put mControlType into mAppData["props"]["controlType"]
+   put mColumns into mAppData["props"]["columnCount"]
+   put mIconData into mAppData["props"]["iconData"]
+
+   --Title
+   put mTitleText into mAppData["props"]["titleText"]
+   put mShowTitle into mAppData["props"]["showTitle"]
+   put mTitleSize into mAppData["props"]["titleSize"]
+   put mTitleTextSize into mAppData["props"]["titleTextSize"]
+   put mTitleTextFont into mAppData["props"]["titleTextFont"]
+   put mTitleTextColor into mAppData["props"]["titleTextColor"]
+
+   --Bottom Buttons
+   put mShowBottomButtons into mAppData["props"]["showBottomButtons"]
+   put mShowButtons into mAppData["props"]["showButtons"]
+   put mBottomButtonTextSize into mAppData["props"]["bottomButtonTextSize"]
+   put mButton1Text into mAppData["props"]["buttonOne"]
+   put mButton2Text into mAppData["props"]["buttonTwo"]
+   put mButton3Text into mAppData["props"]["buttonThree"]
+   put mBottomButtonAlignment into mAppData["props"]["bottomButtonAlignment"]
+   put mBottomButtonWidth into mAppData["props"]["bottomButtonWidth"]
+   put mBottomButtonHeight into mAppData["props"]["bottomButtonHeight"]
+   put mBottomButtonBuffer into mAppData["props"]["bottomButtonBuffer"]
+   put mBottomButtonBackColor into mAppData["props"]["bottomButtonBackColor"]
+   put mBottomButtonTextColor into mAppData["props"]["bottomButtonTextColor"]
+
+   --Overlay
+   put mOverlay into mAppData["props"]["overlayMode"]
+   put mBoxHeight into mAppData["props"]["overlayHeight"]
+   put mBoxWidth into mAppData["props"]["overlayWidth"]
+   put mOverlayAlign into mAppData["props"]["overlayAlign"]
+   put mBoxOffset into mAppData["props"]["overlayOffset"]
+   put mOverlayColor into mAppData["props"]["overlayColor"]
+   put mOverlayOpacity into mAppData["props"]["overlayOpacity"]
+
+   --SHARED CONTROL PROPS
+   put mControlBufferH into mAppData["props"]["controlBufferH"]
+   put mControlBufferV into mAppData["props"]["controlBufferV"]
+   put mControlIconA into mAppData["props"]["controlIconA"]
+   put mControlIconB into mAppData["props"]["controlIconB"]
+   put mControlIconColor into mAppData["props"]["controlIconColor"]
+   put mControlItemSpacing into mAppData["props"]["controlItemSpacing"]
+   put mControlObjectColor into mAppData["props"]["controlObjectColor"]
+   put mControlObjectSize into mAppData["props"]["controlObjectSize"]
+   put mControlRadius into mAppData["props"]["controlRadius"]
+   put mControlText into mAppData["props"]["controlText"]
+   put mControlTextAlign into mAppData["props"]["controlTextAlign"]
+   put mControlTextColor into mAppData["props"]["controlTextColor"]
+   put mControlTextSize into mAppData["props"]["controlTextSize"]
+   put mControlValueColor into mAppData["props"]["controlValueColor"]
+   put mControlValueFont into mAppData["props"]["controlValueFont"]
+   put mControlValueSize into mAppData["props"]["controlValueSize"]
+   put mControlValueWidth into mAppData["props"]["controlValueWidth"]
+
+   --BUTTON BAR
+   put mButtonBarType into mAppData["props"]["buttonBarType"]
+   put mButtonBarStyle into mAppData["props"]["buttonBarStyle"]
+
+   --Dialog Box
+   put mDialogIconAlign into mAppData["props"]["dialogIconAlign"]
+
+   --Switches
+
+   --Numeric Up/Down
+   put mUpDownLayout into mAppData["props"]["upDownLayout"]
+
+   --SLIDERS
+   put mSliderShowValue into mAppData["props"]["sliderShowValue"]
+   put mSliderShowLabel into mAppData["props"]["sliderShowLabel"]
+   put mSliderType into mAppData["props"]["sliderType"]
+
+end handler
+
+public handler updateProperties()
+   variable tProp as String
+   variable tValue as String
+   variable tChanges as Array
+   put mAppData["updateprops"] into tChanges
+   delete mAppData["updateprops"]
+   repeat for each element tProp in tChanges["updateprops"]
+      put tProp into tChanges["catch"]
+      if tChanges["updateprops"][tProp] is false then
+         set property tProp of my script object to false
+      else if tChanges["updateprops"][tProp] is true then
+         set property tProp of my script object to true
+      else if tChanges["updateprops"][tProp] begins with "qznum_" then
+         put char 7 to -1 of tChanges["updateprops"][tProp] into tValue
+         set property tProp of my script object to mkNum(tValue)
+      else
+         set property tProp of my script object to  tChanges["defaultprops"][tProp]
+      end if
+      --set property tProp of my script object to tValue
+   end repeat
+
+end handler
+
+public handler rectToArray(in pRect as Rectangle) returns Array
+  variable tData as Array
+
+  put mkStr(the top of pRect) into tData["top"]
+  put mkStr(the bottom of pRect) into tData["bottom"]
+  put mkStr(the left of pRect) into tData["left"]
+  put mkStr(the right of pRect) into tData["right"]
+  put mkStr(the height of pRect) into tData["height"]
+  put mkStr(the width of pRect) into tData["width"]
+  return tData
+end handler
+
+public handler rectToFlatLine(in pRect as Rectangle) returns String
+  variable tData as String
+
+  put "top: " & mkStr(the top of pRect) & ", bot: " into tData
+  put mkStr(the bottom of pRect) & ", left: " after tData
+  put mkStr(the left of pRect) & ", right: " after tData
+  put mkStr(the right of pRect) & ", hgt: " after tData
+  put mkStr(the height of pRect) & ", wdt: " after tData
+  put mkStr(the width of pRect) after tData
+  return tData
+end handler
+
+public handler arrayToRect(in pArray as Array) returns Rectangle
+  return rectangle [mkNum(pArray["left"]),mkNum(pArray["top"]),mkNum(pArray["right"]),mkNum(pArray["bottom"])]
+end handler
+
+public handler drawSVG(in pName as String, in pRect as Rectangle)
+  variable tIconPath as Path
+  if pName begins with "builtin:" then
+   put char 9 to -1 of pName into pName
+   put path iconSVGPathFromName(pName) into tIconPath
+  else
+     put path pName into tIconPath
+  end if
+  constrainPathToRect(pRect, tIconPath)
+  fill tIconPath on this canvas
+end handler
+
+public handler calcTextHeight(in pText as String)
+  return the height of the layout bounds of text pText on this canvas
+end handler
+
+public handler calcTextWidth(in pText as String)
+  return the width of the layout bounds of text pText on this canvas
+end handler
+
+public handler mkNum(in pString as String) returns Number
+  return pString parsed as number
+end handler
+
+public handler mkStr(in pItem) returns String
+  return pItem formatted as string
+end handler
+
+public handler chooseAndSetPaint(in pColor as String, in pDefault as String)
+
+   if pColor is "default" then
+      setPaint(pDefault)
+   else
+      setPaint(pColor)
+   end if
+end handler
+
+public handler chooseAndSetFont(in pType as String, in pX as String, in pDefaultFont as String, in pDefaultSize as Number)
+   variable tFont as Font
+   if mData[pX][pType &"font"] is "default" then
+      put font pDefaultFont into tFont
+   else
+      put font mData[pX][pType & "font"] into tFont
+   end if
+
+   if mData[pX][pType & "size"] is "default" then
+      set the size of tFont to pDefaultSize
+   else
+      set the size of tFont to mkNum(mData[pX][pType & "size"])
+   end if
+
+   set the font of this canvas to tFont
+end handler
+
+public handler setPaint(in pString as String)
+  variable tColor as Color
+  if pString is "fore" then
+     set the paint of this canvas to my foreground paint
+  else if pString is "back" then
+     set the paint of this canvas to my background paint
+  else if pString is "border" then
+     set the paint of this canvas to my border paint
+  else if pString is "hilite" then
+     set the paint of this canvas to my highlight paint
+  else if pString is "shadow" then
+      set the paint of this canvas to my shadow paint
+   else if pString is "focus" then
+      set the paint of this canvas to my focus paint
+   else if pString is "top" then
+      set the paint of this canvas to my top paint
+   else if pString is "bottom" then
+      set the paint of this canvas to my bottom paint
+   else if pString is "clear" then
+      put color [0,0,0] into tColor
+      set the alpha of tColor to 0
+      set the paint of this canvas to solid paint with tColor
+   else
+      put stringToColor(pString) into tColor
+      set the paint of this canvas to solid paint with tColor
+   end if
+end handler
+
+private handler adjustRect(in pRect as Rectangle,in pAdjust as Number) returns Rectangle
+  subtract pAdjust*2 from the height of pRect
+  subtract pAdjust*2 from the width of pRect
+  add pAdjust to the left of pRect
+  add pAdjust to the top of pRect
+  return pRect
+end handler
+
+private handler removeRectFromRect(in pRectMain as Rectangle,in pRectNew as Rectangle,in pDirection as String)
+   if pDirection is "above" then
+      subtract the height of pRectNew from the height of pRectMain
+      set the top of pRectMain to the bottom of pRectNew
+   end if
+
+   return pRectMain
+end handler
+
+private handler mpWrapTextinRect(in pTextBox as Rectangle,in pText as String,in pAlign as String)
+   variable tTextW as Number
+   variable tTextH as Number
+   variable tMaxRows as Number
+   variable tWords as List
+   variable tWord as String
+   variable tLine as String
+   variable tTestLine as String
+   variable tRow as Number
+   variable tAlign as List
+   variable tLinesofText as List
+
+   split pAlign by " " into tAlign
+   replace newline with " qzqz " in pText
+   split pText by " " into tWords
+   put the height of the layout bounds of text pText on this canvas into tTextH
+   put the width of pTextBox into tTextW
+   put the floor of ((the height of pTextBox)/tTextH) into tMaxRows
+   if tMaxRows = 0 then
+      return
+   end if
+   put 1 into tRow
+
+   repeat for each element tWord in tWords
+      put tLine & tWord into tTestLine
+      if the width of the layout bounds of text tTestLine on this canvas > tTextW or tWord is "qzqz" then
+         push tLine onto back of tLinesofText
+         put "" into tTestLine
+         if tRow=tMaxRows then
+            put "" into tLine
+            exit repeat
+         end if
+         add 1 to tRow
+         if tWord is "qzqz" then
+            put "" into tLine
+         else
+            put tWord & " " into tLine
+         end if
+      else
+         put tTestLine & " " into tLine
+      end if
+   end repeat
+   push tLine onto back of tLinesofText
+
+   if element 1 of tAlign is "center" then
+      add ((the height of pTextBox)-(tMaxRows*tTextH) + (tMaxRows-tRow)*tTextH)/2 to the top of pTextBox
+   else if element 1 of tAlign is "bottom" then
+      add ((the height of pTextBox)-(tMaxRows*tTextH) + (tMaxRows-tRow)*tTextH) to the top of pTextBox
+   end if
+
+   put 1 into tRow
+   repeat for each element tLine in tLinesofText
+      set the height of pTextBox to tTextH
+      if element 2 of tAlign is "center" then
+         fill text tLine at center of pTextBox on this canvas
+      else if element 2 of tAlign is "right" then
+         fill text tLine at top right of pTextBox on this canvas
+      else
+         fill text tLine at top left of pTextBox on this canvas
+      end if
+      add 1 to tRow
+      add tTextH to the top of pTextBox
+   end repeat
+end handler
+
+public handler stringToColor(in pString as String) returns Color
+  if the number of chars in pString is 0 then
+    return ""
+  end if
+
+  variable tRed as Number
+  variable tGreen as Number
+  variable tBlue as Number
+  variable tAlpha as Number
+
+  variable tComponentList as List
+  split pString by "," into tComponentList
+
+  variable tComponentCount
+  put the number of elements in tComponentList into tComponentCount
+  if tComponentCount is not 3 and tComponentCount is not 4 then
+    // Invalid number of components detected
+    throw "Invalid color"
+  end if
+
+  put (element 1 of tComponentList) parsed as number into tRed
+  put (element 2 of tComponentList) parsed as number into tGreen
+  put (element 3 of tComponentList) parsed as number into tBlue
+
+  if tComponentCount is 4 then
+    if element 4 of tComponentList is "inf" then
+      put 255 into tAlpha
+   else
+      put the minimum value of [255, (element 4 of tComponentList) parsed as number] into tAlpha
+   end if
+  else
+    put 255 into tAlpha
+  end if
+
+  return color [ tRed/255, tGreen/255, tBlue/255, tAlpha/255 ]
+end handler
+
+/**
+Summary: Quazquafies the existing text
+pText: The incoming text
+Returns: Cleaned text
+Description:
+Replaces certain text with quazquafied text:
+qzqc = comma (,)
+qzqs = space
+qzqq = double quotes (")
+qzqt = tab
+qzqv = sequence of quotes comma quotes  (",")
+qzqz = carriage return
+**/
+
+public handler quazQua(in pText as String,in pType as String) returns String
+   if pType is "encode" then
+      return qzZ(pText)
+   else
+      return qzQ(pText)
+   end if
+end handler
+
+public handler qzQ(in pText as String) returns String
+  variable tResult as String
+  put pText into tResult
+  replace "qzqc" with "," in tResult
+  replace "qzqs" with " " in tResult
+  --replace "qzqo" with ":" in tResult
+  --replace "qzqm" with ";" in tResult
+  --replace "qzqg" with "'" in tResult
+  replace "qzqq" with "\q" in tResult
+  replace "qzqv" with "\q,\q" in tResult
+  replace "qzqn" with "\n" in tResult
+  replace "qzqz" with "\r" in tResult
+  replace "qzqt" with "\t" in tResult
+  return tResult
+end handler
+
+public handler qzZ(in pText as String) returns String
+  variable tResult as String
+  put pText into tResult
+  replace "," with "qzqc" in tResult
+  replace " " with "qzqs" in tResult
+  replace "\q" with "qzqq" in tResult
+  replace "\q,\q" with "qzqv" in tResult
+  replace "\r" with "qzqz" in tResult
+  replace "\t" with "qzqt" in tResult
+  return tResult
+end handler
+
+public handler enQ(in pText as String) returns String
+  return "\q" & pText & "\q"
+end handler
+
+public handler hexToRGB(in pText)
+  variable tColor as String
+  variable tRGB as String
+  put char 1 to 2 of pText into tColor
+  put tColor converted from base 16 to base 10 into tRGB
+  put "," after tRGB
+  put char 3 to 4 of pText into tColor
+  put tColor converted from base 16 to base 10 after tRGB
+  put "," after tRGB
+  put char 5 to 6 of pText into tColor
+  put tColor converted from base 16 to base 10 after tRGB
+  return tRGB
+end handler
+
+public handler getPink(in pText)
+  if pText is "deep" then
+    return hexToRGB("FF1493")
+  else if pText is "spicy" then
+    return hexToRGB("FF1CAE")
+  else if pText is "shocking" then
+    return hexToRGB("FF0FC0")
+  else if pText is "bright" then
+    return hexToRGB("FF007F")
+  else if pText is "hollywood" then
+    return hexToRGB("F400A1")
+  else if pText is "cerise" then
+    return hexToRGB("DA3287")
+  end if
+end handler
+
+/**
+Summary: Returns a time stamp.
+pType: The type of time stamp desired
+pPrefix: Prefixed value if making an id number or doc number
+Returns: Desired time stamp.
+Description:
+Year is automatically truncated to the last 2 digits.
+The date in the example is "May 25th, 2018 13:23:42"
+pTypes (only first letter is neeeded) include:
+   "seconds" - includes up to the seconds, "180525132342"
+   "minutes" - includes up to the minutes, "1805251323"
+   "hours" - includes up to the hour, "18052513"
+   "full" - includes just the full date with the full year, "20180525"
+   "zeconds" - (with a "z") is the univeral seconds Unix time, "1527269022"
+   "x-milliseconds" - (with an "x") is the universal time in milliseconds, "1527269022000"
+   blank/by default - full date, "180525"
+**/
+
+public handler thymeStamp(in pType as String, in pPrefix as String) returns String
+   variable tDate as List
+   variable tSecs as Number
+   variable tStamp as String
+   variable tLimit as String
+   variable tYear as Number
+   put char 1 of pType into tLimit
+
+   if pType is "z" then
+      put the universal time into tSecs
+      put tSecs formatted as string into tStamp
+   else if pType is "x" then
+      put the universal time into tSecs
+      put tSecs*1000 into tSecs
+      put tSecs formatted as string into tStamp
+   else
+      put the local date into tDate
+      put element 1 of tDate into tYear
+      if pType is not "f" then
+          subtract 2000 from tYear
+      end if
+      put tYear formatted as string into tStamp
+      put element 2 of tDate formatted as string after tStamp
+      put element 3 of tDate formatted as string after tStamp
+      if tLimit is "s" or tLimit is "m" or tLimit is "h" then
+         put element 4 of tDate formatted as string after tStamp
+      end if
+      if tLimit is "s" or tLimit is "m" then
+         put element 5 of tDate formatted as string after tStamp
+      end if
+      if tLimit is "s" then
+         put element 6 of tDate formatted as string after tStamp
+      end if
+   end if
+
+   if pPrefix is not "none" then
+      put pPrefix before tStamp
+   end if
+
+   return tStamp
+end handler
+
+/**
+Summary: AYANS format to Array
+pText: Text that is AYA encoded
+Returns: An array
+Description:
+libAYANS 0.3.14
+And Yet Another Simple Notation System
+
+indentation doesn't matter, just for readability
+any leading spaces are deleted, to put actual leading spaces in use "~"
+
+single key value combos
+   =  value inline
+   _  single value is the next line
+   |  single value spans mutliple lines including line breaks
+   >  single value spans multiple lines substituting space for line breaks
+   -  simple array of items
+   !  complex/nested array
+
+**/
+
+public handler ayaToArray(in pText as String) returns Array
+   variable tText as String    --cleaned up text
+   variable tAya as List       --list from the above text
+   variable tResult as Array   --array being compiled
+   variable tLine as String    --holder for the repeat
+   variable tHold as String    --holder for array and lists to be parsed
+   variable tCurrent as String --current variable name
+   variable tType as String    --current type
+   variable tBack as Array     --holder for parseline
+
+   put removeLeadSpaces(pText) into tText
+   split tText by newline into tAya
+   repeat for each element tLine in tAya
+
+      if tType is "single-next" then
+         put tLine into tResult[tCurrent]
+         put "end" into tType
+      else if tType begins with "multi" then
+         if char 1 of tLine is ";" then
+            put "end" into tType
+            next repeat
+         end if
+
+         put ayaClean(tLine) into tLine
+
+         if tType ends with "lb" and tCurrent is among the keys of tResult then
+            put newline after tResult[tCurrent]
+         else if tCurrent is among the keys of tResult then
+            put " " after tResult[tCurrent]
+         end if
+
+         if tCurrent is among the keys of tResult then
+            put tLine after tResult[tCurrent]
+         else
+            put tLine into tResult[tCurrent]
+         end if
+
+      else if tType is "list" then
+         ----TODO: ADD LIST FUNCTION
+
+      else if tType is "array" then
+         if tLine is ";" & tCurrent then
+            put ayaToArray(tHold) into tResult[tCurrent]
+            put "" into tHold
+         else
+            if tHold is not "" then
+               put newline after tHold
+            end if
+            put tLine after tHold
+         end if
+      else
+         put ayaParseLine(tLine) into tBack
+         if tBack["type"] is "single" then
+            put tBack["key"] into tCurrent
+            put tBack["value"] into tResult[tCurrent]
+            put "end" into tType
+         else
+            put tBack["type"] into tType
+            put tBack["key"] into tCurrent
+            if "value" is among the keys of tResult then
+               put tBack["value"] into tResult[tCurrent]
+            end if
+         end if
+      end if
+
+   end repeat
+   return tResult
+end handler
+
+public handler ayaParseLine(in pText as String) returns Array
+   variable tResult as Array
+   variable tChar as String
+   variable tType as String
+   variable tKey as String
+   variable tItem as String
+
+   put char 1 of pText into tType
+   if tType is "=" then
+      put "single" into tResult["type"]
+   else if tType is "|" then
+      put "multi-lb" into tResult["type"]
+   else if tType is ">" then
+      put "multi-spc" into tResult["type"]
+   else if tType is "-" then
+      put "list" into tResult["type"]
+   else if tType is "!" then
+      put "array" into tResult["type"]
+   else if tType is ";" then
+      put "end" into tResult["type"]
+   end if
+
+   if tType is "_" then
+      put "single-next" into tResult["type"]
+      put char 2 to -1 of pText into tResult["key"]
+      return tResult
+   end if
+
+   put char 2 to -1 of pText into pText
+   put "key" into tType
+   repeat for each char tChar in pText
+      if tChar is ";" and tType is "key" then
+         put tItem into tResult["key"]
+         put "" into tItem
+         put "value" into tType
+      else
+         put tChar after tItem
+      end if
+   end repeat
+   if tItem is not "" then
+      put ayaClean(tItem) into tResult["value"]
+   end if
+   return tResult
+end handler
+
+public handler ayaClean(pText) returns String
+   put removeLeadSpaces(pText) into pText
+   if char 1 of pText is "~" then
+      delete the first char of pText
+      put " " before pText
+   end if
+   return pText
+end handler
+
+/**
+Summary: Removes leading spaces from a line of text
+pText: String
+Returns: Text without any leading spaces
+Description:
+Only looks at a single lines
+**/
+
+public handler removeLeadSpaces(pText) returns String
+   variable tText as String
+
+   repeat 1000 times
+      if pText is tText then
+         exit repeat
+      end if
+      put pText into tText
+      if char 1 of pText is " " then
+         put char 2 to -1 of pText into pText
+      end if
+      replace newline & " " with newline in pText
+   end repeat
+   return pText
+end handler
+
+/**
+Name: forceRedraw
+Type: property
+Syntax: set the forceRedraw of <widget> to <boolean>
+
+Summary: Force Redraw of Widget
+
+Description:
+Setting to true will initiate an immediate redraw of the widget. Most of the proerties do not automatically redraw the controls when changed, so this will allow a quick redraw after serveral changes have been made.
+Once redraw is complete, the property will return to the value of false.
+
+Name: defaultChangeType
+Type: property
+Syntax: set the defaultChangeType of <widget> to <boolean>
+
+Summary: New Defaults - Changing Type
+
+Description:
+When true, will load certain defaults such as appearance an icons.
+When false, the current settings will all renain.
+
+Name: showMainSquare
+Type: Property
+Syntax: set the showMainSquare of <widget> to <boolean>
+Syntax: get the showMainSquare of <widget>
+
+Summary: Show Working Area
+
+Description:
+The working area is the section of the widget after the title and bottom buttons are drawn (assuming they're shown chosen).
+When true, a solid box is drawn around the working area of the canvas with the same radius as the back square.
+
+Name: workingAreaOffsetW
+Type: Property
+Syntax: set the workingAreaOffsetW of <widget> to <number>
+Syntax: get the workingAreaOffsetW of <widget>
+
+Summary: Working Area Width Offset
+
+Description:
+Adjusts the size of the working area width from the edge.
+
+Name: workingAreaOffsetH
+Type: Property
+Syntax: set the workingAreaOffsetH of <widget> to <number>
+Syntax: get the workingAreaOffsetH of <widget>
+
+Summary: Working Area Height Offset
+
+Description:
+Adjusts the size of the working area height from the edges, or from the bottom of the title and/or the top of the buttons.
+
+Name: mainSquareColor
+Type: Property
+Syntax: set the mainSquareColor of <widget> to <built_in_color>
+Syntax: get the mainSquareColor of <widget>
+
+Summary: Working Area Color
+
+Description:
+Sets the color of the square around the working area.
+Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite,clear."
+
+Name: showTitle
+Type: Property
+Syntax: set the showTitle of <widget> to <boolean>
+Syntax: get the showTitle of <widget>
+
+Summary: Show Title at Top
+
+Description:
+When true, displays the title at the top of the box.
+
+Name: titleText
+Type: Property
+Syntax: set the titleText of <widget> to <text>
+Syntax: get the titleText of <widget>
+
+Summary: Title Text
+
+Description:
+The text of the title displayed at the top.
+
+Name: titleSize
+Type: Property
+Syntax: set the titleSize of <widget> to <number>
+Syntax: get the titleSize of <widget>
+
+Summary: Title rect offset
+
+Description:
+Offsets the title from the top of the box.
+
+Name: titleTextSize
+Type: Property
+Syntax: set the titleTextSize of <widget> to <number>
+Syntax: get the titleTextSize of <widget>
+
+Summary: Title font size
+
+Description:
+Font size for the title text at the top.
+
+Name: titleTextFont
+Type: Property
+Syntax: set the titleTextFont of <widget> to <font>
+Syntax: get the titleTextFont of <widget>
+
+Summary: Title Font
+
+Description:
+Font for the title text.
+
+Name: titleTextColor
+Type: Property
+Syntax: set the titleTextColor of <widget> to <built_in_color>
+Syntax: get the titleTextColor of <widget>
+
+Summary: Title Color
+
+Description:
+Sets the color of the title text.
+Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite,clear."
+
+
+Name: boxBorder
+Type: Property
+Syntax: set the boxBorder of <widget> to <number>
+Syntax: get the boxBorder of <widget>
+
+Summary: Border thickness
+
+Description:
+Sets the thickness of the border around the box.
+
+Name: boxRadius
+Type: Property
+Syntax: set the boxRadius of <widget> to <number>
+Syntax: get the boxRadius of <widget>
+
+Summary: Border and Box Radius
+
+Description:
+Sets the radius of the back square of the box. Set to zero for no rounded corners.
+
+Name: overlayMode
+Type: Property
+Syntax: set the overlayMode of <widget> to <boolean>
+Syntax: get the overlayMode of <widget>
+
+Summary: Show as an Overlay
+
+Description:
+When true, the widget switches to overlay mode. The purpose of overlay mode is to totally block the screen from user interaction until the interaction in the box is complete.
+It is best to set the geometry of the widget to resize to the size of the stack.
+
+Name: overlayAlign
+Type: Property
+Syntax: set the overlayAlign of <widget> to <list of items>
+Syntax: get the overlayAlign of <widget>
+
+Summary: Overlay Alignment
+
+Description:
+Sets where on the overlay the box will appear. It consists of two terms, the first is where it is vertically, the second is where it is horizontally.
+Options are "top left,top center,top right,center left,center center,center right,bottom left,bottom center,bottom right."
+
+Name: overlayHeight
+Type: Property
+Syntax: set the overlayHeight of <widget> to <number>
+Syntax: get the overlayHeight of <widget>
+
+Summary: Overlay-Box Height
+
+Description:
+When in overlay mode, sets the height of the box that will be displayed.
+
+Name: overlayWidth
+Type: Property
+Syntax: set the overlayWidth of <widget> to <number>
+Syntax: get the overlayWidth of <widget>
+
+Summary: Overlay-Box Width
+
+Description:
+When in overlay mode, sets the width of the box that will be displayed.
+
+Name: overlayOffset
+Type: Property
+Syntax: set the overlayOffset of <widget> to <number>
+Syntax: get the overlayOffset of <widget>
+
+Summary: Overlay Offset from Edge
+
+Description:
+Moves the box the specified pixels from the edge(s). Does not apply to "center center".
+For top or bottom alignments, the offset will apply to both edges.
+
+Name: overlayColor
+Type: Property
+Syntax: set the overlayColor of <widget> to <built_in_color>
+Syntax: get the overlayColor of <widget>
+
+Summary: Overlay Color
+
+Description:
+Sets the color of the remain area will be colored if the transparency is set above zero.
+Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite,clear."
+
+Name: overlayOpacity
+Type: Property
+Syntax: set the overlayOpacity of <widget> to <number from list>
+Syntax: get the overlayOpacity of <widget>
+
+Summary: Overlay Opacity
+
+Description:
+Sets how opaque or transparent the overlay area is (the alpha value of the color).
+When set to zero, the overlay area is not visible.
+
+Name: showBottomButtons
+Type: Property
+Syntax: set the showBottomButtons of <widget> to <boolean>
+Syntax: get the showBottomButtons of <widget>
+
+Summary: Show Bottom Buttons
+
+Description:
+Shows 1-3 buttons at the bottom of the box.
+Sends the message "buttonPressed" with the number of the button.
+on buttonPressed pNum
+
+end buttonPressed
+
+Name: bottomButtonTextSize
+Type: Property
+Syntax: set the bottomButtonTextSize of <widget> to <number>
+Syntax: get the bottomButtonTextSize of <widget>
+
+Summary: Bottom Button Text Size
+
+Description:
+Sets the text size of the text in the bottom buttons.
+
+Name: button1Text
+Type: Property
+Syntax: set the button1Text of <widget> to <string>
+Syntax: get the button1Text of <widget>
+
+Summary: Bottom Button 1 Text
+
+Description:
+Set the text that appears in the first button. Default is "OK".
+
+Name: button2Text
+Type: Property
+Syntax: set the button2Text of <widget> to <string>
+Syntax: get the button2Text of <widget>
+
+Summary: Bottom Button 2 Text
+
+Description:
+Set the text that appears in the second button. Default is "Cancel".
+
+Name: button3Text
+Type: Property
+Syntax: set the button3Text of <widget> to <string>
+Summary: Bottom Button 3 Text
+
+Description:
+Set the text that appears in the third button.
+
+Name: showButtons
+Type: Property
+Syntax: set the showButtons of <widget> to <number>
+Syntax: get the showButtons of <widget>
+
+Summary: Bottom Buttons-Number to show
+
+Description:
+Sets how many buttons (1-3) will appear at the bottom of the
+
+Name: bottomButtonAlignment
+Type: Property
+Syntax: set the bottomButtonAlignment of <widget> to <string from list>
+Syntax: get the bottomButtonAlignment of <widget>
+
+Summary: Bottom Button Alignment
+
+Description:
+Sets where in the box the bottom buttons will be displayed.
+
+Name: bottomButtonWidth
+Type: Property
+Syntax: set the bottomButtonWidth of <widget> to <number>
+Syntax: get the bottomButtonWidth of <widget>
+
+Summary: Bottom Button Width
+
+Description:
+Sets how wide each bottom button will be.
+
+Name: bottomButtonHeight
+Type: Property
+Syntax: set the bottomButtonHeight of <widget> to <number>
+Syntax: get the bottomButtonHeight of <widget>
+
+Summary: Bottom Button Height
+
+Description:
+Sets how tall each bottom button will be.
+
+Name: bottomButtonBuffer
+Type: Property
+Syntax: set the bottomButtonBuffer of <widget> to <number>
+Syntax: get the bottomButtonBuffer of <widget>
+
+Summary: Bottom Button Buffer/Offset
+
+Description:
+Adjusts the spacing in pixels between the buttons.
+
+Name: bottomButtonBackColor
+Type: Property
+Syntax: set the bottomButtonBackColor of <widget> to <built_in_color>
+Syntax: get the bottomButtonBackColor of <widget>
+
+Summary: Bottom Button Background Color
+
+Description:
+Sets the color of the background of the bottom buttons.
+Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite,clear."
+
+Name: bottomButtonTextColor
+Type: Property
+Syntax: set the bottomButtonTextColor of <widget> to <built_in_color>
+Syntax: get the bottomButtonTextColor of <widget>
+
+Summary: Bottom Button Text Color
+
+Description:
+Sets the color of the text that is displayed in the bottom buttons.
+Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite,clear."
+
+Name: appData
+Type: Property
+Syntax: get the appData of <widget>
+
+Summary: AppData for Debugging
+
+Description:
+Shows app data for debugging, editing will not affect that functioning of the widget.
+
+Name: myData
+Type: Property
+Syntax: set the myData of <widget> to <array>
+Syntax: get the myData of <widget>
+
+Summary: Data - Array for Configuration
+
+Description:
+Array of data to be used for the working area controls.
+The main keys of the array should be numeric, starting with 1 and continuing in sequential order, each representing a seperate instance of a control.
+The subkeys of each control vary based on type. The widget will automatically fill in missing information.
+
+Name: inputText
+Type: Property
+Syntax: set the inputText of <widget> to <string>
+Syntax: get the inputText of <widget>
+
+Summary: Data - Text for Configuration (EXPERIMENTAL)
+
+Description:
+Text based data which will be parsed into myData. This will completely overwrite myData, so make sure to include all data.
+Use the name "myData" as the main array name.
+Using AYANS format:
+libAYANS 0.3.14
+And Yet Another Simple Notation System
+
+indentation doesn't matter, just for readability
+any leading spaces are deleted, to put actual leading spaces in use "~"
+the tilde will be the first space
+single key value combos
+!  array start with name
+=  value inline
+_  single value is the next line (underscore)
+|  single value spans mutliple lines including line breaks
+>  single value spans multiple lines substituting space for line breaks
+-  simple array of items
+;  ends array with the name used in the beginning
+
+!myData;
+=abc; 123
+=def; reststop
+=coffee; needed
+!buttons;
+=color; hot pink
+=size; 541
+=alignment; center
+;buttons
+|poem;
+There is in the lab said the dean
+Quite a remarkable machine
+~  Where Oedpius Rex
+~  Could have learned about sex
+Without any help from the Queen
+;poem
+;myData
+
+Name: controlType
+Type: Property
+Syntax: set the controlType of <widget> to <string>
+Syntax: get the controlType of <widget>
+
+Summary: Control Types
+
+Description:
+Selection of the type of controls.
+Options include:
+Button Bar
+Sliders
+Dialog Box
+Form Backdrop
+Numeric Up/Down
+Switches
+
+Name: columnCount
+Type: Property
+Syntax: set the columnCount of <widget> to <number>
+Syntax: get the columnCount of <widget>
+
+Summary: Number of Columns
+
+Description:
+Specifies the number of columns to put buttons, switches and numeric up/down selectors in.
+Default is a single column.
+
+Name: controlBufferV
+Type: Property
+Syntax: set the controlBufferV of <widget> to <number>
+Syntax: get the controlBufferV of <widget>
+
+Summary: Control Row Vertical Buffer
+
+Description:
+Buffer added to the vertical spacing between each control.
+
+Name: controlBufferV
+Type: Property
+Syntax: set the controlBufferH of <widget> to <number>
+Syntax: get the controlBufferH of <widget>
+
+Summary: Control Row Horizontal Buffer
+
+Description:
+Buffer added to the horizontal spacing from the left of the edge of each control.
+
+Name: controlRadius
+Type: Property
+Syntax: set the controlRadius of <widget> to <number>
+Syntax: get the controlRadius of <widget>
+
+Summary: Control Corner Radius
+Description:
+The radius for each control if applicable.
+qzqzzqz Applies to: button bar
+
+Name: controlTextFont
+Type: Property
+Syntax: set the controlTextFont of <widget> to <string>
+Syntax: get the controlTextFont of <widget>
+
+Summary: Control Label Font
+
+Description:
+Sets the font size for label text. Can be overriden in the button data. Use the keyword "default" to use this.
+The label text is any text on a button or describing the function of the control.
+
+Name: controlTextSize
+Type: Property
+Syntax: set the controlTextSize of <widget> to <number>
+Syntax: get the controlTextSize of <widget>
+
+Summary: Control Label Font Size
+
+Description:
+Sets the default font size for label text. Can be overriden in the button data. Use the keyword "default" to use this.
+
+Name: controlTextColor
+Type: Property
+Syntax: set the controlTextColor of <widget> to <string>
+Syntax: get the controlTextColor of <widget>
+
+Summary: Control's Text/Label Color
+
+Description:
+Sets the control's text color.
+Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite,clear."
+
+Name: controlValueSize
+Type: Property
+Syntax: set the controlValueSize of <widget> to <number>
+Syntax: get the controlValueSize of <widget>
+
+Summary: Control Value Size
+
+Description:
+Set the sext size of the value generated by a control.
+Applies to:  Numeric Up/Down, Sliders.
+
+Name: controlTextWidth
+Type: Property
+Syntax: set the controlTextWidth of <widget> to <number>
+Syntax: get the controlTextWidth of <widget>
+
+Summary: Control Text Fixed Width
+
+Description:
+Sets the specific width of the label on a control.
+Applies to: Sliders, Numeric Up/Down
+
+Name: controlValueWidth
+Type: Property
+Syntax: set the controlValueWidth of <widget> to <number>
+Syntax: get the controlValueWidth of <widget>
+
+Summary: Control Value Fixed Width
+
+Description:
+Sets the specific width of the value on a control.
+Applies to: Sliders, Numeric Up/Down
+
+Name: controlValueFont
+Type: Property
+Syntax: set the controlValueFont of <widget> to <font>
+Syntax: get the controlValueFont of <widget>
+
+Summary: Control Value Font
+
+Description:
+Font for the numeric value displayed.
+Applies to: Sliders, Numeric Up/Down
+
+Name: controlValueColor
+Type: Property
+Syntax: set the controlValueColor of <widget> to <string>
+Syntax: get the controlValueColor of <widget>
+
+Summary: Control Value Color
+
+Description:
+Color for the numeric value displayed.
+Applies to: Sliders, Numeric Up/Down
+Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite."
+
+Name: controlTextAlign
+Type: Property
+Syntax: set the controlTextAlign of <widget> to <string>
+Syntax: get the controlTextAlign of <widget>
+
+Summary: Control Text Alignment
+
+Description:
+Sets where on the text will appear in the box. It consists of two terms, the first is where it is vertically, the second is where it is horizontally.
+Options are "top left,top center,top right,center left,center center,center right,bottom left,bottom center,bottom right."
+Applies to; dialog box
+
+Name: controlObjectColor
+Type: Property
+Syntax: set the controlObjectColor of <widget> to <string>
+Syntax: get the controlObjectColor of <widget>
+
+Summary: Control Object Color
+
+Description:
+Sets the color for icons and objects in the control..
+Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite,clear."
+Includes the icon for dialog boxes, the icons for numeric up/downs, the handle on the sliders, the icon on the switches.
+
+Name: controlObjectSize
+Type: Property
+Syntax: set the controlObjectSize of <widget> to <number>
+Syntax: get the controlObjectSize of <widget>
+
+Summary: Control Object/Icon Size
+
+Description:
+Sets the size of the object/icon to be displayed in the control.
+Includes the icon for dialog boxes, the icons for numeric up/downs, the handle on the sliders, the icon on the switches.
+
+Name: controlItemSpacing
+Type: Property
+Syntax: set the controlItemSpacing of <widget> to <number>
+Syntax: get the controlItemSpacing of <widget>
+
+Summary: Control Buffer Space Between
+
+Description:
+Sets the spacing between controls.
+Applies to: Button bar, switches, numeric up/down
+
+Name: controlIconA
+Type: Property
+Syntax: set the controlIconA of <widget> to <string>
+Syntax: get the controlIconA of <widget>
+
+Summary: Control Icon "A"
+
+Description:
+The "A" icon specifies the following icons:
+-dialog box icon if displayed
+-default button bar icon if displayed
+-"plus" icon for numeric up/down
+-hilited object for switch
+To use one of Livecode builtin icons, format as "builtin:" and the name
+See "iconData" for using one of the user icon pathes
+Set with an actual SVG path will display it as-is
+
+Name: controlIconB
+Type: Property
+Syntax: set the controlIconB of <widget> to <string>
+Syntax: get the controlIconB of <widget>
+
+Summary: Control Icon "B"
+
+Description:
+The "B" icon specifies the following icons:
+-"minus" icon for numeric up/down
+-nonhilited object for switch
+To use one of Livecode builtin icons, format as "builtin:" and the name
+See "iconData" for using one of the user icon pathes
+Set with an actual SVG path will display it as-is
+
+Name: controlIconColor
+Type: Property
+Syntax: set the controlIconColor of <widget> to <string>
+Syntax: get the controlIconColor of <widget>
+
+Summary: Control Icon Color
+
+Description:
+Sets the control's icon color.
+Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite."
+
+Name: iconData
+Type: Property
+Syntax: set the iconData of <widget> to <array>
+Syntax: get the iconData of <widget>
+
+Summary: Array of Icon Pathes
+
+Description:
+Array of icons to be used in various controls.
+To use in data, prefice the name of the icon with "icondata:"
+Icon families and categories can be used, to organize.
+If the icon array goes 1 or 2 layers deep, use "iconfam1" of "iconfam2"
+For example:
+iconfam2:myfamily:mycategory:iconname
+
+Name: buttonActionButton
+Type: Property
+Syntax: get the inputText of <widget>
+
+Summary: Selected Action Button
+
+Description:
+WHen the buttonbar mode is "action", value is set to the selected action button.
+
+Name: buttonBarType
+Type: Property
+Syntax: set the buttonBarType of <widget> to <string>
+Syntax: get the buttonBarType of <widget>
+
+Summary: ButtonBar Type
+
+Description:
+Type of button bar:
+Single - a single button is selected like a radio button
+Multiple - multlple buttons can be selected, similar to a checkbox
+Action - an action button does not stay hilited and triggers actionSelected with the button number
+
+
+Name: buttonBarStyle
+Type: Property
+Syntax: set the buttonBarStyle of <widget> to <string>
+Syntax: get the buttonBarStyle of <widget>
+
+Summary: ButtonBar Appearance
+
+Description:
+Displays the type of button shown. Options are:
+Text:  Displays text only
+Icon:  Displays icon only
+Icon Above Text: Displays both icon and text, with icon on top
+
+Name: controlText
+Type: Property
+Syntax: set the controlText of <widget> to <string>
+Syntax: get the controlText of <widget>
+
+Summary: ControlText
+
+Description:
+Text to be displayed in the dialog text box. Use quazQua to markup.
+For a new line, use qzqn
+Also text displayed
+
+Name: dialogIconAlign
+Type: Property
+Syntax: set the dialogIconAlign of <widget> to <string>
+Syntax: get the dialogIconAlign of <widget>
+
+Summary: DialogBox Position of the Icon
+
+Description:
+Displays the icon in the dialog box at the top, the bottom of in the center.
+
+Name: upDownLayout
+Type: Property
+Syntax: set the upDownLayout of <widget> to <string>
+Syntax: get the upDownLayout of <widget>
+
+Summary: Up/Down Value Layout
+
+Description:
+Determines the order of the plus and minus icons, the value being worked on and the label.
+Options are:
+plus/value/minus/label,plus/minus/value/label,value/plus/minus/label,minus/value/plus/label,minus/plus/value/label,value/minus/plus/label
+
+Name: sliderShowValue
+Type: Property
+Syntax: set the sliderShowValue of <widget> to <boolean>
+Syntax: get the sliderShowValue of <widget>
+
+Summary: Slider - Show Value
+
+Description:
+When true, displays the current value to the right of the slider
+
+Name: sliderShowLabel
+Type: Property
+Syntax: set the sliderShowLabel of <widget> to <boolean>
+Syntax: get the sliderShowLabel of <widget>
+
+Summary: Slider - Show Label
+
+Description:
+When true, displays the label to the left of the slider
+
+Name: sliderType
+Type: Property
+Syntax: set the sliderType of <widget> to <string>
+Syntax: get the sliderType of <widget>
+
+Summary: SLider Types
+
+Description:
+Set the type of sliders, either as a color picker or numeric values.
+Valid types are:
+Values - Simple numeric values with a minimum and maximum
+ColorRGB - qzqzqz work on these!!
+ColorRGBA
+
+Name: propertyName
+Type: Property
+Syntax: set the inputText of <widget> to <string>
+Syntax: get the inputText of <widget>
+
+Summary: quickDesc
+
+Description:
+descriptiongoeshere
+
+
+**/
+
+/*
+Name: propertyName
+Type: Property
+Syntax: set the inputText of <widget> to <string>
+Syntax: get the inputText of <widget>
+
+Summary: quickDesc
+
+Description:
+descriptiongoeshere
+
+
+*/
+
+end widget
