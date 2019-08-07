@@ -1,0 +1,124 @@
+Library: 
+
+Type: 
+
+author: MadPink
+
+version: 0.8.0
+
+
+Name: thymeStamp
+
+Type: handler
+
+Syntax: thymeStamp(<pType>,<pPrefix>)
+
+Summary: Returns a time stamp.
+
+pType: The type of time stamp desired
+
+pPrefix: Prefixed value if making an id number or doc number
+
+Returns: Desired time stamp.
+
+Description:
+Year is automatically truncated to the last 2 digits.
+The date in the example is "May 25th, 2018 13:23:42"
+pTypes (only first letter is neeeded) include:
+   "seconds" - includes up to the seconds, "180525132342"
+   "minutes" - includes up to the minutes, "1805251323"
+   "hours" - includes up to the hour, "18052513"
+   "full" - includes just the full date with the full year, "20180525"
+   "zeconds" - (with a "z") is the univeral seconds Unix time, "1527269022"
+   "x-milliseconds" - (with an "x") is the universal time in milliseconds, "1527269022000"
+   blank/by default - full date, "180525"
+
+Parameters:
+:
+
+
+:
+
+
+
+
+Name: quazQua
+
+Type: handler
+
+Syntax: quazQua(<pText>,<pType>)
+
+Summary: Quazquafies the existing text
+
+pText: The incoming text
+
+Returns: Cleaned text
+
+Description:
+Replaces certain text with quazquafied text:
+qzqc = comma (,)
+qzqs = space
+qzqq = double quotes (")
+qzqt = tab
+qzqv = sequence of quotes comma quotes  (",")
+qzqz = carriage return
+
+Parameters:
+:
+
+
+:
+
+
+
+
+Name: ayaToArray
+
+Type: handler
+
+Syntax: ayaToArray(<pText>)
+
+Summary: AYANS format to Array
+
+pText: Text that is AYA encoded
+
+Returns: An array
+
+Description:
+libAYANS 0.3.14
+And Yet Another Simple Notation System
+
+indentation doesn't matter, just for readability
+any leading spaces are deleted, to put actual leading spaces in use "~"
+
+single key value combos
+   =  value inline
+   _  single value is the next line
+   |  single value spans mutliple lines including line breaks
+   >  single value spans multiple lines substituting space for line breaks
+   -  simple array of items
+   !  complex/nested array
+
+Parameters:
+:
+
+
+
+
+Name: removeLeadSpaces
+
+Type: handler
+
+Syntax: removeLeadSpaces()
+
+Summary: Removes leading spaces from a line of text
+
+pText: String
+
+Returns: Text without any leading spaces
+
+Description: Only looks at a single lines
+
+
+
+
