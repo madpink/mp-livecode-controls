@@ -2,7 +2,7 @@
   <name>pink.mad.ubercontrol</name>
   <title>MPUberControlPanel</title>
   <author>MadPink</author>
-  <description>Allows for multiple configurable controls that can be dynamically switched</description>
+  <description>Allows for multiple configurable controls that can be bdynamically switched</description>
   <version>0.8.0</version>
   <license>community</license>
   <type>widget</type>
@@ -440,6 +440,7 @@
   <handler name="OnPaint" parameters="" return="any"/>
   <handler name="checkForRedraw" parameters="" return="any"/>
   <handler name="paintDialogBox" parameters="" return="any"/>
+  <handler name="buttonBarIcon" parameters="in Rectangle,in string" return="any"/>
   <handler name="getIconPath" parameters="in string" return="any"/>
   <handler name="displayIcon" parameters="in any,in any" return="any"/>
   <handler name="createSwitch" parameters="in string" return="any"/>
@@ -462,7 +463,7 @@
   <handler name="bottomButtonPressed" parameters="" return="any"/>
   <handler name="userAction" parameters="" return="any"/>
   <handler name="actionSelected" parameters="" return="any"/>
-  <handler name="resetClicks" parameters="" return="any"/>
+  <handler name="resetSelects" parameters="" return="any"/>
   <handler name="selectSwitch" parameters="" return="any"/>
   <handler name="randomLabel" parameters="" return="any"/>
   <handler name="randomNumber" parameters="in number" return="any"/>

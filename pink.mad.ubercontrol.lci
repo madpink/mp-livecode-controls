@@ -24,6 +24,7 @@ import module pink.mad.ubercontrol
   handler OnPaint() returns optional any
   handler checkForRedraw() returns optional any
   handler paintDialogBox() returns optional any
+  handler buttonBarIcon(in pRect as Rectangle, in pKey as String) returns optional any
   handler getIconPath(in pVal as String) returns optional any
   handler displayIcon(in pRect as optional any, in pIcon as optional any) returns optional any
   handler createSwitch(in pVal as String) returns optional any
@@ -46,7 +47,7 @@ import module pink.mad.ubercontrol
   handler bottomButtonPressed() returns optional any
   handler userAction() returns optional any
   handler actionSelected() returns optional any
-  handler resetClicks() returns optional any
+  handler resetSelects() returns optional any
   handler selectSwitch() returns optional any
   handler randomLabel() returns optional any
   handler randomNumber(in pVal as Number) returns optional any
