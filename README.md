@@ -2,7 +2,7 @@
 
 ## The MadPink Uber-Controls Widget For Livecode
 
-Visit wiki for details.
+Visit wiki for details. Released under CC BY-SA 4.0, built with Livecode and love.
 
 Visit [mpControls Planning Board](https://madpink.plutio.com/p/uf8vchdszfbwucqtd) to see current plans and progress.
 
