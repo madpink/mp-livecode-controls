@@ -2,8 +2,8 @@
   <name>pink.mad.ubercontrol</name>
   <title>MPUberControlPanel</title>
   <author>MadPink</author>
-  <description>Allows for multiple configurable controls that can be bdynamically switched</description>
-  <version>0.8.0</version>
+  <description>Allows for multiple configurable controls that can be dynamically switched</description>
+  <version>0.9.15</version>
   <license>community</license>
   <type>widget</type>
   <requires name="com.livecode.canvas"/>
