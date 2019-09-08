@@ -3,7 +3,7 @@
   <title>MPUberControlPanel</title>
   <author>MadPink</author>
   <description>Allows for multiple configurable controls that can be dynamically switched</description>
-  <version>0.9.15</version>
+  <version>0.9.17</version>
   <license>community</license>
   <type>widget</type>
   <requires name="com.livecode.canvas"/>
@@ -98,6 +98,16 @@
   <metadata key="mainSquareColor.default">shadow</metadata>
   <metadata key="mainSquareColor.label">Working Area Color</metadata>
   <metadata key="mainSquareColor.section">Colors</metadata>
+  <property name="boxBorder" get="number" set="number"/>
+  <metadata key="boxBorder.editor">com.livecode.pi.number</metadata>
+  <metadata key="boxBorder.default">5</metadata>
+  <metadata key="boxBorder.label">Border thickness</metadata>
+  <metadata key="boxBorder.section">Table</metadata>
+  <property name="boxRadius" get="number" set="number"/>
+  <metadata key="boxRadius.editor">com.livecode.pi.number</metadata>
+  <metadata key="boxRadius.default">13</metadata>
+  <metadata key="boxRadius.label">Border and Box Radius</metadata>
+  <metadata key="boxRadius.section">Table</metadata>
   <property name="showTitle" get="boolean" set="boolean"/>
   <metadata key="showTitle.editor">com.livecode.pi.boolean</metadata>
   <metadata key="showTitle.default">true</metadata>
@@ -129,16 +139,6 @@
   <metadata key="titleTextColor.default">border</metadata>
   <metadata key="titleTextColor.label">Title Color</metadata>
   <metadata key="titleTextColor.section">Colors</metadata>
-  <property name="boxBorder" get="number" set="number"/>
-  <metadata key="boxBorder.editor">com.livecode.pi.number</metadata>
-  <metadata key="boxBorder.default">5</metadata>
-  <metadata key="boxBorder.label">Border thickness</metadata>
-  <metadata key="boxBorder.section">Table</metadata>
-  <property name="boxRadius" get="number" set="number"/>
-  <metadata key="boxRadius.editor">com.livecode.pi.number</metadata>
-  <metadata key="boxRadius.default">13</metadata>
-  <metadata key="boxRadius.label">Border and Box Radius</metadata>
-  <metadata key="boxRadius.section">Table</metadata>
   <property name="overlayMode" get="boolean" set="boolean"/>
   <metadata key="overlayMode.editor">com.livecode.pi.boolean</metadata>
   <metadata key="overlayMode.default">false</metadata>
@@ -243,15 +243,23 @@
   <metadata key="bottomButtonTextColor.section">Colors</metadata>
   <property name="appData" get="array" set="array"/>
   <metadata key="appData.editor">com.livecode.pi.array</metadata>
-  <metadata key="appData.label">AppData for Debugging</metadata>
+  <metadata key="appData.label">AppData for Storage</metadata>
   <metadata key="appData.section">Advanced</metadata>
   <property name="myData" get="array" set="array"/>
   <metadata key="myData.editor">com.livecode.pi.array</metadata>
   <metadata key="myData.section">Contents</metadata>
   <metadata key="myData.label">Data - Array for Configuration</metadata>
+  <property name="dataCommand" get="string" set="string"/>
+  <metadata key="dataCommand.editor">com.livecode.pi.text</metadata>
+  <metadata key="dataCommand.default"></metadata>
+  <metadata key="dataCommand.label">Data Command</metadata>
+  <metadata key="dataCommand.section">Advanced</metadata>
+  <property name="controlOutput" get="any"/>
+  <metadata key="controlOutput.section">Advanced</metadata>
+  <metadata key="controlOutput.label">Output from Controls</metadata>
   <property name="controlType" get="string" set="string"/>
   <metadata key="controlType.editor">com.livecode.pi.enum</metadata>
-  <metadata key="controlType.options">Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Sliders,Switches</metadata>
+  <metadata key="controlType.options">Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Progress Bars,Sliders,Switches</metadata>
   <metadata key="controlType.default">Button Bar</metadata>
   <metadata key="controlType.label">Control Types</metadata>
   <metadata key="controlType.section">Basic</metadata>
@@ -275,6 +283,11 @@
   <metadata key="controlRadius.default">23</metadata>
   <metadata key="controlRadius.label">Control Corner Radius</metadata>
   <metadata key="controlRadius.section">Basic</metadata>
+  <property name="displayLabel" get="boolean" set="boolean"/>
+  <metadata key="displayLabel.editor">com.livecode.pi.boolean</metadata>
+  <metadata key="displayLabel.default">true</metadata>
+  <metadata key="displayLabel.section">Basic</metadata>
+  <metadata key="displayLabel.label">Control Show Label</metadata>
   <property name="controlTextFont" get="string" set="string"/>
   <metadata key="controlTextFont.editor">com.livecode.pi.font</metadata>
   <metadata key="controlTextFont.default">Arial</metadata>
@@ -297,6 +310,11 @@
   <metadata key="controlHiliteColor.default">hilite</metadata>
   <metadata key="controlHiliteColor.label">Control Hilited Color</metadata>
   <metadata key="controlHiliteColor.section">Colors</metadata>
+  <property name="displayValue" get="boolean" set="boolean"/>
+  <metadata key="displayValue.editor">com.livecode.pi.boolean</metadata>
+  <metadata key="displayValue.default">true</metadata>
+  <metadata key="displayValue.section">Basic</metadata>
+  <metadata key="displayValue.label">Control Show Value</metadata>
   <property name="controlValueSize" get="number" set="number"/>
   <metadata key="controlValueSize.editor">com.livecode.pi.number</metadata>
   <metadata key="controlValueSize.default">31</metadata>
@@ -376,15 +394,6 @@
   <metadata key="iconData.editor">com.livecode.pi.array</metadata>
   <metadata key="iconData.label">Array of Icon Pathes</metadata>
   <metadata key="iconData.section">Icons</metadata>
-  <property name="buttonActionButton" get="any"/>
-  <metadata key="buttonActionButton.section">Effects</metadata>
-  <metadata key="buttonActionButton.label">Selected Action Button</metadata>
-  <property name="buttonPinEntry" get="string"/>
-  <metadata key="buttonPinEntry.section">Effects</metadata>
-  <metadata key="buttonPinEntry.label">ButtonBar PIN Entry</metadata>
-  <property name="pinPadResult" get="string"/>
-  <metadata key="pinPadResult.section">Effects</metadata>
-  <metadata key="pinPadResult.label">PIN Pad Result</metadata>
   <property name="buttonBarType" get="string" set="string"/>
   <metadata key="buttonBarType.editor">com.livecode.pi.enum</metadata>
   <metadata key="buttonBarType.options">Single,Multiple,Action,EntryPad</metadata>
@@ -409,46 +418,18 @@
   <metadata key="upDownLayout.default">plus/value/minus/label</metadata>
   <metadata key="upDownLayout.label">Up/Down Value Layout</metadata>
   <metadata key="upDownLayout.section">Basic</metadata>
-  <property name="sliderShowValue" get="boolean" set="boolean"/>
-  <metadata key="sliderShowValue.editor">com.livecode.pi.boolean</metadata>
-  <metadata key="sliderShowValue.default">true</metadata>
-  <metadata key="sliderShowValue.section">Basic</metadata>
-  <metadata key="sliderShowValue.label">Slider Show Value</metadata>
-  <property name="sliderShowLabel" get="boolean" set="boolean"/>
-  <metadata key="sliderShowLabel.editor">com.livecode.pi.boolean</metadata>
-  <metadata key="sliderShowLabel.default">true</metadata>
-  <metadata key="sliderShowLabel.section">Basic</metadata>
-  <metadata key="sliderShowLabel.label">Slider Show Label</metadata>
   <property name="sliderType" get="string" set="string"/>
   <metadata key="sliderType.editor">com.livecode.pi.enum</metadata>
   <metadata key="sliderType.options">Values,ColorRGB,ColorRGBA</metadata>
   <metadata key="sliderType.default">Values</metadata>
   <metadata key="sliderType.label">Slider Types</metadata>
   <metadata key="sliderType.section">Basic</metadata>
-  <property name="includeClear" get="boolean" set="boolean"/>
-  <metadata key="includeClear.editor">com.livecode.pi.boolean</metadata>
-  <metadata key="includeClear.default">true</metadata>
-  <metadata key="includeClear.section">Basic</metadata>
-  <property name="includeEnter" get="boolean" set="boolean"/>
-  <metadata key="includeEnter.editor">com.livecode.pi.boolean</metadata>
-  <metadata key="includeEnter.default">true</metadata>
-  <metadata key="includeEnter.section">Basic</metadata>
   <handler name="OnCreate" parameters="" return="any"/>
   <handler name="OnOpen" parameters="" return="any"/>
   <handler name="OnSave" parameters="out array" return="any"/>
   <handler name="OnLoad" parameters="in array" return="any"/>
   <handler name="OnPaint" parameters="" return="any"/>
   <handler name="checkForRedraw" parameters="" return="any"/>
-  <handler name="paintDialogBox" parameters="" return="any"/>
-  <handler name="buttonBarIcon" parameters="in Rectangle,in string" return="any"/>
-  <handler name="getIconPath" parameters="in string" return="any"/>
-  <handler name="displayIcon" parameters="in any,in any" return="any"/>
-  <handler name="createSwitch" parameters="in string" return="any"/>
-  <handler name="paintSliders" parameters="" return="any"/>
-  <handler name="baseTitleAndButtons" parameters="" return="any"/>
-  <handler name="borderAdjust" parameters="in Rectangle,in number,in number" return="any"/>
-  <handler name="overlayAdjust" parameters="" return="any"/>
-  <handler name="bottomButtons" parameters="in any,in any" return="any"/>
   <handler name="OnMouseUp" parameters="" return="any"/>
   <handler name="OnMouseMove" parameters="" return="any"/>
   <handler name="OnMouseDown" parameters="" return="any"/>
@@ -463,33 +444,4 @@
   <handler name="bottomButtonPressed" parameters="" return="any"/>
   <handler name="userAction" parameters="" return="any"/>
   <handler name="actionSelected" parameters="" return="any"/>
-  <handler name="resetSelects" parameters="" return="any"/>
-  <handler name="selectSwitch" parameters="" return="any"/>
-  <handler name="randomLabel" parameters="" return="any"/>
-  <handler name="randomNumber" parameters="in number" return="any"/>
-  <handler name="addAppDataProps" parameters="" return="any"/>
-  <handler name="updateProperties" parameters="" return="any"/>
-  <handler name="rectToArray" parameters="in Rectangle" return="array"/>
-  <handler name="rectToFlatLine" parameters="in Rectangle" return="string"/>
-  <handler name="arrayToRect" parameters="in array" return="Rectangle"/>
-  <handler name="drawSVG" parameters="in string,in Rectangle" return="any"/>
-  <handler name="calcTextHeight" parameters="in string" return="any"/>
-  <handler name="calcTextWidth" parameters="in string" return="any"/>
-  <handler name="mkNum" parameters="in string" return="number"/>
-  <handler name="mkStr" parameters="in any" return="string"/>
-  <handler name="chooseAndSetPaint" parameters="in string,in string" return="any"/>
-  <handler name="chooseAndSetFont" parameters="in string,in string,in string,in number" return="any"/>
-  <handler name="setPaint" parameters="in string" return="any"/>
-  <handler name="stringToColor" parameters="in string" return="Color"/>
-  <handler name="quazQua" parameters="in string,in string" return="string"/>
-  <handler name="qzQ" parameters="in string" return="string"/>
-  <handler name="qzZ" parameters="in string" return="string"/>
-  <handler name="enQ" parameters="in string" return="string"/>
-  <handler name="hexToRGB" parameters="in any" return="any"/>
-  <handler name="getPink" parameters="in any" return="any"/>
-  <handler name="thymeStamp" parameters="in string,in string" return="string"/>
-  <handler name="ayaToArray" parameters="in string" return="array"/>
-  <handler name="ayaParseLine" parameters="in string" return="array"/>
-  <handler name="ayaClean" parameters="in any" return="string"/>
-  <handler name="removeLeadSpaces" parameters="in any" return="string"/>
 </package>

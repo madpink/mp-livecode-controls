@@ -23,16 +23,6 @@ import module pink.mad.ubercontrol
   handler OnLoad(in pVal as Array) returns optional any
   handler OnPaint() returns optional any
   handler checkForRedraw() returns optional any
-  handler paintDialogBox() returns optional any
-  handler buttonBarIcon(in pRect as Rectangle, in pKey as String) returns optional any
-  handler getIconPath(in pVal as String) returns optional any
-  handler displayIcon(in pRect as optional any, in pIcon as optional any) returns optional any
-  handler createSwitch(in pVal as String) returns optional any
-  handler paintSliders() returns optional any
-  handler baseTitleAndButtons() returns optional any
-  handler borderAdjust(in pRect as Rectangle, in pBorder as Number, in pMult as Number) returns optional any
-  handler overlayAdjust() returns optional any
-  handler bottomButtons(in pRect as optional any, in pIcon as optional any) returns optional any
   handler OnMouseUp() returns optional any
   handler OnMouseMove() returns optional any
   handler OnMouseDown() returns optional any
@@ -47,33 +37,4 @@ import module pink.mad.ubercontrol
   handler bottomButtonPressed() returns optional any
   handler userAction() returns optional any
   handler actionSelected() returns optional any
-  handler resetSelects() returns optional any
-  handler selectSwitch() returns optional any
-  handler randomLabel() returns optional any
-  handler randomNumber(in pVal as Number) returns optional any
-  handler addAppDataProps() returns optional any
-  handler updateProperties() returns optional any
-  handler rectToArray(in pRect as Rectangle) returns Array
-  handler rectToFlatLine(in pRect as Rectangle) returns String
-  handler arrayToRect(in pArray as Array) returns Rectangle
-  handler drawSVG(in pName as String, in pRect as Rectangle) returns optional any
-  handler calcTextHeight(in pVal as String) returns optional any
-  handler calcTextWidth(in pVal as String) returns optional any
-  handler mkNum(in pString as String) returns Number
-  handler mkStr(in pItem as optional any) returns String
-  handler chooseAndSetPaint(in pKey as String, in pType as String) returns optional any
-  handler chooseAndSetFont(in pType as String, in pX as String, in pDefaultFont as String, in pDefaultSize as Number) returns optional any
-  handler setPaint(in pVal as String) returns optional any
-  handler stringToColor(in pString as String) returns Color
-  handler quazQua(in pText as String, in pType as String) returns String
-  handler qzQ(in pText as String) returns String
-  handler qzZ(in pText as String) returns String
-  handler enQ(in pText as String) returns String
-  handler hexToRGB(in pColor as optional any) returns optional any
-  handler getPink(in pColor as optional any) returns optional any
-  handler thymeStamp(in pText as String, in pType as String) returns String
-  handler ayaToArray(in pText as String) returns Array
-  handler ayaParseLine(in pText as String) returns Array
-  handler ayaClean(in pItem as optional any) returns String
-  handler removeLeadSpaces(in pItem as optional any) returns String
 end module
