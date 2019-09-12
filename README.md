@@ -4,7 +4,7 @@
 
 Visit wiki for details. Released under CC BY-SA 4.0, built with Livecode and love.
 
-Visit [mpControls Planning Board](https://madpink.plutio.com/p/uf8vchdszfbwucqtd) to see current plans and progress.
+Visit [mpControls Planning Board](https://madpink.plutio.com/p/sgjnnwx7q7etcwpfg) to see current plans and progress.
 
 ### Some quick terminology
 * A "control" is an individual button, switch and other items drawn within the widget.
