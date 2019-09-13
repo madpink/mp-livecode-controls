@@ -2,12 +2,12 @@ widget pink.mad.ubercontrol
 
 metadata title is "MPUberControlPanel"
 metadata author is "MadPink"
-metadata version is "0.9.16"
+metadata version is "0.9.17"
 metadata description is "Allows for multiple configurable controls that can be dynamically switched"
 metadata preferredSize  is "420,230"
 metadata svgicon is  "M51.3,29.1V24c0-6.1,3.4-11.6,8.9-14.4L57.9,5c-7.2,3.6-11.7,10.9-11.7,19v7.1l1.2,1.2C48.7,31.5,50,30.3,51.3,29.1z M68.1,34.1c0.7,0.4,1.4,0.8,2,1.4c4.4-2.2,8.1-5.6,8.4-9.3c-5.1,2.8-9.3,4.2-12.1,4.9L68.1,34.1  C68.1,34.1,68.1,34.1,68.1,34.1z M28.8,33.3V33c-0.4-1.2-0.7-2.4-0.9-3.6l-8.2-2.7C21.7,28.9,24.9,31.8,28.8,33.3z M43.6,95c2.5,0,4.7-1.3,6-3.2c-0.5-1-0.8-2.2-0.8-3.4c-2.2-0.8-4-2.3-5.1-4.3c-1.5,2.6-4.1,4.4-7.1,4.8  C37.1,92.4,40.1,95,43.6,95z M58.5,95c3.6,0,6.5-2.6,7.1-6c-2.4-0.3-4.5-1.6-6-3.3c-1.8,2.1-4.5,3.4-7.4,3.4c-0.2,0-0.5,0-0.7,0C52,92.4,55,95,58.5,95z  M74.2,79.3c0-0.3,0-0.6-0.1-0.9c-0.3,0-0.5,0-0.8,0c-3.6,0-6.8-2-8.5-4.9c-0.8,1.4-1.9,2.6-3.3,3.4  c0.2,0.8,0.3,1.5,0.3,2.4c0,1.4-0.3,2.8-0.9,4c1.3,1.9,3.5,3.2,6,3.2C71,86.5,74.2,83.3,74.2,79.3z M59.3,79.3c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-3.6,0-6.8-2-8.5-4.9c-0.6,1-1.3,1.9-2.3,2.7  c-0.4,0.9-0.7,2-0.7,3.1c0,4,3.2,7.2,7.2,7.2C56.1,86.5,59.3,83.3,59.3,79.3z M35.1,86.5c4,0,7.2-3.2,7.2-7.2c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-2.4,0-4.7-0.9-6.4-2.4  c-1.4,1.2-3.1,2-5,2.3c0,0.3-0.1,0.6-0.1,0.9C27.9,83.3,31.2,86.5,35.1,86.5z M20.4,65.1c-0.6,1-0.9,2.3-0.9,3.5c0,4,3.2,7.2,7.2,7.2c1.8,0,3.4-0.6,4.7-1.7c-1.1-1.6-1.7-3.5-1.7-5.5  c0-1.2,0.2-2.3,0.6-3.4c-1.3-0.1-2.5-0.4-3.6-0.9c-1.3,0.6-2.7,1-4.2,1C21.7,65.3,21,65.3,20.4,65.1z M38.1,62.1c-1.3,1.4-3,2.5-5,3c-0.6,1.1-1,2.3-1,3.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.2-0.3-2.4-0.8-3.4  c-0.1,0-0.3,0-0.4,0C42.5,65.3,39.9,64.1,38.1,62.1z M80.6,68.7c0-1.5-0.5-2.9-1.3-4.1c-1.2,0.5-2.4,0.8-3.8,0.8c-2.5,0-4.7-0.9-6.4-2.4c-1.8,1.3-2.9,3.4-2.9,5.8  c0,4,3.2,7.2,7.2,7.2C77.3,75.9,80.6,72.7,80.6,68.7z M53.5,62c-2.6,1.1-4.4,3.7-4.4,6.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.3-2.5-0.9-3.5  c-0.6,0.1-1.2,0.2-1.8,0.2C57.9,65.3,55.3,64.1,53.5,62z M22.4,62.8c0.6,0,1.1-0.1,1.7-0.2c-1.8-1.8-3-4.3-3-7c0-1,0.2-2.1,0.5-3c-1.7-0.1-3.3-0.7-4.7-1.7  c-1.1,1.3-1.7,2.9-1.7,4.7C15.2,59.5,18.4,62.8,22.4,62.8z M23.7,55.6c0,4,3.2,7.2,7.2,7.2c2.3,0,4.4-1.1,5.7-2.9c-0.7-1.3-1-2.8-1-4.3c0-1.3,0.3-2.6,0.8-3.8  c-1.2,0.5-2.5,0.8-3.9,0.8c-1.8,0-3.6-0.5-5-1.4c-0.9,0.6-1.9,1-3,1.2C24,53.3,23.7,54.4,23.7,55.6z M82.7,55.6c0-1.4-0.4-2.7-1.1-3.8c-1.2,0.5-2.6,0.9-4,0.9c-2.6,0-4.9-1-6.7-2.6c-0.5,0.4-0.9,0.9-1.3,1.4  c0.6,1.3,1,2.7,1,4.2s-0.4,2.9-1,4.2c1.3,1.8,3.4,3,5.8,3C79.5,62.8,82.7,59.5,82.7,55.6z M54.5,52.1c0.4,1.1,0.6,2.2,0.6,3.4s-0.2,2.4-0.6,3.4c1.2,2.2,3.6,3.8,6.3,3.8c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.5-1-3.6  c-1.1,0.4-2.2,0.6-3.4,0.6c-2.7,0-5.2-1.1-7-2.9C55.8,50.3,55,51.1,54.5,52.1z M38.2,55.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.6-1-3.7c-1.1,0.4-2.3,0.7-3.6,0.7c-2.7,0-5.1-1.1-6.9-2.8  C39.3,51.1,38.2,53.2,38.2,55.6z M22.4,50c1,0,2-0.2,2.9-0.6c-1.6-1.7-2.6-4.1-2.6-6.6s1-4.9,2.6-6.6c-0.9-0.4-1.9-0.6-2.9-0.6c-4,0-7.2,3.2-7.2,7.2  C15.2,46.8,18.4,50,22.4,50z M37.7,37.9c-2.5-0.2-5-0.9-7.3-2c-3,0.9-5.2,3.6-5.2,6.9c0,4,3.2,7.2,7.2,7.2c2.7,0,5.1-1.5,6.3-3.8  c-0.4-1.1-0.6-2.2-0.6-3.4s0.2-2.4,0.6-3.4C38.5,38.8,38.2,38.4,37.7,37.9z M72.2,38.1c0.8,1.4,1.2,3,1.2,4.7s-0.5,3.3-1.2,4.7c1.3,1.5,3.3,2.5,5.4,2.5c4,0,7.2-3.2,7.2-7.2c0-4-3.2-7.2-7.2-7.2  C75.5,35.6,73.5,36.6,72.2,38.1z M63.7,50c4,0,7.2-3.2,7.2-7.2c0-2.9-1.8-5.5-4.3-6.6c-2.7,1-5.4,1.5-8.2,1.7c-0.5,0.5-0.8,1.1-1.1,1.7  c0.3,1,0.5,2.1,0.5,3.2c0,1.1-0.2,2.2-0.5,3.2C58.4,48.4,60.8,50,63.7,50z M47,36.5c-1.3,0.5-2.7,0.9-4.1,1.2c-1.3,1.3-2.2,3.1-2.2,5.1c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.9-0.8-3.7-2-5  C51.1,37.6,49,37.2,47,36.5z M49.1,34.3c0,0.1,0,0.1,0,0.2c5.2,1.4,10.8,1.3,16-0.5l-6.4-11.1C56.8,27.1,53,31.6,49.1,34.3z M45.6,34.3L31.3,19.9c-1.7,4.4-1.5,9.5,0.5,13.8C36.1,35.7,41.2,35.9,45.6,34.3z"
 
-constant kVersion is "0.9.16 beta 2019-09-06 12:42"
+constant kVersion is "0.9.17 beta 2019.09.07.1142"
 
 use com.livecode.math
 use com.livecode.canvas
@@ -510,7 +510,7 @@ end handler
 private variable mDebugCat as String
 private handler clearDebugInfo(in pDebug as String)
   put pDebug into mDebugCat
-  put the empty array into mAppData["deb8ug"][mDebugCat]
+  put the empty array into mAppData["debug"][mDebugCat]
   setAppData(mAppData)
 end handler
 
@@ -589,7 +589,7 @@ private variable mActionOutput
 
 property controlType  get mControlType  set setControlType
 metadata controlType.editor  is "com.livecode.pi.enum"
-metadata controlType.options  is "Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Sliders,Switches"
+metadata controlType.options  is "Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Progress Bars,Sliders,Switches"
 metadata controlType.default  is "Button Bar"
 metadata controlType.label  is "Control Types"
 metadata controlType.section  is "Basic"
@@ -608,6 +608,8 @@ private handler setControlType(in pVal as String)
       useDefaultUpDownProps()
     else if mControlType is "Dialog Box" then
       useDefaultDialogBoxProps()
+   --else if mControlType is "Progress Bars" then
+      --useDefaultProgressBarsProps()
     else if mControlType is "Sliders" then
       useDefaultSlidersProps()
     else if mControlType is "Form Backdrop" then
@@ -665,6 +667,19 @@ private handler setControlRadius(in pVal as Number)
   checkForRedraw()
 end handler
 
+property displayLabel   get mDisplayLabel   set setDisplayLabel
+metadata displayLabel.editor   is "com.livecode.pi.boolean"
+metadata displayLabel.default   is "true"
+metadata displayLabel.section   is "Basic"
+metadata displayLabel.label  is "Control Show Label"
+private variable mDisplayLabel as Boolean
+private handler setDisplayLabel(in pVal as Boolean)
+  put pVal into mAppData["props"]["displayLabel"]
+  put pVal into mDisplayLabel
+  checkForRedraw()
+end handler
+
+
 property controlTextFont  get mControlTextFont  set setControlTextFont
 metadata controlTextFont.editor  is "com.livecode.pi.font"
 metadata controlTextFont.default  is "Arial"
@@ -712,6 +727,18 @@ private variable mControlHiliteColor as String
 private handler setControlHiliteColor(in pVal as String)
   put pVal into mAppData["props"]["controlHiliteColor"]
   put pVal into mControlHiliteColor
+  checkForRedraw()
+end handler
+
+property displayValue    get mDisplayValue   set setDisplayValue
+metadata displayValue.editor   is "com.livecode.pi.boolean"
+metadata displayValue.default   is "true"
+metadata displayValue.section   is "Basic"
+metadata displayValue.label  is "Control Show Value"
+private variable mDisplayValue as Boolean
+private handler setDisplayValue(in pVal as Boolean)
+  put pVal into mAppData["props"]["displayValue"]
+  put pVal into mDisplayValue
   checkForRedraw()
 end handler
 
@@ -950,7 +977,7 @@ metadata buttonBarStyle.label    is "ButtonBar Appearance"
 metadata buttonBarStyle.section   is "Basic"
 private variable mButtonBarStyle as String
 private handler setButtonBarStyle(in pVal as String)
-  put pVal into mAppData["props"]["showMainSquare"]
+  put pVal into mAppData["props"]["buttonBarStyle"]
   put pVal into mButtonBarStyle
   checkForRedraw()
 end handler
@@ -982,36 +1009,12 @@ metadata upDownLayout.section   is "Basic"
 private variable mUpDownLayout as String
 
 private handler setUpDownLayout(in pVal as String)
-  put pVal into mAppData["props"]["showMainSquare"]
+  put pVal into mAppData["props"]["upDownLayout"]
   put pVal into mUpDownLayout
   checkForRedraw()
 end handler
 
---SECTION: SLIDERS PROPS
-
-property sliderShowValue    get mSliderShowValue   set setSliderShowValue
-metadata sliderShowValue.editor   is "com.livecode.pi.boolean"
-metadata sliderShowValue.default   is "true"
-metadata sliderShowValue.section   is "Basic"
-metadata sliderShowValue.label  is "Slider Show Value"
-private variable mSliderShowValue as Boolean
-private handler setSliderShowValue(in pVal as Boolean)
-  put pVal into mAppData["props"]["showMainSquare"]
-  put pVal into mSliderShowValue
-  checkForRedraw()
-end handler
-
-property sliderShowLabel   get mSliderShowLabel   set setSliderShowLabel
-metadata sliderShowLabel.editor   is "com.livecode.pi.boolean"
-metadata sliderShowLabel.default   is "true"
-metadata sliderShowLabel.section   is "Basic"
-metadata sliderShowLabel.label  is "Slider Show Label"
-private variable mSliderShowLabel as Boolean
-private handler setSliderShowLabel(in pVal as Boolean)
-  put pVal into mAppData["props"]["showMainSquare"]
-  put pVal into mSliderShowLabel
-  checkForRedraw()
-end handler
+--SECTION: SLIDERS/PROGRESS PROPS
 
 property sliderType  get mSliderType  set setSliderType
 metadata sliderType.editor  is "com.livecode.pi.enum"
@@ -1021,25 +1024,25 @@ metadata sliderType.label  is "Slider Types"
 metadata sliderType.section  is "Basic"
 private variable mSliderType as String
 private handler setSliderType(in pVal as String)
-  put pVal into mAppData["props"]["showMainSquare"]
+  put pVal into mAppData["props"]["sliderType"]
   put pVal into mSliderType
   put the empty array into mData
   if mSliderType is "ColorRGB" or mSliderType is "ColorRGBA" then
-  variable tCount as Number
-  variable tCountK as Number
-  variable tKey as String
-  variable tValues as List
-  variable tKeys as List
-  put ["label","line","circle","min","max","value"] into tKeys
-  put ["R","hilite","hilite","0","255","255"] into tValues
-  repeat with tCount from 1 up to 3
-    put mkStr(tCount) into tKey
-    put the empty array into mData[tKey]
-    repeat with tCountK from 1 up to 6
-      put element tCountK of tValues into mData[tKey][element tCountK of tKeys]
+    variable tCount as Number
+    variable tCountK as Number
+    variable tKey as String
+    variable tValues as List
+    variable tKeys as List
+    put ["label","line","circle","min","max","value"] into tKeys
+    put ["R","hilite","hilite","0","255","255"] into tValues
+    repeat with tCount from 1 up to 3
+      put mkStr(tCount) into tKey
+      put the empty array into mData[tKey]
+      repeat with tCountK from 1 up to 6
+        put element tCountK of tValues into mData[tKey][element tCountK of tKeys]
+      end repeat
     end repeat
-  end repeat
-  put "G" into mData["2"]["label"]
+    put "G" into mData["2"]["label"]
     put "B" into mData["3"]["label"]
   end if
   if mSliderType is "ColorRGBA" then
@@ -1200,8 +1203,8 @@ public handler OnSave(out rProperties as Array)
   put mUpDownLayout into rProperties["upDownLayout"]
 
   --SLIDERS
-  put mSliderShowValue into rProperties["sliderShowValue"]
-  put mSliderShowLabel into rProperties["sliderShowLabel"]
+  put mDisplayValue into rProperties["displayValue"]
+  put mDisplayLabel into rProperties["displayLabel"]
   put mSliderType into rProperties["sliderType"]
 
   put the empty array into mAppData["props"]
@@ -1292,10 +1295,10 @@ private handler loadPropsFromAppData()
   put pickProp("upDownLayout","plus/value/minus/label") into mUpDownLayout
 
   --SLIDERS
-  put pickProp("sliderShowValue",true) into mSliderShowValue
-  put pickProp("sliderShowLabel",true) into mSliderShowLabel
+  put pickProp("displayValue",true) into mDisplayValue
+  put pickProp("displayLabel",true) into mDisplayLabel
   put pickProp("sliderType","Values") into mSliderType
-  put pickProp("sliderShowLabel",true) into mSliderShowLabel
+  put pickProp("displayLabel",true) into mDisplayLabel
 end handler
 
 --SECTION: VERIFY
@@ -1366,6 +1369,19 @@ private handler verifyDataComplete()
       --Values
       put tKeys & ["circle","min","max","value"] into tKeys
       put tValues & ["default","0","100","50"] into tValues
+   else if mControlType is "Progress Bars" then
+      --Label/Fonts
+      put ["label","textfont","valuefont"] into tKeys
+      put [randomLabel(),"default","default"] into tValues
+      --Text size
+      put tKeys & ["textsize","valuesize","valuesize"] into tKeys
+      put tValues & ["default","default","default"] into tValues
+      --Colors
+      put tKeys & ["labelcolor","linecolor","progresscolor","valuecolor"] into tKeys
+      put tValues & ["default","default","default","default"] into tValues
+      --Values
+      put tKeys & ["min","max","value"] into tKeys
+      put tValues & ["0","100","50"] into tValues
     else if mControlType is "Form Backdrop" then
       --Basics
       put ["label","show","size"] into tKeys
@@ -1451,6 +1467,8 @@ public handler OnPaint()
     paintDialogBox()
   else if mControlType is "Switches" then
     paintSwitches()
+else if mControlType is "Progress Bars" then
+    paintProgress()
   else if mControlType is "Numeric Up/Down" then
     paintUpDown()
   else if mControlType is "Sliders" then
@@ -1596,7 +1614,7 @@ handler paintButtonBar()
 
   put the number of elements in mData into tControlCount
   if "props" is among the keys of mData then
-     subtract 1 from tCountrolCount
+     subtract 1 from tControlCount
   end if
 
   repeat with tCount from 1 up to tControlCount
@@ -1901,6 +1919,85 @@ private handler drawButton(in pKey as String,in pType as String,in pRect as Rect
 end handler
 
 
+--SECTION: PROGRESS BAR
+
+private handler paintProgress()
+  variable tX as Number
+  clearDebugInfo("progress")
+
+  put [] into mLocList
+
+  calcControlSize()
+
+  repeat with tX from 1 up to the number of elements in mData
+    makeProgressBar(tX)
+  end repeat
+  setAppData(mAppData)
+end handler
+
+private handler makeProgressBar(in pX as Number)
+  variable tRect as Rectangle
+  variable tWide as Number
+  variable tLabelRect as Rectangle
+  variable tValueRect as Rectangle
+  variable tLineRect as Rectangle
+  variable tTop as Number
+  variable tText as String
+  variable tKey as String
+  variable tPath as Path
+  variable tSegment as Number
+
+  put mkStr(pX) into tKey
+
+  put mControlRect into tRect
+  put mWide into tWide
+
+  if mDisplayLabel then
+    chooseAndSetPaint(mData[tKey]["labelcolor"],mControlTextColor)
+    chooseAndSetFont("text", tKey, mControlTextFont, mControlTextSize)
+
+    put tRect into tLabelRect
+    set the width of tLabelRect to mControlTextWidth
+    subtract the width of tLabelRect from the width of tRect
+    set the left of tRect to the right of tLabelRect
+    put qzQ(mData[tKey]["label"]) into tText
+    mpWrapTextinRect(tLabelRect,tText,mControlTextAlign)
+  end if
+
+  if mDisplayValue then
+    chooseAndSetPaint(mData[tKey]["valuecolor"],mControlValueColor)
+    chooseAndSetFont("value", tKey, mControlValueFont, mControlValueSize)
+    put tRect into tValueRect
+    set the width of tValueRect to mControlValueWidth
+    set the right of tValueRect to the right of mCurrentRect
+    subtract the width of tValueRect from the width of tRect
+    set the right of tRect to the left of tValueRect
+    put qzQ(mData[tKey]["value"]) into tText
+    mpWrapTextinRect(tValueRect,tText,mControlTextAlign)
+  end if
+
+  chooseAndSetPaint(mData[tKey]["linecolor"],mControlObjectColor)
+
+  put tRect into tLineRect
+  set the height of tLineRect to mControlItemSpacing
+  put the top of tRect into tTop
+  add (the height of tRect/2) - (mControlItemSpacing/2) to tTop
+  set the top of tLineRect to tTop
+  fill rectangle path of tLineRect on this canvas
+  set the top of mControlRect to the bottom of mControlRect
+
+  chooseAndSetPaint(mData[tKey]["progresscolor"],mControlHiliteColor)
+
+  put mkNum(mData[tKey]["max"]) - mkNum(mData[tKey]["min"]) into tSegment
+  put the width of tLineRect/tSegment into tSegment
+
+  add mkNum(mData[tKey]["value"]) * tSegment to the left of tLineRect
+  subtract mkNum(mData[tKey]["value"]) * tSegment from the width of tLineRect
+  fill rectangle path of tLineRect on this canvas
+
+  push tRect onto mLocList
+end handler
+
 --SECTION: SLIDERS
 
 -- TODO: finish paintColors sliders
@@ -1908,24 +2005,16 @@ end handler
 -- TODO: apply mControlObjectVertical options to: SLIDERS
 
 private handler paintSliders()
-  variable tCount as Number
-  variable tRect as Rectangle
   variable tX as Number
   clearDebugInfo("slide")
 
   put [] into mLocList
   put [] into mHandles
   put [] into mCurrentSliderColor
-  -- if mSliderType is "ColorRGB" then
-  --  paintColors("rgb")
-  -- else if mSliderType is "ColorRGBA" then
-  --  paintColors("rgba")
-  -- end if
-  put the number of elements in mData into tCount
 
   calcControlSize()
 
-  repeat with tX from 1 up to tCount
+  repeat with tX from 1 up to the number of elements in mData
     makeSlider(tX)
   end repeat
   setAppData(mAppData)
@@ -1949,7 +2038,7 @@ private handler makeSlider(in pX as Number)
 
   put mControlRect into tRect
   put mWide into tWide
-  if mSliderShowLabel then
+  if mDisplayLabel then
     chooseAndSetPaint(mData[tKey]["labelcolor"],mControlTextColor)
     chooseAndSetFont("text", tKey, mControlTextFont, mControlTextSize)
 
@@ -1961,7 +2050,7 @@ private handler makeSlider(in pX as Number)
     mpWrapTextinRect(tLabelRect,tText,mControlTextAlign)
   end if
 
-  if mSliderShowValue then
+  if mDisplayValue then
     chooseAndSetPaint(mData[tKey]["valuecolor"],mControlValueColor)
     chooseAndSetFont("value", tKey, mControlValueFont, mControlValueSize)
     put tRect into tValueRect
@@ -4049,20 +4138,20 @@ Determines the order of the plus and minus icons, the value being worked on and 
 Options are:
 plus/value/minus/label,plus/minus/value/label,value/plus/minus/label,minus/value/plus/label,minus/plus/value/label,value/minus/plus/label
 
-Name: sliderShowValue
+Name: displayValue
 Type: Property
-Syntax: set the sliderShowValue of <widget> to <boolean>
-Syntax: get the sliderShowValue of <widget>
+Syntax: set the displayValue of <widget> to <boolean>
+Syntax: get the displayValue of <widget>
 
 Summary: Slider - Show Value
 
 Description:
 When true, displays the current value to the right of the slider
 
-Name: sliderShowLabel
+Name: displayLabel
 Type: Property
-Syntax: set the sliderShowLabel of <widget> to <boolean>
-Syntax: get the sliderShowLabel of <widget>
+Syntax: set the displayLabel of <widget> to <boolean>
+Syntax: get the displayLabel of <widget>
 
 Summary: Slider - Show Label
 
