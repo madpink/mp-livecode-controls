@@ -10,10 +10,10 @@ import module pink.mad.ubercontrol
   use com.livecode.type
   use com.livecode.widget
   use com.livecode.array
+  use com.livecode.engine
   use com.livecode.char
   use com.livecode.typeconvert
   use com.livecode.mathfoundation
-  use com.livecode.engine
   use com.livecode.math
   use com.livecode.byte
   use com.livecode.date
@@ -21,6 +21,7 @@ import module pink.mad.ubercontrol
   handler OnOpen() returns optional any
   handler OnSave(out rProperties as Array) returns optional any
   handler OnLoad(in pVal as Array) returns optional any
+  handler userInteraction() returns optional any
   handler OnPaint() returns optional any
   handler checkForRedraw() returns optional any
   handler OnMouseUp() returns optional any
@@ -35,6 +36,4 @@ import module pink.mad.ubercontrol
   handler OnGeometryChanged() returns optional any
   handler OnStartEditing() returns optional any
   handler bottomButtonPressed() returns optional any
-  handler userAction() returns optional any
-  handler actionSelected() returns optional any
 end module

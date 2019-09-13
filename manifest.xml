@@ -3,7 +3,7 @@
   <title>MPUberControlPanel</title>
   <author>MadPink</author>
   <description>Allows for multiple configurable controls that can be dynamically switched</description>
-  <version>0.9.17</version>
+  <version>0.9.18</version>
   <license>community</license>
   <type>widget</type>
   <requires name="com.livecode.canvas"/>
@@ -17,10 +17,10 @@
   <requires name="com.livecode.type"/>
   <requires name="com.livecode.widget"/>
   <requires name="com.livecode.array"/>
+  <requires name="com.livecode.engine"/>
   <requires name="com.livecode.char"/>
   <requires name="com.livecode.typeconvert"/>
   <requires name="com.livecode.mathfoundation"/>
-  <requires name="com.livecode.engine"/>
   <requires name="com.livecode.math"/>
   <requires name="com.livecode.byte"/>
   <requires name="com.livecode.date"/>
@@ -257,6 +257,11 @@
   <property name="controlOutput" get="any"/>
   <metadata key="controlOutput.section">Advanced</metadata>
   <metadata key="controlOutput.label">Output from Controls</metadata>
+  <property name="sendMessage" get="boolean" set="boolean"/>
+  <metadata key="sendMessage.editor">com.livecode.pi.boolean</metadata>
+  <metadata key="sendMessage.default">true</metadata>
+  <metadata key="sendMessage.label">Allow messages to be posted</metadata>
+  <metadata key="sendMessage.section">Advanced</metadata>
   <property name="controlType" get="string" set="string"/>
   <metadata key="controlType.editor">com.livecode.pi.enum</metadata>
   <metadata key="controlType.options">Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Progress Bars,Sliders,Switches</metadata>
@@ -428,6 +433,7 @@
   <handler name="OnOpen" parameters="" return="any"/>
   <handler name="OnSave" parameters="out array" return="any"/>
   <handler name="OnLoad" parameters="in array" return="any"/>
+  <handler name="userInteraction" parameters="" return="any"/>
   <handler name="OnPaint" parameters="" return="any"/>
   <handler name="checkForRedraw" parameters="" return="any"/>
   <handler name="OnMouseUp" parameters="" return="any"/>
@@ -442,6 +448,4 @@
   <handler name="OnGeometryChanged" parameters="" return="any"/>
   <handler name="OnStartEditing" parameters="" return="any"/>
   <handler name="bottomButtonPressed" parameters="" return="any"/>
-  <handler name="userAction" parameters="" return="any"/>
-  <handler name="actionSelected" parameters="" return="any"/>
 </package>
