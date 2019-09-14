@@ -469,14 +469,14 @@ private handler setBottomButtonBuffer(in pVal as Number)
   checkForRedraw()
 end handler
 
-property showOutputBox  get mShowOutputBox  set setShowOutputBox
+property showOutputBox  get mShowOutputBoxType  set setShowOutputBox
 metadata showOutputBox.editor  is "com.livecode.pi.enum"
 metadata showOutputBox.options  is "off,values,mask"
 metadata showOutputBox.default  is "off"
 metadata showOutputBox.label  is "Displays an OutputBox"
-metadata showOutputBox.section  is "Colors"
-private variable mShowOutputBox as Boolean
+metadata showOutputBox.section  is "Table"
 private variable mShowOutputBoxType as String
+private variable mShowOutputBox as Boolean
 
 private handler setShowOutputBox(in pVal as String)
   put pVal into mAppData["props"]["showOutputBoxType"]
@@ -493,7 +493,7 @@ end handler
 property bottomButtonBackColor  get mBottomButtonBackColor  set setBottomButtonBackColor
 metadata bottomButtonBackColor.editor  is "com.livecode.pi.enum"
 metadata bottomButtonBackColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
-metadata bottomButtonBackColor.default  is "back"
+metadata bottomButtonBackColor.default  is "fore"
 metadata bottomButtonBackColor.label  is "Bottom Button Background Color"
 metadata bottomButtonBackColor.section  is "Colors"
 private variable mBottomButtonBackColor as String
@@ -506,7 +506,7 @@ end handler
 property bottomButtonTextColor  get mBottomButtonTextColor  set setBottomButtonTextColor
 metadata bottomButtonTextColor.editor  is "com.livecode.pi.enum"
 metadata bottomButtonTextColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
-metadata bottomButtonTextColor.default  is "fore"
+metadata bottomButtonTextColor.default  is "back"
 metadata bottomButtonTextColor.label  is "Bottom Button Text Color"
 metadata bottomButtonTextColor.section  is "Colors"
 private variable mBottomButtonTextColor as String
@@ -536,9 +536,9 @@ private handler clearDebugInfo(in pDebug as String)
 end handler
 
 private handler addDebugInfo(in pKey as String, in pValue)
---  Example of capturing values
   --  --  clearDebugInfo sets the array key that values are saved in
   --  --  addDebugInfo adds a value to a key later viewed in appData
+  --  --  Example of capturing values:
   --  clearDebugInfo("cat")
   --  addDebugInfo("KEY",VALUE)
   put pValue into mAppData["debug"][mDebugCat][pKey]
@@ -1087,32 +1087,6 @@ private handler setSliderType(in pVal as String)
   checkForRedraw()
 end handler
 
---REVIEW: PIN PAD PROPS
-
--- property includeClear    get mIncludeClear   set setIncludeClear
--- metadata includeClear.editor   is "com.livecode.pi.boolean"
--- metadata includeClear.default   is "true"
--- metadata includeClear.section   is "Basic"
--- private variable mIncludeClear as Boolean
---
--- private handler setIncludeClear(in pVal as Boolean)
---   put pVal into mAppData["props"]["showMainSquare"]
---   put pVal into mIncludeClear
---   checkForRedraw()
--- end handler
---
--- property includeEnter    get mIncludeEnter   set setIncludeEnter
--- metadata includeEnter.editor   is "com.livecode.pi.boolean"
--- metadata includeEnter.default   is "true"
--- metadata includeEnter.section   is "Basic"
--- private variable mIncludeEnter as Boolean
---
--- private handler setIncludeEnter(in pVal as Boolean)
---   put pVal into mAppData["props"]["showMainSquare"]
---   put pVal into mIncludeEnter
---   checkForRedraw()
--- end handler
-
 --SECTION: FORM BACKDROP PROPS
 
 --SECTION:  SCRIPT VARIABLES
@@ -1146,6 +1120,11 @@ public handler OnCreate()
   put the empty array into mAppData["savedcontrols"]
   put the empty array into mAppData["savedthemes"]
   put true into mUseColorThemes
+
+  --FIXME: titleTextSize is still not working
+  if mTitleTextSize is 0 then
+     put 23 into mTitleTextSize
+  end if
 
   defaultIconData()
 end handler
@@ -2361,21 +2340,21 @@ private handler bottomButtons(in pColorFore, in pColorBack)
   end if
 
   if mShowButtons >=1 then
-    setPaint(pColorFore)
-    fill rounded rectangle path of tOkayRect with radius 23 on this canvas
     setPaint(pColorBack)
+    fill rounded rectangle path of tOkayRect with radius 23 on this canvas
+    setPaint(pColorFore)
     fill text mButton1Text at center of tOkayRect on this canvas
   end if
   if mShowButtons >=2 then
-    setPaint(pColorFore)
-    fill rounded rectangle path of tCancelRect with radius 23 on this canvas
     setPaint(pColorBack)
+    fill rounded rectangle path of tCancelRect with radius 23 on this canvas
+    setPaint(pColorFore)
     fill text mButton2Text at center of tCancelRect on this canvas
   end if
   if mShowButtons = 3 then
-    setPaint(pColorFore)
-    fill rounded rectangle path of tThirdRect with radius 23 on this canvas
     setPaint(pColorBack)
+    fill rounded rectangle path of tThirdRect with radius 23 on this canvas
+    setPaint(pColorFore)
     fill text mButton3Text at center of tThirdRect on this canvas
   end if
   subtract the height of tBottomRect from the height of mCurrentRect

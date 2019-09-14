@@ -3,7 +3,7 @@
   <title>MPUberControlPanel</title>
   <author>MadPink</author>
   <description>Allows for multiple configurable controls that can be dynamically switched</description>
-  <version>0.9.18</version>
+  <version>0.9.19</version>
   <license>community</license>
   <type>widget</type>
   <requires name="com.livecode.canvas"/>
@@ -229,16 +229,22 @@
   <metadata key="bottomButtonBuffer.default">3</metadata>
   <metadata key="bottomButtonBuffer.label">Bottom Button Buffer/Offset</metadata>
   <metadata key="bottomButtonBuffer.section">Table</metadata>
+  <property name="showOutputBox" get="string" set="string"/>
+  <metadata key="showOutputBox.editor">com.livecode.pi.enum</metadata>
+  <metadata key="showOutputBox.options">off,values,mask</metadata>
+  <metadata key="showOutputBox.default">off</metadata>
+  <metadata key="showOutputBox.label">Displays an OutputBox</metadata>
+  <metadata key="showOutputBox.section">Table</metadata>
   <property name="bottomButtonBackColor" get="string" set="string"/>
   <metadata key="bottomButtonBackColor.editor">com.livecode.pi.enum</metadata>
   <metadata key="bottomButtonBackColor.options">fore,back,top,bottom,shadow,focus,border,hilite,clear</metadata>
-  <metadata key="bottomButtonBackColor.default">back</metadata>
+  <metadata key="bottomButtonBackColor.default">fore</metadata>
   <metadata key="bottomButtonBackColor.label">Bottom Button Background Color</metadata>
   <metadata key="bottomButtonBackColor.section">Colors</metadata>
   <property name="bottomButtonTextColor" get="string" set="string"/>
   <metadata key="bottomButtonTextColor.editor">com.livecode.pi.enum</metadata>
   <metadata key="bottomButtonTextColor.options">fore,back,top,bottom,shadow,focus,border,hilite,clear</metadata>
-  <metadata key="bottomButtonTextColor.default">fore</metadata>
+  <metadata key="bottomButtonTextColor.default">back</metadata>
   <metadata key="bottomButtonTextColor.label">Bottom Button Text Color</metadata>
   <metadata key="bottomButtonTextColor.section">Colors</metadata>
   <property name="appData" get="array" set="array"/>
