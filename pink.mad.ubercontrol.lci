@@ -2,17 +2,17 @@ import module pink.mad.ubercontrol
   use com.livecode.canvas
   use com.livecode.library.iconsvg
   use com.livecode.library.widgetutils
+  use com.livecode.array
+  use com.livecode.list
+  use com.livecode.widget
   use com.livecode.arithmetic
   use com.livecode.binary
-  use com.livecode.list
   use com.livecode.logic
   use com.livecode.string
   use com.livecode.type
-  use com.livecode.widget
-  use com.livecode.array
-  use com.livecode.engine
-  use com.livecode.char
   use com.livecode.typeconvert
+  use com.livecode.char
+  use com.livecode.engine
   use com.livecode.mathfoundation
   use com.livecode.math
   use com.livecode.byte
@@ -23,7 +23,6 @@ import module pink.mad.ubercontrol
   handler OnLoad(in pVal as Array) returns optional any
   handler userInteraction() returns optional any
   handler OnPaint() returns optional any
-  handler checkForRedraw() returns optional any
   handler OnMouseUp() returns optional any
   handler OnMouseMove() returns optional any
   handler OnMouseDown() returns optional any

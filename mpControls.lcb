@@ -2,12 +2,12 @@ widget pink.mad.ubercontrol
 
 metadata title is "MPUberControlPanel"
 metadata author is "MadPink"
-metadata version is "0.9.19"
+metadata version is "0.9.22"
 metadata description is "Allows for multiple configurable controls that can be dynamically switched"
 metadata preferredSize  is "420,230"
 metadata svgicon is  "M51.3,29.1V24c0-6.1,3.4-11.6,8.9-14.4L57.9,5c-7.2,3.6-11.7,10.9-11.7,19v7.1l1.2,1.2C48.7,31.5,50,30.3,51.3,29.1z M68.1,34.1c0.7,0.4,1.4,0.8,2,1.4c4.4-2.2,8.1-5.6,8.4-9.3c-5.1,2.8-9.3,4.2-12.1,4.9L68.1,34.1  C68.1,34.1,68.1,34.1,68.1,34.1z M28.8,33.3V33c-0.4-1.2-0.7-2.4-0.9-3.6l-8.2-2.7C21.7,28.9,24.9,31.8,28.8,33.3z M43.6,95c2.5,0,4.7-1.3,6-3.2c-0.5-1-0.8-2.2-0.8-3.4c-2.2-0.8-4-2.3-5.1-4.3c-1.5,2.6-4.1,4.4-7.1,4.8  C37.1,92.4,40.1,95,43.6,95z M58.5,95c3.6,0,6.5-2.6,7.1-6c-2.4-0.3-4.5-1.6-6-3.3c-1.8,2.1-4.5,3.4-7.4,3.4c-0.2,0-0.5,0-0.7,0C52,92.4,55,95,58.5,95z  M74.2,79.3c0-0.3,0-0.6-0.1-0.9c-0.3,0-0.5,0-0.8,0c-3.6,0-6.8-2-8.5-4.9c-0.8,1.4-1.9,2.6-3.3,3.4  c0.2,0.8,0.3,1.5,0.3,2.4c0,1.4-0.3,2.8-0.9,4c1.3,1.9,3.5,3.2,6,3.2C71,86.5,74.2,83.3,74.2,79.3z M59.3,79.3c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-3.6,0-6.8-2-8.5-4.9c-0.6,1-1.3,1.9-2.3,2.7  c-0.4,0.9-0.7,2-0.7,3.1c0,4,3.2,7.2,7.2,7.2C56.1,86.5,59.3,83.3,59.3,79.3z M35.1,86.5c4,0,7.2-3.2,7.2-7.2c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-2.4,0-4.7-0.9-6.4-2.4  c-1.4,1.2-3.1,2-5,2.3c0,0.3-0.1,0.6-0.1,0.9C27.9,83.3,31.2,86.5,35.1,86.5z M20.4,65.1c-0.6,1-0.9,2.3-0.9,3.5c0,4,3.2,7.2,7.2,7.2c1.8,0,3.4-0.6,4.7-1.7c-1.1-1.6-1.7-3.5-1.7-5.5  c0-1.2,0.2-2.3,0.6-3.4c-1.3-0.1-2.5-0.4-3.6-0.9c-1.3,0.6-2.7,1-4.2,1C21.7,65.3,21,65.3,20.4,65.1z M38.1,62.1c-1.3,1.4-3,2.5-5,3c-0.6,1.1-1,2.3-1,3.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.2-0.3-2.4-0.8-3.4  c-0.1,0-0.3,0-0.4,0C42.5,65.3,39.9,64.1,38.1,62.1z M80.6,68.7c0-1.5-0.5-2.9-1.3-4.1c-1.2,0.5-2.4,0.8-3.8,0.8c-2.5,0-4.7-0.9-6.4-2.4c-1.8,1.3-2.9,3.4-2.9,5.8  c0,4,3.2,7.2,7.2,7.2C77.3,75.9,80.6,72.7,80.6,68.7z M53.5,62c-2.6,1.1-4.4,3.7-4.4,6.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.3-2.5-0.9-3.5  c-0.6,0.1-1.2,0.2-1.8,0.2C57.9,65.3,55.3,64.1,53.5,62z M22.4,62.8c0.6,0,1.1-0.1,1.7-0.2c-1.8-1.8-3-4.3-3-7c0-1,0.2-2.1,0.5-3c-1.7-0.1-3.3-0.7-4.7-1.7  c-1.1,1.3-1.7,2.9-1.7,4.7C15.2,59.5,18.4,62.8,22.4,62.8z M23.7,55.6c0,4,3.2,7.2,7.2,7.2c2.3,0,4.4-1.1,5.7-2.9c-0.7-1.3-1-2.8-1-4.3c0-1.3,0.3-2.6,0.8-3.8  c-1.2,0.5-2.5,0.8-3.9,0.8c-1.8,0-3.6-0.5-5-1.4c-0.9,0.6-1.9,1-3,1.2C24,53.3,23.7,54.4,23.7,55.6z M82.7,55.6c0-1.4-0.4-2.7-1.1-3.8c-1.2,0.5-2.6,0.9-4,0.9c-2.6,0-4.9-1-6.7-2.6c-0.5,0.4-0.9,0.9-1.3,1.4  c0.6,1.3,1,2.7,1,4.2s-0.4,2.9-1,4.2c1.3,1.8,3.4,3,5.8,3C79.5,62.8,82.7,59.5,82.7,55.6z M54.5,52.1c0.4,1.1,0.6,2.2,0.6,3.4s-0.2,2.4-0.6,3.4c1.2,2.2,3.6,3.8,6.3,3.8c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.5-1-3.6  c-1.1,0.4-2.2,0.6-3.4,0.6c-2.7,0-5.2-1.1-7-2.9C55.8,50.3,55,51.1,54.5,52.1z M38.2,55.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.6-1-3.7c-1.1,0.4-2.3,0.7-3.6,0.7c-2.7,0-5.1-1.1-6.9-2.8  C39.3,51.1,38.2,53.2,38.2,55.6z M22.4,50c1,0,2-0.2,2.9-0.6c-1.6-1.7-2.6-4.1-2.6-6.6s1-4.9,2.6-6.6c-0.9-0.4-1.9-0.6-2.9-0.6c-4,0-7.2,3.2-7.2,7.2  C15.2,46.8,18.4,50,22.4,50z M37.7,37.9c-2.5-0.2-5-0.9-7.3-2c-3,0.9-5.2,3.6-5.2,6.9c0,4,3.2,7.2,7.2,7.2c2.7,0,5.1-1.5,6.3-3.8  c-0.4-1.1-0.6-2.2-0.6-3.4s0.2-2.4,0.6-3.4C38.5,38.8,38.2,38.4,37.7,37.9z M72.2,38.1c0.8,1.4,1.2,3,1.2,4.7s-0.5,3.3-1.2,4.7c1.3,1.5,3.3,2.5,5.4,2.5c4,0,7.2-3.2,7.2-7.2c0-4-3.2-7.2-7.2-7.2  C75.5,35.6,73.5,36.6,72.2,38.1z M63.7,50c4,0,7.2-3.2,7.2-7.2c0-2.9-1.8-5.5-4.3-6.6c-2.7,1-5.4,1.5-8.2,1.7c-0.5,0.5-0.8,1.1-1.1,1.7  c0.3,1,0.5,2.1,0.5,3.2c0,1.1-0.2,2.2-0.5,3.2C58.4,48.4,60.8,50,63.7,50z M47,36.5c-1.3,0.5-2.7,0.9-4.1,1.2c-1.3,1.3-2.2,3.1-2.2,5.1c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.9-0.8-3.7-2-5  C51.1,37.6,49,37.2,47,36.5z M49.1,34.3c0,0.1,0,0.1,0,0.2c5.2,1.4,10.8,1.3,16-0.5l-6.4-11.1C56.8,27.1,53,31.6,49.1,34.3z M45.6,34.3L31.3,19.9c-1.7,4.4-1.5,9.5,0.5,13.8C36.1,35.7,41.2,35.9,45.6,34.3z"
 
-constant kVersion is "0.9.19 beta 2019.09.13.1837"
+constant kVersion is "0.9.22 beta 2019.09.19.0707"
 
 use com.livecode.math
 use com.livecode.canvas
@@ -67,32 +67,6 @@ metadata textFont.default  is "Helvetica"
 metadata textSize.editor is "com.livecode.pi.number"
 metadata textSize.default  is "15"
 
-property manualRedraw  get mManualRedraw  set setManualRedraw
-metadata manualRedraw.editor  is "com.livecode.pi.boolean"
-metadata manualRedraw.default  is "false"
-metadata manualRedraw.label  is "Manual Redraw"
-metadata manualRedraw.section  is "Advanced"
-private variable mManualRedraw as Boolean
-private handler setManualRedraw(in pVal as Boolean)
-  put pVal into mManualRedraw
-  if mManualRedraw is false then
-    redraw all
-  end if
-end handler
-
-property forceRedraw  get mForceRedraw  set setForceRedraw
-metadata forceRedraw.editor  is "com.livecode.pi.boolean"
-metadata forceRedraw.default  is "false"
-metadata forceRedraw.label  is "Force Redraw"
-metadata forceRedraw.section  is "Advanced"
-private variable mForceRedraw as Boolean
-private handler setForceRedraw(in pVal as Boolean)
-  if pVal then
-    redraw all
-  end if
-  put false into mForceRedraw
-end handler
-
 property defaultChangeType  get mDefaultChangeType  set setDefaultChangeType
 metadata defaultChangeType.editor  is "com.livecode.pi.boolean"
 metadata defaultChangeType.default  is "true"
@@ -115,7 +89,7 @@ private variable mShowMainSquare as Boolean
 private handler setShowMainSquare(in pVal as Boolean)
   put pVal into mAppData["showMainSquare"]
   put pVal into mShowMainSquare
-  checkForRedraw()
+  redraw all
 end handler
 
 property workingAreaOffsetW  get mWorkingAreaOffsetW  set setWorkingAreaOffsetW
@@ -127,7 +101,7 @@ private variable mWorkingAreaOffsetW as Number
 private handler setWorkingAreaOffsetW(in pVal as Number)
   put pVal into mAppData["props"]["workingAreaOffsetW"]
   put pVal into mWorkingAreaOffsetW
-  checkForRedraw()
+  redraw all
 end handler
 
 property workingAreaOffsetH  get mWorkingAreaOffsetH  set setWorkingAreaOffsetH
@@ -139,7 +113,7 @@ private variable mWorkingAreaOffsetH as Number
 private handler setWorkingAreaOffsetH(in pVal as Number)
   put pVal into mAppData["props"]["workingAreaOffsetH"]
   put pVal into mWorkingAreaOffsetH
-  checkForRedraw()
+  redraw all
 end handler
 
 property mainSquareColor  get mMainSquareColor  set setMainSquareColor
@@ -152,7 +126,7 @@ private variable mMainSquareColor as String
 private handler setMainSquareColor(in pVal as String)
   put pVal into mAppData["props"]["mainSquareColor"]
   put pVal into mMainSquareColor
-  checkForRedraw()
+  redraw all
 end handler
 
 property boxBorder  get mBorder  set setBorder
@@ -164,7 +138,7 @@ private variable mBorder as Number
 private handler setBorder(in pVal as Number)
   put pVal into mAppData["props"]["boxBorder"]
   put pVal into mBorder
-  checkForRedraw()
+  redraw all
 end handler
 
 property boxRadius  get mRadius  set setRadius
@@ -176,7 +150,7 @@ private variable mRadius as Number
 private handler setRadius(in pVal as Number)
   put pVal into mAppData["props"]["boxRadius"]
   put pVal into mRadius
-  checkForRedraw()
+  redraw all
 end handler
 
 --SECTION: TITLE PROPS
@@ -190,7 +164,7 @@ private variable mShowTitle as Boolean
 private handler setshowTitle(in pVal as Boolean)
   put pVal into mAppData["props"]["showTitle"]
   put pVal into mShowTitle
-  checkForRedraw()
+  redraw all
 end handler
 
 property titleText  get mTitleText  set setTitleText
@@ -202,7 +176,7 @@ private variable mTitleText as String
 private handler setTitleText(in pVal as String)
   put pVal into mAppData["props"]["titleText"]
   put pVal into mTitleText
-  checkForRedraw()
+  redraw all
 end handler
 
 property titleSize  get mTitleSize  set setTitleSize
@@ -214,19 +188,19 @@ private variable mTitleSize as Number
 private handler setTitleSize(in pVal as Number)
   put pVal into mAppData["props"]["titleSize"]
   put pVal into mTitleSize
-  checkForRedraw()
+  redraw all
 end handler
 
-property titleTextSize  get mTitleTextSize  set setTitleTextSize
+property titleTextSize  get mTitleTextSize  set settitleTextSize
 metadata titleTextSize.editor  is "com.livecode.pi.number"
 metadata titleTextSize.default  is "23"
 metadata titleTextSize.label  is "Title font size"
 metadata titleTextSize.section  is "Text"
 private variable mTitleTextSize as Number
-private handler setTitleTextSize(in pVal as Number)
+private handler settitleTextSize(in pVal as Number)
   put pVal into mAppData["props"]["titleTextSize"]
   put pVal into mTitleTextSize
-  checkForRedraw()
+  redraw all
 end handler
 
 property titleTextFont  get mTitleTextFont  set settitleTextFont
@@ -238,7 +212,7 @@ private variable mTitleTextFont as String
 private handler settitleTextFont(in pVal as String)
   put pVal into mAppData["props"]["titleTextFont"]
   put pVal into mTitleTextFont
-  checkForRedraw()
+  redraw all
 end handler
 
 property titleTextColor  get mTitleTextColor  set setTitleTextColor
@@ -251,7 +225,7 @@ private variable mTitleTextColor as String
 private handler setTitleTextColor(in pVal as String)
   put pVal into mAppData["props"]["titleTextColor"]
   put pVal into mTitleTextColor
-  checkForRedraw()
+  redraw all
 end handler
 
 --SECTION: OVERLAY PROPS
@@ -265,7 +239,7 @@ private variable mOverlay as Boolean
 private handler setOverlay(in pVal as Boolean)
   put pVal into mAppData["props"]["overlayMode"]
   put pVal into mOverlay
-  checkForRedraw()
+  redraw all
 end handler
 
 property overlayAlign  get mOverlayAlign  set setOverlayAlign
@@ -278,7 +252,7 @@ private variable mOverlayAlign as String
 private handler setOverlayAlign(in pVal as String)
   put pVal into mAppData["props"]["overlayAlign"]
   put pVal into mOverlayAlign
-  checkForRedraw()
+  redraw all
 end handler
 
 property overlayHeight  get mBoxHeight  set setBoxHeight
@@ -291,7 +265,7 @@ private variable mBoxHeight as Number
 private handler setBoxHeight(in pVal as Number)
   put pVal into mAppData["props"]["overlayHeight"]
   put pVal into mBoxHeight
-  checkForRedraw()
+  redraw all
 end handler
 
 property overlayWidth  get mBoxWidth  set setBoxWidth
@@ -304,7 +278,7 @@ private variable mBoxWidth as Number
 private handler setBoxWidth(in pVal as Number)
   put pVal into mAppData["props"]["overlayWidth"]
   put pVal into mBoxWidth
-  checkForRedraw()
+  redraw all
 end handler
 
 property overlayOffset  get mBoxOffset  set setOverlayOffset
@@ -316,7 +290,7 @@ private variable mBoxOffset as Number
 private handler setOverlayOffset(in pVal as Number)
   put pVal into mAppData["props"]["overlayOffset"]
   put pVal into mBoxOffset
-  checkForRedraw()
+  redraw all
 end handler
 
 property overlayColor  get mOverlayColor  set setOverlayColor
@@ -329,7 +303,7 @@ private variable mOverlayColor as String
 private handler setOverlayColor(in pVal as String)
   put pVal into mAppData["props"]["overlayColor"]
   put pVal into mOverlayColor
-  checkForRedraw()
+  redraw all
 end handler
 
 property overlayOpacity  get mOverlayOpacity  set setOverlayOpacity
@@ -342,7 +316,7 @@ private variable mOverlayOpacity as Number
 private handler setOverlayOpacity(in pVal as Number)
   put pVal into mAppData["props"]["overlayOpacity"]
   put pVal into mOverlayOpacity
-  checkForRedraw()
+  redraw all
 end handler
 
 --SECTION: BOTTOM BUTTON PROPS
@@ -356,7 +330,7 @@ private variable mShowBottomButtons as Boolean
 private handler setShowBottonButtons(in pVal as Boolean)
   put pVal into mAppData["props"]["showBottomButtons"]
   put pVal into mShowBottomButtons
-  checkForRedraw()
+  redraw all
 end handler
 
 property bottomButtonTextSize  get mBottomButtonTextSize  set setBottomButtonTextSize
@@ -368,7 +342,7 @@ private variable mBottomButtonTextSize as Number
 private handler setBottomButtonTextSize(in pVal as Number)
   put pVal into mAppData["props"]["bottomButtonTextSize"]
   put pVal into mBottomButtonTextSize
-  checkForRedraw()
+  redraw all
 end handler
 
 property button1Text  get mButton1Text  set setButtonOne
@@ -380,7 +354,7 @@ private variable mButton1Text as String
 private handler setButtonOne(in pVal as String)
   put pVal into mAppData["props"]["button1Text"]
   put pVal into mButton1Text
-  checkForRedraw()
+  redraw all
 end handler
 
 property button2Text  get mButton2Text  set setButtonTwo
@@ -392,7 +366,7 @@ private variable mButton2Text as String
 private handler setButtonTwo(in pVal as String)
   put pVal into mAppData["props"]["button2Text"]
   put pVal into mButton2Text
-  checkForRedraw()
+  redraw all
 end handler
 
 property button3Text  get mButton3Text  set setButtonThree
@@ -404,7 +378,7 @@ private variable mButton3Text as String
 private handler setButtonThree(in pVal as String)
   put pVal into mAppData["props"]["button3Text"]
   put pVal into mButton3Text
-  checkForRedraw()
+  redraw all
 end handler
 
 property showButtons  get mShowButtons  set setShowButtons
@@ -417,7 +391,7 @@ private variable mShowButtons as Number
 private handler setShowButtons(in pVal as Number)
   put pVal into mAppData["props"]["showButtons"]
   put pVal into mShowButtons
-  checkForRedraw()
+  redraw all
 end handler
 
 property bottomButtonAlignment  get mBottomButtonAlignment  set setBottomButtonAlignment
@@ -430,7 +404,7 @@ private variable mBottomButtonAlignment as String
 private handler setBottomButtonAlignment(in pVal as String)
   put pVal into mAppData["props"]["bottomButtonAlignment"]
   put pVal into mBottomButtonAlignment
-  checkForRedraw()
+  redraw all
 end handler
 
 property bottomButtonWidth  get mBottomButtonWidth  set setBottomButtonWidth
@@ -442,7 +416,7 @@ private variable mBottomButtonWidth as Number
 private handler setBottomButtonWidth(in pVal as Number)
   put pVal into mAppData["props"]["bottomButtonWidth"]
   put pVal into mBottomButtonWidth
-  checkForRedraw()
+  redraw all
 end handler
 
 property bottomButtonHeight  get mBottomButtonHeight  set setBottomButtonHeight
@@ -454,7 +428,7 @@ private variable mBottomButtonHeight as Number
 private handler setBottomButtonHeight(in pVal as Number)
   put pVal into mAppData["props"]["bottomButtonHeight"]
   put pVal into mBottomButtonHeight
-  checkForRedraw()
+  redraw all
 end handler
 
 property bottomButtonBuffer  get mBottomButtonBuffer  set setBottomButtonBuffer
@@ -466,28 +440,20 @@ private variable mBottomButtonBuffer as Number
 private handler setBottomButtonBuffer(in pVal as Number)
   put pVal into mAppData["props"]["bottomButtonBuffer"]
   put pVal into mBottomButtonBuffer
-  checkForRedraw()
+  redraw all
 end handler
 
-property showOutputBox  get mShowOutputBoxType  set setShowOutputBox
-metadata showOutputBox.editor  is "com.livecode.pi.enum"
-metadata showOutputBox.options  is "off,values,mask"
-metadata showOutputBox.default  is "off"
+property showOutputBox  get mShowOutputBox  set setShowOutputBox
+metadata showOutputBox.editor  is "com.livecode.pi.boolean"
+metadata showOutputBox.default  is "false"
 metadata showOutputBox.label  is "Displays an OutputBox"
 metadata showOutputBox.section  is "Table"
-private variable mShowOutputBoxType as String
 private variable mShowOutputBox as Boolean
 
-private handler setShowOutputBox(in pVal as String)
-  put pVal into mAppData["props"]["showOutputBoxType"]
-  put pVal into mShowOutputBoxType
-  if pVal is "Off" then
-    put false into mShowOutputBox
-  else
-    put true into mShowOutputBox
-  end if
-  put mShowOutputBox into mAppData["props"]["showOutputBoxBool"]
-  checkForRedraw()
+private handler setShowOutputBox(in pVal as Boolean)
+  put pVal into mAppData["props"]["showOutputBox"]
+  put pVal into mShowOutputBox
+  redraw all
 end handler
 
 property bottomButtonBackColor  get mBottomButtonBackColor  set setBottomButtonBackColor
@@ -500,7 +466,7 @@ private variable mBottomButtonBackColor as String
 private handler setBottomButtonBackColor(in pVal as String)
   put pVal into mAppData["props"]["bottomButtonBackColor"]
   put pVal into mBottomButtonBackColor
-  checkForRedraw()
+  redraw all
 end handler
 
 property bottomButtonTextColor  get mBottomButtonTextColor  set setBottomButtonTextColor
@@ -513,7 +479,69 @@ private variable mBottomButtonTextColor as String
 private handler setBottomButtonTextColor(in pVal as String)
   put pVal into mAppData["props"]["bottomButtonTextColor"]
   put pVal into mBottomButtonTextColor
-  checkForRedraw()
+  redraw all
+end handler
+
+property outputBoxTextColor  get mShowOutputBoxTextColor  set setOutputBoxTextColor
+metadata outputBoxTextColor.editor  is "com.livecode.pi.enum"
+metadata outputBoxTextColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata outputBoxTextColor.default  is "fore"
+metadata outputBoxTextColor.label  is "Output Box Text Color"
+metadata outputBoxTextColor.section  is "Colors"
+private variable mShowOutputBoxTextColor as String
+private handler setOutputBoxTextColor(in pVal as String)
+  put pVal into mAppData["props"]["outputBoxTextColor"]
+  put pVal into mShowOutputBoxTextColor
+  redraw all
+end handler
+
+property outputBoxBackColor  get mShowOutputBoxBackColor  set setOutputBoxBackColor
+metadata outputBoxBackColor.editor  is "com.livecode.pi.enum"
+metadata outputBoxBackColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata outputBoxBackColor.default  is "back"
+metadata outputBoxBackColor.label  is "Output Box Back Color"
+metadata outputBoxBackColor.section  is "Colors"
+private variable mShowOutputBoxBackColor as String
+private handler setOutputBoxBackColor(in pVal as String)
+  put pVal into mAppData["props"]["outputBoxBackColor"]
+  put pVal into mShowOutputBoxBackColor
+  redraw all
+end handler
+
+property outputBoxHeight  get mOutputBoxHeight  set setOutputBoxHeight
+metadata outputBoxHeight.editor  is "com.livecode.pi.number"
+metadata outputBoxHeight.default  is "23"
+metadata outputBoxHeight.label  is "Output Box Height"
+metadata outputBoxHeight.section  is "Table"
+private variable mOutputBoxHeight as Number
+private handler setOutputBoxHeight(in pVal as Number)
+  put pVal into mAppData["props"]["outputBoxHeight"]
+  put pVal into mOutputBoxHeight
+  redraw all
+end handler
+
+property outputBoxTextSize  get mTitleTextSize  set setOutputBoxTextSize
+metadata outputBoxTextSize.editor  is "com.livecode.pi.number"
+metadata outputBoxTextSize.default  is "15"
+metadata outputBoxTextSize.label  is "Output box font size"
+metadata outputBoxTextSize.section  is "Text"
+private variable mShowOutputBoxTextSize as Number
+private handler setOutputBoxTextSize(in pVal as Number)
+  put pVal into mAppData["props"]["outputBoxTextSize"]
+  put pVal into mShowOutputBoxTextSize
+  redraw all
+end handler
+
+property outputBoxTextFont  get mShowOutputBoxTextFont  set setOutputBoxTextFont
+metadata outputBoxTextFont.editor  is "com.livecode.pi.font"
+metadata outputBoxTextFont.default  is "Courier"
+metadata outputBoxTextFont.label  is "Output Box Font"
+metadata outputBoxTextFont.section  is "Text"
+private variable mShowOutputBoxTextFont as String
+private handler setOutputBoxTextFont(in pVal as String)
+  put pVal into mAppData["props"]["outputBoxTextFont"]
+  put pVal into mShowOutputBoxTextFont
+  redraw all
 end handler
 
 --SECTION: myData/AppData
@@ -592,29 +620,43 @@ private handler setSendMessage(in pVal as Boolean)
   put pVal into mSendMessage
 end handler
 
--- property inputData      get mInputData      set setInputData
--- metadata inputData.editor   is "com.livecode.pi.text"
--- metadata inputData.default   is ""
--- metadata inputData.label  is "Data through text"
--- metadata inputData.section       is "Contents"
--- private variable mInputData as String
+property inputData      get mInputData      set setInputData
+metadata inputData.editor   is "com.livecode.pi.text"
+metadata inputData.default   is ""
+metadata inputData.label  is "Data through text"
+metadata inputData.section       is "Contents"
+private variable mInputData as String
 
 /*
-!mydata;
-!1;
-=label;Test 1
-;1
-!2;
-=label;Test 2
-;2
-;mydata
+1;;label;;THis is the thing
+1;;value;;20
+2;;label;;other thing
 */
 
--- private handler setInputData(in pText as String)
---  variable tResult as Array
---  put ayaToArray(pText) into tResult
---  setData(tResult["myData"])
--- end handler
+private handler setInputData(in pText as String)
+  variable tResult as Array
+  variable tParsedLine as List
+  variable tInput as List
+  variable tLine as String
+  variable tControl as String
+  variable tProp as String
+
+  if not(pText is "") then
+    split pText by newline into tInput
+    repeat for each element tLine in tInput
+      split tLine by ";;" into tParsedLine
+      put element 1 of tParsedLine into tControl
+      put element 2 of tParsedLine into tProp
+      if not(tControl is among the keys of tResult) then
+        put the empty array into tResult[tControl]
+      end if
+      put quazQua(element 3 of tParsedLine,"decode") into tResult[tControl][tProp]
+    end repeat
+    setData(tResult)
+
+    put "" into pText
+  end if
+end handler
 
 --SECTION: GENERAL CONTROL PROPS
 
@@ -659,7 +701,7 @@ private variable mColumns as Number
 private handler setColumns(in pVal as Number)
   put pVal into mAppData["props"]["columnCount"]
   put pVal into mColumns
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlBufferV    get mControlBufferV   set setControlBufferV
@@ -671,7 +713,7 @@ private variable mControlBufferV as Number
 private handler setControlBufferV(in pVal as Number)
   put pVal into mAppData["props"]["controlBufferV"]
   put pVal into mControlBufferV
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlBufferH    get mControlBufferH   set setControlBufferH
@@ -683,7 +725,7 @@ private variable mControlBufferH as Number
 private handler setControlBufferH(in pVal as Number)
   put pVal into mAppData["props"]["controlBufferH"]
   put pVal into mControlBufferH
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlRadius    get mControlRadius   set setControlRadius
@@ -695,7 +737,7 @@ private variable mControlRadius as Number
 private handler setControlRadius(in pVal as Number)
   put pVal into mAppData["props"]["controlRadius"]
   put pVal into mControlRadius
-  checkForRedraw()
+  redraw all
 end handler
 
 property displayLabel   get mDisplayLabel   set setDisplayLabel
@@ -707,7 +749,7 @@ private variable mDisplayLabel as Boolean
 private handler setDisplayLabel(in pVal as Boolean)
   put pVal into mAppData["props"]["displayLabel"]
   put pVal into mDisplayLabel
-  checkForRedraw()
+  redraw all
 end handler
 
 
@@ -720,7 +762,7 @@ private variable mControlTextFont as String
 private handler setControlTextFont(in pVal as String)
   put pVal into mAppData["props"]["controlTextFont"]
   put pVal into mControlTextFont
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlTextSize    get mControlTextSize   set setControlTextSize
@@ -732,7 +774,7 @@ private variable mControlTextSize as Number
 private handler setControlTextSize(in pVal as Number)
   put pVal into mAppData["props"]["controlTextSize"]
   put pVal into mControlTextSize
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlTextColor  get mControlTextColor  set setcontrolTextColor
@@ -745,7 +787,7 @@ private variable mControlTextColor as String
 private handler setcontrolTextColor(in pVal as String)
   put pVal into mAppData["props"]["controlTextColor"]
   put pVal into mControlTextColor
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlHiliteColor  get mControlHiliteColor  set setControlHiliteColor
@@ -758,7 +800,7 @@ private variable mControlHiliteColor as String
 private handler setControlHiliteColor(in pVal as String)
   put pVal into mAppData["props"]["controlHiliteColor"]
   put pVal into mControlHiliteColor
-  checkForRedraw()
+  redraw all
 end handler
 
 property displayValue    get mDisplayValue   set setDisplayValue
@@ -770,7 +812,7 @@ private variable mDisplayValue as Boolean
 private handler setDisplayValue(in pVal as Boolean)
   put pVal into mAppData["props"]["displayValue"]
   put pVal into mDisplayValue
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlValueSize    get mControlValueSize   set setControlValueSize
@@ -782,7 +824,7 @@ private variable mControlValueSize as Number
 private handler setControlValueSize(in pVal as Number)
   put pVal into mAppData["props"]["controlValueSize"]
   put pVal into mControlValueSize
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlTextWidth    get mControlTextWidth   set setControlTextWidth
@@ -794,7 +836,7 @@ private variable mControlTextWidth as Number
 private handler setControlTextWidth(in pVal as Number)
   put pVal into mAppData["props"]["controlTextWidth"]
   put pVal into mControlTextWidth
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlValueWidth    get mControlValueWidth   set setControlValueWidth
@@ -806,7 +848,7 @@ private variable mControlValueWidth as Number
 private handler setControlValueWidth(in pVal as Number)
   put pVal into mAppData["props"]["controlValueWidth"]
   put pVal into mControlValueWidth
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlValueFont  get mControlValueFont  set setControlValueFont
@@ -818,7 +860,7 @@ private variable mControlValueFont as String
 private handler setControlValueFont(in pVal as String)
   put pVal into mAppData["props"]["controlValueFont"]
   put pVal into mControlValueFont
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlValueColor  get mControlValueColor  set setControlValueColor
@@ -831,7 +873,7 @@ private variable mControlValueColor as String
 private handler setControlValueColor(in pVal as String)
   put pVal into mAppData["props"]["controlValueColor"]
   put pVal into mControlValueColor
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlTextAlign get mControlTextAlign    set setControlTextAlign
@@ -844,7 +886,7 @@ private variable mControlTextAlign as String
 private handler setControlTextAlign(in pVal as String)
   put pVal into mAppData["props"]["controlValueColor"]
   put pVal into mControlTextAlign
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlObjectColor  get mControlObjectColor  set setControlObjectColor
@@ -857,7 +899,7 @@ private variable mControlObjectColor as String
 private handler setControlObjectColor(in pVal as String)
   put pVal into mAppData["props"]["controlObjectColor"]
   put pVal into mControlObjectColor
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlObjectVertical  get mControlObjectVertical  set setControlObjectVertical
@@ -870,7 +912,7 @@ private variable mControlObjectVertical as String
 private handler setControlObjectVertical(in pVal as String)
   put pVal into mAppData["props"]["controlObjectVertical"]
   put pVal into mControlObjectVertical
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlObjectSize    get mControlObjectSize   set setControlObjectSize
@@ -882,7 +924,7 @@ private variable mControlObjectSize as Number
 private handler setControlObjectSize(in pVal as Number)
   put pVal into mAppData["props"]["controlObjectSize"]
   put pVal into mControlObjectSize
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlItemSpacing    get mControlItemSpacing   set setControlItemSpacing
@@ -894,7 +936,7 @@ private variable mControlItemSpacing as Number
 private handler setControlItemSpacing(in pVal as Number)
   put pVal into mAppData["props"]["controlItemSpacing"]
   put pVal into mControlItemSpacing
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlIconA    get mControlIconA   set setControlIconA
@@ -906,7 +948,7 @@ private variable mControlIconA as String
 private handler setControlIconA(in pVal as String)
   put pVal into mAppData["props"]["controlIconA"]
   put pVal into mControlIconA
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlIconB    get mControlIconB   set setControlIconB
@@ -918,7 +960,7 @@ private variable mControlIconB as String
 private handler setControlIconB(in pVal as String)
   put pVal into mAppData["props"]["controlIconB"]
   put pVal into mControlIconB
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlIconColor  get mControlIconColor  set setControlIconColor
@@ -931,7 +973,7 @@ private variable mControlIconColor as String
 private handler setControlIconColor(in pVal as String)
   put pVal into mAppData["props"]["controlIconColor"]
   put pVal into mControlIconColor
-  checkForRedraw()
+  redraw all
 end handler
 
 property controlText    get mControlText   set setControlText
@@ -943,7 +985,7 @@ private variable mControlText as String
 private handler setControlText(in pVal as String)
   put pVal into mAppData["props"]["controlText"]
   put pVal into mControlText
-  checkForRedraw()
+  redraw all
 end handler
 
 --SECTION: ICON PROPS
@@ -956,7 +998,7 @@ private variable mIconData as Array
 private handler setIconData(in pVal as Array)
   put pVal into mAppData["props"]["iconData"]
   put pVal into mIconData
-  checkForRedraw()
+  redraw all
 end handler
 
 private handler defaultIconData()
@@ -968,7 +1010,7 @@ private handler defaultIconData()
   put "xxx" into mIconData["switch"]["checked"]
   put "xxx" into mIconData["switch"]["unchecked"]
   setIconData(mIconData)
-  checkForRedraw()
+  redraw all
 end handler
 
 
@@ -997,7 +1039,7 @@ private handler setBarType(in pText as String)
   if pText is "EntryPad" then
     pinPadDefaults()
   end if
-  checkForRedraw()
+  redraw all
 end handler
 
 property buttonBarStyle    get mButtonBarStyle   set setButtonBarStyle
@@ -1010,7 +1052,7 @@ private variable mButtonBarStyle as String
 private handler setButtonBarStyle(in pVal as String)
   put pVal into mAppData["props"]["buttonBarStyle"]
   put pVal into mButtonBarStyle
-  checkForRedraw()
+  redraw all
 end handler
 
 
@@ -1026,7 +1068,7 @@ private variable mDialogIconAlign as String
 
 private handler setDialogIconAlign(in pText as String)
   put pText into mDialogIconAlign
-  checkForRedraw()
+  redraw all
 end handler
 
 --SECTION: NUMERIC UP/DOWN PROPS
@@ -1042,7 +1084,7 @@ private variable mUpDownLayout as String
 private handler setUpDownLayout(in pVal as String)
   put pVal into mAppData["props"]["upDownLayout"]
   put pVal into mUpDownLayout
-  checkForRedraw()
+  redraw all
 end handler
 
 --SECTION: SLIDERS/PROGRESS PROPS
@@ -1084,7 +1126,7 @@ private handler setSliderType(in pVal as String)
   if mDefaultChangeType then
     useDefaultSlidersProps()
   end if
-  checkForRedraw()
+  redraw all
 end handler
 
 --SECTION: FORM BACKDROP PROPS
@@ -1119,9 +1161,10 @@ public handler OnCreate()
   put the empty array into mAppData["savedprops"]
   put the empty array into mAppData["savedcontrols"]
   put the empty array into mAppData["savedthemes"]
+  put "  " into mActionOutput
   put true into mUseColorThemes
 
-  --FIXME: titleTextSize is still not working
+  --FIXME: titleTextSize workaround
   if mTitleTextSize is 0 then
      put 23 into mTitleTextSize
   end if
@@ -1186,13 +1229,12 @@ public handler OnSave(out rProperties as Array)
   put mOverlayOpacity into rProperties["overlayOpacity"]
 
   --OUTPUT BOX
-  put mShowOutputBox into rProperties["showOutputBoxBool"]
-  put mShowOutputBoxType into rProperties["showOutputBoxType"]
-  -- put mOutputBoxHeight into rProperties["outputBoxHeight"]
-  -- put mShowOutputBoxTextSize into rProperties["outputBoxTextSize"]
-  -- put mShowOutputBoxTextFont into rProperties["outputBoxTextFont"]
-  -- put mShowOutputBoxTextColor into rProperties["outputBoxTextColor"]
-  -- put mShowOutputBoxBackColor into rProperties["outputBoxTextColor"]
+  put mShowOutputBox into rProperties["showOutputBox"]
+  put mOutputBoxHeight into rProperties["outputBoxHeight"]
+  put mShowOutputBoxTextSize into rProperties["outputBoxTextSize"]
+  put mShowOutputBoxTextFont into rProperties["outputBoxTextFont"]
+  put mShowOutputBoxTextColor into rProperties["outputBoxTextColor"]
+  put mShowOutputBoxBackColor into rProperties["outputBoxBackColor"]
 
   --SHARED CONTROL PROPS
   put mControlBufferH into rProperties["controlBufferH"]
@@ -1235,6 +1277,7 @@ public handler OnSave(out rProperties as Array)
 end handler
 
 public handler OnLoad(in pProperties as Array)
+  put "  " into mActionOutput
   put the empty array into mAppData["props"]
   put pProperties into mAppData["props"]
   loadPropsFromAppData()
@@ -1287,6 +1330,14 @@ private handler loadPropsFromAppData()
   put pickProp("overlayColor","bottom") into mOverlayColor
   put pickProp("overlayOpacity",0) into mOverlayOpacity
 
+  --OUTPUT BOX
+  put pickProp("showOutputBox",false) into mShowOutputBox
+  put pickProp("outputBoxHeight",23) into mOutputBoxHeight
+  put pickProp("outputBoxTextSize",13) into mShowOutputBoxTextSize
+  put pickProp("outputBoxTextFont","Courier") into mShowOutputBoxTextFont
+  put pickProp("outputBoxTextColor","for1=e") into mShowOutputBoxTextColor
+  put pickProp("outputBoxBackColor","back") into mShowOutputBoxBackColor
+
   --SHARED CONTROL PROPS
   put pickProp("controlBufferH",2) into mControlBufferH
   put pickProp("controlBufferV",2) into mControlBufferV
@@ -1333,11 +1384,19 @@ public handler userInteraction()
   end if
 end handler
 
-private handler outputMultipleValues()
+private handler outputValues()
   variable tKey as Number
   put "" into mActionOutput
   repeat with tKey from 1 up to the number of elements in mData
-    put mData[tKey]["value"] & "," after mActionOutput
+    if ((mControlType is "Switches") or (mControlType is "Button Bar")) then
+      if mData[mkStr(tKey)]["selected"] is "false" then
+        next repeat
+      end if
+    end if
+    if tKey > 1 and not (mActionOutput is empty) then
+      put "," after mActionOutput
+   end if
+    put mkStr(mData[mkStr(tKey)]["value"]) after mActionOutput
   end repeat
 end handler
 
@@ -1517,12 +1576,6 @@ else if mControlType is "Progress Bars" then
   end if
 
   setAppData(mAppData)
-end handler
-
-public handler checkForRedraw()
-  if mManualRedraw is false then
-    redraw all
-  end if
 end handler
 
 
@@ -2147,27 +2200,20 @@ end handler
 
 --SECTION: DRAW BASE, TITLE, BOTTOM BUTTONS, OVERLAY, OUTPUT BOX
 private handler drawBaseItems()
-  -- DELETE: Remove lines if all works without them
-  -- variable tColor as Color
-  -- variable tPaint as Paint
-  -- variable tOverlayRect as Rectangle
   put rectangle [0,0,my width,my height] into mCurrentRect
 
   if mOverlay then
     drawOverlay()
-    -- setPaint(mOverlayColor)
-    -- put the paint of this canvas into tPaint
-    -- put the color of tPaint into tColor
-    -- set the alpha of tColor to mOverlayOpacity/100
-    -- set the paint of this canvas to solid paint with tColor
-    -- fill rectangle path of mCurrentRect on this canvas
-    -- overlayAdjust()
   end if
 
   put mpDrawBase("border","back",mBorder,mRadius,mCurrentRect) into mCurrentRect
 
   if mShowTitle then
-    displayTitle(mTitleTextColor)
+    displayTitle()
+  end if
+
+  if mShowOutputBox then
+    displayOutputBox()
   end if
 
   if mShowBottomButtons then
@@ -2183,9 +2229,6 @@ private handler drawBaseItems()
     setPaint(mMainSquareColor)
     fill rounded rectangle path of mCurrentRect with radius 23 on this canvas
   end if
-  -- if mShowOutputBox then
-  --   displayOutputBox()
-  -- end if
 end handler
 
 private handler borderAdjust(in pRect as Rectangle,in pBorder as Number,in pMult as Number)
@@ -2258,19 +2301,19 @@ private handler mpDrawBase(in pFore as String, in pBack as String, in pBorder as
   return tRect
 end handler
 
-private handler displayTitle(in pColor)
-  variable tTItleRect as Rectangle
+private handler displayTitle()
+  variable tTitleRect as Rectangle
   -- clearDebugInfo("title")
 
-  setPaint(pColor)
+  setPaint(mTitleTextColor)
   put mCurrentRect into tTItleRect
   set the font of this canvas to font mTitleTextFont  at size mTitleTextSize
   set the height of tTItleRect to calcTextHeight(mTitleText)
-  add mTitleSize to the top of tTItleRect
-  mpWrapTextinRect(tTItleRect,mTitleText,"center center")
+  add mTitleSize to the top of tTitleRect
+  mpWrapTextinRect(tTitleRect,mTitleText,"center center")
   add mTitleSize*2 to the height of tTItleRect
   set the top of mCurrentRect to the bottom of tTItleRect
-  subtract the height of tTItleRect from the height of mCurrentRect
+  subtract the height of tTitleRect from the height of mCurrentRect
 end handler
 
 private handler bottomButtons(in pColorFore, in pColorBack)
@@ -2364,7 +2407,18 @@ private handler bottomButtons(in pColorFore, in pColorBack)
 end handler
 
 private handler displayOutputBox()
-  -- TODO: add outputbox
+variable tOutputRect as Rectangle
+  -- clearDebugInfo("title")
+
+  setPaint(mTitleTextColor)
+  put mCurrentRect into tOutputRect
+  set the font of this canvas to font mShowOutputBoxTextFont at size mShowOutputBoxTextSize
+  set the height of tOutputRect to mOutputBoxHeight
+  add mTitleSize to the top of tOutputRect
+  mpWrapTextinRect(tOutputRect,mActionOutput,"center center")
+  --add tOutputRect*2 to the height of tOutputRect
+  set the top of mCurrentRect to the bottom of tOutputRect
+  subtract the height of tOutputRect from the height of mCurrentRect
 end handler
 
 private handler calcIconSize()
@@ -2421,18 +2475,13 @@ handler executeDataCommand()
   else if char 1 of tAction is "d" then
     deleteDataSets(tType, tName)
   else if char 1 of tAction is "t" then
-    put thymeStamp(tType,tName) into mActionOutput
-else if char 1 of tAction is "i" then
+    put mkStr(thymeStamp(tType,tName)) into mActionOutput
+    post "qzq" with [mActionOutput]
+  else if char 1 of tAction is "i" then
     incrementProgress()
   else if char 1 of tAction is "q" then
     put quazQua(tName,tType) into mActionOutput
-  else if char 1 of tAction is "a" then
-    put the empty array into mAppData["output"]
-    if char 1 of tType is "e" then
-      put ayaToArray(tType) into mAppData["output"]
-    else if char 1 of tType is "d" then
-      --TODO: add arrayToAYA decode
-    end if
+    post "qzq" with [mActionOutput]
   end if
 end handler
 
@@ -2637,7 +2686,7 @@ private handler selectButtonBar()
           put "true" into mData[tKey]["selected"]
           exit repeat
         end if
-        outputMultipleValues()
+        outputValues()
         userInteraction()
       else
         if "exclusive" is among the keys of mData[tKey] then
@@ -2715,14 +2764,14 @@ private handler selectSlider()
     if tLoc is within tSlideRect then
       put mkStr(tX) into mSelected
       adjustSlider(the x of the mouse position)
-      outputMultipleValues()
+      outputValues()
       userInteraction()
     end if
 
     if tLoc is within tHandleRect then
       put true into mStillDown
       put mkStr(tX) into mSelected
-      outputMultipleValues()
+      outputValues()
       userInteraction()
     end if
   end repeat
@@ -2793,7 +2842,7 @@ private handler selectSwitch()
       else
         put "true" into mData[tCurr]["selected"]
       end if
-      outputMultipleValues()
+      outputValues()
       userInteraction()
       exit repeat
     end if
@@ -2825,7 +2874,7 @@ private handler selectUpDown()
           put tCurr into mSelected
           put tDirect into mData[tCurr]["direct"]
           incrementCount()
-          outputMultipleValues()
+          outputValues()
           userInteraction()
           exit repeat
         end if
@@ -2931,7 +2980,12 @@ private handler randomNumber(in pMax as Number)
   variable tNumber
   put any number into tNumber
   multiply tNumber by pMax
-  return the rounded of tNumber
+  put the rounded of tNumber into tNumber
+  if tNumber = 0 then
+    return 1
+  else
+    return tNumber
+  end if
 end handler
 
 --FIXME:  updateProperties command (add through mAppData)
@@ -3011,7 +3065,11 @@ private handler mkNum(in pString as String) returns Number
 end handler
 
 private handler mkStr(in pItem) returns String
-  return pItem formatted as string
+  if pItem is a string then
+    return pItem
+  else
+    return pItem formatted as string
+  end if
 end handler
 
 private handler chooseAndSetPaint(in pColor as String, in pDefault as String)
@@ -3323,144 +3381,6 @@ private handler thymeStamp(in pType as String, in pPrefix as String) returns Str
   return tStamp
 end handler
 
-/**
-Summary: AYANS format to Array
-pText: Text that is AYA encoded
-Returns: An array
-Description:
-libAYANS 0.3.14
-And Yet Another Simple Notation System
-
-indentation doesn't matter, just for readability
-any leading spaces are deleted, to put actual leading spaces in use "~"
-
-single key value combos
-  =  value inline
-  _  single value is the next line
-  |  single value spans mutliple lines including line breaks
-  >  single value spans multiple lines substituting space for line breaks
-  -  simple array of items
-  !  complex/nested array
-
-**/
-
-private handler ayaToArray(in pText as String) returns Array
-  variable tText as String  --cleaned up text
-  variable tAya as List    --list from the above text
-  variable tResult as Array  --array being compiled
-  variable tLine as String  --holder for the repeat
-  variable tHold as String  --holder for array and lists to be parsed
-  variable tCurrent as String --current variable name
-  variable tType as String  --current type
-  variable tBack as Array   --holder for parseline
-
-  put removeLeadSpaces(pText) into tText
-  split tText by newline into tAya
-  repeat for each element tLine in tAya
-    if tType is "single-next" then
-      put tLine into tResult[tCurrent]
-      put "end" into tType
-    else if tType begins with "multi" then
-      if char 1 of tLine is ";" then
-        put "end" into tType
-        next repeat
-      end if
-      put ayaClean(tLine) into tLine
-      if tType ends with "lb" and tCurrent is among the keys of tResult then
-        put newline after tResult[tCurrent]
-      else if tCurrent is among the keys of tResult then
-        put " " after tResult[tCurrent]
-      end if
-      if tCurrent is among the keys of tResult then
-        put tLine after tResult[tCurrent]
-      else
-        put tLine into tResult[tCurrent]
-      end if
-
-    else if tType is "list" then
-      ----TODO: Add AYA List Function
-
-    else if tType is "array" then
-      if tLine is ";" & tCurrent then
-        put ayaToArray(tHold) into tResult[tCurrent]
-        put "" into tHold
-      else
-        if tHold is not "" then
-          put newline after tHold
-        end if
-        put tLine after tHold
-      end if
-    else
-      put ayaParseLine(tLine) into tBack
-      if tBack["type"] is "single" then
-        put tBack["key"] into tCurrent
-        put tBack["value"] into tResult[tCurrent]
-        put "end" into tType
-      else
-        put tBack["type"] into tType
-        put tBack["key"] into tCurrent
-        if "value" is among the keys of tResult then
-          put tBack["value"] into tResult[tCurrent]
-        end if
-      end if
-    end if
-  end repeat
-  return tResult
-end handler
-
-private handler ayaParseLine(in pText as String) returns Array
-  variable tResult as Array
-  variable tChar as String
-  variable tType as String
-  variable tKey as String
-  variable tItem as String
-
-  put char 1 of pText into tType
-  if tType is "=" then
-    put "single" into tResult["type"]
-  else if tType is "|" then
-    put "multi-lb" into tResult["type"]
-  else if tType is ">" then
-    put "multi-spc" into tResult["type"]
-  else if tType is "-" then
-    put "list" into tResult["type"]
-  else if tType is "!" then
-    put "array" into tResult["type"]
-  else if tType is ";" then
-    put "end" into tResult["type"]
-  end if
-
-  if tType is "_" then
-    put "single-next" into tResult["type"]
-    put char 2 to -1 of pText into tResult["key"]
-    return tResult
-  end if
-
-  put char 2 to -1 of pText into pText
-  put "key" into tType
-  repeat for each char tChar in pText
-    if tChar is ";" and tType is "key" then
-      put tItem into tResult["key"]
-      put "" into tItem
-      put "value" into tType
-    else
-      put tChar after tItem
-    end if
-  end repeat
-  if tItem is not "" then
-    put ayaClean(tItem) into tResult["value"]
-  end if
-  return tResult
-end handler
-
-private handler ayaClean(pText) returns String
-  put removeLeadSpaces(pText) into pText
-  if char 1 of pText is "~" then
-    delete the first char of pText
-    put " " before pText
-  end if
-  return pText
-end handler
 
 /**
 Summary: Removes leading spaces from a line of text
