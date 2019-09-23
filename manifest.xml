@@ -3,7 +3,7 @@
   <title>MPUberControlPanel</title>
   <author>MadPink</author>
   <description>Allows for multiple configurable controls that can be dynamically switched</description>
-  <version>0.9.21</version>
+  <version>0.9.23</version>
   <license>community</license>
   <type>widget</type>
   <requires name="com.livecode.canvas"/>
