@@ -1005,10 +1005,11 @@ private handler defaultIconData()
   put the empty array into mIconData["updown"]
   put "M 496 122 C 703 122 871 290 871 496 C 871 703 703 871 496 871 C 290 871 122 703 122 496 C 122 290 290 122 496 122 M 496 0 C 222 0 0 222 0 496 C 0 771 222 993 496 993 C 771 993 993 771 993 496 C 993 222 771 0 496 0 L 496 0 z M 436 557 L 309 557 C 276 557 249 530 249 496 C 249 463 276 436 309 436 L 436 436 L 557 436 L 684 436 C 717 436 744 463 744 496 C 744 530 717 557 684 557 L 557 557 L 436 557 z" into mIconData["updown"]["minus"]
   put "M 496 122 C 703 122 871 290 871 496 C 871 703 703 871 496 871 C 290 871 122 703 122 496 C 122 290 290 122 496 122 M 496 0 C 222 0 0 222 0 496 C 0 771 222 993 496 993 C 771 993 993 771 993 496 C 993 222 771 0 496 0 L 496 0 z M 684 436 L 557 436 L 557 309 C 557 276 530 249 496 249 C 463 249 436 276 436 309 L 436 436 L 309 436 C 276 436 249 463 249 496 C 249 530 276 557 309 557 L 436 557 L 436 684 C 436 717 463 744 496 744 C 530 744 557 717 557 684 L 557 557 L 684 557 C 717 557 744 530 744 496 C 744 463 717 436 684 436 z" into mIconData["updown"]["plus"]
-  put "M 515 318 C 482 318 455 345 455 378 C 455 412 482 439 515 439 C 549 439 576 412 576 378 C 576 345 549 318 515 318 M 662 318 C 629 318 602 345 602 378 C 602 412 629 439 662 439 C 696 439 723 412 723 378 C 723 345 696 318 662 318 M 368 318 C 335 318 308 345 308 378 C 308 412 335 439 368 439 C 402 439 429 412 429 378 C 429 345 402 318 368 318 M 621 754 C 630 754 640 750 648 742 L 984 406 C 1000 391 1000 366 984 351 L 648 15 C 633 0 608 0 593 15 C 578 30 578 54 593 70 L 902 378 L 593 687 C 578 702 578 727 593 742 C 601 750 611 754 621 754 M 378 754 C 369 754 359 750 351 742 L 15 406 C 0 391 0 366 15 351 L 351 15 C 366 0 391 0 406 15 C 421 30 421 54 406 70 L 97 378 L 406 687 C 421 702 421 727 406 742 C 398 750 388 754 378 754" into mIconData["code"]
-  put the empty array into mIconData["switch"]
-  put "xxx" into mIconData["switch"]["checked"]
-  put "xxx" into mIconData["switch"]["unchecked"]
+  put the empty array into mIconData["misc"]
+  put "M 515 318 C 482 318 455 345 455 378 C 455 412 482 439 515 439 C 549 439 576 412 576 378 C 576 345 549 318 515 318 M 662 318 C 629 318 602 345 602 378 C 602 412 629 439 662 439 C 696 439 723 412 723 378 C 723 345 696 318 662 318 M 368 318 C 335 318 308 345 308 378 C 308 412 335 439 368 439 C 402 439 429 412 429 378 C 429 345 402 318 368 318 M 621 754 C 630 754 640 750 648 742 L 984 406 C 1000 391 1000 366 984 351 L 648 15 C 633 0 608 0 593 15 C 578 30 578 54 593 70 L 902 378 L 593 687 C 578 702 578 727 593 742 C 601 750 611 754 621 754 M 378 754 C 369 754 359 750 351 742 L 15 406 C 0 391 0 366 15 351 L 351 15 C 366 0 391 0 406 15 C 421 30 421 54 406 70 L 97 378 L 406 687 C 421 702 421 727 406 742 C 398 750 388 754 378 754" into mIconData["misc"]["code"]
+  -- put the empty array into mIconData["switch"]
+  -- put "xxx" into mIconData["switch"]["checked"]
+  -- put "xxx" into mIconData["switch"]["unchecked"]
   setIconData(mIconData)
   redraw all
 end handler
@@ -1787,7 +1788,6 @@ private handler getIconPath(in pIcon as String)
   variable tPath as Path
   variable tList as List
   variable tFam as String
-  variable tCat as String
   variable tIcon as String
 
   split pIcon by ":" into tList
@@ -1795,17 +1795,9 @@ private handler getIconPath(in pIcon as String)
   if element 1 of tList is "builtin" then
     put path iconSVGPathFromName(element 2 of tList) into tPath
   else if element 1 of tList is "icondata" then
-    put element 2 of tList into tIcon
-    put path mIconData[tIcon] into tPath
-  else if element 1 of tList is "iconfam1" then
     put element 2 of tList into tFam
     put element 3 of tList into tIcon
     put path mIconData[tFam][tIcon] into tPath
-  else if element 1 of tList is "iconfam2" then
-    put element 2 of tList into tFam
-    put element 3 of tList into tCat
-    put element 4 of tList into tIcon
-    put path mIconData[tFam][tCat][tIcon] into tPath
   else
     put path pIcon into tPath
   end if
@@ -2492,6 +2484,8 @@ handler executeDataCommand()
   else if char 1 of tAction is "t" then
     put mkStr(thymeStamp(tType,tName)) into mActionOutput
     post "qzq" with [mActionOutput]
+  else if char 1 to 4 of tAction is "icon" then
+    addIconToLibrary(tType, tName, element 4 of tCommands)
   else if char 1 of tAction is "i" then
     incrementProgress()
   else if char 1 of tAction is "q" then
@@ -2547,6 +2541,15 @@ handler deleteDataSets(in pType as String, in pName as String)
       delete mAppData["savedthemes"][pName]
     end if
   end if
+end handler
+
+handler addIconToLibrary(in pFamily as String, in pName, in pIconPath as String)
+  if not(pFamily is among the keys of mIconData) then
+    put the empty array into mIconData[pFamily]
+  end if
+
+  put pIconPath into mIconData[pFamily][pName]
+  setIconData(mIconData)
 end handler
 
 --SECTION:  USER INTERATION
@@ -4078,10 +4081,9 @@ Summary: Array of Icon Pathes
 Description:
 Array of icons to be used in various controls.
 To use in data, prefice the name of the icon with "icondata:"
-Icon families and categories can be used, to organize.
-If the icon array goes 1 or 2 layers deep, use "iconfam1" of "iconfam2"
+Format listed needs to inclufe the icon's family and the name.
 For example:
-iconfam2:myfamily:mycategory:iconname
+icondata:myfamily:iconname
 
 Name: buttonActionButton
 Type: Property

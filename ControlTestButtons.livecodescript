@@ -60,7 +60,8 @@ command buttonAction pType
          break
       case "E"
          -- set the xxx of widget 1 of stack testStack to zzz
-         
+         put "icon:thisfamily/thisname:thisIsATest" into tIcon
+         set the dataCommand of widget 1 of stack testStack to tIcon
          break
       case "F"
          -- set the xxx of widget 1 of stack testStack to zzz
