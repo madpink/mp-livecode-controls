@@ -3,7 +3,7 @@
   <title>MPUberControlPanel</title>
   <author>MadPink</author>
   <description>Allows for multiple configurable controls that can be dynamically changed</description>
-  <version>0.9.24</version>
+  <version>0.9.29</version>
   <license>community</license>
   <type>widget</type>
   <requires name="com.livecode.canvas"/>
@@ -219,11 +219,6 @@
   <metadata key="bottomButtonBuffer.default">3</metadata>
   <metadata key="bottomButtonBuffer.label">Bottom Button Buffer/Offset</metadata>
   <metadata key="bottomButtonBuffer.section">Table</metadata>
-  <property name="showOutputBox" get="boolean" set="boolean"/>
-  <metadata key="showOutputBox.editor">com.livecode.pi.boolean</metadata>
-  <metadata key="showOutputBox.default">false</metadata>
-  <metadata key="showOutputBox.label">Displays an OutputBox</metadata>
-  <metadata key="showOutputBox.section">Table</metadata>
   <property name="bottomButtonBackColor" get="string" set="string"/>
   <metadata key="bottomButtonBackColor.editor">com.livecode.pi.enum</metadata>
   <metadata key="bottomButtonBackColor.options">fore,back,top,bottom,shadow,focus,border,hilite,clear</metadata>
@@ -236,6 +231,11 @@
   <metadata key="bottomButtonTextColor.default">back</metadata>
   <metadata key="bottomButtonTextColor.label">Bottom Button Text Color</metadata>
   <metadata key="bottomButtonTextColor.section">Colors</metadata>
+  <property name="showOutputBox" get="boolean" set="boolean"/>
+  <metadata key="showOutputBox.editor">com.livecode.pi.boolean</metadata>
+  <metadata key="showOutputBox.default">false</metadata>
+  <metadata key="showOutputBox.label">Displays an OutputBox</metadata>
+  <metadata key="showOutputBox.section">Table</metadata>
   <property name="outputBoxTextColor" get="string" set="string"/>
   <metadata key="outputBoxTextColor.editor">com.livecode.pi.enum</metadata>
   <metadata key="outputBoxTextColor.options">fore,back,top,bottom,shadow,focus,border,hilite,clear</metadata>
