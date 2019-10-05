@@ -1862,6 +1862,7 @@ end handler
 private handler paintSwitches()
   variable tCount as Number
   variable tCurr as String
+  variable tControlCount as Number
   variable tRect as Rectangle
   variable tCurrColumn as Number
   variable tCurrControl as Number
@@ -1871,15 +1872,28 @@ private handler paintSwitches()
   put [] into mLocList
 
   calcControlSize()
-
+  put the number of elements in mData into tControlCount
+  if "props" is among the keys of mData then
+     subtract 1 from tControlCount
+  end if
   set the top of mControlRect to the top of mCurrentRect + mControlBufferV
   set the left of mControlRect to the left of mCurrentRect + mControlBufferH
-  repeat with tCount from 1 up to (the number of elements in mData)
+
+  repeat with tCount from 1 up to tControlCount
     put mkStr(tCount) into tCurr
     createSwitch(tCurr)
     push mControlRect onto mLocList
     set the top of mControlRect to the bottom of mControlRect
     add mControlItemSpacing to the top of mControlRect
+
+    if tCurrControl = mCountPerColumn then
+      put 1 into tCurrControl
+      add 1 to tCurrColumn
+      set the top of mControlRect to the top of mCurrentRect + mControlBufferV
+      add (the width of mControlRect + mControlBufferH) to the left of mControlRect
+    else
+      add 1 to tCurrControl
+    end if
   end repeat
 end handler
 

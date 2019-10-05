@@ -69,17 +69,6 @@ command buttonAction pType
          testType "Switches",5,1
          break
       case "G"
-         -- set the xxx of widget 1 of stack testStack to zzz
-         set the height of widget 1 of stack testStack to 420
-         set the width of widget 1 of stack testStack to 400
-         set the top of widget 1 of stack testStack to 2
-         set the left of widget 1 of stack testStack to 2
-         set the height of stack testStack to 440
-         set the width of stack testStack to 410
-         set the left of stack testStack to the right of this stack
-         set the top of stack testStack to the top of this stack
-         break
-      case "H"
          --cycleTest
          -- set the showOutputBox of widget 1 of stack testStack to true
          
@@ -97,9 +86,19 @@ command buttonAction pType
          put ";2" & cr after tInput
          put ";mydata" after tInput
          */
-         --set the dataCommand of widget 1 of stack testStack to "t:z:xx"
          
-         ç         
+         break
+      case "H"
+         --set the dataCommand of widget 1 of stack testStack to "t:z:xx"
+         -- set the xxx of widget 1 of stack testStack to zzz
+         set the height of widget 1 of stack testStack to 420
+         set the width of widget 1 of stack testStack to 400
+         set the top of widget 1 of stack testStack to 2
+         set the left of widget 1 of stack testStack to 2
+         set the height of stack testStack to 440
+         set the width of stack testStack to 410
+         set the left of stack testStack to the right of this stack
+         set the top of stack testStack to the top of this stack
          break
    end switch
    getDataFromWidget
