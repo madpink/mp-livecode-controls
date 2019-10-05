@@ -1,4 +1,4 @@
-﻿script "ControlTestButtons.lcs"
+script "ControlTestButtons.lcs"
 local testStack = "LiveCode Extension Test Window"
 
 on mouseUp
@@ -48,15 +48,15 @@ command buttonAction pType
          break
       case "B"
          set the controlBufferV of widget 1 of stack testStack to 13
-         
+
          break
       case "C"
          set the controlItemSpacing of widget 1 of stack testStack to 1
-         
+
          break
       case "D"
          set the controlItemSpacing of widget 1 of stack testStack to 13
-         
+
          break
       case "E"
          -- set the xxx of widget 1 of stack testStack to zzz
@@ -69,24 +69,13 @@ command buttonAction pType
          testType "Switches",5,1
          break
       case "G"
-         -- set the xxx of widget 1 of stack testStack to zzz
-         set the height of widget 1 of stack testStack to 420
-         set the width of widget 1 of stack testStack to 400
-         set the top of widget 1 of stack testStack to 2
-         set the left of widget 1 of stack testStack to 2
-         set the height of stack testStack to 440
-         set the width of stack testStack to 410
-         set the left of stack testStack to the right of this stack
-         set the top of stack testStack to the top of this stack
-         break
-      case "H"
          --cycleTest
          -- set the showOutputBox of widget 1 of stack testStack to true
-         
+
          put "1;;label;;THis is the thing" & cr into tInput
          put "1;;value;;20" & cr after tInput
          put "2;;label;;other thing" after tInput
-         
+
          /*
          put "!mydata;" & cr into tInput
          put "!1;" & cr after tInput
@@ -97,9 +86,19 @@ command buttonAction pType
          put ";2" & cr after tInput
          put ";mydata" after tInput
          */
+
+         break
+      case "H"
          --set the dataCommand of widget 1 of stack testStack to "t:z:xx"
-         
-         ç         
+         -- set the xxx of widget 1 of stack testStack to zzz
+         set the height of widget 1 of stack testStack to 420
+         set the width of widget 1 of stack testStack to 400
+         set the top of widget 1 of stack testStack to 2
+         set the left of widget 1 of stack testStack to 2
+         set the height of stack testStack to 440
+         set the width of stack testStack to 410
+         set the left of stack testStack to the right of this stack
+         set the top of stack testStack to the top of this stack
          break
    end switch
    getDataFromWidget
