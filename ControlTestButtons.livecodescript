@@ -1,8 +1,12 @@
-script "ControlTestButtons.lcs"
+﻿script "ControlTestButtons.lcs"
 local testStack = "LiveCode Extension Test Window"
 
 on mouseUp
-   buttonAction the short name of the target
+   if exists(stack testStack) then
+      buttonAction the short name of the target
+   else
+      edit the script of stack "ControlTestButtons.lcs"
+   end if
 end mouseUp
 
 command getDataFromWidget
@@ -37,7 +41,7 @@ command buttonAction pType
          testType "Form Backdrop",controlCount,5
          break
       case "8"
-         edit the script of me
+         edit the script of stack "ControlTestButtons.lcs"
          break
       case "9"
          set the arrayData of widget "controlData" to empty
@@ -48,15 +52,15 @@ command buttonAction pType
          break
       case "B"
          set the controlBufferV of widget 1 of stack testStack to 13
-
+         
          break
       case "C"
          set the controlItemSpacing of widget 1 of stack testStack to 1
-
+         
          break
       case "D"
          set the controlItemSpacing of widget 1 of stack testStack to 13
-
+         
          break
       case "E"
          -- set the xxx of widget 1 of stack testStack to zzz
@@ -71,11 +75,11 @@ command buttonAction pType
       case "G"
          --cycleTest
          -- set the showOutputBox of widget 1 of stack testStack to true
-
+         
          put "1;;label;;THis is the thing" & cr into tInput
          put "1;;value;;20" & cr after tInput
          put "2;;label;;other thing" after tInput
-
+         
          /*
          put "!mydata;" & cr into tInput
          put "!1;" & cr after tInput
@@ -86,7 +90,7 @@ command buttonAction pType
          put ";2" & cr after tInput
          put ";mydata" after tInput
          */
-
+         
          break
       case "H"
          --set the dataCommand of widget 1 of stack testStack to "t:z:xx"
