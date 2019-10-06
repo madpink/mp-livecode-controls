@@ -1568,25 +1568,49 @@ public handler OnPaint()
   drawBaseItems()
   calcControlSize()
   clearDebugInfo(mControlType)
-  if mControlType is "Button Bar" then
-    paintButtonBar()
-  else if mControlType is "Dialog Box" then
+  if mControlType is "Dialog Box" then
     paintDialogBox()
-  else if mControlType is "Switches" then
-    paintSwitches()
-  else if mControlType is "Progress Bars" then
-    paintProgress()
+  else if mControlType is "Button Bar" then
+    paintButtonBar()
   else if mControlType is "Numeric Up/Down" then
     paintUpDown()
-  else if mControlType is "Sliders" then
-    paintSliders()
   else if mControlType is "Form Backdrop" then
     paintFormBackdrop()
+  else
+    paintControls()
   end if
 
   setAppData(mAppData)
 end handler
 
+private handler paintControls()
+  variable tCount as Number
+
+  set the top of mControlRect to the top of mCurrentRect + mControlBufferV
+  set the left of mControlRect to the left of mCurrentRect + mControlBufferH
+
+  repeat with tCount from 1 up to mControlCount
+    put mkStr(tCount) into mCurrentControlKey
+    if mData[mCurrentControlKey]["show"] is "false" then
+      push "skip" onto mLocList
+    else
+      if mControlType is "Button Bar" then
+         paintButtonBar()
+       else if mControlType is "Switches" then
+         createSwitch()
+      else if mControlType is "Progress Bars" then
+         createProgressBar()
+       else if mControlType is "Numeric Up/Down" then
+         paintUpDown()
+       else if mControlType is "Sliders" then
+         createSlider()
+       else if mControlType is "Form Backdrop" then
+         paintFormBackdrop()
+       end if
+    end if
+  end repeat
+  setAppData(mAppData)
+end handler
 
 --SECTION:  PIN PAD
 -- TODO: change PIN PAD to a seperate button bar option
@@ -1623,15 +1647,15 @@ end handler
 private handler paintFormBackdrop()
   variable tTotal as Number
   variable tHeight as Number
-  variable tRec as Number
+  variable tCount as Number
   variable tLabelRect as Rectangle
 
-  repeat with tRec from 1 up to (the number of elements in mData)
-    put mkStr(tRec) into mCurrentControlKey
-    add mkNum(mData[mCurrentControlKey]["size"]) to tTotal
+  repeat with tCount from 1 up to (the number of elements in mData)
+    put mkStr(tCount) into mCurrentControlKey
+    add mkNum(mData[mCurrentControlKey]["size"]) to mControlCount
   end repeat
 
-  put (the height of mCurrentRect)/tTotal into tHeight
+  put (the height of mCurrentRect)/mControlCount into tHeight
   put mCurrentRect into tLabelRect
 
   add mControlBufferV to the top of tLabelRect
@@ -1639,8 +1663,8 @@ private handler paintFormBackdrop()
   add mControlBufferH to the left of tLabelRect
   subtract (mControlBufferH*2) from the width of tLabelRect
 
-  repeat with tRec from 1 up to (the number of elements in mData)
-    put mkStr(tRec) into mCurrentControlKey
+  repeat with tCount from 1 up to (the number of elements in mData)
+    put mkStr(tCount) into mCurrentControlKey
     set the height of tLabelRect to (tHeight * mkNum(mData[mCurrentControlKey]["size"]))
     chooseAndSetPaint(mData[mCurrentControlKey]["textcolor"],mControlTextColor)
     chooseAndSetFont("text", mCurrentControlKey, mControlTextFont, mControlTextSize)
@@ -1648,6 +1672,16 @@ private handler paintFormBackdrop()
     push tLabelRect onto mLocList
     set the top of tLabelRect to the bottom of tLabelRect
   end repeat
+
+end handler
+
+private handler createFormEntry()
+  variable tTotal as Number
+  variable tHeight as Number
+  variable tRec as Number
+  variable tLabelRect as Rectangle
+
+
 
 end handler
 
@@ -1862,36 +1896,6 @@ end handler
 
 --SECTION:  SWITCHES
 
-private handler paintSwitches()
-  variable tCount as Number
-  variable tRect as Rectangle
-
-  set the top of mControlRect to the top of mCurrentRect + mControlBufferV
-  set the left of mControlRect to the left of mCurrentRect + mControlBufferH
-
-  repeat with tCount from 1 up to mControlCount
-    put mkStr(tCount) into mCurrentControlKey
-    if mData[mCurrentControlKey]["show"] is "false" then
-      push "skip" onto mLocList
-    else
-      createSwitch()
-    end if
-
-    push mControlRect onto mLocList
-    set the top of mControlRect to the bottom of mControlRect
-    add mControlItemSpacing to the top of mControlRect
-
-    if mControlInColumn = mCountPerColumn then
-      put 1 into mControlInColumn
-      add 1 to mCurrentColumn
-      set the top of mControlRect to the top of mCurrentRect + mControlBufferV
-      add (the width of mControlRect + mControlBufferH) to the left of mControlRect
-    else
-      add 1 to mControlInColumn
-    end if
-  end repeat
-end handler
-
 private handler createSwitch()
   variable tIconRect as Rectangle
   variable tTextRect as Rectangle
@@ -1925,6 +1929,19 @@ private handler createSwitch()
   chooseAndSetFont("text", mCurrentControlKey, mControlTextFont, mControlTextSize)
   chooseAndSetPaint(mData[mCurrentControlKey]["textcolor"],mControlTextColor)
   mpWrapTextinRect(tTextRect,mData[mCurrentControlKey]["label"],"center left")
+
+  push mControlRect onto mLocList
+  set the top of mControlRect to the bottom of mControlRect
+  add mControlItemSpacing to the top of mControlRect
+
+  if mControlInColumn = mCountPerColumn then
+    put 1 into mControlInColumn
+    add 1 to mCurrentColumn
+    set the top of mControlRect to the top of mCurrentRect + mControlBufferV
+    add (the width of mControlRect + mControlBufferH) to the left of mControlRect
+  else
+    add 1 to mControlInColumn
+  end if
 end handler
 
 --SECTION: NUMERIC UP/DOWN
@@ -2010,17 +2027,7 @@ end handler
 
 --SECTION: PROGRESS BAR
 
-private handler paintProgress()
-  variable tCount as Number
-
-  repeat with tCount from 1 up to the number of elements in mData
-    put mkStr(tCount) into mCurrentControlKey
-    makeProgressBar()
-  end repeat
-  setAppData(mAppData)
-end handler
-
-private handler makeProgressBar()
+private handler createProgressBar()
   variable tRect as Rectangle
   variable tWide as Number
   variable tLabelRect as Rectangle
@@ -2085,22 +2092,6 @@ end handler
 -- TODO: finish paintColors sliders
 -- TODO: Multicolumn sliders
 -- TODO: apply mControlObjectVertical options to: SLIDERS
-
-private handler paintSliders()
-  variable tCount as Number
-  set the top of mControlRect to the top of mCurrentRect + mControlBufferV
-  set the left of mControlRect to the left of mCurrentRect + mControlBufferH
-
-  repeat with tCount from 1 up to the number of elements in mData
-    put mkStr(tCount) into mCurrentControlKey
-    if mData[mCurrentControlKey]["show"] is "false" then
-     push "skip" onto mLocList
-    else
-     createSlider()
-    end if
-  end repeat
-  setAppData(mAppData)
-end handler
 
 private handler createSlider()
   variable tRect as Rectangle
