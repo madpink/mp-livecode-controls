@@ -1472,8 +1472,8 @@ private handler verifyDataComplete()
       put tValues & ["0","100","50"] into tValues
     else if mControlType is "Form Backdrop" then
       --Basics
-      put ["label","show","size"] into tKeys
-      put [randomLabel() ,"true","1"] into tValues
+      put ["label","show"] into tKeys
+      put [randomLabel() ,"true"] into tValues
       --Text
       put tKeys & ["textcolor","textsize","textfont"] into tKeys
       put tValues & ["default","default","default"] into tValues
@@ -1556,8 +1556,6 @@ public handler OnPaint()
   clearDebugInfo(mControlType)
   if mControlType is "Dialog Box" then
     paintDialogBox()
-  else if mControlType is "Form Backdrop" then
-    paintFormBackdrop()
   else
     paintControls()
   end if
@@ -1587,12 +1585,12 @@ private handler paintControls()
          createUpDown()
        else if mControlType is "Sliders" then
          createSlider()
-       -- else if mControlType is "Form Backdrop" then
-       --   paintFormBackdrop()
+       else if mControlType is "Form Backdrop" then
+         createFormEntry()
        end if
     end if
+
   end repeat
-  setAppData(mAppData)
 end handler
 
 --SECTION:  PIN PAD
@@ -1627,45 +1625,14 @@ private handler drawEntry()
 end handler
 
 --SECTION:  FORM BACKDROP
-private handler paintFormBackdrop()
-  variable tTotal as Number
-  variable tHeight as Number
-  variable tCount as Number
-  variable tLabelRect as Rectangle
-
-  repeat with tCount from 1 up to (the number of elements in mData)
-    put mkStr(tCount) into mAppData["vars"]["CurrentControlKey"]
-    add mkNum(mData[mAppData["vars"]["CurrentControlKey"]]["size"]) to tTotal
-  end repeat
-
-  put (the height of mCurrentRect)/tTotal into tHeight
-  put mCurrentRect into tLabelRect
-
-  add mControlBufferV to the top of tLabelRect
-  subtract (mControlBufferV*2) from the height of tLabelRect
-  add mControlBufferH to the left of tLabelRect
-  subtract (mControlBufferH*2) from the width of tLabelRect
-
-  repeat with tCount from 1 up to (the number of elements in mData)
-    put mkStr(tCount) into mAppData["vars"]["CurrentControlKey"]
-    set the height of tLabelRect to (tHeight * mkNum(mData[mAppData["vars"]["CurrentControlKey"]]["size"]))
-    chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["textcolor"],mControlTextColor)
-    chooseAndSetFont("text", mAppData["vars"]["CurrentControlKey"], mControlTextFont, mControlTextSize)
-    mpWrapTextinRect(tLabelRect,mData[mAppData["vars"]["CurrentControlKey"]]["label"],"center left")
-    push tLabelRect onto mLocList
-    set the top of tLabelRect to the bottom of tLabelRect
-  end repeat
-
-end handler
 
 private handler createFormEntry()
-  variable tTotal as Number
-  variable tHeight as Number
-  variable tRec as Number
-  variable tLabelRect as Rectangle
-
-
-
+  --TODO: Fix "SHOW"
+  chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["textcolor"],mControlTextColor)
+  chooseAndSetFont("text", mAppData["vars"]["CurrentControlKey"], mControlTextFont, mControlTextSize)
+  mpWrapTextinRect(mControlRect,mData[mAppData["vars"]["CurrentControlKey"]]["label"],"center left")
+  push mControlRect onto mLocList
+  set the top of mControlRect to the bottom of mControlRect + mControlBufferV
 end handler
 
 --SECTION:  DIALOG BOX
@@ -1708,6 +1675,7 @@ end handler
 ------- adjust width of buttons to columns
 
 private handler createButton()
+  --TODO: Fix "SHOW"
   variable tFont as Font
   variable tCount as Number
   variable tText as String
@@ -1862,6 +1830,7 @@ end handler
 --SECTION:  SWITCHES
 
 private handler createSwitch()
+  --TODO: Fix "SHOW"
   variable tIconRect as Rectangle
   variable tTextRect as Rectangle
   variable tIconPath as Path
@@ -1913,6 +1882,7 @@ end handler
 -- TODO: Multicolumn up/down
 
 private handler createUpDown()
+  --TODO: Fix "SHOW"
   variable tRect as Rectangle
   variable tNext as String
   variable tIconPath as Path
@@ -1980,6 +1950,7 @@ end handler
 --SECTION: PROGRESS BAR
 
 private handler createProgressBar()
+  --TODO: Fix "SHOW"
   variable tRect as Rectangle
   variable tWide as Number
   variable tLabelRect as Rectangle
@@ -2046,6 +2017,7 @@ end handler
 -- TODO: apply mControlObjectVertical options to: SLIDERS
 
 private handler createSlider()
+  --TODO: Fix "SHOW"
   variable tRect as Rectangle
   variable tWide as Number
   variable tLabelRect as Rectangle
