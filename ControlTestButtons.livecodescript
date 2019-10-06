@@ -1,5 +1,6 @@
 ﻿script "ControlTestButtons.lcs"
 local testStack = "LiveCode Extension Test Window"
+local controlCount
 
 on mouseUp
    if exists(stack testStack) then
@@ -95,16 +96,8 @@ command buttonAction pType
          
          break
       case "H"
-         --set the dataCommand of widget 1 of stack testStack to "t:z:xx"
-         -- set the xxx of widget 1 of stack testStack to zzz
-         set the height of widget 1 of stack testStack to 420
-         set the width of widget 1 of stack testStack to 400
-         set the top of widget 1 of stack testStack to 2
-         set the left of widget 1 of stack testStack to 2
-         set the height of stack testStack to 440
-         set the width of stack testStack to 410
-         set the left of stack testStack to the right of this stack
-         set the top of stack testStack to the top of this stack
+         resizeTestStack
+         cycleTest
          break
    end switch
    getDataFromWidget
@@ -117,6 +110,17 @@ command testType pType pCount pWait
    wait pWait
 end testType
 
+command resizeTestStack
+   set the height of widget 1 of stack testStack to 420
+   set the width of widget 1 of stack testStack to 400
+   set the top of widget 1 of stack testStack to 2
+   set the left of widget 1 of stack testStack to 2
+   set the height of stack testStack to 440
+   set the width of stack testStack to 410
+   set the left of stack testStack to the right of this stack
+   set the top of stack testStack to the top of this stack
+end resizeTestStack
+
 command quickData pX
    local tData
    repeat with x=1 to pX
@@ -127,10 +131,12 @@ command quickData pX
 end quickData
 
 command cycleTest
-   testType "Button Bar",controlCount,200
-   testType "Sliders",controlCount,200
-   testType "Numeric Up/Down",controlCount,200
-   testType "Progress Bars",controlCount,200
-   testType "Switches",controlCount,200
-   testType "Dialog Box",controlCount,200
+   local tThyme 
+   put (541 + 42)/23 into tThyme
+   testType "Button Bar",controlCount,tThyme
+   testType "Sliders",controlCount,tThyme
+   testType "Numeric Up/Down",controlCount,tThyme
+   testType "Progress Bars",controlCount,tThyme
+   testType "Switches",controlCount,tThyme
+   testType "Dialog Box",controlCount,tThyme
 end cycleTest
