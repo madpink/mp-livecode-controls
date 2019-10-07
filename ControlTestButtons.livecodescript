@@ -1,6 +1,7 @@
 ﻿script "ControlTestButtons.lcs"
 local testStack = "LiveCode Extension Test Window"
 local controlCount
+local addToTitle = ""
 
 on mouseUp
    if exists(stack testStack) then
@@ -76,28 +77,24 @@ command buttonAction pType
          testType "Switches",5,1
          break
       case "G"
-         --cycleTest
-         -- set the showOutputBox of widget 1 of stack testStack to true
-         
-         put "1;;label;;THis is the thing" & cr into tInput
-         put "1;;value;;20" & cr after tInput
-         put "2;;label;;other thing" after tInput
-         
-         /*
-         put "!mydata;" & cr into tInput
-         put "!1;" & cr after tInput
-         put "=label;Test 1" & cr after tInput
-         put ";1" & cr after tInput
-         put "!2;" & cr after tInput
-         put "=label;Test 2" & cr after tInput
-         put ";2" & cr after tInput
-         put ";mydata" after tInput
-         */
-         
+         set the columnCount of widget 1 of stack testStack to 2
+         set the controlObjectVertical of widget 1 of stack testStack to "Fixed Spacing"
+         put "2col/fixed" into addToTitle
+         cycleTest
+         set the controlObjectVertical of widget 1 of stack testStack to "Even Spacing"
+         put "2col/Even" into addToTitle
+         cycleTest
+         set the columnCount of widget 1 of stack testStack to 1
+         set the controlObjectVertical of widget 1 of stack testStack to "Fixed Spacing"
+         put "1col/Fixed" into addToTitle
+         cycleTest
+         set the controlObjectVertical of widget 1 of stack testStack to "Even Spacing"
+         put "1col/Even" into addToTitle
+         cycleTest
+         put empty into addToTitle
          break
       case "H"
          resizeTestStack
-         cycleTest
          break
    end switch
    getDataFromWidget
@@ -105,7 +102,7 @@ end buttonAction
 
 command testType pType pCount pWait
    set the controlType of widget 1 of stack testStack to pType
-   set the titleText of widget 1 of stack testStack to "Test:" && pType
+   set the titleText of widget 1 of stack testStack to pType && addToTItle
    quickData pCount
    wait pWait
 end testType
@@ -133,6 +130,7 @@ end quickData
 command cycleTest
    local tThyme 
    put (541 + 42)/23 into tThyme
+   put (541 + 42)/13 into tThyme
    testType "Button Bar",controlCount,tThyme
    testType "Sliders",controlCount,tThyme
    testType "Numeric Up/Down",controlCount,tThyme
