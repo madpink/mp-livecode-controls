@@ -1,8 +1,13 @@
 ﻿script "ControlTestButtons.lcs"
 local testStack = "LiveCode Extension Test Window"
+local controlCount
 
 on mouseUp
-   buttonAction the short name of the target
+   if exists(stack testStack) then
+      buttonAction the short name of the target
+   else
+      edit the script of stack "ControlTestButtons.lcs"
+   end if
 end mouseUp
 
 command getDataFromWidget
@@ -37,14 +42,16 @@ command buttonAction pType
          testType "Form Backdrop",controlCount,5
          break
       case "8"
-         edit the script of me
+         edit the script of stack "ControlTestButtons.lcs"
          break
       case "9"
          set the arrayData of widget "controlData" to empty
          exit to top
          break
       case "A"
-         set the controlBufferV of widget 1 of stack testStack to 1
+         set the columnCount of widget 1 of stack testStack to 2
+         testType "Switches",8
+         
          break
       case "B"
          set the controlBufferV of widget 1 of stack testStack to 13
@@ -69,17 +76,6 @@ command buttonAction pType
          testType "Switches",5,1
          break
       case "G"
-         -- set the xxx of widget 1 of stack testStack to zzz
-         set the height of widget 1 of stack testStack to 420
-         set the width of widget 1 of stack testStack to 400
-         set the top of widget 1 of stack testStack to 2
-         set the left of widget 1 of stack testStack to 2
-         set the height of stack testStack to 440
-         set the width of stack testStack to 410
-         set the left of stack testStack to the right of this stack
-         set the top of stack testStack to the top of this stack
-         break
-      case "H"
          --cycleTest
          -- set the showOutputBox of widget 1 of stack testStack to true
          
@@ -97,9 +93,11 @@ command buttonAction pType
          put ";2" & cr after tInput
          put ";mydata" after tInput
          */
-         --set the dataCommand of widget 1 of stack testStack to "t:z:xx"
          
-         ç         
+         break
+      case "H"
+         resizeTestStack
+         cycleTest
          break
    end switch
    getDataFromWidget
@@ -112,6 +110,17 @@ command testType pType pCount pWait
    wait pWait
 end testType
 
+command resizeTestStack
+   set the height of widget 1 of stack testStack to 420
+   set the width of widget 1 of stack testStack to 400
+   set the top of widget 1 of stack testStack to 2
+   set the left of widget 1 of stack testStack to 2
+   set the height of stack testStack to 440
+   set the width of stack testStack to 410
+   set the left of stack testStack to the right of this stack
+   set the top of stack testStack to the top of this stack
+end resizeTestStack
+
 command quickData pX
    local tData
    repeat with x=1 to pX
@@ -122,10 +131,12 @@ command quickData pX
 end quickData
 
 command cycleTest
-   testType "Button Bar",controlCount,200
-   testType "Sliders",controlCount,200
-   testType "Numeric Up/Down",controlCount,200
-   testType "Progress Bars",controlCount,200
-   testType "Switches",controlCount,200
-   testType "Dialog Box",controlCount,200
+   local tThyme 
+   put (541 + 42)/23 into tThyme
+   testType "Button Bar",controlCount,tThyme
+   testType "Sliders",controlCount,tThyme
+   testType "Numeric Up/Down",controlCount,tThyme
+   testType "Progress Bars",controlCount,tThyme
+   testType "Switches",controlCount,tThyme
+   testType "Dialog Box",controlCount,tThyme
 end cycleTest
