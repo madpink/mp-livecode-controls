@@ -1421,7 +1421,7 @@ variable tCount as Number
       put the empty array into mData[mkStr(tCount)]
     end if
     if mControlType is "Mixed Controls" then
-      if "controlType" is not among the keys of mData[mkStr(tCount)] then
+      if "controltype" is not among the keys of mData[mkStr(tCount)] then
          put "Button Bar" into mData[mkStr(tCount)]["controltype"]
       end if
       verifyControlComplete(mData[mkStr(tCount)]["controltype"], mkStr(tCount))
@@ -1612,14 +1612,16 @@ public handler OnPaint()
      if mData[mCurrentControlKey]["show"] is "false" then
         push "skip" onto mLocList
      else
-        if mControlType is "Mixed" then
+        if mControlType is "Mixed Controls" then
           put mData[mCurrentControlKey]["controltype"] into tControlType
-        else
+          addDebugInfo("xcontrol" & mCurrentControlKey, tControlType)
+       else
           put mControlType into tControlType
         end if
-        addDebugInfo("control", tControlType)
+        addDebugInfo("tcontrol" & mCurrentControlKey, tControlType)
+        addDebugInfo("mcontrol", mControlType)
 
-        if mControlType is "Switches" then
+        if tControlType is "Switches" then
           createSwitch()
          else if tControlType is "Button Bar" then
           addDebugInfo("button1", mCurrentControlKey)
@@ -2149,25 +2151,25 @@ private handler drawBaseItems()
   put rectangle [0,0,my width,my height] into mCurrentRect
 
   if mOverlay then
-    clearDebugInfo("Overlay")
+    -- clearDebugInfo("Overlay")
     drawOverlay()
   end if
 
-  clearDebugInfo("Base")
+  -- clearDebugInfo("Base")
   put mpDrawBase("border","back",mBorder,mRadius,mCurrentRect) into mCurrentRect
 
   if mShowTitle then
-    clearDebugInfo("Title")
+    -- clearDebugInfo("Title")
     displayTitle()
   end if
 
   if mShowOutputBox then
-    clearDebugInfo("Output Box")
+    -- clearDebugInfo("Output Box")
     displayOutputBox()
   end if
 
   if mShowBottomButtons then
-    clearDebugInfo("Bottom Buttons")
+    -- clearDebugInfo("Bottom Buttons")
     bottomButtons(mBottomButtonTextColor,mBottomButtonBackColor)
   end if
 
