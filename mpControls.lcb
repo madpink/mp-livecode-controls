@@ -2,12 +2,12 @@ widget pink.mad.ubercontrol
 
 metadata title is "MPUberControlPanel"
 metadata author is "MadPink"
-metadata version is "0.9.38"
+metadata version is "0.9.39"
 metadata description is "Allows for multiple configurable controls that can be dynamically changed"
 metadata preferredSize  is "420,230"
 metadata svgicon is  "M51.3,29.1V24c0-6.1,3.4-11.6,8.9-14.4L57.9,5c-7.2,3.6-11.7,10.9-11.7,19v7.1l1.2,1.2C48.7,31.5,50,30.3,51.3,29.1z M68.1,34.1c0.7,0.4,1.4,0.8,2,1.4c4.4-2.2,8.1-5.6,8.4-9.3c-5.1,2.8-9.3,4.2-12.1,4.9L68.1,34.1  C68.1,34.1,68.1,34.1,68.1,34.1z M28.8,33.3V33c-0.4-1.2-0.7-2.4-0.9-3.6l-8.2-2.7C21.7,28.9,24.9,31.8,28.8,33.3z M43.6,95c2.5,0,4.7-1.3,6-3.2c-0.5-1-0.8-2.2-0.8-3.4c-2.2-0.8-4-2.3-5.1-4.3c-1.5,2.6-4.1,4.4-7.1,4.8  C37.1,92.4,40.1,95,43.6,95z M58.5,95c3.6,0,6.5-2.6,7.1-6c-2.4-0.3-4.5-1.6-6-3.3c-1.8,2.1-4.5,3.4-7.4,3.4c-0.2,0-0.5,0-0.7,0C52,92.4,55,95,58.5,95z  M74.2,79.3c0-0.3,0-0.6-0.1-0.9c-0.3,0-0.5,0-0.8,0c-3.6,0-6.8-2-8.5-4.9c-0.8,1.4-1.9,2.6-3.3,3.4  c0.2,0.8,0.3,1.5,0.3,2.4c0,1.4-0.3,2.8-0.9,4c1.3,1.9,3.5,3.2,6,3.2C71,86.5,74.2,83.3,74.2,79.3z M59.3,79.3c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-3.6,0-6.8-2-8.5-4.9c-0.6,1-1.3,1.9-2.3,2.7  c-0.4,0.9-0.7,2-0.7,3.1c0,4,3.2,7.2,7.2,7.2C56.1,86.5,59.3,83.3,59.3,79.3z M35.1,86.5c4,0,7.2-3.2,7.2-7.2c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-2.4,0-4.7-0.9-6.4-2.4  c-1.4,1.2-3.1,2-5,2.3c0,0.3-0.1,0.6-0.1,0.9C27.9,83.3,31.2,86.5,35.1,86.5z M20.4,65.1c-0.6,1-0.9,2.3-0.9,3.5c0,4,3.2,7.2,7.2,7.2c1.8,0,3.4-0.6,4.7-1.7c-1.1-1.6-1.7-3.5-1.7-5.5  c0-1.2,0.2-2.3,0.6-3.4c-1.3-0.1-2.5-0.4-3.6-0.9c-1.3,0.6-2.7,1-4.2,1C21.7,65.3,21,65.3,20.4,65.1z M38.1,62.1c-1.3,1.4-3,2.5-5,3c-0.6,1.1-1,2.3-1,3.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.2-0.3-2.4-0.8-3.4  c-0.1,0-0.3,0-0.4,0C42.5,65.3,39.9,64.1,38.1,62.1z M80.6,68.7c0-1.5-0.5-2.9-1.3-4.1c-1.2,0.5-2.4,0.8-3.8,0.8c-2.5,0-4.7-0.9-6.4-2.4c-1.8,1.3-2.9,3.4-2.9,5.8  c0,4,3.2,7.2,7.2,7.2C77.3,75.9,80.6,72.7,80.6,68.7z M53.5,62c-2.6,1.1-4.4,3.7-4.4,6.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.3-2.5-0.9-3.5  c-0.6,0.1-1.2,0.2-1.8,0.2C57.9,65.3,55.3,64.1,53.5,62z M22.4,62.8c0.6,0,1.1-0.1,1.7-0.2c-1.8-1.8-3-4.3-3-7c0-1,0.2-2.1,0.5-3c-1.7-0.1-3.3-0.7-4.7-1.7  c-1.1,1.3-1.7,2.9-1.7,4.7C15.2,59.5,18.4,62.8,22.4,62.8z M23.7,55.6c0,4,3.2,7.2,7.2,7.2c2.3,0,4.4-1.1,5.7-2.9c-0.7-1.3-1-2.8-1-4.3c0-1.3,0.3-2.6,0.8-3.8  c-1.2,0.5-2.5,0.8-3.9,0.8c-1.8,0-3.6-0.5-5-1.4c-0.9,0.6-1.9,1-3,1.2C24,53.3,23.7,54.4,23.7,55.6z M82.7,55.6c0-1.4-0.4-2.7-1.1-3.8c-1.2,0.5-2.6,0.9-4,0.9c-2.6,0-4.9-1-6.7-2.6c-0.5,0.4-0.9,0.9-1.3,1.4  c0.6,1.3,1,2.7,1,4.2s-0.4,2.9-1,4.2c1.3,1.8,3.4,3,5.8,3C79.5,62.8,82.7,59.5,82.7,55.6z M54.5,52.1c0.4,1.1,0.6,2.2,0.6,3.4s-0.2,2.4-0.6,3.4c1.2,2.2,3.6,3.8,6.3,3.8c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.5-1-3.6  c-1.1,0.4-2.2,0.6-3.4,0.6c-2.7,0-5.2-1.1-7-2.9C55.8,50.3,55,51.1,54.5,52.1z M38.2,55.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.6-1-3.7c-1.1,0.4-2.3,0.7-3.6,0.7c-2.7,0-5.1-1.1-6.9-2.8  C39.3,51.1,38.2,53.2,38.2,55.6z M22.4,50c1,0,2-0.2,2.9-0.6c-1.6-1.7-2.6-4.1-2.6-6.6s1-4.9,2.6-6.6c-0.9-0.4-1.9-0.6-2.9-0.6c-4,0-7.2,3.2-7.2,7.2  C15.2,46.8,18.4,50,22.4,50z M37.7,37.9c-2.5-0.2-5-0.9-7.3-2c-3,0.9-5.2,3.6-5.2,6.9c0,4,3.2,7.2,7.2,7.2c2.7,0,5.1-1.5,6.3-3.8  c-0.4-1.1-0.6-2.2-0.6-3.4s0.2-2.4,0.6-3.4C38.5,38.8,38.2,38.4,37.7,37.9z M72.2,38.1c0.8,1.4,1.2,3,1.2,4.7s-0.5,3.3-1.2,4.7c1.3,1.5,3.3,2.5,5.4,2.5c4,0,7.2-3.2,7.2-7.2c0-4-3.2-7.2-7.2-7.2  C75.5,35.6,73.5,36.6,72.2,38.1z M63.7,50c4,0,7.2-3.2,7.2-7.2c0-2.9-1.8-5.5-4.3-6.6c-2.7,1-5.4,1.5-8.2,1.7c-0.5,0.5-0.8,1.1-1.1,1.7  c0.3,1,0.5,2.1,0.5,3.2c0,1.1-0.2,2.2-0.5,3.2C58.4,48.4,60.8,50,63.7,50z M47,36.5c-1.3,0.5-2.7,0.9-4.1,1.2c-1.3,1.3-2.2,3.1-2.2,5.1c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.9-0.8-3.7-2-5  C51.1,37.6,49,37.2,47,36.5z M49.1,34.3c0,0.1,0,0.1,0,0.2c5.2,1.4,10.8,1.3,16-0.5l-6.4-11.1C56.8,27.1,53,31.6,49.1,34.3z M45.6,34.3L31.3,19.9c-1.7,4.4-1.5,9.5,0.5,13.8C36.1,35.7,41.2,35.9,45.6,34.3z"
 
-constant kVersion is "0.9.38 beta 2019.10.07.0642"
+constant kVersion is "0.9.39 beta 2019.10.07.1742"
 
 use com.livecode.math
 use com.livecode.canvas
@@ -940,6 +940,32 @@ private handler setControlItemSpacing(in pVal as Number)
   redraw all
 end handler
 
+--TODO: DOC: add to wiki and help docs
+property controlValuePrefix    get mControlValuePrefix   set setControlValuePrefix
+metadata controlValuePrefix.editor   is "com.livecode.pi.text"
+metadata controlValuePrefix.default   is " "
+metadata controlValuePrefix.label    is "Control - Value Prefix"
+metadata controlValuePrefix.section   is "Basic"
+private variable mControlValuePrefix as String
+private handler setControlValuePrefix(in pVal as String)
+  put pVal into mAppData["props"]["controlValuePrefix"]
+  put pVal into mControlValuePrefix
+  redraw all
+end handler
+
+--TODO: DOC: add to wiki and help docs
+property controlValueSuffix    get mControlValueSuffix   set setControlValueSuffix
+metadata controlValueSuffix.editor   is "com.livecode.pi.text"
+metadata controlValueSuffix.default   is "%"
+metadata controlValueSuffix.label    is "Control - Value Suffix"
+metadata controlValueSuffix.section   is "Basic"
+private variable mControlValueSuffix as String
+private handler setControlValueSuffix(in pVal as String)
+  put pVal into mAppData["props"]["controlValueSuffix"]
+  put pVal into mControlValueSuffix
+  redraw all
+end handler
+
 property controlIconA    get mControlIconA   set setControlIconA
 metadata controlIconA.editor   is "com.livecode.pi.text"
 metadata controlIconA.default   is "iconfam1:updown:plus"
@@ -1130,6 +1156,7 @@ private variable mItemOrder as List
 private variable mCurrentTheme as String
 private variable mUseColorThemes as Boolean
 private variable mEntryValue as String
+private variable mCurrentControlKey as String
 
 --SECTION:  EVENT HANDLERS
 public handler OnCreate()
@@ -1137,6 +1164,7 @@ public handler OnCreate()
   put the empty array into mAppData
   put the empty array into mAppData["debug"]
   put the empty array into mAppData["props"]
+  put the empty array into mAppData["rect"]
   put the empty array into mAppData["savedprops"]
   put the empty array into mAppData["savedcontrols"]
   put the empty array into mAppData["savedthemes"]
@@ -1232,6 +1260,8 @@ public handler OnSave(out rProperties as Array)
   put mControlTextSize into rProperties["controlTextSize"]
   put mControlValueColor into rProperties["controlValueColor"]
   put mControlValueFont into rProperties["controlValueFont"]
+  put mControlValuePrefix into rProperties["controlValuePrefix"]
+  put mControlValueSuffix into rProperties["controlValueSuffix"]
   put mControlValueSize into rProperties["controlValueSize"]
   put mControlValueWidth into rProperties["controlValueWidth"]
 
@@ -1334,6 +1364,8 @@ private handler loadPropsFromAppData()
   put pickProp("controlTextSize",13) into mControlTextSize
   put pickProp("controlValueColor","fore") into mControlValueColor
   put pickProp("controlValueFont","Courier") into mControlValueFont
+  put pickProp("controlValuePrefix","") into mControlValuePrefix
+  put pickProp("controlValueSuffix","%") into mControlValueSuffix
   put pickProp("controlValueSize",31) into mControlValueSize
   put pickProp("controlValueWidth",31) into mControlValueWidth
 
@@ -1424,8 +1456,10 @@ private handler verifyDataComplete()
       put ["label","show","short"] into tKeys
       put [randomLabel(),"true","xval" & mkStr(tCount)] into tValues
       --Values
-      put tKeys & ["min","max","step","value"] into tKeys
-      put tValues & ["0","100","1","50"] into tValues
+      --TODO: DOC: add to docs
+      --TODO: add to paint
+      put tKeys & ["min","max","step","value","prefix","suffix"] into tKeys
+      put tValues & ["0","100","1","50","default","default"] into tValues
       --Icons
       put tKeys & ["iconplus","iconminus"] into tKeys
       put tValues & ["iconfam1:updown:plus","iconfam1:updown:minus"] into tValues
@@ -1446,8 +1480,10 @@ private handler verifyDataComplete()
       put tKeys & ["labelcolor","linecolor","handlecolor","valuecolor"] into tKeys
       put tValues & ["default","default","default","default"] into tValues
       --Values
-      put tKeys & ["circle","min","max","value"] into tKeys
-      put tValues & ["default","0","100","50"] into tValues
+      --TODO: DOC: add to docs
+      --TODO: add to paint
+      put tKeys & ["circle","min","max","value","prefix","suffix"] into tKeys
+      put tValues & ["default","0","100","50","default","default"] into tValues
    else if mControlType is "Progress Bars" then
       --Label/Fonts
       put ["label","show","textfont","valuefont"] into tKeys
@@ -1459,8 +1495,10 @@ private handler verifyDataComplete()
       put tKeys & ["labelcolor","linecolor","progresscolor","valuecolor"] into tKeys
       put tValues & ["default","default","default","default"] into tValues
       --Values
-      put tKeys & ["min","max","value"] into tKeys
-      put tValues & ["0","100","50"] into tValues
+      --TODO: DOC: add to docs
+      --TODO: add to paint
+      put tKeys & ["min","max","value","prefix","suffix"] into tKeys
+      put tValues & ["0","100","50","default","default"] into tValues
     else if mControlType is "Form Backdrop" then
       --Basics
       put ["label","show"] into tKeys
@@ -1554,8 +1592,8 @@ public handler OnPaint()
     set the left of mControlRect to the left of mCurrentRect + mControlBufferH
 
     repeat with tCount from 1 up to mAppData["vars"]["ControlCount"]
-     put mkStr(tCount) into mAppData["vars"]["CurrentControlKey"]
-     if mData[mAppData["vars"]["CurrentControlKey"]]["show"] is "false" then
+     put mkStr(tCount) into mCurrentControlKey
+     if mData[mCurrentControlKey]["show"] is "false" then
         push "skip" onto mLocList
      else
         if mControlType is "Switches" then
@@ -1622,9 +1660,18 @@ end handler
 
 private handler createFormEntry()
   --TODO: Fix "SHOW"
-  chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["textcolor"],mControlTextColor)
-  chooseAndSetFont("text", mAppData["vars"]["CurrentControlKey"], mControlTextFont, mControlTextSize)
-  mpWrapTextinRect(mControlRect,mData[mAppData["vars"]["CurrentControlKey"]]["label"],"center left")
+  variable tLabels as List
+
+  chooseAndSetPaint(mData[mCurrentControlKey]["textcolor"],mControlTextColor)
+  chooseAndSetFont("text", mCurrentControlKey, mControlTextFont, mControlTextSize)
+  if mData[mCurrentControlKey]["label"] contains ";;" then
+    split mData[mCurrentControlKey]["label"] by ";;" into tLabels
+    mpWrapTextinRect(mControlRect,element 1 of tLabels,"center left")
+    mpWrapTextinRect(mControlRect,element 2 of tLabels,"center right")
+  else
+    mpWrapTextinRect(mControlRect,mData[mCurrentControlKey]["label"],mControlTextAlign)
+  end if
+  put rectToFlatLine(mControlRect) into mAppData["rect"][mCurrentControlKey]
   push mControlRect onto mLocList
 end handler
 
@@ -1687,24 +1734,24 @@ private handler createButton()
   set the top of mControlRect to tTop
 
   push mControlRect onto mLocList
-  setButtonPaint(mAppData["vars"]["CurrentControlKey"],"button")
+  setButtonPaint(mCurrentControlKey,"button")
   fill rounded rectangle path of mControlRect with radius mControlRadius on this canvas
 
-  setButtonPaint(mAppData["vars"]["CurrentControlKey"],"text")
-  chooseAndSetFont("text", mAppData["vars"]["CurrentControlKey"], mControlTextFont, mControlTextSize)
-  put qzQ(mData[mAppData["vars"]["CurrentControlKey"]]["label"]) into tText
+  setButtonPaint(mCurrentControlKey,"text")
+  chooseAndSetFont("text", mCurrentControlKey, mControlTextFont, mControlTextSize)
+  put qzQ(mData[mCurrentControlKey]["label"]) into tText
 
   if mButtonBarStyle is "Text" then
-    setButtonPaint(mAppData["vars"]["CurrentControlKey"],"text")
+    setButtonPaint(mCurrentControlKey,"text")
     fill text tText at center of mControlRect on this canvas
   else if mButtonBarStyle is "Icon Above Text" then
-    setButtonPaint(mAppData["vars"]["CurrentControlKey"],"text")
+    setButtonPaint(mCurrentControlKey,"text")
     fill text tText at bottom of mControlRect on this canvas
     put mControlRect into tRect
     set the height of tRect to the height of mControlRect -20
-    buttonBarIcon(tRect,mAppData["vars"]["CurrentControlKey"])
+    buttonBarIcon(tRect,mCurrentControlKey)
   else if mButtonBarStyle is "Icon" then
-    buttonBarIcon(mControlRect,mAppData["vars"]["CurrentControlKey"])
+    buttonBarIcon(mControlRect,mCurrentControlKey)
   else if mButtonBarStyle is "Icon Left" or mButtonBarStyle is "Icon Left Text Center" then
     put mControlRect into tRect
     put mControlRect into tTextRect
@@ -1714,8 +1761,8 @@ private handler createButton()
     add mControlBufferH to the left of tRect
     add the width of tRect+(mControlBufferH*2) to the left of tTextRect
     subtract the width of tRect+(mControlBufferH*3) from the width of tTextRect
-    buttonBarIcon(tRect,mAppData["vars"]["CurrentControlKey"])
-    setButtonPaint(mAppData["vars"]["CurrentControlKey"],"text")
+    buttonBarIcon(tRect,mCurrentControlKey)
+    setButtonPaint(mCurrentControlKey,"text")
     if mButtonBarStyle is "Icon Left" then
       fill text tText at left of tTextRect on this canvas
     else if mButtonBarStyle is "Icon Left Text Center" then
@@ -1828,18 +1875,18 @@ private handler createSwitch()
   set the width of tIconRect to the height of tIconRect
   add (the height of mControlRect - the height of tIconRect)/2 to the top of tIconRect
 
-  if mData[mAppData["vars"]["CurrentControlKey"]]["selected"] is "true" then
-    if mData[mAppData["vars"]["CurrentControlKey"]]["iconchecked"] is "default" then
-      put mControlIconA into mData[mAppData["vars"]["CurrentControlKey"]]["iconchecked"]
+  if mData[mCurrentControlKey]["selected"] is "true" then
+    if mData[mCurrentControlKey]["iconchecked"] is "default" then
+      put mControlIconA into mData[mCurrentControlKey]["iconchecked"]
     end if
-    chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["checkediconcolor"],mControlHiliteColor)
-    put getIconPath(mData[mAppData["vars"]["CurrentControlKey"]]["iconchecked"]) into tIconPath
+    chooseAndSetPaint(mData[mCurrentControlKey]["checkediconcolor"],mControlHiliteColor)
+    put getIconPath(mData[mCurrentControlKey]["iconchecked"]) into tIconPath
   else
-    if mData[mAppData["vars"]["CurrentControlKey"]]["iconunchecked"] is "default" then
-      put mControlIconB into mData[mAppData["vars"]["CurrentControlKey"]]["iconunchecked"]
+    if mData[mCurrentControlKey]["iconunchecked"] is "default" then
+      put mControlIconB into mData[mCurrentControlKey]["iconunchecked"]
     end if
-    chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["uncheckediconcolor"],mControlIconColor)
-    put getIconPath(mData[mAppData["vars"]["CurrentControlKey"]]["iconunchecked"]) into tIconPath
+    chooseAndSetPaint(mData[mCurrentControlKey]["uncheckediconcolor"],mControlIconColor)
+    put getIconPath(mData[mCurrentControlKey]["iconunchecked"]) into tIconPath
   end if
 
   constrainPathToRect(tIconRect, tIconPath)
@@ -1847,9 +1894,9 @@ private handler createSwitch()
   subtract (the width of tIconRect)+5 from the width of tTextRect
   set the left of tTextRect to the right of tIconRect+5
 
-  chooseAndSetFont("text", mAppData["vars"]["CurrentControlKey"], mControlTextFont, mControlTextSize)
-  chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["textcolor"],mControlTextColor)
-  mpWrapTextinRect(tTextRect,mData[mAppData["vars"]["CurrentControlKey"]]["label"],"center left")
+  chooseAndSetFont("text", mCurrentControlKey, mControlTextFont, mControlTextSize)
+  chooseAndSetPaint(mData[mCurrentControlKey]["textcolor"],mControlTextColor)
+  mpWrapTextinRect(tTextRect,mData[mCurrentControlKey]["label"],"center left")
 
   push mControlRect onto mLocList
 end handler
@@ -1862,6 +1909,7 @@ private handler createUpDown()
   variable tRect as Rectangle
   variable tNext as String
   variable tIconPath as Path
+  variable tValue as String
 
   split mUpDownLayout by "/" into mItemOrder
 
@@ -1869,21 +1917,21 @@ private handler createUpDown()
 
   repeat for each element tNext in mItemOrder
     if tNext is "value" then
-      chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["valuecolor"],mControlValueColor)
+      chooseAndSetPaint(mData[mCurrentControlKey]["valuecolor"],mControlValueColor)
       set the width of tRect to mControlValueWidth
-      chooseAndSetFont("value", mAppData["vars"]["CurrentControlKey"], mControlValueFont, mControlValueSize)
-      fill text mData[mAppData["vars"]["CurrentControlKey"]]["value"] at center of tRect on this canvas
+      chooseAndSetFont("value", mCurrentControlKey, mControlValueFont, mControlValueSize)
+      fill text buildValue(mCurrentControlKey) at center of tRect on this canvas
     else if tNext is "label" then
-      chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["textcolor"],mControlTextColor)
+      chooseAndSetPaint(mData[mCurrentControlKey]["textcolor"],mControlTextColor)
       add 2 to the left of tRect
-      chooseAndSetFont("text", mAppData["vars"]["CurrentControlKey"], mControlTextFont, mControlTextSize)
-      set the width of tRect to calcTextWidth(mData[mAppData["vars"]["CurrentControlKey"]]["label"])
-      fill text mData[mAppData["vars"]["CurrentControlKey"]]["label"] at center of tRect on this canvas
+      chooseAndSetFont("text", mCurrentControlKey, mControlTextFont, mControlTextSize)
+      set the width of tRect to calcTextWidth(mData[mCurrentControlKey]["label"])
+      fill text mData[mCurrentControlKey]["label"] at center of tRect on this canvas
     else
-      chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["objectcolor"],mControlObjectColor)
+      chooseAndSetPaint(mData[mCurrentControlKey]["objectcolor"],mControlObjectColor)
       set the width of tRect to mControlObjectSize
-      put getIconPath(mData[mAppData["vars"]["CurrentControlKey"]]["iconplus"]) into tIconPath
-      drawButton(mAppData["vars"]["CurrentControlKey"],tNext,tRect)
+      put getIconPath(mData[mCurrentControlKey]["iconplus"]) into tIconPath
+      drawButton(mCurrentControlKey,tNext,tRect)
      end if
      set the left of tRect to the right of tRect
      add mControlItemSpacing to the left of tRect
@@ -1942,30 +1990,29 @@ private handler createProgressBar()
   put mAppData["vars"]["Wide"] into tWide
 
   if mDisplayLabel then
-    chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["labelcolor"],mControlTextColor)
-    chooseAndSetFont("text", mAppData["vars"]["CurrentControlKey"], mControlTextFont, mControlTextSize)
+    chooseAndSetPaint(mData[mCurrentControlKey]["labelcolor"],mControlTextColor)
+    chooseAndSetFont("text", mCurrentControlKey, mControlTextFont, mControlTextSize)
 
     put tRect into tLabelRect
     set the width of tLabelRect to mControlTextWidth
     subtract the width of tLabelRect from the width of tRect
     set the left of tRect to the right of tLabelRect
-    put qzQ(mData[mAppData["vars"]["CurrentControlKey"]]["label"]) into tText
+    put qzQ(mData[mCurrentControlKey]["label"]) into tText
     mpWrapTextinRect(tLabelRect,tText,mControlTextAlign)
   end if
 
   if mDisplayValue then
-    chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["valuecolor"],mControlValueColor)
-    chooseAndSetFont("value", mAppData["vars"]["CurrentControlKey"], mControlValueFont, mControlValueSize)
+    chooseAndSetPaint(mData[mCurrentControlKey]["valuecolor"],mControlValueColor)
+    chooseAndSetFont("value", mCurrentControlKey, mControlValueFont, mControlValueSize)
     put tRect into tValueRect
     set the width of tValueRect to mControlValueWidth
     set the right of tValueRect to the right of mControlRect
     subtract the width of tValueRect from the width of tRect
     set the right of tRect to the left of tValueRect
-    put qzQ(mData[mAppData["vars"]["CurrentControlKey"]]["value"]) into tText
-    mpWrapTextinRect(tValueRect,tText,mControlTextAlign)
+    mpWrapTextinRect(tValueRect,buildValue(mCurrentControlKey),mControlTextAlign)
   end if
 
-  chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["linecolor"],mControlObjectColor)
+  chooseAndSetPaint(mData[mCurrentControlKey]["linecolor"],mControlObjectColor)
 
   put tRect into tLineRect
   set the height of tLineRect to mControlItemSpacing
@@ -1974,13 +2021,13 @@ private handler createProgressBar()
   set the top of tLineRect to tTop
   fill rectangle path of tLineRect on this canvas
 
-  chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["progresscolor"],mControlHiliteColor)
+  chooseAndSetPaint(mData[mCurrentControlKey]["progresscolor"],mControlHiliteColor)
 
-  put mkNum(mData[mAppData["vars"]["CurrentControlKey"]]["max"]) - mkNum(mData[mAppData["vars"]["CurrentControlKey"]]["min"]) into tSegment
+  put mkNum(mData[mCurrentControlKey]["max"]) - mkNum(mData[mCurrentControlKey]["min"]) into tSegment
   put the width of tLineRect/tSegment into tSegment
 
-  add mkNum(mData[mAppData["vars"]["CurrentControlKey"]]["value"]) * tSegment to the left of tLineRect
-  subtract mkNum(mData[mAppData["vars"]["CurrentControlKey"]]["value"]) * tSegment from the width of tLineRect
+  add mkNum(mData[mCurrentControlKey]["value"]) * tSegment to the left of tLineRect
+  subtract mkNum(mData[mCurrentControlKey]["value"]) * tSegment from the width of tLineRect
   fill rectangle path of tLineRect on this canvas
 
   push tRect onto mLocList
@@ -2009,31 +2056,30 @@ private handler createSlider()
   put mControlRect into tRect
   put mAppData["vars"]["Wide"] into tWide
   if mDisplayLabel then
-    chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["labelcolor"],mControlTextColor)
-    chooseAndSetFont("text", mAppData["vars"]["CurrentControlKey"], mControlTextFont, mControlTextSize)
+    chooseAndSetPaint(mData[mCurrentControlKey]["labelcolor"],mControlTextColor)
+    chooseAndSetFont("text", mCurrentControlKey, mControlTextFont, mControlTextSize)
 
     put tRect into tLabelRect
     set the width of tLabelRect to mControlTextWidth
     subtract the width of tLabelRect from the width of tRect
     set the left of tRect to the right of tLabelRect
-    put qzQ(mData[mAppData["vars"]["CurrentControlKey"]]["label"]) into tText
+    put qzQ(mData[mCurrentControlKey]["label"]) into tText
     mpWrapTextinRect(tLabelRect,tText,mControlTextAlign)
   end if
 
   if mDisplayValue then
-    chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["valuecolor"],mControlValueColor)
-    chooseAndSetFont("value", mAppData["vars"]["CurrentControlKey"], mControlValueFont, mControlValueSize)
+    chooseAndSetPaint(mData[mCurrentControlKey]["valuecolor"],mControlValueColor)
+    chooseAndSetFont("value", mCurrentControlKey, mControlValueFont, mControlValueSize)
     put tRect into tValueRect
     set the width of tValueRect to mControlValueWidth
     set the right of tValueRect to the right of mControlRect
     subtract the width of tValueRect from the width of tRect
     set the right of tRect to the left of tValueRect
-    put qzQ(mData[mAppData["vars"]["CurrentControlKey"]]["value"]) into tText
-    mpWrapTextinRect(tValueRect,tText,mControlTextAlign)
+    mpWrapTextinRect(tValueRect,buildValue(mCurrentControlKey),mControlTextAlign)
     --TODO:  Slider Value alignment?
   end if
 
-  chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["linecolor"],mControlObjectColor)
+  chooseAndSetPaint(mData[mCurrentControlKey]["linecolor"],mControlObjectColor)
 
   put tRect into tLineRect
   set the height of tLineRect to mControlItemSpacing
@@ -2041,14 +2087,14 @@ private handler createSlider()
   add (the height of tRect/2) - (mControlItemSpacing/2) to tTop
   set the top of tLineRect to tTop
   fill rectangle path of tLineRect on this canvas
-  chooseAndSetPaint(mData[mAppData["vars"]["CurrentControlKey"]]["handlecolor"],mControlIconColor)
+  chooseAndSetPaint(mData[mCurrentControlKey]["handlecolor"],mControlIconColor)
   put the top of tRect into tYaxis
   add the height of tRect/2 to tYaxis
 
-  put mkNum(mData[mAppData["vars"]["CurrentControlKey"]]["max"]) - mkNum(mData[mAppData["vars"]["CurrentControlKey"]]["min"]) into tSegment
+  put mkNum(mData[mCurrentControlKey]["max"]) - mkNum(mData[mCurrentControlKey]["min"]) into tSegment
   put the width of tLineRect/tSegment into tSegment
 
-  put mkNum(mData[mAppData["vars"]["CurrentControlKey"]]["value"]) * tSegment into tXAxis
+  put mkNum(mData[mCurrentControlKey]["value"]) * tSegment into tXAxis
   add the left of tLineRect to tXAxis
 
   put circle path centered at point [tXaxis,tYAxis] with radius mControlRadius into tPath
@@ -2879,6 +2925,23 @@ private handler randomNumber(in pMax as Number)
   else
     return tNumber
   end if
+end handler
+
+private handler buildValue(in pControl) returns String
+  variable tValue as String
+
+  put mkStr(mData[pControl]["value"]) into tValue
+  if mData[pControl]["prefix"] is "default" then
+    put mControlValuePrefix before tValue
+  else
+    put mData[pControl]["prefix"] before tValue
+  end if
+  if mData[pControl]["suffix"] is "default" then
+    put mControlValueSuffix after tValue
+  else
+    put mData[pControl]["suffix"] after tValue
+  end if
+  return tValue
 end handler
 
 --FIXME:  updateProperties command (add through mAppData)
