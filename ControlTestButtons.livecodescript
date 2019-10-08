@@ -3,6 +3,19 @@ local testStack = "LiveCode Extension Test Window"
 local controlCount
 local addToTitle = ""
 
+/*
+Useful for testing out the control panel when programming the widget
+The first set of buttons makes a particular controlType with a random number of controls
+
+A-F can be programmed to test out certain scenarios, data sets, properties etc...
+
+Cycle goes creates each type of control in succession in one and two columns.
+
+Size resizes the test window and moves it next to the ControlTest stack.
+
+When a button is pressed, the appData and myData of the widget is put into the Tree on the right.
+*/
+
 on mouseUp
    if exists(stack testStack) then
       buttonAction the short name of the target
@@ -50,9 +63,11 @@ command buttonAction pType
          exit to top
          break
       case "A"
-         set the columnCount of widget 1 of stack testStack to 2
-         testType "Switches",8
-         
+         set the controlType of widget 1 of stack testStack to "Mixed Controls"
+         put "Button Bar" into tData[1]
+         put "Sliders" into tData[2]
+         put "Switches" into tData[3]
+         set the myData of widget 1 of stack testStack to tData
          break
       case "B"
          set the controlBufferV of widget 1 of stack testStack to 13
