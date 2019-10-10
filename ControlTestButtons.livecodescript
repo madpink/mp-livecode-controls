@@ -64,9 +64,11 @@ command buttonAction pType
          break
       case "A"
          set the controlType of widget 1 of stack testStack to "Mixed Controls"
-         put "Button Bar" into tData[1]
-         put "Sliders" into tData[2]
-         put "Switches" into tData[3]
+         put "Button Bar" into tData[1]["controltype"]
+         put "Sliders" into tData[2]["controltype"]
+         put "Switches" into tData[3]["controltype"]
+         put "Numeric Up/Down" into tData[4]["controltype"]
+         put "Switches" into tData[5]["controltype"]
          set the myData of widget 1 of stack testStack to tData
          break
       case "B"
