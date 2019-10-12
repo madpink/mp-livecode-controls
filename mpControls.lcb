@@ -1157,8 +1157,8 @@ private variable mCurrentTheme as String
 private variable mUseColorThemes as Boolean
 private variable mEntryValue as String
 private variable mCurrentControlKey as String
-private variable mUserSelectedType as String  --TODO: not used yet
 private variable mPosition as Point
+private variable mExitMultiple as Boolean
 
 --SECTION:  EVENT HANDLERS
 public handler OnCreate()
@@ -1616,17 +1616,13 @@ public handler OnPaint()
      else
         if mControlType is "Mixed Controls" then
           put mData[mCurrentControlKey]["controltype"] into tControlType
-          addDebugInfo("xcontrol" & mCurrentControlKey, tControlType)
        else
           put mControlType into tControlType
         end if
-        addDebugInfo("tcontrol" & mCurrentControlKey, tControlType)
-        addDebugInfo("mcontrol", mControlType)
 
         if tControlType is "Switches" then
           createSwitch()
          else if tControlType is "Button Bar" then
-          addDebugInfo("button1", mCurrentControlKey)
           createButton()
          else if tControlType is "Progress Bars" then
           createProgressBar()
@@ -1751,7 +1747,6 @@ private handler createButton()
   variable tTextRect as Rectangle
   variable tLeft as Number
   variable tTop as Number
-  addDebugInfo("button2", mCurrentControlKey)
   put the left of mCurrentRect + (mControlBufferH * mAppData["vars"]["CurrentColumn"]) into tLeft
   add (mAppData["vars"]["CurrentColumn"] - 1) * the width of mControlRect to tLeft
   set the left of mControlRect to tLeft
@@ -2531,22 +2526,21 @@ public handler OnMouseMove()
 end handler
 
 public handler OnMouseDown()
-  variable tPosition as Point
-  put the mouse position into tPosition
   put the mouse position into mPosition
 
   if mControlType is "Mixed Controls" then
-    selectMixed(tPosition)
+    selectMixed(mPosition)
   else if mControlType is "Button Bar" then
     selectButtonBar()
   else if mControlType is "Switches" then
-    selectSwitch(tPosition)
+    selectSwitch()
   else if mControlType is "Sliders" then
-    selectSlider(tPosition)
+    selectSlider()
   else if mControlType is "Numeric Up/Down" then
-    selectUpDown(tPosition)
+    selectUpDown(mPosition)
   end if
   post "mouseDown" with [the click button]
+  setAppData(mAppData)
 end handler
 
 public handler OnMouseRelease()
@@ -2651,38 +2645,39 @@ private handler selectButtonBar()
 end handler
 
 private handler checkButtonBarSelection(in pKey as String)
-    if mButtonBarType is "Multiple" then
-      if mPosition is within mCurrentRect then
-        if mData[pKey]["selected"] is "true" then
-          put "false" into mData[pKey]["selected"]
-        else
-          if "exclusive" is among the keys of mData[pKey] then
-            resetSelects()
-          end if
-          put "true" into mData[pKey]["selected"]
-        end if
-        outputValues()
-        userInteraction()
+  addDebugInfo("check" & pKey,"true")
+  if mButtonBarType is "Multiple" then
+    if mPosition is within mCurrentRect then
+      if mData[pKey]["selected"] is "true" then
+        put "false" into mData[pKey]["selected"]
       else
         if "exclusive" is among the keys of mData[pKey] then
-          put "false" into mData[pKey]["selected"]
+          resetSelects()
         end if
-      end if
-    else if mButtonBarType is "Action" then
-      if mPosition is within mCurrentRect then
-        put pKey into mActionOutput
         put "true" into mData[pKey]["selected"]
-        userInteraction()
       end if
-    else if mButtonBarType is "Single" then
-      if mPosition is within mCurrentRect then
-        put pKey into mActionOutput
-        put "true" into mData[pKey]["selected"]
-      else
+      outputValues()
+      userInteraction()
+    else
+      if "exclusive" is among the keys of mData[pKey] then
         put "false" into mData[pKey]["selected"]
-        userInteraction()
       end if
     end if
+  else if mButtonBarType is "Action" then
+    if mPosition is within mCurrentRect then
+      put pKey into mActionOutput
+      put "true" into mData[pKey]["selected"]
+      userInteraction()
+    end if
+  else if mButtonBarType is "Single" then
+    if mPosition is within mCurrentRect then
+      put pKey into mActionOutput
+      put "true" into mData[pKey]["selected"]
+    else
+      put "false" into mData[pKey]["selected"]
+      userInteraction()
+    end if
+  end if
 end handler
 
 private handler resetSelects()
@@ -2722,32 +2717,32 @@ end handler
 
 --SECTION: USER INTERACTION SLIDERS
 
-private handler selectSlider(in pPosition as Point)
-  -- variable tLoc as Point
-  variable tX as Number
-  variable tSlideRect as Rectangle
-  variable tHandleRect as Rectangle
+private handler selectSlider()
+  variable tCount as Number
+  variable tKey as String
 
-  -- put the click position into tLoc
-
-  repeat with tX from 1 up to the number of elements in mData
-    put element tX of mLocList into tSlideRect
-    put element tX of mHandles into tHandleRect
-
-    if pPosition is within tSlideRect then
-      put mkStr(tX) into mAppData["vars"]["Selected"]
-      adjustSlider(the x of the mouse position)
-      outputValues()
-      userInteraction()
-    end if
-
-    if pPosition is within tHandleRect then
-      put true into mStillDown
-      put mkStr(tX) into mAppData["vars"]["Selected"]
-      outputValues()
-      userInteraction()
-    end if
+  repeat with tCount from 1 up to the number of elements in mData
+    put element tCount of mLocList into mCurrentRect
+    put element tCount of mHandles into mControlRect
+    put mkStr(tCount) into tKey
+    checkSliderSelected(tKey)
   end repeat
+end handler
+
+private handler checkSliderSelected(in pKey as String)
+  if mPosition is within mCurrentRect then
+    put pKey into mAppData["vars"]["Selected"]
+    adjustSlider(the x of the mouse position)
+    outputValues()
+    userInteraction()
+  end if
+
+  if mPosition is within mControlRect then
+    put true into mStillDown
+    put pKey into mAppData["vars"]["Selected"]
+    outputValues()
+    userInteraction()
+  end if
 end handler
 
 private handler releaseSlider()
@@ -2798,28 +2793,27 @@ end handler
 
 --SECTION: USER INTERACTION SWITCHES
 
-private handler selectSwitch(in pPosition as Point)
+private handler selectSwitch()
   variable tCount as Number
-  variable tCurr as String
-  variable tRect as Rectangle
-  -- variable tPosition as Point
-  --
-  -- put the mouse position into tPosition
+  variable tKey as String
 
   repeat with tCount from 1 up to (the number of elements in mData)
-    put mkStr(tCount) into tCurr
-    put element tCount of mLocList into tRect
-    if pPosition is within tRect then
-      if mData[tCurr]["selected"] is "true" then
-        put "false" into mData[tCurr]["selected"]
-      else
-        put "true" into mData[tCurr]["selected"]
-      end if
-      outputValues()
-      userInteraction()
-      exit repeat
-    end if
+    put mkStr(tCount) into tKey
+    put element tCount of mLocList into mCurrentRect
+    checkSwitchSelection(tKey)
   end repeat
+end handler
+
+private handler checkSwitchSelection(in pKey as String)
+  if mPosition is within mCurrentRect then
+    if mData[pKey]["selected"] is "true" then
+      put "false" into mData[pKey]["selected"]
+    else
+      put "true" into mData[pKey]["selected"]
+    end if
+    outputValues()
+    userInteraction()
+  end if
 end handler
 
 --SECTION: USER INTERACTION NUMERIC UPDOWN
@@ -2902,13 +2896,31 @@ end handler
 --SECTION:  USER INTERATION MIXED CONTROLS
 
 private handler selectMixed(in pPosition as Point)
-  variable tRect as Rectangle
   variable tCount as Number
   variable tKey as String
+  variable tControlType as String
+
+  put false into mExitMultiple
   repeat with tCount from 1 up to the number of elements in mData
     put tCount formatted as string into tKey
+    put mData[tKey]["controltype"] into tControlType
     if mData[tKey]["show"] is "false" then
       next repeat
+    end if
+    if tControlType is "Button Bar" then
+      checkButtonBarSelection(tKey)
+    else if tControlType is "Switches" then
+      -- FIXME: all switches get switched?
+      checkSwitchSelection(tKey)
+    else if tControlType is "Sliders" then
+      -- FIXME: adjustSlider not working yet
+      -- checkSliderSelected(tKey)
+    else if tControlType is "Numeric Up/Down" then
+
+    end if
+    if mExitMultiple then
+      put false into mExitMultiple
+      exit repeat
     end if
   end repeat
 end handler
