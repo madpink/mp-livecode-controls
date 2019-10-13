@@ -571,6 +571,12 @@ private handler addDebugInfo(in pKey as String, in pValue)
     clearDebugInfo("cat")
     addDebugInfo("KEY",VALUE)
   */
+  put pKey into mAppData["debug"]["key"]
+  put pValue into mAppData["debug"]["value"]
+  put mDebugCat into mAppData["debug"]["cat"]
+  if mDebugCat is "" then
+     put "quazqua" into mDebugCat
+  end if
   put pValue into mAppData["debug"][mDebugCat][pKey]
   setAppData(mAppData)
 end handler
@@ -1158,7 +1164,8 @@ private variable mUseColorThemes as Boolean
 private variable mEntryValue as String
 private variable mCurrentControlKey as String
 private variable mPosition as Point
-private variable mExitMultiple as Boolean
+private variable mExit as Boolean
+private variable mTimer as Number
 
 --SECTION:  EVENT HANDLERS
 public handler OnCreate()
@@ -1179,6 +1186,7 @@ public handler OnCreate()
      put 23 into mTitleTextSize
   end if
 
+  clearDebugInfo("quazqua")
   defaultIconData()
 end handler
 
@@ -1599,7 +1607,7 @@ public handler OnPaint()
   setCurrentColorSet()
   drawBaseItems()
   calcControlSize()
-  clearDebugInfo(mControlType)
+  -- clearDebugInfo(mControlType)
   if mControlType is "Dialog Box" then
     paintDialogBox()
   else
@@ -2527,6 +2535,7 @@ end handler
 
 public handler OnMouseDown()
   put the mouse position into mPosition
+  addDebugInfo("mouse","down")
 
   if mControlType is "Mixed Controls" then
     selectMixed(mPosition)
@@ -2562,6 +2571,8 @@ end handler
 public handler OnTimer()
   if mControlType is "Button Bar" then
     resetSelects()
+  else if mControlType is "Numeric Up/Down" then
+    -- incrementCount
   end if
 
   redraw all
@@ -2579,7 +2590,7 @@ end handler
 --SECTION USER INTERATION: BOTTOM BUTTONS
 
 public handler bottomButtonPressed(in pPosition as Point)
-  --clearDebugInfo("bottom")
+  -- clearDebugInfo("bottom")
   -- variable tPosition as Point
   -- put the mouse position into tPosition
   if mShowBottomButtons then
@@ -2720,12 +2731,18 @@ end handler
 private handler selectSlider()
   variable tCount as Number
   variable tKey as String
-
+  put false into mExit
+  put 0 into mAppData["vars"]["TimerCount"]
+  put 0 into mTimer
+  setAppData(mAppData)
   repeat with tCount from 1 up to the number of elements in mData
     put element tCount of mLocList into mCurrentRect
     put element tCount of mHandles into mControlRect
     put mkStr(tCount) into tKey
     checkSliderSelected(tKey)
+    if mExit then
+      exit repeat
+    end if
   end repeat
 end handler
 
@@ -2819,67 +2836,69 @@ end handler
 --SECTION: USER INTERACTION NUMERIC UPDOWN
 
 private handler selectUpDown(in pPosition as Point)
-  -- variable tPosition as Point
-  variable tRect as Rectangle
-  variable tCurr as String
-  variable tC as Number
-  variable tDirections as List
-  variable tDirect as String
+  variable tKey as String
+  variable tCount as Number
 
-  put ["plus","minus"] into tDirections
-  -- put the mouse position into tPosition
-
-  repeat with tC from 1 up to the number of elements in mData
-    put mkStr(tC) into tCurr
-    repeat for each element tDirect in tDirections
-      if mData[tCurr]["limit"] is not "true" then
-        put arrayToRect(mData[tCurr]["loc" & tDirect]) into tRect
-        if pPosition is within tRect then
-          put true into mStillDown
-          put 1 into mAppData["vars"]["Timer"]
-          put 0 into mAppData["vars"]["TimerCount"]
-          put tCurr into mAppData["vars"]["Selected"]
-          put tDirect into mData[tCurr]["direct"]
-          incrementCount()
-          outputValues()
-          userInteraction()
-          exit repeat
-        end if
-      end if
-    end repeat
+  repeat with tCount from 1 up to the number of elements in mData
+    put mkStr(tCount) into mCurrentControlKey
+    checkUpDownSelected(mCurrentControlKey)
   end repeat
 end handler
 
-private handler incrementCount()
+private handler checkUpDownSelected(in pKey as String)
+  if mData[mCurrentControlKey]["limit"] is not "true" then
+    if mPosition is within arrayToRect(mData[mCurrentControlKey]["locplus"]) then
+      put true into mStillDown
+      incrementCount("plus")
+    end if
+    if mPosition is within arrayToRect(mData[mCurrentControlKey]["locminus"]) then
+      put true into mStillDown
+      incrementCount("minus")
+    end if
+    if mStillDown then
+      -- FIXME: fix the timer/hold down function
+      -- put 1 into mTimer
+      -- put 0 into mAppData["vars"]["TimerCount"]
+      outputValues()
+      userInteraction()
+      put true into mExit
+   end if
+  end if
+end handler
+
+private handler incrementCount(in pDirect as String)
   variable tNum as Number
   variable tStep as Number
   variable tLimit as Number
+  variable tKey as String
 
+  addDebugInfo("hit","true")
   if mStillDown is true then
-    add 1 to mAppData["vars"]["TimerCount"]
-    if mAppData["vars"]["Timer"] = 1 then
-      put .6 into mAppData["vars"]["Timer"]
-    else if mAppData["vars"]["TimerCount"] > 60 then
-      put .02 into mAppData["vars"]["Timer"]
-    else if mAppData["vars"]["TimerCount"] > 30 then
-      put .05 into mAppData["vars"]["Timer"]
-    else if mAppData["vars"]["TimerCount"] > 10 then
-      put .1 into mAppData["vars"]["Timer"]
-    else
-      put .25 into mAppData["vars"]["Timer"]
-    end if
+    -- add 1 to mAppData["vars"]["TimerCount"]
+    -- if mTimer = 1 then
+    --   put .6 into mTimer
+    -- else if mAppData["vars"]["TimerCount"] > 60 then
+    --   put .02 into mTimer
+    -- else if mAppData["vars"]["TimerCount"] > 30 then
+    --   put .05 into mTimer
+    -- else if mAppData["vars"]["TimerCount"] > 10 then
+    --   put .1 into mTimer
+    -- else
+    --   put .25 into mTimer
+    -- end if
 
-    put mkNum(mData[mAppData["vars"]["Selected"]]["value"]) into tNum
-    put mkNum(mData[mAppData["vars"]["Selected"]]["step"]) into tStep
-    if mData[mAppData["vars"]["Selected"]]["direct"] is "plus" then
-      put mkNum(mData[mAppData["vars"]["Selected"]]["max"]) into tLimit
+    put mkNum(mData[mCurrentControlKey]["value"]) into tNum
+    put mkNum(mData[mCurrentControlKey]["step"]) into tStep
+
+    if pDirect is "plus" then
+      put mkNum(mData[mCurrentControlKey]["max"]) into tLimit
       add tStep to tNum
       if tNum >= tLimit then
         put tLimit into tNum
         put false into mStillDown
       end if
     else
-      put mkNum(mData[mAppData["vars"]["Selected"]]["min"]) into tLimit
+      put mkNum(mData[mCurrentControlKey]["min"]) into tLimit
       subtract tStep from tNum
       if tNum <= tLimit then
         put tLimit into tNum
@@ -2887,8 +2906,8 @@ private handler incrementCount()
       end if
     end if
 
-    put mkStr(tNum) into mData[mAppData["vars"]["Selected"]]["value"]
-    schedule timer in mAppData["vars"]["Timer"] seconds
+    put mkStr(tNum) into mData[mCurrentControlKey]["value"]
+    schedule timer in mTimer seconds
     redraw all
   end if
 end handler
@@ -2900,7 +2919,7 @@ private handler selectMixed(in pPosition as Point)
   variable tKey as String
   variable tControlType as String
 
-  put false into mExitMultiple
+  put false into mExit
   repeat with tCount from 1 up to the number of elements in mData
     put tCount formatted as string into tKey
     put mData[tKey]["controltype"] into tControlType
@@ -2918,8 +2937,7 @@ private handler selectMixed(in pPosition as Point)
     else if tControlType is "Numeric Up/Down" then
 
     end if
-    if mExitMultiple then
-      put false into mExitMultiple
+    if mExit then
       exit repeat
     end if
   end repeat

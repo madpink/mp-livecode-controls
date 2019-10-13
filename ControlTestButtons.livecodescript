@@ -31,6 +31,7 @@ command getDataFromWidget
 end getDataFromWidget
 
 command buttonAction pType
+   resizeTestStack
    put random(8)+2 into controlCount
    switch pType
       case "1"
@@ -72,16 +73,16 @@ command buttonAction pType
          set the myData of widget 1 of stack testStack to tData
          break
       case "B"
-         set the controlBufferV of widget 1 of stack testStack to 13
-         
+         --set the controlBufferV of widget 1 of stack testStack to 13
+         set the buttonBarType of widget 1 of stack testStack to "Single"
          break
       case "C"
-         set the controlItemSpacing of widget 1 of stack testStack to 1
-         
+         --set the controlItemSpacing of widget 1 of stack testStack to 1
+         set the buttonBarType of widget 1 of stack testStack to "Multiple"
          break
       case "D"
-         set the controlItemSpacing of widget 1 of stack testStack to 13
-         
+         --set the controlItemSpacing of widget 1 of stack testStack to 13
+         set the buttonBarType of widget 1 of stack testStack to "Action"
          break
       case "E"
          -- set the xxx of widget 1 of stack testStack to zzz
