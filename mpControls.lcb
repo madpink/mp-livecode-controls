@@ -1404,6 +1404,7 @@ public handler userInteraction()
   else if mSendMessage then
     post "userAction" with [mData, mActionOutput, mControlType]
   end if
+  put true into mExit
 end handler
 
 private handler outputValues()
@@ -2535,10 +2536,9 @@ end handler
 
 public handler OnMouseDown()
   put the mouse position into mPosition
-  addDebugInfo("mouse","down")
 
   if mControlType is "Mixed Controls" then
-    selectMixed(mPosition)
+    selectMixed()
   else if mControlType is "Button Bar" then
     selectButtonBar()
   else if mControlType is "Switches" then
@@ -2546,7 +2546,7 @@ public handler OnMouseDown()
   else if mControlType is "Sliders" then
     selectSlider()
   else if mControlType is "Numeric Up/Down" then
-    selectUpDown(mPosition)
+    selectUpDown()
   end if
   post "mouseDown" with [the click button]
   setAppData(mAppData)
@@ -2591,8 +2591,7 @@ end handler
 
 public handler bottomButtonPressed(in pPosition as Point)
   -- clearDebugInfo("bottom")
-  -- variable tPosition as Point
-  -- put the mouse position into tPosition
+
   if mShowBottomButtons then
     if mPosition is within element 1 of mBottomButtonLoc then
       post "buttonPressed" to my script object with [1]
@@ -2642,50 +2641,48 @@ end handler
 
 private handler selectButtonBar()
   variable tCount as Number
-  variable tKey as String
 
   repeat with tCount from 1 up to the number of elements in mData
-    put tCount formatted as string into tKey
-    if mData[tKey]["show"] is "false" then
+    put tCount formatted as string into mCurrentControlKey
+    if mData[mCurrentControlKey]["show"] is "false" then
       next repeat
     end if
     put element tCount of mLocList into mCurrentRect
-    checkButtonBarSelection(tKey)
+    checkButtonBarSelection()
   end repeat
   setAppData(mAppData)
 end handler
 
-private handler checkButtonBarSelection(in pKey as String)
-  addDebugInfo("check" & pKey,"true")
+private handler checkButtonBarSelection()
   if mButtonBarType is "Multiple" then
     if mPosition is within mCurrentRect then
-      if mData[pKey]["selected"] is "true" then
-        put "false" into mData[pKey]["selected"]
+      if mData[mCurrentControlKey]["selected"] is "true" then
+        put "false" into mData[mCurrentControlKey]["selected"]
       else
-        if "exclusive" is among the keys of mData[pKey] then
+        if "exclusive" is among the keys of mData[mCurrentControlKey] then
           resetSelects()
         end if
-        put "true" into mData[pKey]["selected"]
+        put "true" into mData[mCurrentControlKey]["selected"]
       end if
       outputValues()
       userInteraction()
     else
-      if "exclusive" is among the keys of mData[pKey] then
-        put "false" into mData[pKey]["selected"]
+      if "exclusive" is among the keys of mData[mCurrentControlKey] then
+        put "false" into mData[mCurrentControlKey]["selected"]
       end if
     end if
   else if mButtonBarType is "Action" then
     if mPosition is within mCurrentRect then
-      put pKey into mActionOutput
-      put "true" into mData[pKey]["selected"]
+      put mCurrentControlKey into mActionOutput
+      put "true" into mData[mCurrentControlKey]["selected"]
       userInteraction()
     end if
   else if mButtonBarType is "Single" then
     if mPosition is within mCurrentRect then
-      put pKey into mActionOutput
-      put "true" into mData[pKey]["selected"]
+      put mCurrentControlKey into mActionOutput
+      put "true" into mData[mCurrentControlKey]["selected"]
     else
-      put "false" into mData[pKey]["selected"]
+      put "false" into mData[mCurrentControlKey]["selected"]
       userInteraction()
     end if
   end if
@@ -2750,6 +2747,7 @@ private handler checkSliderSelected(in pKey as String)
   if mPosition is within mCurrentRect then
     put pKey into mAppData["vars"]["Selected"]
     adjustSlider(the x of the mouse position)
+    put true into mExit
     outputValues()
     userInteraction()
   end if
@@ -2757,6 +2755,7 @@ private handler checkSliderSelected(in pKey as String)
   if mPosition is within mControlRect then
     put true into mStillDown
     put pKey into mAppData["vars"]["Selected"]
+    put true into mExit
     outputValues()
     userInteraction()
   end if
@@ -2815,19 +2814,20 @@ private handler selectSwitch()
   variable tKey as String
 
   repeat with tCount from 1 up to (the number of elements in mData)
-    put mkStr(tCount) into tKey
+    put mkStr(tCount) into mCurrentControlKey
     put element tCount of mLocList into mCurrentRect
-    checkSwitchSelection(tKey)
+    checkSwitchSelection()
   end repeat
 end handler
 
-private handler checkSwitchSelection(in pKey as String)
+private handler checkSwitchSelection()
   if mPosition is within mCurrentRect then
-    if mData[pKey]["selected"] is "true" then
-      put "false" into mData[pKey]["selected"]
+    if mData[mCurrentControlKey]["selected"] is "true" then
+      put "false" into mData[mCurrentControlKey]["selected"]
     else
-      put "true" into mData[pKey]["selected"]
+      put "true" into mData[mCurrentControlKey]["selected"]
     end if
+    put true into mExit
     outputValues()
     userInteraction()
   end if
@@ -2835,17 +2835,17 @@ end handler
 
 --SECTION: USER INTERACTION NUMERIC UPDOWN
 
-private handler selectUpDown(in pPosition as Point)
+private handler selectUpDown()
   variable tKey as String
   variable tCount as Number
 
   repeat with tCount from 1 up to the number of elements in mData
     put mkStr(tCount) into mCurrentControlKey
-    checkUpDownSelected(mCurrentControlKey)
+    checkUpDownSelected()
   end repeat
 end handler
 
-private handler checkUpDownSelected(in pKey as String)
+private handler checkUpDownSelected()
   if mData[mCurrentControlKey]["limit"] is not "true" then
     if mPosition is within arrayToRect(mData[mCurrentControlKey]["locplus"]) then
       put true into mStillDown
@@ -2872,7 +2872,6 @@ private handler incrementCount(in pDirect as String)
   variable tLimit as Number
   variable tKey as String
 
-  addDebugInfo("hit","true")
   if mStillDown is true then
     -- add 1 to mAppData["vars"]["TimerCount"]
     -- if mTimer = 1 then
@@ -2914,7 +2913,7 @@ end handler
 
 --SECTION:  USER INTERATION MIXED CONTROLS
 
-private handler selectMixed(in pPosition as Point)
+private handler selectMixed()
   variable tCount as Number
   variable tKey as String
   variable tControlType as String
@@ -2927,15 +2926,15 @@ private handler selectMixed(in pPosition as Point)
       next repeat
     end if
     if tControlType is "Button Bar" then
-      checkButtonBarSelection(tKey)
+      checkButtonBarSelection()
     else if tControlType is "Switches" then
       -- FIXME: all switches get switched?
-      checkSwitchSelection(tKey)
+      checkSwitchSelection()
     else if tControlType is "Sliders" then
       -- FIXME: adjustSlider not working yet
       -- checkSliderSelected(tKey)
     else if tControlType is "Numeric Up/Down" then
-
+      checkUpDownSelected()
     end if
     if mExit then
       exit repeat
