@@ -532,6 +532,13 @@ private handler setOutputBoxTextSize(in pVal as Number)
   redraw all
 end handler
 
+property controlOutput  get mActionOutput
+metadata controlOutput.section is "Advanced"
+metadata controlOutput.label  is "Output from Controls"
+private variable mActionOutput
+
+-- So it goes
+
 property outputBoxTextFont  get mShowOutputBoxTextFont  set setOutputBoxTextFont
 metadata outputBoxTextFont.editor  is "com.livecode.pi.font"
 metadata outputBoxTextFont.default  is "Courier"
