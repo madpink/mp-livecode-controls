@@ -2,12 +2,12 @@ widget pink.mad.ubercontrol
 
 metadata title is "MPUberControlPanel"
 metadata author is "MadPink"
-metadata version is "0.9.39"
+metadata version is "0.9.45"
 metadata description is "Allows for multiple configurable controls that can be dynamically changed"
 metadata preferredSize  is "420,230"
 metadata svgicon is  "M51.3,29.1V24c0-6.1,3.4-11.6,8.9-14.4L57.9,5c-7.2,3.6-11.7,10.9-11.7,19v7.1l1.2,1.2C48.7,31.5,50,30.3,51.3,29.1z M68.1,34.1c0.7,0.4,1.4,0.8,2,1.4c4.4-2.2,8.1-5.6,8.4-9.3c-5.1,2.8-9.3,4.2-12.1,4.9L68.1,34.1  C68.1,34.1,68.1,34.1,68.1,34.1z M28.8,33.3V33c-0.4-1.2-0.7-2.4-0.9-3.6l-8.2-2.7C21.7,28.9,24.9,31.8,28.8,33.3z M43.6,95c2.5,0,4.7-1.3,6-3.2c-0.5-1-0.8-2.2-0.8-3.4c-2.2-0.8-4-2.3-5.1-4.3c-1.5,2.6-4.1,4.4-7.1,4.8  C37.1,92.4,40.1,95,43.6,95z M58.5,95c3.6,0,6.5-2.6,7.1-6c-2.4-0.3-4.5-1.6-6-3.3c-1.8,2.1-4.5,3.4-7.4,3.4c-0.2,0-0.5,0-0.7,0C52,92.4,55,95,58.5,95z  M74.2,79.3c0-0.3,0-0.6-0.1-0.9c-0.3,0-0.5,0-0.8,0c-3.6,0-6.8-2-8.5-4.9c-0.8,1.4-1.9,2.6-3.3,3.4  c0.2,0.8,0.3,1.5,0.3,2.4c0,1.4-0.3,2.8-0.9,4c1.3,1.9,3.5,3.2,6,3.2C71,86.5,74.2,83.3,74.2,79.3z M59.3,79.3c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-3.6,0-6.8-2-8.5-4.9c-0.6,1-1.3,1.9-2.3,2.7  c-0.4,0.9-0.7,2-0.7,3.1c0,4,3.2,7.2,7.2,7.2C56.1,86.5,59.3,83.3,59.3,79.3z M35.1,86.5c4,0,7.2-3.2,7.2-7.2c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-2.4,0-4.7-0.9-6.4-2.4  c-1.4,1.2-3.1,2-5,2.3c0,0.3-0.1,0.6-0.1,0.9C27.9,83.3,31.2,86.5,35.1,86.5z M20.4,65.1c-0.6,1-0.9,2.3-0.9,3.5c0,4,3.2,7.2,7.2,7.2c1.8,0,3.4-0.6,4.7-1.7c-1.1-1.6-1.7-3.5-1.7-5.5  c0-1.2,0.2-2.3,0.6-3.4c-1.3-0.1-2.5-0.4-3.6-0.9c-1.3,0.6-2.7,1-4.2,1C21.7,65.3,21,65.3,20.4,65.1z M38.1,62.1c-1.3,1.4-3,2.5-5,3c-0.6,1.1-1,2.3-1,3.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.2-0.3-2.4-0.8-3.4  c-0.1,0-0.3,0-0.4,0C42.5,65.3,39.9,64.1,38.1,62.1z M80.6,68.7c0-1.5-0.5-2.9-1.3-4.1c-1.2,0.5-2.4,0.8-3.8,0.8c-2.5,0-4.7-0.9-6.4-2.4c-1.8,1.3-2.9,3.4-2.9,5.8  c0,4,3.2,7.2,7.2,7.2C77.3,75.9,80.6,72.7,80.6,68.7z M53.5,62c-2.6,1.1-4.4,3.7-4.4,6.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.3-2.5-0.9-3.5  c-0.6,0.1-1.2,0.2-1.8,0.2C57.9,65.3,55.3,64.1,53.5,62z M22.4,62.8c0.6,0,1.1-0.1,1.7-0.2c-1.8-1.8-3-4.3-3-7c0-1,0.2-2.1,0.5-3c-1.7-0.1-3.3-0.7-4.7-1.7  c-1.1,1.3-1.7,2.9-1.7,4.7C15.2,59.5,18.4,62.8,22.4,62.8z M23.7,55.6c0,4,3.2,7.2,7.2,7.2c2.3,0,4.4-1.1,5.7-2.9c-0.7-1.3-1-2.8-1-4.3c0-1.3,0.3-2.6,0.8-3.8  c-1.2,0.5-2.5,0.8-3.9,0.8c-1.8,0-3.6-0.5-5-1.4c-0.9,0.6-1.9,1-3,1.2C24,53.3,23.7,54.4,23.7,55.6z M82.7,55.6c0-1.4-0.4-2.7-1.1-3.8c-1.2,0.5-2.6,0.9-4,0.9c-2.6,0-4.9-1-6.7-2.6c-0.5,0.4-0.9,0.9-1.3,1.4  c0.6,1.3,1,2.7,1,4.2s-0.4,2.9-1,4.2c1.3,1.8,3.4,3,5.8,3C79.5,62.8,82.7,59.5,82.7,55.6z M54.5,52.1c0.4,1.1,0.6,2.2,0.6,3.4s-0.2,2.4-0.6,3.4c1.2,2.2,3.6,3.8,6.3,3.8c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.5-1-3.6  c-1.1,0.4-2.2,0.6-3.4,0.6c-2.7,0-5.2-1.1-7-2.9C55.8,50.3,55,51.1,54.5,52.1z M38.2,55.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.6-1-3.7c-1.1,0.4-2.3,0.7-3.6,0.7c-2.7,0-5.1-1.1-6.9-2.8  C39.3,51.1,38.2,53.2,38.2,55.6z M22.4,50c1,0,2-0.2,2.9-0.6c-1.6-1.7-2.6-4.1-2.6-6.6s1-4.9,2.6-6.6c-0.9-0.4-1.9-0.6-2.9-0.6c-4,0-7.2,3.2-7.2,7.2  C15.2,46.8,18.4,50,22.4,50z M37.7,37.9c-2.5-0.2-5-0.9-7.3-2c-3,0.9-5.2,3.6-5.2,6.9c0,4,3.2,7.2,7.2,7.2c2.7,0,5.1-1.5,6.3-3.8  c-0.4-1.1-0.6-2.2-0.6-3.4s0.2-2.4,0.6-3.4C38.5,38.8,38.2,38.4,37.7,37.9z M72.2,38.1c0.8,1.4,1.2,3,1.2,4.7s-0.5,3.3-1.2,4.7c1.3,1.5,3.3,2.5,5.4,2.5c4,0,7.2-3.2,7.2-7.2c0-4-3.2-7.2-7.2-7.2  C75.5,35.6,73.5,36.6,72.2,38.1z M63.7,50c4,0,7.2-3.2,7.2-7.2c0-2.9-1.8-5.5-4.3-6.6c-2.7,1-5.4,1.5-8.2,1.7c-0.5,0.5-0.8,1.1-1.1,1.7  c0.3,1,0.5,2.1,0.5,3.2c0,1.1-0.2,2.2-0.5,3.2C58.4,48.4,60.8,50,63.7,50z M47,36.5c-1.3,0.5-2.7,0.9-4.1,1.2c-1.3,1.3-2.2,3.1-2.2,5.1c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.9-0.8-3.7-2-5  C51.1,37.6,49,37.2,47,36.5z M49.1,34.3c0,0.1,0,0.1,0,0.2c5.2,1.4,10.8,1.3,16-0.5l-6.4-11.1C56.8,27.1,53,31.6,49.1,34.3z M45.6,34.3L31.3,19.9c-1.7,4.4-1.5,9.5,0.5,13.8C36.1,35.7,41.2,35.9,45.6,34.3z"
 
-constant kVersion is "0.9.39 beta 2019.10.07.1742"
+constant kVersion is "0.9.45 beta 2019.10.16.0642"
 
 use com.livecode.math
 use com.livecode.canvas
@@ -532,6 +532,13 @@ private handler setOutputBoxTextSize(in pVal as Number)
   redraw all
 end handler
 
+property controlOutput  get mActionOutput
+metadata controlOutput.section is "Advanced"
+metadata controlOutput.label  is "Output from Controls"
+private variable mActionOutput
+
+-- So it goes
+
 property outputBoxTextFont  get mShowOutputBoxTextFont  set setOutputBoxTextFont
 metadata outputBoxTextFont.editor  is "com.livecode.pi.font"
 metadata outputBoxTextFont.default  is "Courier"
@@ -556,22 +563,10 @@ private handler setAppData(in pVal as Array)
   put kVersion into mAppData["version"]
 end handler
 
-private variable mDebugCat as String
-private handler clearDebugInfo(in pDebug as String)
-  put pDebug into mDebugCat
-  put the empty array into mAppData["debug"][mDebugCat]
-  setAppData(mAppData)
-end handler
-
 private handler addDebugInfo(in pKey as String, in pValue)
-  /*
-  clearDebugInfo sets the array key that values are saved in
-  addDebugInfo adds a value to a key later viewed in appData
-    Example of capturing values:
-    clearDebugInfo("cat")
-    addDebugInfo("KEY",VALUE)
-  */
-  put pValue into mAppData["debug"][mDebugCat][pKey]
+  put pKey into mAppData["debug"]["key"]
+  put pValue into mAppData["debug"]["value"]
+  put pValue into mAppData["debug"][pKey]
   setAppData(mAppData)
 end handler
 
@@ -663,7 +658,7 @@ end handler
 
 property controlType  get mControlType  set setControlType
 metadata controlType.editor  is "com.livecode.pi.enum"
-metadata controlType.options  is "Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Progress Bars,Sliders,Switches"
+metadata controlType.options  is "Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Progress Bars,Sliders,Switches,Mixed Controls"
 metadata controlType.default  is "Button Bar"
 metadata controlType.label  is "Control Types"
 metadata controlType.section  is "Basic"
@@ -682,12 +677,10 @@ private handler setControlType(in pVal as String)
       useDefaultUpDownProps()
     else if mControlType is "Dialog Box" then
       useDefaultDialogBoxProps()
-   -- TODO: else if mControlType is "Progress Bars" then
-      -- TODO: useDefaultProgressBarsProps()
-    else if mControlType is "Sliders" then
+    else if mControlType is "Sliders" or mControlType is "Progress Bars" then
       useDefaultSlidersProps()
     else if mControlType is "Form Backdrop" then
-      -- TODO: no props?
+      -- no props for now
     end if
   end if
   redraw all
@@ -940,7 +933,6 @@ private handler setControlItemSpacing(in pVal as Number)
   redraw all
 end handler
 
---TODO: DOC: add to wiki and help docs
 property controlValuePrefix    get mControlValuePrefix   set setControlValuePrefix
 metadata controlValuePrefix.editor   is "com.livecode.pi.text"
 metadata controlValuePrefix.default   is " "
@@ -953,10 +945,9 @@ private handler setControlValuePrefix(in pVal as String)
   redraw all
 end handler
 
---TODO: DOC: add to wiki and help docs
 property controlValueSuffix    get mControlValueSuffix   set setControlValueSuffix
 metadata controlValueSuffix.editor   is "com.livecode.pi.text"
-metadata controlValueSuffix.default   is "%"
+metadata controlValueSuffix.default   is " "
 metadata controlValueSuffix.label    is "Control - Value Suffix"
 metadata controlValueSuffix.section   is "Basic"
 private variable mControlValueSuffix as String
@@ -1157,6 +1148,9 @@ private variable mCurrentTheme as String
 private variable mUseColorThemes as Boolean
 private variable mEntryValue as String
 private variable mCurrentControlKey as String
+private variable mPosition as Point
+private variable mExit as Boolean
+private variable mTimer as Number
 
 --SECTION:  EVENT HANDLERS
 public handler OnCreate()
@@ -1182,11 +1176,8 @@ end handler
 
 --TODO:  CREATE DEFAULT SCRIPT
 public handler OnOpen()
-  post "if the script of me is empty then set script of me to base64Decode(\q & " & kDefaultScript1 & kDefaultScript2 & " & \q)"
+  setDefaultScript()
 end handler
-
-constant kDefaultScript1 is "b24gdXNlckFjdGlvbiBwRGF0YSBwU2VsZWN0ZWQgcFR5cGUKICBsb2NhbCB0VmFsdWUsIHRMYWJlbAogIGlmIHBUeXBlIGlzICJBY3Rpb24iIHRoZW4KICAgIHN3aXRjaCBwU2VsZWN0ZWQKICAgICAgY2FzZSAxCgogICAgICAgIGJyZWFrCiAgICAgIGNhc2UgMgoKCiAgICAgICAgYnJlYWsKICAgIGVuZCBzd2l0Y2gKICBlbHNlCiAgICBwdXQgbURhdGFbcFNlbGVjdGVkXVsidmFsdWUiXSBpbnRvIHRWYWx1ZQogICAgcHV0IG1EYXRhW3BTZWxlY3RlZF1bImxhYmVsIl0gaW50byB0TGFiZWwKICBlbmQgaWYKCiAgLS0gc2V0IHR"
-constant kDefaultScript2 is "oZSBteURhdGEgb2YgbWUgdG8gcERhdGEKZW5kIHVzZXJBY3Rpb24KCm9uIGJ1dHRvblByZXNzZWQgcEJ1dHRvbgogIHN3aXRjaCBwQnV0dG9uCiAgICBjYXNlIDEgIC0tIE9LCgogICAgICBicmVhawogICAgY2FzZSAxICAtLSBDYW5jZWwKCiAgICAgIGJyZWFrCiAgICBjYXNlIDMKCiAgICAgIGJyZWFrCiAgZW5kIHN3aXRjaAplbmQgYnV0dG9uUHJlc3NlZA=="
 
 public handler OnSave(out rProperties as Array)
   put the empty array into rProperties
@@ -1394,6 +1385,7 @@ public handler userInteraction()
   else if mSendMessage then
     post "userAction" with [mData, mActionOutput, mControlType]
   end if
+  put true into mExit
 end handler
 
 private handler outputValues()
@@ -1414,24 +1406,37 @@ end handler
 
 --SECTION: VERIFY
 
+private handler verifyDataComplete()
+variable tCount as Number
+  repeat with tCount from 1 up to the number of elements in mData
+    if not (mData[mkStr(tCount)] is an array) then
+      put the empty array into mData[mkStr(tCount)]
+    end if
+    if mControlType is "Mixed Controls" then
+      if "controltype" is not among the keys of mData[mkStr(tCount)] then
+         put "Button Bar" into mData[mkStr(tCount)]["controltype"]
+      end if
+      verifyControlComplete(mData[mkStr(tCount)]["controltype"], mkStr(tCount))
+    else
+      verifyControlComplete(mControlType, mkStr(tCount))
+    end if
+  end repeat
+end handler
+
 private handler makeDefaultData()
   put randomLabel() into mData["1"]
   put randomLabel() into mData["2"]
 end handler
 
-private handler verifyDataComplete()
-  variable tCount as Number
-  repeat with tCount from 1 up to the number of elements in mData
-    if not (mData[mkStr(tCount)] is an array) then
-      put the empty array into mData[mkStr(tCount)]
-    end if
-    variable tCountK as Number
-    variable tKeys as List
-    variable tValues as List
-    if mControlType is "Button Bar" then
+private handler verifyControlComplete(in pType as String, in pKey as String)
+  variable tCountK as Number
+  variable tKeys as List
+  variable tValues as List
+
+    if pType is "Button Bar" then
       --basics
       put ["label","show","value","selected"] into tKeys
-      put [randomLabel(),"true",mkStr(tCount),"false"] into tValues
+      put [randomLabel(),"true",pKey,"false"] into tValues
       --text
       put tKeys & ["textsize","textfont","selecttextcolor","unselectedtextcolor"] into tKeys
       put tValues & ["default","default","default","default"] into tValues
@@ -1441,23 +1446,21 @@ private handler verifyDataComplete()
       --icons
       put tKeys & ["icon","selectedicon","unselectediconcolor","selectediconcolor"] into tKeys
       put tValues & ["builtin:circle blank","builtin:bullseye","default","default"] into tValues
-    else if mControlType is "Switches" then
+    else if pType is "Switches" then
       --Basics
       put ["label","show","selected","value"] into tKeys
-      put [randomLabel(),"true","false",mkStr(tCount)] into tValues
+      put [randomLabel(),"true","false",pKey] into tValues
       --text
       put tKeys & ["textcolor","textfont","textsize"] into tKeys
       put tValues & ["default","default","default"] into tValues
       --icons
       put tKeys & ["iconchecked","iconunchecked","uncheckediconcolor","checkediconcolor"] into tKeys
       put tValues & ["default","default","default","default"] into tValues
-    else if mControlType is "Numeric Up/Down" then
+    else if pType is "Numeric Up/Down" then
       --Basics
       put ["label","show","short"] into tKeys
-      put [randomLabel(),"true","xval" & mkStr(tCount)] into tValues
+      put [randomLabel(),"true","xval" & pKey] into tValues
       --Values
-      --TODO: DOC: add to docs
-      --TODO: add to paint
       put tKeys & ["min","max","step","value","prefix","suffix"] into tKeys
       put tValues & ["0","100","1","50","default","default"] into tValues
       --Icons
@@ -1469,7 +1472,7 @@ private handler verifyDataComplete()
       --Text
       put tKeys & ["textsize","valuesize","textfont","valuefont"] into tKeys
       put tValues & ["default","default","default","default"] into tValues
-    else if mControlType is "Sliders" then
+    else if pType is "Sliders" then
       --Label/Fonts
       put ["label","show","textfont","valuefont"] into tKeys
       put [randomLabel(),"true","default","default"] into tValues
@@ -1484,7 +1487,7 @@ private handler verifyDataComplete()
       --TODO: add to paint
       put tKeys & ["circle","min","max","value","prefix","suffix"] into tKeys
       put tValues & ["default","0","100","50","default","default"] into tValues
-   else if mControlType is "Progress Bars" then
+   else if pType is "Progress Bars" then
       --Label/Fonts
       put ["label","show","textfont","valuefont"] into tKeys
       put [randomLabel(),"true","default","default"] into tValues
@@ -1495,25 +1498,25 @@ private handler verifyDataComplete()
       put tKeys & ["labelcolor","linecolor","progresscolor","valuecolor"] into tKeys
       put tValues & ["default","default","default","default"] into tValues
       --Values
-      --TODO: DOC: add to docs
-      --TODO: add to paint
       put tKeys & ["min","max","value","prefix","suffix"] into tKeys
       put tValues & ["0","100","50","default","default"] into tValues
-    else if mControlType is "Form Backdrop" then
+    else if pType is "Form Backdrop" then
       --Basics
       put ["label","show"] into tKeys
       put [randomLabel() ,"true"] into tValues
       --Text
       put tKeys & ["textcolor","textsize","textfont"] into tKeys
       put tValues & ["default","default","default"] into tValues
+    else
+      put ["show"] into tKeys
+      put ["false"] into tValues
     end if
 
     repeat with tCountK from 1 up to the number of elements in tKeys
-      if element tCountK of tKeys is not among the keys of mData[mkStr(tCount)] then
-        put element tCountK of tValues into mData[mkStr(tCount)][element tCountK of tKeys]
+      if element tCountK of tKeys is not among the keys of mData[pKey] then
+        put element tCountK of tValues into mData[pKey][element tCountK of tKeys]
       end if
     end repeat
-  end repeat
 end handler
 
 private handler useDefaultButtonBarProps()
@@ -1582,11 +1585,11 @@ public handler OnPaint()
   setCurrentColorSet()
   drawBaseItems()
   calcControlSize()
-  clearDebugInfo(mControlType)
   if mControlType is "Dialog Box" then
     paintDialogBox()
   else
     variable tCount as Number
+    variable tControlType as String
 
     set the top of mControlRect to the top of mCurrentRect + mControlBufferV
     set the left of mControlRect to the left of mCurrentRect + mControlBufferH
@@ -1596,19 +1599,25 @@ public handler OnPaint()
      if mData[mCurrentControlKey]["show"] is "false" then
         push "skip" onto mLocList
      else
-        if mControlType is "Switches" then
-          createSwitch()
-         else if mControlType is "Button Bar" then
-          createButton()
-        else if mControlType is "Progress Bars" then
-          createProgressBar()
-         else if mControlType is "Numeric Up/Down" then
-          createUpDown()
-         else if mControlType is "Sliders" then
-          createSlider()
-         else if mControlType is "Form Backdrop" then
-          createFormEntry()
-         end if
+       if mControlType is "Mixed Controls" then
+         put mData[mCurrentControlKey]["controltype"] into tControlType
+       else
+         put mControlType into tControlType
+       end if
+
+       if tControlType is "Switches" then
+         createSwitch()
+       else if tControlType is "Button Bar" then
+         createButton()
+       else if tControlType is "Progress Bars" then
+         createProgressBar()
+       else if tControlType is "Numeric Up/Down" then
+         createUpDown()
+       else if tControlType is "Sliders" then
+         createSlider()
+       else if tControlType is "Form Backdrop" then
+         createFormEntry()
+       end if
      end if
      if mAppData["vars"]["ControlInColumn"] = mAppData["vars"]["CountPerColumn"] then
         put 1 into mAppData["vars"]["ControlInColumn"]
@@ -1659,7 +1668,6 @@ end handler
 --SECTION:  FORM BACKDROP
 
 private handler createFormEntry()
-  --TODO: Fix "SHOW"
   variable tLabels as List
 
   chooseAndSetPaint(mData[mCurrentControlKey]["textcolor"],mControlTextColor)
@@ -1715,7 +1723,6 @@ end handler
 ------- adjust width of buttons to columns
 
 private handler createButton()
-  --TODO: Fix "SHOW"
   variable tFont as Font
   variable tCount as Number
   variable tText as String
@@ -1723,7 +1730,6 @@ private handler createButton()
   variable tTextRect as Rectangle
   variable tLeft as Number
   variable tTop as Number
-
   put the left of mCurrentRect + (mControlBufferH * mAppData["vars"]["CurrentColumn"]) into tLeft
   add (mAppData["vars"]["CurrentColumn"] - 1) * the width of mControlRect to tLeft
   set the left of mControlRect to tLeft
@@ -1864,7 +1870,6 @@ end handler
 --SECTION:  SWITCHES
 
 private handler createSwitch()
-  --TODO: Fix "SHOW"
   variable tIconRect as Rectangle
   variable tTextRect as Rectangle
   variable tIconPath as Path
@@ -1902,10 +1907,8 @@ private handler createSwitch()
 end handler
 
 --SECTION: NUMERIC UP/DOWN
--- TODO: Multicolumn up/down
 
 private handler createUpDown()
-  --TODO: Fix "SHOW"
   variable tRect as Rectangle
   variable tNext as String
   variable tIconPath as Path
@@ -1975,7 +1978,6 @@ end handler
 --SECTION: PROGRESS BAR
 
 private handler createProgressBar()
-  --TODO: Fix "SHOW"
   variable tRect as Rectangle
   variable tWide as Number
   variable tLabelRect as Rectangle
@@ -2040,7 +2042,6 @@ end handler
 -- TODO: apply mControlObjectVertical options to: SLIDERS
 
 private handler createSlider()
-  --TODO: Fix "SHOW"
   variable tRect as Rectangle
   variable tWide as Number
   variable tLabelRect as Rectangle
@@ -2076,7 +2077,6 @@ private handler createSlider()
     subtract the width of tValueRect from the width of tRect
     set the right of tRect to the left of tValueRect
     mpWrapTextinRect(tValueRect,buildValue(mCurrentControlKey),mControlTextAlign)
-    --TODO:  Slider Value alignment?
   end if
 
   chooseAndSetPaint(mData[mCurrentControlKey]["linecolor"],mControlObjectColor)
@@ -2125,25 +2125,20 @@ private handler drawBaseItems()
   put rectangle [0,0,my width,my height] into mCurrentRect
 
   if mOverlay then
-    clearDebugInfo("Overlay")
     drawOverlay()
   end if
 
-  clearDebugInfo("Base")
   put mpDrawBase("border","back",mBorder,mRadius,mCurrentRect) into mCurrentRect
 
   if mShowTitle then
-    clearDebugInfo("Title")
     displayTitle()
   end if
 
   if mShowOutputBox then
-    clearDebugInfo("Output Box")
     displayOutputBox()
   end if
 
   if mShowBottomButtons then
-    clearDebugInfo("Bottom Buttons")
     bottomButtons(mBottomButtonTextColor,mBottomButtonBackColor)
   end if
 
@@ -2181,8 +2176,6 @@ end handler
 
 private handler overlayAdjust()
   variable tAlign as List
-
-  --clearDebugInfo("overlay")
 
   set the height of mCurrentRect to mBoxHeight
   set the width of mCurrentRect to mBoxWidth
@@ -2227,7 +2220,6 @@ end handler
 
 private handler displayTitle()
   variable tTitleRect as Rectangle
-  -- clearDebugInfo("title")
 
   setPaint(mTitleTextColor)
   put mCurrentRect into tTItleRect
@@ -2332,7 +2324,6 @@ end handler
 
 private handler displayOutputBox()
 variable tOutputRect as Rectangle
-  -- clearDebugInfo("title")
 
   setPaint(mTitleTextColor)
   put mCurrentRect into tOutputRect
@@ -2415,7 +2406,6 @@ handler executeDataCommand()
 end handler
 
 handler loadDataSets(in pType as String, in pName as String)
-  -- clearDebugInfo("load")
   if char 1 of pType is "p" then
     if mAppData["savedprops"][pName] is an array then
       put mAppData["savedprops"][pName] into mAppData["props"]
@@ -2474,7 +2464,10 @@ end handler
 
 --SECTION:  USER INTERATION
 public handler OnMouseUp()
-  bottomButtonPressed()
+  variable tPosition as Point
+  put the mouse position into tPosition
+
+  bottomButtonPressed(tPosition)
   if mControlType is "Button Bar" then
     if mButtonBarType is "Action" then
       schedule timer in .1 seconds
@@ -2500,7 +2493,11 @@ public handler OnMouseMove()
 end handler
 
 public handler OnMouseDown()
-  if mControlType is "Button Bar" then
+  put the mouse position into mPosition
+
+  if mControlType is "Mixed Controls" then
+    selectMixed()
+  else if mControlType is "Button Bar" then
     selectButtonBar()
   else if mControlType is "Switches" then
     selectSwitch()
@@ -2510,6 +2507,7 @@ public handler OnMouseDown()
     selectUpDown()
   end if
   post "mouseDown" with [the click button]
+  setAppData(mAppData)
 end handler
 
 public handler OnMouseRelease()
@@ -2531,6 +2529,8 @@ end handler
 public handler OnTimer()
   if mControlType is "Button Bar" then
     resetSelects()
+  else if mControlType is "Numeric Up/Down" then
+    -- incrementCount
   end if
 
   redraw all
@@ -2547,22 +2547,20 @@ end handler
 
 --SECTION USER INTERATION: BOTTOM BUTTONS
 
-public handler bottomButtonPressed()
-  --clearDebugInfo("bottom")
-  variable tPosition as Point
-  put the mouse position into tPosition
+public handler bottomButtonPressed(in pPosition as Point)
+
   if mShowBottomButtons then
-    if tPosition is within element 1 of mBottomButtonLoc then
+    if mPosition is within element 1 of mBottomButtonLoc then
       post "buttonPressed" to my script object with [1]
     end if
   end if
   if mShowBottomButtons and mShowButtons >= 2 then
-    if tPosition is within element 2 of mBottomButtonLoc then
+    if mPosition is within element 2 of mBottomButtonLoc then
       post "buttonPressed" to my script object with [2]
     end if
   end if
   if mShowBottomButtons and mShowButtons = 3 then
-    if tPosition is within element 3 of mBottomButtonLoc then
+    if mPosition is within element 3 of mBottomButtonLoc then
       post "buttonPressed" to my script object with [3]
     end if
   end if
@@ -2599,56 +2597,52 @@ end handler
 --SECTION USER INTERATION: BUTTON BAR
 
 private handler selectButtonBar()
-  variable tPosition as Point
-  variable tRect as Rectangle
   variable tCount as Number
-  variable tKey as String
-
-  put the mouse position into tPosition
 
   repeat with tCount from 1 up to the number of elements in mData
-    put tCount formatted as string into tKey
-    if mData[tKey]["show"] is "false" then
+    put tCount formatted as string into mCurrentControlKey
+    if mData[mCurrentControlKey]["show"] is "false" then
       next repeat
     end if
-
-    put element tCount of mLocList into tRect
-
-    if mButtonBarType is "Multiple" then
-      if tPosition is within tRect then
-        if mData[tKey]["selected"] is "true" then
-          put "false" into mData[tKey]["selected"]
-        else
-          if "exclusive" is among the keys of mData[tKey] then
-            resetSelects()
-          end if
-          put "true" into mData[tKey]["selected"]
-          exit repeat
-        end if
-        outputValues()
-        userInteraction()
-      else
-        if "exclusive" is among the keys of mData[tKey] then
-          put "false" into mData[tKey]["selected"]
-        end if
-      end if
-    else if mButtonBarType is "Action" then
-      if tPosition is within tRect then
-        put tKey into mActionOutput
-        put "true" into mData[tKey]["selected"]
-        userInteraction()
-      end if
-    else if mButtonBarType is "Single" then
-      if tPosition is within tRect then
-        put tKey into mActionOutput
-        put "true" into mData[tKey]["selected"]
-      else
-        put "false" into mData[tKey]["selected"]
-        userInteraction()
-      end if
-    end if
+    put element tCount of mLocList into mCurrentRect
+    checkButtonBarSelection()
   end repeat
   setAppData(mAppData)
+end handler
+
+private handler checkButtonBarSelection()
+  if mButtonBarType is "Multiple" then
+    if mPosition is within mCurrentRect then
+      if mData[mCurrentControlKey]["selected"] is "true" then
+        put "false" into mData[mCurrentControlKey]["selected"]
+      else
+        if "exclusive" is among the keys of mData[mCurrentControlKey] then
+          resetSelects()
+        end if
+        put "true" into mData[mCurrentControlKey]["selected"]
+      end if
+      outputValues()
+      userInteraction()
+    else
+      if "exclusive" is among the keys of mData[mCurrentControlKey] then
+        put "false" into mData[mCurrentControlKey]["selected"]
+      end if
+    end if
+  else if mButtonBarType is "Action" then
+    if mPosition is within mCurrentRect then
+      put mCurrentControlKey into mActionOutput
+      put "true" into mData[mCurrentControlKey]["selected"]
+      userInteraction()
+    end if
+  else if mButtonBarType is "Single" then
+    if mPosition is within mCurrentRect then
+      put mCurrentControlKey into mActionOutput
+      put "true" into mData[mCurrentControlKey]["selected"]
+    else
+      put "false" into mData[mCurrentControlKey]["selected"]
+      userInteraction()
+    end if
+  end if
 end handler
 
 private handler resetSelects()
@@ -2689,31 +2683,39 @@ end handler
 --SECTION: USER INTERACTION SLIDERS
 
 private handler selectSlider()
-  variable tLoc as Point
-  variable tX as Number
-  variable tSlideRect as Rectangle
-  variable tHandleRect as Rectangle
-
-  put the click position into tLoc
-
-  repeat with tX from 1 up to the number of elements in mData
-    put element tX of mLocList into tSlideRect
-    put element tX of mHandles into tHandleRect
-
-    if tLoc is within tSlideRect then
-      put mkStr(tX) into mAppData["vars"]["Selected"]
-      adjustSlider(the x of the mouse position)
-      outputValues()
-      userInteraction()
-    end if
-
-    if tLoc is within tHandleRect then
-      put true into mStillDown
-      put mkStr(tX) into mAppData["vars"]["Selected"]
-      outputValues()
-      userInteraction()
+  variable tCount as Number
+  variable tKey as String
+  put false into mExit
+  put 0 into mAppData["vars"]["TimerCount"]
+  put 0 into mTimer
+  setAppData(mAppData)
+  repeat with tCount from 1 up to the number of elements in mData
+    put element tCount of mLocList into mCurrentRect
+    put element tCount of mHandles into mControlRect
+    put mkStr(tCount) into tKey
+    checkSliderSelected(tKey)
+    if mExit then
+      exit repeat
     end if
   end repeat
+end handler
+
+private handler checkSliderSelected(in pKey as String)
+  if mPosition is within mCurrentRect then
+    put pKey into mAppData["vars"]["Selected"]
+    adjustSlider(the x of the mouse position)
+    put true into mExit
+    outputValues()
+    userInteraction()
+  end if
+
+  if mPosition is within mControlRect then
+    put true into mStillDown
+    put pKey into mAppData["vars"]["Selected"]
+    put true into mExit
+    outputValues()
+    userInteraction()
+  end if
 end handler
 
 private handler releaseSlider()
@@ -2766,92 +2768,93 @@ end handler
 
 private handler selectSwitch()
   variable tCount as Number
-  variable tCurr as String
-  variable tRect as Rectangle
-  variable tPosition as Point
-
-  put the mouse position into tPosition
+  variable tKey as String
 
   repeat with tCount from 1 up to (the number of elements in mData)
-    put mkStr(tCount) into tCurr
-    put element tCount of mLocList into tRect
-    if tPosition is within tRect then
-      if mData[tCurr]["selected"] is "true" then
-        put "false" into mData[tCurr]["selected"]
-      else
-        put "true" into mData[tCurr]["selected"]
-      end if
-      outputValues()
-      userInteraction()
-      exit repeat
-    end if
+    put mkStr(tCount) into mCurrentControlKey
+    put element tCount of mLocList into mCurrentRect
+    checkSwitchSelection()
   end repeat
+end handler
+
+private handler checkSwitchSelection()
+  if mPosition is within mCurrentRect then
+    if mData[mCurrentControlKey]["selected"] is "true" then
+      put "false" into mData[mCurrentControlKey]["selected"]
+    else
+      put "true" into mData[mCurrentControlKey]["selected"]
+    end if
+    put true into mExit
+    outputValues()
+    userInteraction()
+  end if
 end handler
 
 --SECTION: USER INTERACTION NUMERIC UPDOWN
 
 private handler selectUpDown()
-  variable tPosition as Point
-  variable tRect as Rectangle
-  variable tCurr as String
-  variable tC as Number
-  variable tDirections as List
-  variable tDirect as String
+  variable tKey as String
+  variable tCount as Number
 
-  put ["plus","minus"] into tDirections
-  put the mouse position into tPosition
-
-  repeat with tC from 1 up to the number of elements in mData
-    put mkStr(tC) into tCurr
-    repeat for each element tDirect in tDirections
-      if mData[tCurr]["limit"] is not "true" then
-        put arrayToRect(mData[tCurr]["loc" & tDirect]) into tRect
-        if tPosition is within tRect then
-          put true into mStillDown
-          put 1 into mAppData["vars"]["Timer"]
-          put 0 into mAppData["vars"]["TimerCount"]
-          put tCurr into mAppData["vars"]["Selected"]
-          put tDirect into mData[tCurr]["direct"]
-          incrementCount()
-          outputValues()
-          userInteraction()
-          exit repeat
-        end if
-      end if
-    end repeat
+  repeat with tCount from 1 up to the number of elements in mData
+    put mkStr(tCount) into mCurrentControlKey
+    checkUpDownSelected()
   end repeat
 end handler
 
-private handler incrementCount()
+private handler checkUpDownSelected()
+  if mData[mCurrentControlKey]["limit"] is not "true" then
+    if mPosition is within arrayToRect(mData[mCurrentControlKey]["locplus"]) then
+      put true into mStillDown
+      incrementCount("plus")
+    end if
+    if mPosition is within arrayToRect(mData[mCurrentControlKey]["locminus"]) then
+      put true into mStillDown
+      incrementCount("minus")
+    end if
+    if mStillDown then
+      -- FIXME: fix the timer/hold down function
+      -- put 1 into mTimer
+      -- put 0 into mAppData["vars"]["TimerCount"]
+      outputValues()
+      userInteraction()
+      put true into mExit
+   end if
+  end if
+end handler
+
+private handler incrementCount(in pDirect as String)
   variable tNum as Number
   variable tStep as Number
   variable tLimit as Number
+  variable tKey as String
 
   if mStillDown is true then
-    add 1 to mAppData["vars"]["TimerCount"]
-    if mAppData["vars"]["Timer"] = 1 then
-      put .6 into mAppData["vars"]["Timer"]
-    else if mAppData["vars"]["TimerCount"] > 60 then
-      put .02 into mAppData["vars"]["Timer"]
-    else if mAppData["vars"]["TimerCount"] > 30 then
-      put .05 into mAppData["vars"]["Timer"]
-    else if mAppData["vars"]["TimerCount"] > 10 then
-      put .1 into mAppData["vars"]["Timer"]
-    else
-      put .25 into mAppData["vars"]["Timer"]
-    end if
+    -- add 1 to mAppData["vars"]["TimerCount"]
+    -- if mTimer = 1 then
+    --   put .6 into mTimer
+    -- else if mAppData["vars"]["TimerCount"] > 60 then
+    --   put .02 into mTimer
+    -- else if mAppData["vars"]["TimerCount"] > 30 then
+    --   put .05 into mTimer
+    -- else if mAppData["vars"]["TimerCount"] > 10 then
+    --   put .1 into mTimer
+    -- else
+    --   put .25 into mTimer
+    -- end if
 
-    put mkNum(mData[mAppData["vars"]["Selected"]]["value"]) into tNum
-    put mkNum(mData[mAppData["vars"]["Selected"]]["step"]) into tStep
-    if mData[mAppData["vars"]["Selected"]]["direct"] is "plus" then
-      put mkNum(mData[mAppData["vars"]["Selected"]]["max"]) into tLimit
+    put mkNum(mData[mCurrentControlKey]["value"]) into tNum
+    put mkNum(mData[mCurrentControlKey]["step"]) into tStep
+
+    if pDirect is "plus" then
+      put mkNum(mData[mCurrentControlKey]["max"]) into tLimit
       add tStep to tNum
       if tNum >= tLimit then
         put tLimit into tNum
         put false into mStillDown
       end if
     else
-      put mkNum(mData[mAppData["vars"]["Selected"]]["min"]) into tLimit
+      put mkNum(mData[mCurrentControlKey]["min"]) into tLimit
       subtract tStep from tNum
       if tNum <= tLimit then
         put tLimit into tNum
@@ -2859,10 +2862,40 @@ private handler incrementCount()
       end if
     end if
 
-    put mkStr(tNum) into mData[mAppData["vars"]["Selected"]]["value"]
-    schedule timer in mAppData["vars"]["Timer"] seconds
+    put mkStr(tNum) into mData[mCurrentControlKey]["value"]
+    schedule timer in mTimer seconds
     redraw all
   end if
+end handler
+
+--SECTION:  USER INTERATION MIXED CONTROLS
+
+private handler selectMixed()
+  variable tCount as Number
+  variable tKey as String
+  variable tControlType as String
+
+  put false into mExit
+  repeat with tCount from 1 up to the number of elements in mData
+    put mkStr(tCount) into mCurrentControlKey
+    put mData[mCurrentControlKey]["controltype"] into tControlType
+    if mData[mCurrentControlKey]["show"] is "false" then
+      next repeat
+    end if
+    if tControlType is "Button Bar" then
+      checkButtonBarSelection()
+    else if tControlType is "Switches" then
+      checkSwitchSelection()
+    else if tControlType is "Sliders" then
+      -- FIXME: adjustSlider not working yet
+      -- checkSliderSelected()
+    else if tControlType is "Numeric Up/Down" then
+      checkUpDownSelected()
+    end if
+    if mExit then
+      exit repeat
+    end if
+  end repeat
 end handler
 
 --SECTION:  LIBRARY OF HELPER HANDLERS
@@ -3221,9 +3254,9 @@ private handler qzQ(in pText as String) returns String
   put pText into tResult
   replace "qzqc" with "," in tResult
   replace "qzqs" with " " in tResult
-  --replace "qzqo" with ":" in tResult
-  --replace "qzqm" with ";" in tResult
-  --replace "qzqg" with "'" in tResult
+  replace "qzqo" with ":" in tResult
+  replace "qzqm" with ";" in tResult
+  replace "qzqg" with "'" in tResult
   replace "qzqq" with "\q" in tResult
   replace "qzqv" with "\q,\q" in tResult
   replace "qzqn" with "\n" in tResult
@@ -3338,6 +3371,36 @@ private handler thymeStamp(in pType as String, in pPrefix as String) returns Str
   return tStamp
 end handler
 
+-- SECTION: DEFAULT SCRIPT
+
+private handler setDefaultScript()
+  variable tScript as String
+  put "if the script of me is empty then set script of me" into tScript
+  put " to base64Decode(\q & " after tScript
+  put "b24gbW91c2VVcCBwTW91c2VCdXR0b24KCmVuZCBtb3VzZVVwCgpv" after tScript
+  put "biBtb3VzZURvd24gcE1vdXNlQnV0dG9uCiAgIAplbmQgbW91c2VE" after tScript
+  put "b3duCgpvbiB1c2VyQWN0aW9uIHBEYXRhIHBTZWxlY3RlZCBwVHlw" after tScript
+  put "ZQogIGxvY2FsIHRWYWx1ZSwgdExhYmVsCiAgaWYgcFR5cGUgaXMg" after tScript
+  put "IkFjdGlvbiIgdGhlbgogICAgc3dpdGNoIHBTZWxlY3RlZAogICAg" after tScript
+  put "ICBjYXNlIDEKCiAgICAgICAgYnJlYWsKICAgICAgY2FzZSAyCgog" after tScript
+  put "ICAgICAgIGJyZWFrCiAgICBlbmQgc3dpdGNoCiAgZWxzZQogICAg" after tScript
+  put "cHV0IHBEYXRhW3BTZWxlY3RlZF1bInZhbHVlIl0gaW50byB0VmFs" after tScript
+  put "dWUKICAgIHB1dCBwRGF0YVtwU2VsZWN0ZWRdWyJsYWJlbCJdIGlu" after tScript
+  put "dG8gdExhYmVsCiAgZW5kIGlmCgogIC0tIHNldCB0aGUgbXlEYXRh" after tScript
+  put "IG9mIG1lIHRvIHBEYXRhCmVuZCB1c2VyQWN0aW9uCgpvbiBidXR0" after tScript
+  put "b25QcmVzc2VkIHBCdXR0b24KICAgc3dpdGNoIHBCdXR0b24KICAg" after tScript
+  put "ICAgY2FzZSAxICAtLSBPSwogICAgICAgICAtLSBzZXQgdGhlIHZp" after tScript
+  put "c2libGUgb2YgbWUgdG8gZmFsc2UKICAgICAgICAgYnJlYWsKICAg" after tScript
+  put "ICAgY2FzZSAyICAtLSBDYW5jZWwKICAgICAgICAgLS0gc2V0IHRo" after tScript
+  put "ZSB2aXNpYmxlIG9mIG1lIHRvIGZhbHNlCiAgICAgICAgIGJyZWFr" after tScript
+  put "CiAgICAgIGNhc2UgMwogICAgICAgICAKICAgICAgICAgYnJlYWsK" after tScript
+  put "ICAgZW5kIHN3aXRjaAplbmQgYnV0dG9uUHJlc3NlZAo=" after tScript
+  put " & \q)" after tScript
+  post tScript
+end handler
+
+
+-- SECTION: HELP DOCUMENTATION
 
 /**
 Summary: Removes leading spaces from a line of text
@@ -3364,7 +3427,6 @@ private handler removeLeadSpaces(pText) returns String
 end handler
 
 --SECTION: DOCUMENTATION
--- TODO: update Documentation
 
 /**
 Name: defaultChangeType
@@ -4092,6 +4154,32 @@ Summary: Control Buffer Space Between
 Description:
 Sets the spacing between controls.
 Applies to: Button bar, switches, numeric up/down
+
+Name: controlValuePrefix
+Type: Property
+Syntax: set the controlValuePrefix of <widget> to <string>
+Syntax: get the controlValuePrefix of <widget>
+
+Summary: Control Value Prefix
+
+Description:
+When a value is displayed, the specified string will appear before it.
+For example, if "X:" is the prefix, and 541 is the value, then this will be the displayed value:
+X:541
+Both a prefix and suffix can be specified.
+
+Name: controlValueSuffix
+Type: Property
+Syntax: set the controlValueSuffix of <widget> to <string>
+Syntax: get the controlValueSuffix of <widget>
+
+Summary: Control Value Suffix
+
+Description:
+When a value is displayed, the specified string will appear before it.
+For example, if "%" is the Suffix, and 42 is the value, then this will be the displayed value:
+42%
+Both a prefix and suffix can be specified.
 
 Name: controlIconA
 Type: Property
