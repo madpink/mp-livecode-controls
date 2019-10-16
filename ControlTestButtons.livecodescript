@@ -2,6 +2,7 @@
 local testStack = "LiveCode Extension Test Window"
 local controlCount
 local addToTitle = ""
+local testData
 
 /*
 Useful for testing out the control panel when programming the widget
@@ -32,7 +33,7 @@ end getDataFromWidget
 
 command buttonAction pType
    resizeTestStack
-   put random(8)+2 into controlCount
+   put random(5)+2 into controlCount
    switch pType
       case "1"
          set the controlType of widget 1 of stack testStack to "Dialog Box"
@@ -65,20 +66,22 @@ command buttonAction pType
          break
       case "A"
          set the controlType of widget 1 of stack testStack to "Mixed Controls"
-         put "Button Bar" into tData[1]["controltype"]
-         put "Sliders" into tData[2]["controltype"]
-         put "Switches" into tData[3]["controltype"]
-         put "Numeric Up/Down" into tData[4]["controltype"]
-         put "Switches" into tData[5]["controltype"]
-         set the myData of widget 1 of stack testStack to tData
+         put "Button Bar" into testData[1]["controltype"]
+         put "Sliders" into testData[2]["controltype"]
+         put "Switches" into testData[3]["controltype"]
+         put "Numeric Up/Down" into testData[4]["controltype"]
+         put "Switches" into testData[5]["controltype"]
+         set the myData of widget 1 of stack testStack to testData
          break
       case "B"
          --set the controlBufferV of widget 1 of stack testStack to 13
-         set the buttonBarType of widget 1 of stack testStack to "Single"
+         --set the buttonBarType of widget 1 of stack testStack to "Single"
+         quickData 5
          break
       case "C"
          --set the controlItemSpacing of widget 1 of stack testStack to 1
-         set the buttonBarType of widget 1 of stack testStack to "Multiple"
+         put "false" into testData[2]["show"]
+         set the myData of widget 1 of stack testStack to testData
          break
       case "D"
          --set the controlItemSpacing of widget 1 of stack testStack to 13
@@ -92,7 +95,7 @@ command buttonAction pType
       case "F"
          -- set the xxx of widget 1 of stack testStack to zzz
          --testType "Progress Bars",3,5
-         testType "Switches",5,1
+         set the columnCount of widget 1 of stack testStack to 2
          break
       case "G"
          set the columnCount of widget 1 of stack testStack to 2
@@ -137,12 +140,11 @@ command resizeTestStack
 end resizeTestStack
 
 command quickData pX
-   local tData
+   put empty into testData
    repeat with x=1 to pX
-      --put "qzq" & x into tData[x]["label"]
-      put empty into tData[x]
+      put empty into testData[x]
    end repeat
-   set the myData of widget 1 on stack testStack to tData
+   set the myData of widget 1 on stack testStack to testData
 end quickData
 
 command cycleTest
