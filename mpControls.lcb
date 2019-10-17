@@ -1511,7 +1511,7 @@ end handler
 private handler useDefaultButtonBarProps()
   setControlIconA("builtin:question sign")
   setRadius(23)
-  
+
 end handler
 
 private handler useDefaultSwitchesProps()
