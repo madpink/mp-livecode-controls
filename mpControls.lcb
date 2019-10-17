@@ -40,7 +40,6 @@ metadata borderColor.default is "255,205,255"
 metadata borderColor.section is "Colors"
 metadata borderColor.label is "Border color"
 -- Don't Panic --
-
 metadata topColor.editor  is "com.livecode.pi.color"
 metadata topColor.default is "255,128,192"
 metadata topColor.section is "Colors"
@@ -74,7 +73,6 @@ metadata defaultChangeType.label  is "New Defaults - Changing Type"
 metadata defaultChangeType.section  is "Advanced"
 private variable mDefaultChangeType as Boolean
 private handler setDefaultChangeType(in pVal as Boolean)
-  --qzqz TODO:finish defaultChangeType
   put pVal into mDefaultChangeType
 end handler
 
@@ -261,7 +259,6 @@ metadata overlayHeight.default  is "200"
 metadata overlayHeight.label  is "Overlay-Box Height"
 metadata overlayHeight.section  is "Table"
 private variable mBoxHeight as Number
-
 private handler setBoxHeight(in pVal as Number)
   put pVal into mAppData["props"]["overlayHeight"]
   put pVal into mBoxHeight
@@ -274,7 +271,6 @@ metadata overlayWidth.default  is "300"
 metadata overlayWidth.label  is "Overlay-Box Width"
 metadata overlayWidth.section  is "Table"
 private variable mBoxWidth as Number
-
 private handler setBoxWidth(in pVal as Number)
   put pVal into mAppData["props"]["overlayWidth"]
   put pVal into mBoxWidth
@@ -475,7 +471,6 @@ metadata showOutputBox.default  is "false"
 metadata showOutputBox.label  is "Displays an OutputBox"
 metadata showOutputBox.section  is "Table"
 private variable mShowOutputBox as Boolean
-
 private handler setShowOutputBox(in pVal as Boolean)
   put pVal into mAppData["props"]["showOutputBox"]
   put pVal into mShowOutputBox
@@ -532,25 +527,18 @@ private handler setOutputBoxTextSize(in pVal as Number)
   redraw all
 end handler
 
-property controlOutput  get mActionOutput
-metadata controlOutput.section is "Advanced"
-metadata controlOutput.label  is "Output from Controls"
-private variable mActionOutput
-
--- So it goes
-
 property outputBoxTextFont  get mShowOutputBoxTextFont  set setOutputBoxTextFont
 metadata outputBoxTextFont.editor  is "com.livecode.pi.font"
 metadata outputBoxTextFont.default  is "Courier"
 metadata outputBoxTextFont.label  is "Output Box Font"
 metadata outputBoxTextFont.section  is "Text"
 private variable mShowOutputBoxTextFont as String
--- So it goes
 private handler setOutputBoxTextFont(in pVal as String)
   put pVal into mAppData["props"]["outputBoxTextFont"]
   put pVal into mShowOutputBoxTextFont
   redraw all
 end handler
+-- So it goes
 
 --SECTION: myData/AppData
 
@@ -1523,6 +1511,7 @@ end handler
 private handler useDefaultButtonBarProps()
   setControlIconA("builtin:question sign")
   setRadius(23)
+  
 end handler
 
 private handler useDefaultSwitchesProps()
@@ -1533,6 +1522,9 @@ private handler useDefaultSwitchesProps()
   setControlIconA("builtin:ok sign")
   setControlIconB("builtin:circle")
   setRadius(13)
+  setButtonOne("OK")
+  setButtonTwo("Cancel")
+  setShowButtons(2)
 end handler
 
 private handler useDefaultUpDownProps()
@@ -1542,6 +1534,9 @@ private handler useDefaultUpDownProps()
   setControlIconB("iconfam1:updown:minus")
   put 23 into mControlRadius
   setRadius(23)
+  setButtonOne("Set")
+  setButtonTwo("Reset")
+  setShowButtons(2)
 end handler
 
 private handler useDefaultDialogBoxProps()
@@ -1549,6 +1544,8 @@ private handler useDefaultDialogBoxProps()
   setControlIconA("builtin:question sign")
   put 23 into mControlRadius
   setRadius(23)
+  setButtonOne("Okay")
+  setShowButtons(21
 end handler
 
 private handler useDefaultSlidersProps()
@@ -1557,7 +1554,7 @@ private handler useDefaultSlidersProps()
   setControlIconA("builtin:circle")
   setButtonOne("Okay")
   setButtonTwo("Background")
-  setShowButtons(3)
+  setShowButtons(2)
 end handler
 
 private handler pickProp(in pKey as String,in pValue)

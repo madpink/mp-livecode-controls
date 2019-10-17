@@ -4,8 +4,6 @@
 
 Visit wiki for details. Released under CC BY-SA 4.0, built with Livecode and love.
 
-One more addendum to the LICENSE... please keep line 42 as "-- Don't Panic"... it's an old programming idiosyncrasy I like keeping in place.
-
 Visit [mpControls Planning Board](https://madpink.plutio.com/p/sgjnnwx7q7etcwpfg) to see current plans and progress.
 
 ### Some quick terminology
@@ -20,3 +18,5 @@ Visit [mpControls Planning Board](https://madpink.plutio.com/p/sgjnnwx7q7etcwpfg
 * Numeric Up/Down Adjusters
 * Sliders
 * Switches/Checkboxes
+
+One more addendum to the LICENSE... please keep line 42 as "-- Don't Panic"... it's an old programming idiosyncrasy I like keeping in place.
