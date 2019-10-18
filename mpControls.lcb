@@ -1433,8 +1433,9 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
       put tKeys & ["selectbuttoncolor","unselectedbuttoncolor"] into tKeys
       put tValues & ["default","default"] into tValues
       --icons
-      put tKeys & ["icon","selectedicon","unselectediconcolor","selectediconcolor"] into tKeys
+      put tKeys & ["selectedicon","unselectedicon","selectediconcolor","unselectediconcolor"] into tKeys
       put tValues & ["builtin:circle blank","builtin:bullseye","default","default"] into tValues
+      -- FIXME: put tValues & ["default","default","default","default"] into tValues
     else if pType is "Switches" then
       --Basics
       put ["label","show","selected","value"] into tKeys
@@ -1443,7 +1444,7 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
       put tKeys & ["textcolor","textfont","textsize"] into tKeys
       put tValues & ["default","default","default"] into tValues
       --icons
-      put tKeys & ["iconchecked","iconunchecked","uncheckediconcolor","checkediconcolor"] into tKeys
+      put tKeys & ["selectedicon","unselectedicon","selectediconcolor","unselectediconcolor"] into tKeys
       put tValues & ["default","default","default","default"] into tValues
     else if pType is "Numeric Up/Down" then
       --Basics
@@ -1509,9 +1510,9 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
 end handler
 
 private handler useDefaultButtonBarProps()
-  setControlIconA("builtin:question sign")
   setRadius(23)
-
+  setControlIconB("builtin:circle blank")
+  setControlIconA("builtin:bullseye")
 end handler
 
 private handler useDefaultSwitchesProps()
@@ -1545,7 +1546,7 @@ private handler useDefaultDialogBoxProps()
   put 23 into mControlRadius
   setRadius(23)
   setButtonOne("Okay")
-  setShowButtons(21
+  setShowButtons(21)
 end handler
 
 private handler useDefaultSlidersProps()
@@ -1776,12 +1777,29 @@ private handler createButton()
 end handler
 
 private handler buttonBarIcon(in pRect as Rectangle, in pKey as String)
-  setButtonPaint(pKey,"icon")
-  if mData[pKey]["selected"] is "true" then
-    displayIcon(pRect,mData[pKey]["selectedicon"])
+  variable tIconPath as Path
+
+  setButtonPaint(pKey,"unselectedicon")
+  --if mData[pKey]["selected"] is "true" then
+  --  displayIcon(pRect,mData[pKey]["selectedicon"])
+  --else
+  --  displayIcon(pRect,mData[pKey]["unselectedicon"])
+  --end if
+  if mData[mCurrentControlKey]["selected"] is "true" then
+    if mData[mCurrentControlKey]["selectedicon"] is "default" then
+      put mControlIconA into mData[mCurrentControlKey]["selectedicon"]
+    end if
+    chooseAndSetPaint(mData[mCurrentControlKey]["selectediconcolor"],mControlHiliteColor)
+    put getIconPath(mData[mCurrentControlKey]["selectedicon"]) into tIconPath
   else
-    displayIcon(pRect,mData[pKey]["icon"])
+    if mData[mCurrentControlKey]["unselectedicon"] is "default" then
+      put mControlIconB into mData[mCurrentControlKey]["unselectedicon"]
+    end if
+    chooseAndSetPaint(mData[mCurrentControlKey]["unselectediconcolor"],mControlIconColor)
+    put getIconPath(mData[mCurrentControlKey]["unselectedicon"]) into tIconPath
   end if
+  constrainPathToRect(pRect, tIconPath)
+  fill tIconPath on this canvas
 end handler
 
 private handler getIconPath(in pIcon as String)
@@ -1879,17 +1897,17 @@ private handler createSwitch()
   add (the height of mControlRect - the height of tIconRect)/2 to the top of tIconRect
 
   if mData[mCurrentControlKey]["selected"] is "true" then
-    if mData[mCurrentControlKey]["iconchecked"] is "default" then
-      put mControlIconA into mData[mCurrentControlKey]["iconchecked"]
+    if mData[mCurrentControlKey]["selectedicon"] is "default" then
+      put mControlIconA into mData[mCurrentControlKey]["selectedicon"]
     end if
-    chooseAndSetPaint(mData[mCurrentControlKey]["checkediconcolor"],mControlHiliteColor)
-    put getIconPath(mData[mCurrentControlKey]["iconchecked"]) into tIconPath
+    chooseAndSetPaint(mData[mCurrentControlKey]["selectediconcolor"],mControlHiliteColor)
+    put getIconPath(mData[mCurrentControlKey]["selectedicon"]) into tIconPath
   else
-    if mData[mCurrentControlKey]["iconunchecked"] is "default" then
-      put mControlIconB into mData[mCurrentControlKey]["iconunchecked"]
+    if mData[mCurrentControlKey]["unselectedicon"] is "default" then
+      put mControlIconB into mData[mCurrentControlKey]["unselectedicon"]
     end if
-    chooseAndSetPaint(mData[mCurrentControlKey]["uncheckediconcolor"],mControlIconColor)
-    put getIconPath(mData[mCurrentControlKey]["iconunchecked"]) into tIconPath
+    chooseAndSetPaint(mData[mCurrentControlKey]["unselectediconcolor"],mControlIconColor)
+    put getIconPath(mData[mCurrentControlKey]["unselectedicon"]) into tIconPath
   end if
 
   constrainPathToRect(tIconRect, tIconPath)
