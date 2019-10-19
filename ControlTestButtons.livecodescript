@@ -51,16 +51,18 @@ command buttonAction pType
          break
       case "A"
          set the columnCount of widget 1 of stack testStack to 2
-         testType "Switches",8
+         set the controlObjectVertical of widget 1 of stack testStack to "Fixed spacing"
+         testType "Button Bar",5,5
          
          break
       case "B"
-         set the controlBufferV of widget 1 of stack testStack to 13
+         -- set the controlBufferV of widget 1 of stack testStack to 13
+         set the controlObjectVertical of widget 1 of stack testStack to "Fixed spacing"
          
          break
       case "C"
-         set the controlItemSpacing of widget 1 of stack testStack to 1
-         
+         -- set the controlItemSpacing of widget 1 of stack testStack to 1
+         set the controlObjectVertical of widget 1 of stack testStack to "Even spacing"
          break
       case "D"
          set the controlItemSpacing of widget 1 of stack testStack to 13
