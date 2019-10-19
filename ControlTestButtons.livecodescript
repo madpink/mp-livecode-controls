@@ -65,8 +65,15 @@ command buttonAction pType
          set the controlObjectVertical of widget 1 of stack testStack to "Even spacing"
          break
       case "D"
-         set the controlItemSpacing of widget 1 of stack testStack to 13
-         
+         -- set the controlItemSpacing of widget 1 of stack testStack to 13
+         set the controlType of widget 1 of stack testStack to "Mixed Controls"
+         put "Button Bar" into testData[1]["controltype"]
+         put "Button Bar" into testData[2]["controltype"]
+         put "Numeric Up/Down" into testData[3]["controltype"]
+         put "Sliders" into testData[4]["controltype"]
+         put "Switches" into testData[5]["controltype"]
+         put "Button Bar" into testData[6]["controltype"]
+         set the myData of widget 1 of stack testStack to testData
          break
       case "E"
          -- set the xxx of widget 1 of stack testStack to zzz
