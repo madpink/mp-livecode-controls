@@ -1434,8 +1434,7 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
       put tValues & ["default","default"] into tValues
       --icons
       put tKeys & ["selectedicon","unselectedicon","selectediconcolor","unselectediconcolor"] into tKeys
-      put tValues & ["builtin:circle blank","builtin:bullseye","default","default"] into tValues
-      -- FIXME: put tValues & ["default","default","default","default"] into tValues
+      put tValues & ["default","default","default","default"] into tValues
     else if pType is "Switches" then
       --Basics
       put ["label","show","selected","value"] into tKeys
@@ -1452,10 +1451,10 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
       put [randomLabel(),"true","xval" & pKey] into tValues
       --Values
       put tKeys & ["min","max","step","value","prefix","suffix"] into tKeys
-      put tValues & ["0","100","1","50","default","default"] into tValues
+      put tValues & ["0","100","10","50","default","default"] into tValues
       --Icons
       put tKeys & ["iconplus","iconminus"] into tKeys
-      put tValues & ["iconfam1:updown:plus","iconfam1:updown:minus"] into tValues
+      put tValues & ["default","default"] into tValues
       --Colors
       put tKeys & ["valuecolor","textcolor","objectcolor"] into tKeys
       put tValues & ["default","default","default"] into tValues
@@ -1511,15 +1510,13 @@ end handler
 
 private handler useDefaultButtonBarProps()
   setRadius(23)
-  setControlIconB("builtin:circle blank")
   setControlIconA("builtin:bullseye")
+  setControlIconB("builtin:circle blank")
 end handler
 
 private handler useDefaultSwitchesProps()
   put 13 into mControlRadius
   setRadius(13)
-  put "builtin:ok sign" into mControlIconA
-  put "builtin:circle" into mControlIconB
   setControlIconA("builtin:ok sign")
   setControlIconB("builtin:circle")
   setRadius(13)
@@ -1529,8 +1526,6 @@ private handler useDefaultSwitchesProps()
 end handler
 
 private handler useDefaultUpDownProps()
-  put "iconfam1:updown:plus" into mControlIconA
-  put "iconfam1:updown:minus" into mControlIconB
   setControlIconA("iconfam1:updown:plus")
   setControlIconB("iconfam1:updown:minus")
   put 23 into mControlRadius
@@ -1541,7 +1536,6 @@ private handler useDefaultUpDownProps()
 end handler
 
 private handler useDefaultDialogBoxProps()
-  put "builtin:question sign" into mControlIconA
   setControlIconA("builtin:question sign")
   put 23 into mControlRadius
   setRadius(23)
@@ -1700,6 +1694,7 @@ private handler paintDialogBox()
 end handler
 
 private handler dialogBoxSVG()
+  variable tPath as Path
   variable tIconRect as Rectangle
   put rectangle [mBorder*2,mBorder*2,mBorder*2+mControlObjectSize,mBorder*2+mControlObjectSize] into tIconRect
   set the left of tIconRect to the left of mCurrentRect+(mBorder*2)
@@ -1711,7 +1706,12 @@ private handler dialogBoxSVG()
   else if mDialogIconAlign is "top" then
     set the top of tIconRect to (the top of mCurrentRect + (mBorder*2))
   end if
-  displayIcon(tIconRect,mControlIconA)
+
+  --displayIcon(tIconRect,mControlIconA)
+
+  put getIconPath("default", mControlIconA) into tPath
+  constrainPathToRect(tIconRect, tPath)
+  fill tPath on this canvas
 end handler
 
 --SECTION:  BUTTON BAR
@@ -1729,6 +1729,7 @@ private handler createButton()
   variable tTextRect as Rectangle
   variable tLeft as Number
   variable tTop as Number
+
   put the left of mCurrentRect + (mControlBufferH * mAppData["vars"]["CurrentColumn"]) into tLeft
   add (mAppData["vars"]["CurrentColumn"] - 1) * the width of mControlRect to tLeft
   set the left of mControlRect to tLeft
@@ -1754,9 +1755,9 @@ private handler createButton()
     fill text tText at bottom of mControlRect on this canvas
     put mControlRect into tRect
     set the height of tRect to the height of mControlRect -20
-    buttonBarIcon(tRect,mCurrentControlKey)
+    selectionIcon(tRect)
   else if mButtonBarStyle is "Icon" then
-    buttonBarIcon(mControlRect,mCurrentControlKey)
+    selectionIcon(mControlRect)
   else if mButtonBarStyle is "Icon Left" or mButtonBarStyle is "Icon Left Text Center" then
     put mControlRect into tRect
     put mControlRect into tTextRect
@@ -1766,7 +1767,7 @@ private handler createButton()
     add mControlBufferH to the left of tRect
     add the width of tRect+(mControlBufferH*2) to the left of tTextRect
     subtract the width of tRect+(mControlBufferH*3) from the width of tTextRect
-    buttonBarIcon(tRect,mCurrentControlKey)
+    selectionIcon(tRect)
     setButtonPaint(mCurrentControlKey,"text")
     if mButtonBarStyle is "Icon Left" then
       fill text tText at left of tTextRect on this canvas
@@ -1776,37 +1777,31 @@ private handler createButton()
   end if
 end handler
 
-private handler buttonBarIcon(in pRect as Rectangle, in pKey as String)
+private handler selectionIcon(in pRect as Rectangle)
   variable tIconPath as Path
 
-  setButtonPaint(pKey,"unselectedicon")
-  --if mData[pKey]["selected"] is "true" then
-  --  displayIcon(pRect,mData[pKey]["selectedicon"])
-  --else
-  --  displayIcon(pRect,mData[pKey]["unselectedicon"])
-  --end if
+  setButtonPaint(mCurrentControlKey,"unselectedicon")
+
   if mData[mCurrentControlKey]["selected"] is "true" then
-    if mData[mCurrentControlKey]["selectedicon"] is "default" then
-      put mControlIconA into mData[mCurrentControlKey]["selectedicon"]
-    end if
     chooseAndSetPaint(mData[mCurrentControlKey]["selectediconcolor"],mControlHiliteColor)
-    put getIconPath(mData[mCurrentControlKey]["selectedicon"]) into tIconPath
+    put getIconPath(mData[mCurrentControlKey]["selectedicon"], mControlIconA) into tIconPath
   else
-    if mData[mCurrentControlKey]["unselectedicon"] is "default" then
-      put mControlIconB into mData[mCurrentControlKey]["unselectedicon"]
-    end if
     chooseAndSetPaint(mData[mCurrentControlKey]["unselectediconcolor"],mControlIconColor)
-    put getIconPath(mData[mCurrentControlKey]["unselectedicon"]) into tIconPath
+    put getIconPath(mData[mCurrentControlKey]["unselectedicon"], mControlIconB) into tIconPath
   end if
   constrainPathToRect(pRect, tIconPath)
   fill tIconPath on this canvas
 end handler
 
-private handler getIconPath(in pIcon as String)
+private handler getIconPath(in pIcon as String, in pDefault as String)
   variable tPath as Path
   variable tList as List
   variable tFam as String
   variable tIcon as String
+
+  if pIcon is "default" then
+    put pDefault into pIcon
+  end if
 
   split pIcon by ":" into tList
 
@@ -1821,13 +1816,6 @@ private handler getIconPath(in pIcon as String)
   end if
 
   return tPath
-end handler
-
-private handler displayIcon(in pRect,in pIcon)
-  variable tPath as Path
-  put getIconPath(pIcon) into tPath
-  constrainPathToRect(pRect, tPath)
-  fill tPath on this canvas
 end handler
 
 private handler setButtonPaint(in pKey as String,in pType as String)
@@ -1895,23 +1883,8 @@ private handler createSwitch()
   set the height of tIconRect to mControlObjectSize
   set the width of tIconRect to the height of tIconRect
   add (the height of mControlRect - the height of tIconRect)/2 to the top of tIconRect
+  selectionIcon(tIconRect)
 
-  if mData[mCurrentControlKey]["selected"] is "true" then
-    if mData[mCurrentControlKey]["selectedicon"] is "default" then
-      put mControlIconA into mData[mCurrentControlKey]["selectedicon"]
-    end if
-    chooseAndSetPaint(mData[mCurrentControlKey]["selectediconcolor"],mControlHiliteColor)
-    put getIconPath(mData[mCurrentControlKey]["selectedicon"]) into tIconPath
-  else
-    if mData[mCurrentControlKey]["unselectedicon"] is "default" then
-      put mControlIconB into mData[mCurrentControlKey]["unselectedicon"]
-    end if
-    chooseAndSetPaint(mData[mCurrentControlKey]["unselectediconcolor"],mControlIconColor)
-    put getIconPath(mData[mCurrentControlKey]["unselectedicon"]) into tIconPath
-  end if
-
-  constrainPathToRect(tIconRect, tIconPath)
-  fill tIconPath on this canvas
   subtract (the width of tIconRect)+5 from the width of tTextRect
   set the left of tTextRect to the right of tIconRect+5
 
@@ -1927,11 +1900,8 @@ end handler
 private handler createUpDown()
   variable tRect as Rectangle
   variable tNext as String
-  variable tIconPath as Path
-  variable tValue as String
 
   split mUpDownLayout by "/" into mItemOrder
-
   put mControlRect into tRect
 
   repeat for each element tNext in mItemOrder
@@ -1949,7 +1919,6 @@ private handler createUpDown()
     else
       chooseAndSetPaint(mData[mCurrentControlKey]["objectcolor"],mControlObjectColor)
       set the width of tRect to mControlObjectSize
-      put getIconPath(mData[mCurrentControlKey]["iconplus"]) into tIconPath
       drawButton(mCurrentControlKey,tNext,tRect)
      end if
      set the left of tRect to the right of tRect
@@ -1972,24 +1941,27 @@ private handler drawButton(in pKey as String,in pType as String,in pRect as Rect
   if pType is "plus" then
     if tValue < tUpperLimit then
       put true into tShowButton
+      put getIconPath(mData[pKey]["iconplus"], mControlIconA) into tIconPath
       put mData[pKey]["iconplus"] into tIcon
     end if
   else if pType is "minus" then
     if tValue > tLowerLimit then
       put true into tShowButton
+      put getIconPath(mData[pKey]["iconminus"], mControlIconB) into tIconPath
       put mData[pKey]["iconminus"] into tIcon
     end if
   end if
 
   if tShowButton then
-    displayIcon(pRect,tIcon)
+    --put getIconPath(tIcon) into tIconPath
+    constrainPathToRect(pRect, tIconPath)
+    fill tIconPath on this canvas
     put rectToArray(pRect) into mData[pKey]["loc" & pType]
     put "false" into mData[pKey]["limit"]
   else
     put "true" into mData[pKey]["limit"]
   end if
 end handler
-
 
 --SECTION: PROGRESS BAR
 
