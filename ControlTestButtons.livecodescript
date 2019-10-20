@@ -65,8 +65,15 @@ command buttonAction pType
          set the controlObjectVertical of widget 1 of stack testStack to "Even spacing"
          break
       case "D"
-         set the controlItemSpacing of widget 1 of stack testStack to 13
-         
+         -- set the controlItemSpacing of widget 1 of stack testStack to 13
+         set the controlType of widget 1 of stack testStack to "Mixed Controls"
+         put "Button Bar" into testData[1]["controltype"]
+         put "Button Bar" into testData[2]["controltype"]
+         put "Numeric Up/Down" into testData[3]["controltype"]
+         put "Sliders" into testData[4]["controltype"]
+         put "Switches" into testData[5]["controltype"]
+         put "Button Bar" into testData[6]["controltype"]
+         set the myData of widget 1 of stack testStack to testData
          break
       case "E"
          -- set the xxx of widget 1 of stack testStack to zzz
@@ -110,12 +117,12 @@ command testType pType pCount pWait
 end testType
 
 command resizeTestStack
-   set the height of widget 1 of stack testStack to 420
-   set the width of widget 1 of stack testStack to 400
+   set the height of widget 1 of stack testStack to 423
+   set the width of widget 1 of stack testStack to 541
    set the top of widget 1 of stack testStack to 2
    set the left of widget 1 of stack testStack to 2
-   set the height of stack testStack to 440
-   set the width of stack testStack to 410
+   set the height of stack testStack to 451
+   set the width of stack testStack to 542
    set the left of stack testStack to the right of this stack
    set the top of stack testStack to the top of this stack
 end resizeTestStack
@@ -123,7 +130,6 @@ end resizeTestStack
 command quickData pX
    local tData
    repeat with x=1 to pX
-      --put "qzq" & x into tData[x]["label"]
       put empty into tData[x]
    end repeat
    set the myData of widget 1 on stack testStack to tData
@@ -131,7 +137,6 @@ end quickData
 
 command cycleTest
    local tThyme 
-   put (541 + 42)/23 into tThyme
    put (541 + 42)/13 into tThyme
    testType "Button Bar",controlCount,tThyme
    testType "Sliders",controlCount,tThyme
@@ -140,3 +145,22 @@ command cycleTest
    testType "Switches",controlCount,tThyme
    testType "Dialog Box",controlCount,tThyme
 end cycleTest
+
+command encodeDefaultScript
+   local tX, tCount, tOutput
+   put the script of button "currentScript" into tInput
+   put base64Encode(tInput) into tX
+   replace cr with "" in tX
+   repeat ceiling((the number of chars of tX)/42) times
+      put the number of chars of tX into tCount
+      if tCount < 42 then
+         put "  put " & quote & char 1 to 42 of tX & quote & " after tScript" & cr after tOutput
+         exit repeat
+      else
+         put "  put " & quote & char 1 to 42 of tX & quote & " after tScript" & cr after tOutput
+         delete char 1 to 42 of tX
+      end if
+   end repeat
+   put tOutput into field "scriptRez"
+   set the clipboardData["text"] to tOutput
+end encodeDefaultScript
