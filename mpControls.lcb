@@ -2735,14 +2735,8 @@ private handler adjustSlider(in pX as Number)
 
   if pX < the left of tSlideRect then
     put mData[mAppData["vars"]["Selected"]]["min"] into mData[mAppData["vars"]["Selected"]]["value"]
-    if pX < the left of tAdjustedRect then
-      put false into mStillDown
-    end if
   else if pX > the right of tSlideRect then
     put mData[mAppData["vars"]["Selected"]]["max"] into mData[mAppData["vars"]["Selected"]]["value"]
-    if pX > the right of tAdjustedRect then
-      put false into mStillDown
-    end if
   else
     put mkNum(mData[mAppData["vars"]["Selected"]]["max"]) - mkNum(mData[mAppData["vars"]["Selected"]]["min"]) into tRange
     put the width of tSlideRect/tRange into tFactor
