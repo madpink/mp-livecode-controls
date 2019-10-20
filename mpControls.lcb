@@ -2,12 +2,12 @@ widget pink.mad.ubercontrol
 
 metadata title is "MPUberControlPanel"
 metadata author is "MadPink"
-metadata version is "0.9.47"
+metadata version is "0.9.49"
 metadata description is "Allows for multiple configurable controls that can be dynamically changed"
 metadata preferredSize  is "420,230"
 metadata svgicon is  "M51.3,29.1V24c0-6.1,3.4-11.6,8.9-14.4L57.9,5c-7.2,3.6-11.7,10.9-11.7,19v7.1l1.2,1.2C48.7,31.5,50,30.3,51.3,29.1z M68.1,34.1c0.7,0.4,1.4,0.8,2,1.4c4.4-2.2,8.1-5.6,8.4-9.3c-5.1,2.8-9.3,4.2-12.1,4.9L68.1,34.1  C68.1,34.1,68.1,34.1,68.1,34.1z M28.8,33.3V33c-0.4-1.2-0.7-2.4-0.9-3.6l-8.2-2.7C21.7,28.9,24.9,31.8,28.8,33.3z M43.6,95c2.5,0,4.7-1.3,6-3.2c-0.5-1-0.8-2.2-0.8-3.4c-2.2-0.8-4-2.3-5.1-4.3c-1.5,2.6-4.1,4.4-7.1,4.8  C37.1,92.4,40.1,95,43.6,95z M58.5,95c3.6,0,6.5-2.6,7.1-6c-2.4-0.3-4.5-1.6-6-3.3c-1.8,2.1-4.5,3.4-7.4,3.4c-0.2,0-0.5,0-0.7,0C52,92.4,55,95,58.5,95z  M74.2,79.3c0-0.3,0-0.6-0.1-0.9c-0.3,0-0.5,0-0.8,0c-3.6,0-6.8-2-8.5-4.9c-0.8,1.4-1.9,2.6-3.3,3.4  c0.2,0.8,0.3,1.5,0.3,2.4c0,1.4-0.3,2.8-0.9,4c1.3,1.9,3.5,3.2,6,3.2C71,86.5,74.2,83.3,74.2,79.3z M59.3,79.3c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-3.6,0-6.8-2-8.5-4.9c-0.6,1-1.3,1.9-2.3,2.7  c-0.4,0.9-0.7,2-0.7,3.1c0,4,3.2,7.2,7.2,7.2C56.1,86.5,59.3,83.3,59.3,79.3z M35.1,86.5c4,0,7.2-3.2,7.2-7.2c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-2.4,0-4.7-0.9-6.4-2.4  c-1.4,1.2-3.1,2-5,2.3c0,0.3-0.1,0.6-0.1,0.9C27.9,83.3,31.2,86.5,35.1,86.5z M20.4,65.1c-0.6,1-0.9,2.3-0.9,3.5c0,4,3.2,7.2,7.2,7.2c1.8,0,3.4-0.6,4.7-1.7c-1.1-1.6-1.7-3.5-1.7-5.5  c0-1.2,0.2-2.3,0.6-3.4c-1.3-0.1-2.5-0.4-3.6-0.9c-1.3,0.6-2.7,1-4.2,1C21.7,65.3,21,65.3,20.4,65.1z M38.1,62.1c-1.3,1.4-3,2.5-5,3c-0.6,1.1-1,2.3-1,3.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.2-0.3-2.4-0.8-3.4  c-0.1,0-0.3,0-0.4,0C42.5,65.3,39.9,64.1,38.1,62.1z M80.6,68.7c0-1.5-0.5-2.9-1.3-4.1c-1.2,0.5-2.4,0.8-3.8,0.8c-2.5,0-4.7-0.9-6.4-2.4c-1.8,1.3-2.9,3.4-2.9,5.8  c0,4,3.2,7.2,7.2,7.2C77.3,75.9,80.6,72.7,80.6,68.7z M53.5,62c-2.6,1.1-4.4,3.7-4.4,6.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.3-2.5-0.9-3.5  c-0.6,0.1-1.2,0.2-1.8,0.2C57.9,65.3,55.3,64.1,53.5,62z M22.4,62.8c0.6,0,1.1-0.1,1.7-0.2c-1.8-1.8-3-4.3-3-7c0-1,0.2-2.1,0.5-3c-1.7-0.1-3.3-0.7-4.7-1.7  c-1.1,1.3-1.7,2.9-1.7,4.7C15.2,59.5,18.4,62.8,22.4,62.8z M23.7,55.6c0,4,3.2,7.2,7.2,7.2c2.3,0,4.4-1.1,5.7-2.9c-0.7-1.3-1-2.8-1-4.3c0-1.3,0.3-2.6,0.8-3.8  c-1.2,0.5-2.5,0.8-3.9,0.8c-1.8,0-3.6-0.5-5-1.4c-0.9,0.6-1.9,1-3,1.2C24,53.3,23.7,54.4,23.7,55.6z M82.7,55.6c0-1.4-0.4-2.7-1.1-3.8c-1.2,0.5-2.6,0.9-4,0.9c-2.6,0-4.9-1-6.7-2.6c-0.5,0.4-0.9,0.9-1.3,1.4  c0.6,1.3,1,2.7,1,4.2s-0.4,2.9-1,4.2c1.3,1.8,3.4,3,5.8,3C79.5,62.8,82.7,59.5,82.7,55.6z M54.5,52.1c0.4,1.1,0.6,2.2,0.6,3.4s-0.2,2.4-0.6,3.4c1.2,2.2,3.6,3.8,6.3,3.8c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.5-1-3.6  c-1.1,0.4-2.2,0.6-3.4,0.6c-2.7,0-5.2-1.1-7-2.9C55.8,50.3,55,51.1,54.5,52.1z M38.2,55.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.6-1-3.7c-1.1,0.4-2.3,0.7-3.6,0.7c-2.7,0-5.1-1.1-6.9-2.8  C39.3,51.1,38.2,53.2,38.2,55.6z M22.4,50c1,0,2-0.2,2.9-0.6c-1.6-1.7-2.6-4.1-2.6-6.6s1-4.9,2.6-6.6c-0.9-0.4-1.9-0.6-2.9-0.6c-4,0-7.2,3.2-7.2,7.2  C15.2,46.8,18.4,50,22.4,50z M37.7,37.9c-2.5-0.2-5-0.9-7.3-2c-3,0.9-5.2,3.6-5.2,6.9c0,4,3.2,7.2,7.2,7.2c2.7,0,5.1-1.5,6.3-3.8  c-0.4-1.1-0.6-2.2-0.6-3.4s0.2-2.4,0.6-3.4C38.5,38.8,38.2,38.4,37.7,37.9z M72.2,38.1c0.8,1.4,1.2,3,1.2,4.7s-0.5,3.3-1.2,4.7c1.3,1.5,3.3,2.5,5.4,2.5c4,0,7.2-3.2,7.2-7.2c0-4-3.2-7.2-7.2-7.2  C75.5,35.6,73.5,36.6,72.2,38.1z M63.7,50c4,0,7.2-3.2,7.2-7.2c0-2.9-1.8-5.5-4.3-6.6c-2.7,1-5.4,1.5-8.2,1.7c-0.5,0.5-0.8,1.1-1.1,1.7  c0.3,1,0.5,2.1,0.5,3.2c0,1.1-0.2,2.2-0.5,3.2C58.4,48.4,60.8,50,63.7,50z M47,36.5c-1.3,0.5-2.7,0.9-4.1,1.2c-1.3,1.3-2.2,3.1-2.2,5.1c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.9-0.8-3.7-2-5  C51.1,37.6,49,37.2,47,36.5z M49.1,34.3c0,0.1,0,0.1,0,0.2c5.2,1.4,10.8,1.3,16-0.5l-6.4-11.1C56.8,27.1,53,31.6,49.1,34.3z M45.6,34.3L31.3,19.9c-1.7,4.4-1.5,9.5,0.5,13.8C36.1,35.7,41.2,35.9,45.6,34.3z"
 
-constant kVersion is "0.9.47 beta 2019.10.19.1142"
+constant kVersion is "0.9.49 beta 2019.10.20.1804"
 
 use com.livecode.math
 use com.livecode.canvas
@@ -554,7 +554,6 @@ end handler
 
 private handler addDebugInfo(in pKey as String, in pValue)
   put pValue into mAppData["debug"][pKey]
-  setAppData(mAppData)
 end handler
 
 property myData  get mData  set setData
@@ -1128,16 +1127,12 @@ private variable mCurrentRect as Rectangle
 private variable mBottomButtonLoc as List
 private variable mLocList as List
 private variable mControlRect as Rectangle
-private variable mStillDown as Boolean
 private variable mHandles as List
 private variable mItemOrder as List
 private variable mCurrentTheme as String
 private variable mUseColorThemes as Boolean
-private variable mEntryValue as String
 private variable mCurrentControlKey as String
 private variable mPosition as Point
-private variable mExit as Boolean
-private variable mTimer as Number
 
 --SECTION:  EVENT HANDLERS
 public handler OnCreate()
@@ -1150,6 +1145,7 @@ public handler OnCreate()
   put the empty array into mAppData["savedcontrols"]
   put the empty array into mAppData["savedthemes"]
   put the empty array into mAppData["vars"]
+  put "false" into mAppData["vars"]["stilldown"]
   put "  " into mActionOutput
   put true into mUseColorThemes
 
@@ -1372,7 +1368,7 @@ public handler userInteraction()
   else if mSendMessage then
     post "userAction" with [mData, mActionOutput, mControlType]
   end if
-  put true into mExit
+  put true into mAppData["vars"]["exit"]
 end handler
 
 private handler outputValues()
@@ -1394,7 +1390,7 @@ end handler
 --SECTION: VERIFY
 
 private handler verifyDataComplete()
-variable tCount as Number
+  variable tCount as Number
   repeat with tCount from 1 up to the number of elements in mData
     if not (mData[mkStr(tCount)] is an array) then
       put the empty array into mData[mkStr(tCount)]
@@ -1561,6 +1557,8 @@ end handler
 
 --SECTION:  GENERAL PAINT
 public handler OnPaint()
+  variable tCount as Number
+  variable tControlType as String
   put [] into mLocList
   put [] into mHandles
   put 1 into mAppData["vars"]["CurrentColumn"]
@@ -1577,9 +1575,6 @@ public handler OnPaint()
   if mControlType is "Dialog Box" then
     paintDialogBox()
   else
-    variable tCount as Number
-    variable tControlType as String
-
     set the top of mControlRect to the top of mCurrentRect + mControlBufferV
     set the left of mControlRect to the left of mCurrentRect + mControlBufferH
 
@@ -1619,7 +1614,6 @@ public handler OnPaint()
      end if
     end repeat
   end if
-
   setAppData(mAppData)
 end handler
 
@@ -1639,8 +1633,8 @@ private handler drawEntry()
 
   setPaint("hilite")
 
-  if mEntryValue is not empty then
-    put the number of chars in mEntryValue into tDigits
+  if mAppData["vars"]["entryvalue"] is not empty then
+    put the number of chars in mAppData["vars"]["entryvalue"] into tDigits
     put the width of mCurrentRect into tWide
     put (my width-tWide)/2 into tLeft
     put tDigits * (mRadius*2) into tWtest
@@ -1670,6 +1664,7 @@ private handler createFormEntry()
   end if
   put rectToFlatLine(mControlRect) into mAppData["rect"][mCurrentControlKey]
   push mControlRect onto mLocList
+  push "" onto mHandles
 end handler
 
 --SECTION:  DIALOG BOX
@@ -1736,6 +1731,7 @@ private handler createButton()
   set the top of mControlRect to tTop
 
   push mControlRect onto mLocList
+  push "" onto mHandles
   setButtonPaint(mCurrentControlKey,"button")
   fill rounded rectangle path of mControlRect with radius mControlRadius on this canvas
 
@@ -1838,7 +1834,7 @@ end handler
 
 private handler pinPadDefaults()
   put 3 into mColumns
-  put "" into mEntryValue
+  put "" into mAppData["vars"]["entryvalue"]
   put "Even Spacing" into mControlObjectVertical
   put the empty array into mData
   put "1\n " into mData["1"]["label"]
@@ -1889,6 +1885,7 @@ private handler createSwitch()
   mpWrapTextinRect(tTextRect,mData[mCurrentControlKey]["label"],"center left")
 
   push mControlRect onto mLocList
+  push "" onto mHandles
 end handler
 
 --SECTION: NUMERIC UP/DOWN
@@ -1899,6 +1896,8 @@ private handler createUpDown()
 
   split mUpDownLayout by "/" into mItemOrder
   put mControlRect into tRect
+  push mControlRect onto mLocList
+  push "" onto mHandles
 
   repeat for each element tNext in mItemOrder
     if tNext is "value" then
@@ -2017,6 +2016,7 @@ private handler createProgressBar()
   fill rectangle path of tLineRect on this canvas
 
   push tRect onto mLocList
+  push "" onto mHandles
 end handler
 
 --SECTION: SLIDERS
@@ -2339,7 +2339,6 @@ private handler calcControlSize()
     set the height of mControlRect to (mAppData["vars"]["High"]/mAppData["vars"]["CountPerColumn"])
     subtract mControlBufferH from mAppData["vars"]["Wide"]
     set the width of mControlRect to (mAppData["vars"]["Wide"]/mColumns) - mControlBufferH
-    addDebugInfo("evenheight", the height of mControlRect)
   end if
 end handler
 
@@ -2445,32 +2444,37 @@ public handler OnMouseUp()
   put the mouse position into tPosition
 
   bottomButtonPressed(tPosition)
-  if mControlType is "Button Bar" then
+  if mAppData["vars"]["currentType"] is "Button Bar" then
     if mButtonBarType is "Action" then
       schedule timer in .1 seconds
     end if
-  else if mControlType is "Sliders" then
-    releaseSlider()
-  else if mControlType is "PIN Pad" then
+  else if mAppData["vars"]["currentType"] is "PIN Pad" then
     selectPINpad()
   end if
-  put false into mStillDown
+  put false into mAppData["vars"]["stilldown"]
   redraw all
   post "mouseUp" with [the click button]
 end handler
 
 public handler OnMouseMove()
   variable tCurr as Number
-  if mControlType is "Sliders" then
-    if mStillDown then
-      adjustSlider(the x of the mouse position )
+  variable tSlider as Boolean
+
+  if mControlType is "Sliders" and mAppData["vars"]["stilldown"]  then
+    adjustSlider(the x of the mouse position)
+    redraw all
+  else if mControlType is "Mixed Controls" and mAppData["vars"]["stilldown"]  then
+    if mData[mCurrentControlKey]["controltype"] is "Sliders" then
+      adjustSlider(the x of the mouse position)
       redraw all
     end if
   end if
 end handler
 
 public handler OnMouseDown()
+  put false into mAppData["vars"]["stilldown"]
   put the mouse position into mPosition
+  put mControlType into mAppData["vars"]["currentType"]
 
   if mControlType is "Mixed Controls" then
     selectMixed()
@@ -2484,7 +2488,6 @@ public handler OnMouseDown()
     selectUpDown()
   end if
   post "mouseDown" with [the click button]
-  setAppData(mAppData)
 end handler
 
 public handler OnMouseRelease()
@@ -2504,9 +2507,9 @@ public handler OnMouseEnter()
 end handler
 
 public handler OnTimer()
-  if mControlType is "Button Bar" then
+  if mAppData["vars"]["currentType"] is "Button Bar" then
     resetSelects()
-  else if mControlType is "Numeric Up/Down" then
+  else if mAppData["vars"]["currentType"] is "Numeric Up/Down" then
     -- incrementCount
   end if
 
@@ -2556,13 +2559,13 @@ private handler selectPINpad()
    put arrayToRect(mData["buttonrect"][mkStr(tZ)]) into tRect
    if tPosition is within tRect then
      if tZ is 10 then
-      put "" into mEntryValue
+      put "" into mAppData["vars"]["entryvalue"]
      else if tZ is 12 then
-      post "enterPressed" to my script object with [mEntryValue]
+      post "enterPressed" to my script object with [mAppData["vars"]["entryvalue"]]
      else if tZ is 10 then
-      put "0" after mEntryValue
+      put "0" after mAppData["vars"]["entryvalue"]
      else
-      put mkStr(tZ) after mEntryValue
+      put mkStr(tZ) after mAppData["vars"]["entryvalue"]
      end if
      redraw all
      exit repeat
@@ -2584,7 +2587,6 @@ private handler selectButtonBar()
     put element tCount of mLocList into mCurrentRect
     checkButtonBarSelection()
   end repeat
-  setAppData(mAppData)
 end handler
 
 private handler checkButtonBarSelection()
@@ -2627,7 +2629,12 @@ private handler resetSelects()
   variable tKey as String
   repeat with tCount from 1 up to the number of elements in mData
     put tCount formatted as string into tKey
-    put "false" into mData[tKey]["selected"]
+    if mControlType is "Button Bar" or mData[tKey]["controltype"] is "Button Bar" then
+      put "false" into mData[tKey]["selected"]
+      -- if not(mAppData["vars"]["currentType"] is "Button Bar") then
+      --   next repeat
+      -- end if
+    end if
   end repeat
 end handler
 
@@ -2662,46 +2669,46 @@ end handler
 private handler selectSlider()
   variable tCount as Number
   variable tKey as String
-  put false into mExit
+  put false into mAppData["vars"]["exit"]
   put 0 into mAppData["vars"]["TimerCount"]
-  put 0 into mTimer
-  setAppData(mAppData)
+  put 0 into mAppData["vars"]["timer"]
   repeat with tCount from 1 up to the number of elements in mData
+    put mkStr(tCount) into mCurrentControlKey
     put element tCount of mLocList into mCurrentRect
     put element tCount of mHandles into mControlRect
-    put mkStr(tCount) into tKey
-    checkSliderSelected(tKey)
-    if mExit then
+    checkSliderSelected()
+    if mAppData["vars"]["exit"] then
       exit repeat
     end if
   end repeat
 end handler
 
-private handler checkSliderSelected(in pKey as String)
+private handler checkSliderSelected()
   if mPosition is within mCurrentRect then
-    put pKey into mAppData["vars"]["Selected"]
+    put mCurrentControlKey into mAppData["vars"]["Selected"]
     adjustSlider(the x of the mouse position)
-    put true into mExit
+    put true into mAppData["vars"]["exit"]
     outputValues()
     userInteraction()
   end if
 
   if mPosition is within mControlRect then
-    put true into mStillDown
-    put pKey into mAppData["vars"]["Selected"]
-    put true into mExit
+    put true into mAppData["vars"]["stilldown"]
+    put mCurrentControlKey into mAppData["vars"]["Selected"]
+    put true into mAppData["vars"]["exit"]
     outputValues()
     userInteraction()
   end if
 end handler
 
-private handler releaseSlider()
-  if mStillDown then
-    put false into mStillDown
-  else
-
-  end if
-end handler
+-- DELETE:
+-- private handler releaseSlider()
+--   if mStillDown then
+--     put false into mStillDown
+--   else
+--     -- Do we want something here?
+--   end if
+-- end handler
 
 private handler adjustSlider(in pX as Number)
   variable tSlideRect as Rectangle
@@ -2722,14 +2729,8 @@ private handler adjustSlider(in pX as Number)
 
   if pX < the left of tSlideRect then
     put mData[mAppData["vars"]["Selected"]]["min"] into mData[mAppData["vars"]["Selected"]]["value"]
-    if pX < the left of tAdjustedRect then
-      put false into mStillDown
-    end if
   else if pX > the right of tSlideRect then
     put mData[mAppData["vars"]["Selected"]]["max"] into mData[mAppData["vars"]["Selected"]]["value"]
-    if pX > the right of tAdjustedRect then
-      put false into mStillDown
-    end if
   else
     put mkNum(mData[mAppData["vars"]["Selected"]]["max"]) - mkNum(mData[mAppData["vars"]["Selected"]]["min"]) into tRange
     put the width of tSlideRect/tRange into tFactor
@@ -2739,7 +2740,6 @@ private handler adjustSlider(in pX as Number)
     put mkStr(pX) into mData[mAppData["vars"]["Selected"]]["value"]
   end if
 end handler
-
 
 --SECTION: USER INTERACTION SWITCHES
 
@@ -2761,7 +2761,7 @@ private handler checkSwitchSelection()
     else
       put "true" into mData[mCurrentControlKey]["selected"]
     end if
-    put true into mExit
+    put true into mAppData["vars"]["exit"]
     outputValues()
     userInteraction()
   end if
@@ -2780,22 +2780,24 @@ private handler selectUpDown()
 end handler
 
 private handler checkUpDownSelected()
+  put "false" into mData[mCurrentControlKey]["limit"]
+
   if mData[mCurrentControlKey]["limit"] is not "true" then
     if mPosition is within arrayToRect(mData[mCurrentControlKey]["locplus"]) then
-      put true into mStillDown
+      put true into  mAppData["vars"]["stilldown"]
       incrementCount("plus")
     end if
     if mPosition is within arrayToRect(mData[mCurrentControlKey]["locminus"]) then
-      put true into mStillDown
+      put true into  mAppData["vars"]["stilldown"]
       incrementCount("minus")
     end if
-    if mStillDown then
+    if mAppData["vars"]["stilldown"]  then
       -- FIXME: fix the timer/hold down function
-      -- put 1 into mTimer
+      -- put 1 into mAppData["vars"]["timer"]
       -- put 0 into mAppData["vars"]["TimerCount"]
       outputValues()
       userInteraction()
-      put true into mExit
+      put true into mAppData["vars"]["exit"]
    end if
   end if
 end handler
@@ -2806,18 +2808,18 @@ private handler incrementCount(in pDirect as String)
   variable tLimit as Number
   variable tKey as String
 
-  if mStillDown is true then
+  if mAppData["vars"]["stilldown"] is true then
     -- add 1 to mAppData["vars"]["TimerCount"]
-    -- if mTimer = 1 then
-    --   put .6 into mTimer
+    -- if mAppData["vars"]["timer"] = 1 then
+    --   put .6 into mAppData["vars"]["timer"]
     -- else if mAppData["vars"]["TimerCount"] > 60 then
-    --   put .02 into mTimer
+    --   put .02 into mAppData["vars"]["timer"]
     -- else if mAppData["vars"]["TimerCount"] > 30 then
-    --   put .05 into mTimer
+    --   put .05 into mAppData["vars"]["timer"]
     -- else if mAppData["vars"]["TimerCount"] > 10 then
-    --   put .1 into mTimer
+    --   put .1 into mAppData["vars"]["timer"]
     -- else
-    --   put .25 into mTimer
+    --   put .25 into mAppData["vars"]["timer"]
     -- end if
 
     put mkNum(mData[mCurrentControlKey]["value"]) into tNum
@@ -2828,19 +2830,18 @@ private handler incrementCount(in pDirect as String)
       add tStep to tNum
       if tNum >= tLimit then
         put tLimit into tNum
-        put false into mStillDown
       end if
     else
       put mkNum(mData[mCurrentControlKey]["min"]) into tLimit
       subtract tStep from tNum
       if tNum <= tLimit then
         put tLimit into tNum
-        put false into mStillDown
+        put false into mAppData["vars"]["stilldown"]
       end if
     end if
 
     put mkStr(tNum) into mData[mCurrentControlKey]["value"]
-    schedule timer in mTimer seconds
+    schedule timer in mAppData["vars"]["timer"] seconds
     redraw all
   end if
 end handler
@@ -2851,11 +2852,12 @@ private handler selectMixed()
   variable tCount as Number
   variable tKey as String
   variable tControlType as String
-
-  put false into mExit
+  put false into mAppData["vars"]["exit"]
   repeat with tCount from 1 up to the number of elements in mData
+    put element tCount of mLocList into mCurrentRect
     put mkStr(tCount) into mCurrentControlKey
     put mData[mCurrentControlKey]["controltype"] into tControlType
+    put tControlType into mAppData["vars"]["currentType"]
     if mData[mCurrentControlKey]["show"] is "false" then
       next repeat
     end if
@@ -2865,11 +2867,12 @@ private handler selectMixed()
       checkSwitchSelection()
     else if tControlType is "Sliders" then
       -- FIXME: adjustSlider not working yet
-      -- checkSliderSelected()
+      put element tCount of mHandles into mControlRect
+      checkSliderSelected()
     else if tControlType is "Numeric Up/Down" then
       checkUpDownSelected()
     end if
-    if mExit then
+    if mAppData["vars"]["exit"] then
       exit repeat
     end if
   end repeat
@@ -3354,24 +3357,30 @@ private handler setDefaultScript()
   variable tScript as String
   put "if the script of me is empty then set script of me" into tScript
   put " to base64Decode(\q & " after tScript
-  put "b24gbW91c2VVcCBwTW91c2VCdXR0b24KCmVuZCBtb3VzZVVwCgpv" after tScript
-  put "biBtb3VzZURvd24gcE1vdXNlQnV0dG9uCiAgIAplbmQgbW91c2VE" after tScript
-  put "b3duCgpvbiB1c2VyQWN0aW9uIHBEYXRhIHBTZWxlY3RlZCBwVHlw" after tScript
-  put "ZQogIGxvY2FsIHRWYWx1ZSwgdExhYmVsCiAgaWYgcFR5cGUgaXMg" after tScript
-  put "IkFjdGlvbiIgdGhlbgogICAgc3dpdGNoIHBTZWxlY3RlZAogICAg" after tScript
-  put "ICBjYXNlIDEKCiAgICAgICAgYnJlYWsKICAgICAgY2FzZSAyCgog" after tScript
-  put "ICAgICAgIGJyZWFrCiAgICBlbmQgc3dpdGNoCiAgZWxzZQogICAg" after tScript
-  put "cHV0IHBEYXRhW3BTZWxlY3RlZF1bInZhbHVlIl0gaW50byB0VmFs" after tScript
-  put "dWUKICAgIHB1dCBwRGF0YVtwU2VsZWN0ZWRdWyJsYWJlbCJdIGlu" after tScript
-  put "dG8gdExhYmVsCiAgZW5kIGlmCgogIC0tIHNldCB0aGUgbXlEYXRh" after tScript
-  put "IG9mIG1lIHRvIHBEYXRhCmVuZCB1c2VyQWN0aW9uCgpvbiBidXR0" after tScript
-  put "b25QcmVzc2VkIHBCdXR0b24KICAgc3dpdGNoIHBCdXR0b24KICAg" after tScript
-  put "ICAgY2FzZSAxICAtLSBPSwogICAgICAgICAtLSBzZXQgdGhlIHZp" after tScript
-  put "c2libGUgb2YgbWUgdG8gZmFsc2UKICAgICAgICAgYnJlYWsKICAg" after tScript
-  put "ICAgY2FzZSAyICAtLSBDYW5jZWwKICAgICAgICAgLS0gc2V0IHRo" after tScript
-  put "ZSB2aXNpYmxlIG9mIG1lIHRvIGZhbHNlCiAgICAgICAgIGJyZWFr" after tScript
-  put "CiAgICAgIGNhc2UgMwogICAgICAgICAKICAgICAgICAgYnJlYWsK" after tScript
-  put "ICAgZW5kIHN3aXRjaAplbmQgYnV0dG9uUHJlc3NlZAo=" after tScript
+  put "b24gbW91c2VVcCBwTW91c2VCdXR0b24KCmVuZCBtb3" after tScript
+  put "VzZVVwCgpvbiBtb3VzZURvd24gcE1vdXNlQnV0dG9u" after tScript
+  put "CiAgIAplbmQgbW91c2VEb3duCgpvbiB1c2VyQWN0aW" after tScript
+  put "9uIHBEYXRhIHBTZWxlY3RlZCBwVHlwZQogIGxvY2Fs" after tScript
+  put "IHRWYWx1ZSwgdExhYmVsCiAgaWYgcFR5cGUgaXMgIk" after tScript
+  put "FjdGlvbiIgdGhlbgogICAgc3dpdGNoIHBTZWxlY3Rl" after tScript
+  put "ZAogICAgICBjYXNlIDEKCiAgICAgICAgYnJlYWsKIC" after tScript
+  put "AgICAgY2FzZSAyCgogICAgICAgIGJyZWFrCiAgICBl" after tScript
+  put "bmQgc3dpdGNoCiAgZWxzZQogICAgcHV0IHBEYXRhW3" after tScript
+  put "BTZWxlY3RlZF1bInZhbHVlIl0gaW50byB0VmFsdWUK" after tScript
+  put "ICAgIHB1dCBwRGF0YVtwU2VsZWN0ZWRdWyJsYWJlbC" after tScript
+  put "JdIGludG8gdExhYmVsCiAgZW5kIGlmCgogIC0tIHNl" after tScript
+  put "dCB0aGUgbXlEYXRhIG9mIG1lIHRvIHBEYXRhCmVuZC" after tScript
+  put "B1c2VyQWN0aW9uCgpvbiBidXR0b25QcmVzc2VkIHBC" after tScript
+  put "dXR0b24KICAgc3dpdGNoIHBCdXR0b24KICAgICAgY2" after tScript
+  put "FzZSAxICAtLSBPSwogICAgICAgICAtLSBzZXQgdGhl" after tScript
+  put "IHZpc2libGUgb2YgbWUgdG8gZmFsc2UKICAgICAgIC" after tScript
+  put "AgYnJlYWsKICAgICAgY2FzZSAyICAtLSBDYW5jZWwK" after tScript
+  put "ICAgICAgICAgLS0gc2V0IHRoZSB2aXNpYmxlIG9mIG" after tScript
+  put "1lIHRvIGZhbHNlCiAgICAgICAgIGJyZWFrCiAgICAg" after tScript
+  put "IGNhc2UgMwogICAgICAgICAKICAgICAgICAgYnJlYW" after tScript
+  put "sKICAgZW5kIHN3aXRjaAplbmQgYnV0dG9uUHJlc3Nl" after tScript
+  put "ZAo=" after tScript
+
   put " & \q)" after tScript
   post tScript
 end handler
