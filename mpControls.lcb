@@ -2622,7 +2622,12 @@ private handler resetSelects()
   variable tKey as String
   repeat with tCount from 1 up to the number of elements in mData
     put tCount formatted as string into tKey
-    put "false" into mData[tKey]["selected"]
+    if mControlType is "Button Bar" or mData[tKey]["controltype"] is "Button Bar" then
+      put "false" into mData[tKey]["selected"]
+      -- if not(mAppData["vars"]["currentType"] is "Button Bar") then
+      --   next repeat
+      -- end if
+    end if
   end repeat
 end handler
 
