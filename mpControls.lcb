@@ -554,7 +554,6 @@ end handler
 
 private handler addDebugInfo(in pKey as String, in pValue)
   put pValue into mAppData["debug"][pKey]
-  setAppData(mAppData)
 end handler
 
 property myData  get mData  set setData
@@ -1618,13 +1617,6 @@ public handler OnPaint()
      end if
     end repeat
   end if
-
-  -- DELETE:
-  -- put the empty array into mAppData["debug"]
-  -- repeat with tCount from 1 up to the number of elements in mLocList
-  --   put rectToFlatLine(element tCount of mLocList) into mAppData["debug"][mkStr(tCount)]
-  -- end repeat
-  setAppData(mAppData)
 end handler
 
 --SECTION:  PIN PAD
@@ -2449,13 +2441,13 @@ public handler OnMouseUp()
   put the mouse position into tPosition
 
   bottomButtonPressed(tPosition)
-  if mControlType is "Button Bar" then
+  if mAppData["vars"]["currentType"] is "Button Bar" then
     if mButtonBarType is "Action" then
       schedule timer in .1 seconds
     end if
-  else if mControlType is "Sliders" then
+  else if mAppData["vars"]["currentType"] is "Sliders" then
     releaseSlider()
-  else if mControlType is "PIN Pad" then
+  else if mAppData["vars"]["currentType"] is "PIN Pad" then
     selectPINpad()
   end if
   put false into mStillDown
@@ -2475,6 +2467,7 @@ end handler
 
 public handler OnMouseDown()
   put the mouse position into mPosition
+  put mControlType into mAppData["vars"]["currentType"]
 
   if mControlType is "Mixed Controls" then
     selectMixed()
@@ -2488,7 +2481,6 @@ public handler OnMouseDown()
     selectUpDown()
   end if
   post "mouseDown" with [the click button]
-  setAppData(mAppData)
 end handler
 
 public handler OnMouseRelease()
@@ -2508,9 +2500,9 @@ public handler OnMouseEnter()
 end handler
 
 public handler OnTimer()
-  if mControlType is "Button Bar" then
+  if mAppData["vars"]["currentType"] is "Button Bar" then
     resetSelects()
-  else if mControlType is "Numeric Up/Down" then
+  else if mAppData["vars"]["currentType"] is "Numeric Up/Down" then
     -- incrementCount
   end if
 
@@ -2588,7 +2580,6 @@ private handler selectButtonBar()
     put element tCount of mLocList into mCurrentRect
     checkButtonBarSelection()
   end repeat
-  setAppData(mAppData)
 end handler
 
 private handler checkButtonBarSelection()
@@ -2669,7 +2660,6 @@ private handler selectSlider()
   put false into mExit
   put 0 into mAppData["vars"]["TimerCount"]
   put 0 into mTimer
-  setAppData(mAppData)
   repeat with tCount from 1 up to the number of elements in mData
     put element tCount of mLocList into mCurrentRect
     put element tCount of mHandles into mControlRect
@@ -2743,7 +2733,6 @@ private handler adjustSlider(in pX as Number)
     put mkStr(pX) into mData[mAppData["vars"]["Selected"]]["value"]
   end if
 end handler
-
 
 --SECTION: USER INTERACTION SWITCHES
 
@@ -2858,9 +2847,9 @@ private handler selectMixed()
   put false into mExit
   repeat with tCount from 1 up to the number of elements in mData
     put element tCount of mLocList into mCurrentRect
-
     put mkStr(tCount) into mCurrentControlKey
     put mData[mCurrentControlKey]["controltype"] into tControlType
+    put tControlType into mAppData["vars"]["currentType"]
     if mData[mCurrentControlKey]["show"] is "false" then
       next repeat
     end if
