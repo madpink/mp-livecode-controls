@@ -147,3 +147,22 @@ command cycleTest
    testType "Switches",controlCount,tThyme
    testType "Dialog Box",controlCount,tThyme
 end cycleTest
+
+command encodeDefaultScript
+   put the script of button "currentScript" into tInput
+   put base64Encode(tInput) into tX
+   replace cr with "" in tX
+   put ceiling((the number of chars of tX)/52) into tLines
+   repeat tLines times
+      put the number of chars of tX into tCount
+      if tCount < 52 then
+         put "  put " & quote & char 1 to 52 of tX & quote & " after tScript" & cr after tOutput
+         exit repeat
+      else
+         put "  put " & quote & char 1 to 52 of tX & quote & " after tScript" & cr after tOutput
+         delete char 1 to 52 of tX
+      end if
+   end repeat
+   put tOutput into field "scriptRez"
+   set the clipboardData["text"] to tOutput
+end encodeDefaultScript

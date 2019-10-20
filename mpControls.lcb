@@ -2457,7 +2457,7 @@ end handler
 
 public handler OnMouseMove()
   variable tCurr as Number
-  if mControlType is "Sliders" then
+  if mControlType is "Sliders" or mData[mCurrentControlKey]["controltype"] is "Sliders"  then
     if mStillDown then
       adjustSlider(the x of the mouse position )
       redraw all
@@ -3353,24 +3353,30 @@ private handler setDefaultScript()
   variable tScript as String
   put "if the script of me is empty then set script of me" into tScript
   put " to base64Decode(\q & " after tScript
-  put "b24gbW91c2VVcCBwTW91c2VCdXR0b24KCmVuZCBtb3VzZVVwCgpv" after tScript
-  put "biBtb3VzZURvd24gcE1vdXNlQnV0dG9uCiAgIAplbmQgbW91c2VE" after tScript
-  put "b3duCgpvbiB1c2VyQWN0aW9uIHBEYXRhIHBTZWxlY3RlZCBwVHlw" after tScript
-  put "ZQogIGxvY2FsIHRWYWx1ZSwgdExhYmVsCiAgaWYgcFR5cGUgaXMg" after tScript
-  put "IkFjdGlvbiIgdGhlbgogICAgc3dpdGNoIHBTZWxlY3RlZAogICAg" after tScript
-  put "ICBjYXNlIDEKCiAgICAgICAgYnJlYWsKICAgICAgY2FzZSAyCgog" after tScript
-  put "ICAgICAgIGJyZWFrCiAgICBlbmQgc3dpdGNoCiAgZWxzZQogICAg" after tScript
-  put "cHV0IHBEYXRhW3BTZWxlY3RlZF1bInZhbHVlIl0gaW50byB0VmFs" after tScript
-  put "dWUKICAgIHB1dCBwRGF0YVtwU2VsZWN0ZWRdWyJsYWJlbCJdIGlu" after tScript
-  put "dG8gdExhYmVsCiAgZW5kIGlmCgogIC0tIHNldCB0aGUgbXlEYXRh" after tScript
-  put "IG9mIG1lIHRvIHBEYXRhCmVuZCB1c2VyQWN0aW9uCgpvbiBidXR0" after tScript
-  put "b25QcmVzc2VkIHBCdXR0b24KICAgc3dpdGNoIHBCdXR0b24KICAg" after tScript
-  put "ICAgY2FzZSAxICAtLSBPSwogICAgICAgICAtLSBzZXQgdGhlIHZp" after tScript
-  put "c2libGUgb2YgbWUgdG8gZmFsc2UKICAgICAgICAgYnJlYWsKICAg" after tScript
-  put "ICAgY2FzZSAyICAtLSBDYW5jZWwKICAgICAgICAgLS0gc2V0IHRo" after tScript
-  put "ZSB2aXNpYmxlIG9mIG1lIHRvIGZhbHNlCiAgICAgICAgIGJyZWFr" after tScript
-  put "CiAgICAgIGNhc2UgMwogICAgICAgICAKICAgICAgICAgYnJlYWsK" after tScript
-  put "ICAgZW5kIHN3aXRjaAplbmQgYnV0dG9uUHJlc3NlZAo=" after tScript
+  put "b24gbW91c2VVcCBwTW91c2VCdXR0b24KCmVuZCBtb3" after tScript
+  put "VzZVVwCgpvbiBtb3VzZURvd24gcE1vdXNlQnV0dG9u" after tScript
+  put "CiAgIAplbmQgbW91c2VEb3duCgpvbiB1c2VyQWN0aW" after tScript
+  put "9uIHBEYXRhIHBTZWxlY3RlZCBwVHlwZQogIGxvY2Fs" after tScript
+  put "IHRWYWx1ZSwgdExhYmVsCiAgaWYgcFR5cGUgaXMgIk" after tScript
+  put "FjdGlvbiIgdGhlbgogICAgc3dpdGNoIHBTZWxlY3Rl" after tScript
+  put "ZAogICAgICBjYXNlIDEKCiAgICAgICAgYnJlYWsKIC" after tScript
+  put "AgICAgY2FzZSAyCgogICAgICAgIGJyZWFrCiAgICBl" after tScript
+  put "bmQgc3dpdGNoCiAgZWxzZQogICAgcHV0IHBEYXRhW3" after tScript
+  put "BTZWxlY3RlZF1bInZhbHVlIl0gaW50byB0VmFsdWUK" after tScript
+  put "ICAgIHB1dCBwRGF0YVtwU2VsZWN0ZWRdWyJsYWJlbC" after tScript
+  put "JdIGludG8gdExhYmVsCiAgZW5kIGlmCgogIC0tIHNl" after tScript
+  put "dCB0aGUgbXlEYXRhIG9mIG1lIHRvIHBEYXRhCmVuZC" after tScript
+  put "B1c2VyQWN0aW9uCgpvbiBidXR0b25QcmVzc2VkIHBC" after tScript
+  put "dXR0b24KICAgc3dpdGNoIHBCdXR0b24KICAgICAgY2" after tScript
+  put "FzZSAxICAtLSBPSwogICAgICAgICAtLSBzZXQgdGhl" after tScript
+  put "IHZpc2libGUgb2YgbWUgdG8gZmFsc2UKICAgICAgIC" after tScript
+  put "AgYnJlYWsKICAgICAgY2FzZSAyICAtLSBDYW5jZWwK" after tScript
+  put "ICAgICAgICAgLS0gc2V0IHRoZSB2aXNpYmxlIG9mIG" after tScript
+  put "1lIHRvIGZhbHNlCiAgICAgICAgIGJyZWFrCiAgICAg" after tScript
+  put "IGNhc2UgMwogICAgICAgICAKICAgICAgICAgYnJlYW" after tScript
+  put "sKICAgZW5kIHN3aXRjaAplbmQgYnV0dG9uUHJlc3Nl" after tScript
+  put "ZAo=" after tScript
+
   put " & \q)" after tScript
   post tScript
 end handler
