@@ -2451,8 +2451,9 @@ public handler OnMouseUp()
     if mButtonBarType is "Action" then
       schedule timer in .1 seconds
     end if
-  else if mAppData["vars"]["currentType"] is "Sliders" then
-    releaseSlider()
+    -- DELETE
+  -- else if mAppData["vars"]["currentType"] is "Sliders" then
+  --   --releaseSlider()
   else if mAppData["vars"]["currentType"] is "PIN Pad" then
     selectPINpad()
   end if
@@ -2465,21 +2466,19 @@ public handler OnMouseMove()
   variable tCurr as Number
   variable tSlider as Boolean
 
-  if mControlType is "Sliders" then
-    put true into tSlider
-  else if mControlType is "Mixed Controls" then
-    if mData[mCurrentControlKey]["controltype"] is "Sliders" then
-      put true into tSlider
-    end if
-  end if
-
-  if mStillDown and tSlider then
+  if mControlType is "Sliders" and mStillDown then
     adjustSlider(the x of the mouse position)
     redraw all
+  else if mControlType is "Mixed Controls" and mStillDown then
+    -- if mData[mCurrentControlKey]["controltype"] is "Sliders" then
+      adjustSlider(the x of the mouse position)
+      redraw all
+    -- end if
   end if
 end handler
 
 public handler OnMouseDown()
+  put false into mStillDown
   put the mouse position into mPosition
   put mControlType into mAppData["vars"]["currentType"]
 
@@ -2708,13 +2707,14 @@ private handler checkSliderSelected()
   end if
 end handler
 
-private handler releaseSlider()
-  if mStillDown then
-    put false into mStillDown
-  else
-    -- Do we want something here?
-  end if
-end handler
+-- DELETE:
+-- private handler releaseSlider()
+--   if mStillDown then
+--     put false into mStillDown
+--   else
+--     -- Do we want something here?
+--   end if
+-- end handler
 
 private handler adjustSlider(in pX as Number)
   variable tSlideRect as Rectangle
