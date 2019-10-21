@@ -1145,7 +1145,7 @@ public handler OnCreate()
   put the empty array into mAppData["savedcontrols"]
   put the empty array into mAppData["savedthemes"]
   put the empty array into mAppData["vars"]
-  put "false" into mAppData["vars"]["stilldown"]
+  put false into mAppData["vars"]["stilldown"]
   put "  " into mActionOutput
   put true into mUseColorThemes
 
@@ -2457,8 +2457,8 @@ public handler OnMouseUp()
 end handler
 
 public handler OnMouseMove()
-  variable tCurr as Number
-  variable tSlider as Boolean
+  -- variable tCurr as Number
+  -- variable tSlider as Boolean
 
   if mControlType is "Sliders" and mAppData["vars"]["stilldown"]  then
     adjustSlider(the x of the mouse position)
