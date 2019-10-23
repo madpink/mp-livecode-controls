@@ -1157,7 +1157,6 @@ public handler OnCreate()
   defaultIconData()
 end handler
 
---TODO:  CREATE DEFAULT SCRIPT
 public handler OnOpen()
   setDefaultScript()
 end handler
@@ -1710,7 +1709,6 @@ end handler
 
 --SECTION:  BUTTON BAR
 
--- TODO: apply mControlObjectVertical options to:-BUTTONBAR  --> problem with width in fixed size
 -- FIXME: button bar (fixed height and multiple columns )
 ------- if bottom of a button's rect is > the bottom of mCurrentRect then send tp next column
 ------- adjust width of buttons to columns
@@ -2025,8 +2023,6 @@ end handler
 --SECTION: SLIDERS
 
 -- TODO: finish paintColors sliders
--- TODO: Multicolumn sliders
--- TODO: apply mControlObjectVertical options to: SLIDERS
 
 private handler createSlider()
   variable tRect as Rectangle
@@ -2320,6 +2316,8 @@ private handler displayOutputBox()
   mpWrapTextinRect(tOutputRect,mActionOutput,"center center")
   set the top of mCurrentRect to the bottom of tOutputRect
   subtract the height of tOutputRect from the height of mCurrentRect
+
+  -- TODO: Work on outuput
 end handler
 
 private handler calcControlSize()
@@ -2364,7 +2362,7 @@ handler executeDataCommand()
   put element 1 of tCommands into tAction
   put element 2 of tCommands into tType
   put element 3 of tCommands into tName
-  -- QZQZ:  add output commands and output data command handler
+
   if char 1 of tAction is "l" then
     loadDataSets(tType, tName)
   else if char 1 of tAction is "s" then
@@ -2381,6 +2379,23 @@ handler executeDataCommand()
   else if char 1 of tAction is "q" then
     put quazQua(tName,tType) into mActionOutput
     post "qzq" with [mActionOutput]
+  else if char 1 of tAction is "o" then
+    -- QZQZ:  add output commands and output data command handler
+    processOutputCommand(tName, tType)
+  end if
+end handler
+
+handler processOutputCommand(in pData as String, in pCommand as String)
+  variable tData
+  if pCommand is "value" then
+    put pData into mActionOutput
+  else if pCommand is "saved" then
+    put mAppData["savedoutputs"][pData] into mActionOutput
+  else  --SAVE
+    if "savedoutputs" is not(among the keys of mAppData) then
+      put the empty array into mAppData["savedoutputs"]
+    end if
+    put pData into mAppData["savedoutputs"][pCommand]
   end if
 end handler
 
