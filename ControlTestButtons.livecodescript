@@ -57,8 +57,9 @@ command buttonAction pType
          break
       case "B"
          -- set the controlBufferV of widget 1 of stack testStack to 13
-         set the controlObjectVertical of widget 1 of stack testStack to "Fixed spacing"
-         
+         --set the controlObjectVertical of widget 1 of stack testStack to "Fixed spacing"
+         resizeTestStack
+         set the controlType of widget 1 of stack testStack to "Action Wheel"
          break
       case "C"
          -- set the controlItemSpacing of widget 1 of stack testStack to 1

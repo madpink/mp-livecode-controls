@@ -644,7 +644,7 @@ end handler
 
 property controlType  get mControlType  set setControlType
 metadata controlType.editor  is "com.livecode.pi.enum"
-metadata controlType.options  is "Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Progress Bars,Sliders,Switches,Mixed Controls"
+metadata controlType.options  is "Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Progress Bars,Sliders,Switches,Mixed Controls,Action Wheel"
 metadata controlType.default  is "Button Bar"
 metadata controlType.label  is "Control Types"
 metadata controlType.section  is "Basic"
@@ -1581,6 +1581,8 @@ public handler OnPaint()
   calcControlSize()
   if mControlType is "Dialog Box" then
     paintDialogBox()
+  else if mControlType is "Action Wheel" then
+    paintActionWheel()
   else
     set the top of mControlRect to the top of mCurrentRect + mControlBufferV
     set the left of mControlRect to the left of mCurrentRect + mControlBufferH
@@ -4372,7 +4374,7 @@ descriptiongoeshere
 
 -- SECTION: PAINT ACTION WHEEL
 
-public handler createActionWheel()
+public handler paintActionWheel()
    variable tPath as Path
    variable tBigX as Number
    variable tBigY as Number
@@ -4399,7 +4401,6 @@ public handler createActionWheel()
      put "fore" into mData[mkstr(tCount)]["textColor"]
      put true into mData[mkstr(tCount)]["show"]
    end repeat
-
    if my width > my height then
       put my height/2 into tBigRad
    else
@@ -4408,12 +4409,10 @@ public handler createActionWheel()
    put tBigRad/4 into tLilRad
    put my width/2 into tBigX
    put my height/2 into tBigY
-
    put point [(my width/2),(my height/2)] into tCenter
    set the font of this canvas to my font
    setPaint("back")
    fill circle path centered at tCenter with radius tBigRad on this canvas
-
    if mShowOutputBox then
       setPaint("border")
       put centerRectGen() into tRect
@@ -4431,10 +4430,9 @@ public handler createActionWheel()
       set the height of tRect to (the height of tRect*.7)
 
       set the size of the font of this canvas to 13
-      mpWrapTextinRect(tRect,mData[mkStr(tCount)]["text"],"center center")
+      -- FIXME: mpWrapTextinRect(tRect,mData[mkStr(tCount)]["text"],"center center")
       put false into mAppData["vars"]["down"]
    end if
-
    put tBigX into tLilX
    put tBigY-(tLilRad*2.8) into tLilY
    makeCircle(tLilX, tLilY, tLilRad, 1)
@@ -4469,55 +4467,65 @@ public handler createActionWheel()
 end handler
 
 private handler makeCircle(in pX, in pY, in pRad, in pNum)
-   variable tKey as String
    variable tRect as Rectangle
-   put mkStr(pNum) into tKey
-   if mData[tKey]["show"] then
-      chooseAndSetPaint(mData[mCurrentControlKey]["selectediconcolor"],mControlHiliteColor)
-      put mkStr(pNum) into tKey
-      put the empty array into mData[tKey]
+   addDebugInfo("datacheckMC0",mData)
+   put mkStr(pNum) into mCurrentControlKey
+   addDebugInfo("key",mCurrentControlKey)
+   if mData[mCurrentControlKey]["show"] then
+      chooseAndSetPaint(mData[mCurrentControlKey]["textColor"],mControlHiliteColor)
+      -- setPaint(mControlHiliteColor)
+      addDebugInfo("datacheckMC1",mData)
+
+      --put the empty array into mData[mCurrentControlKey]
       put rectangle [0,0,1,1] into tRect
       set the width of tRect to pRad*2
       set the height of tRect to pRad*2
       set the left of tRect to pX-pRad
       set the top of tRect to pY-pRad
-      drawCircle(tRect,tKey,pRad)
+      addDebugInfo("datacheckMC1",mData)
+      drawCircle(tRect,pRad)
    end if
+
+   addDebugInfo("datacheckMCZ",mData)
 end handler
 
-public handler drawCircle(in pRect,in pKey,in pRad)
+public handler drawCircle(in pRect,in pRad)
    variable tIconPath as Path
+   addDebugInfo("datacheckDC1",mData)
 
    fill rounded rectangle path of pRect with radius pRad on this canvas
-   put rectToArray(pRect) into mData[pKey]
-   chooseAndSetPaint(mData[pKey]["textColor"],mControlIconColor)
+   chooseAndSetPaint(mData[mCurrentControlKey]["textColor"],mControlIconColor)
    if mButtonBarStyle is "Text" then
       set the size of the font of this canvas to mControlTextSize
-      mpWrapTextinRect(pRect,mData[pKey]["text"],"center center")
+      mpWrapTextinRect(pRect,mData[mCurrentControlKey]["text"],"center center")
    else if mButtonBarStyle is "Icon" then
       put pRad*.3 into pRad
       add pRad to the top of pRect
       add pRad to the left of pRect
       set the width of pRect to (the width of pRect*.7)
       set the height of pRect to (the height of pRect*.7)
-      put getIconPath(mData[pKey]["iconA"], mControlIconA) into tIconPath
+      put getIconPath(mData[mCurrentControlKey]["iconA"], mControlIconA) into tIconPath
       constrainPathToRect(pRect, tIconPath)
       fill tIconPath on this canvas
    else
+      addDebugInfo("datacheckDC2",mData)
+
       add pRad*.2 to the top of pRect
       add pRad*.41 to the left of pRect
       set the width of pRect to (the width of pRect*.6)
       set the height of pRect to (the height of pRect*.6)
 
-      put getIconPath(mData[pKey]["iconA"], mControlIconA) into tIconPath
+      put getIconPath(mData[mCurrentControlKey]["selectedicon"], mControlIconA) into tIconPath
       constrainPathToRect(pRect, tIconPath)
       fill tIconPath on this canvas
 
       set the top of pRect to the bottom of pRect+2
       set the size of the font of this canvas to mControlTextSize
       set the height of pRect to (the height of pRect*.5)
-      mpWrapTextinRect(pRect,mData[pKey]["text"],"center center")
+      mpWrapTextinRect(pRect,mData[mCurrentControlKey]["label"],"center center")
    end if
+   addDebugInfo("datacheckDCX",mData)
+
 end handler
 
 private handler centerRectGen() returns Rectangle
@@ -4547,10 +4555,10 @@ private handler centerCircleStat(in pText as String)
    if pText is "true" then
       put true into mShowOutputBox
    else
-      put the empty array into mData["center"]
+      put the empty array into mAppData["vars"]["center"]
       put false into mShowOutputBox
    end if
-   put pText into mData["centercircle"]
+   put pText into mAppData["vars"]["centercircle"]
 end handler
 
 /*
