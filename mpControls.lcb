@@ -568,7 +568,9 @@ private handler setData(in pVal as Array)
   put pVal into mAppData["props"]["myData"]
   put pVal into mData
 
-  if mControlType is not "Dialog Box" then
+  if mControlType is "Button Wheel" then
+
+  else if mControlType is not "Dialog Box" then
     verifyDataComplete()
   end if
 
@@ -644,7 +646,7 @@ end handler
 
 property controlType  get mControlType  set setControlType
 metadata controlType.editor  is "com.livecode.pi.enum"
-metadata controlType.options  is "Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Progress Bars,Sliders,Switches,Mixed Controls,Action Wheel"
+metadata controlType.options  is "Button Bar,Dialog Box,Form Backdrop,Numeric Up/Down,Progress Bars,Sliders,Switches,Mixed Controls,Button Wheel"
 metadata controlType.default  is "Button Bar"
 metadata controlType.label  is "Control Types"
 metadata controlType.section  is "Basic"
@@ -654,6 +656,9 @@ private handler setControlType(in pVal as String)
   setData(mData)
   put pVal into mAppData["props"]["controlType"]
   put pVal into mControlType
+  if mControlType is "Button Wheel" then
+    useDefaultButtonWheelProps()
+  end if
   if mDefaultChangeType then
     if mControlType is "Button Bar" then
       useDefaultButtonBarProps()
@@ -1513,6 +1518,30 @@ private handler useDefaultButtonBarProps()
   setControlIconB("builtin:circle blank")
 end handler
 
+private handler useDefaultButtonWheelProps()
+  variable tCount as Number
+  variable tLabels as List
+  variable tIcons as List
+  
+  put ["Exit", "Add", "Settings", "Filter", "Rubbish", "Help", "Sort", "Move"] into tLabels
+  put ["builtin:ban circle", "builtin:plus", "builtin:cogs", "builtin:filter", "builtin:trash", "builtin:question sign", "builtin:sort by attributes", "builtin:move"] into tIcons
+
+  repeat with tCount from 1 up to 8
+    put the empty array into mData[mkStr(tCount)]
+    put element tCount of tLabels into mData[mkstr(tCount)]["label"]
+    put element tCount of tIcons into mData[mkstr(tCount)]["unselectedicon"]
+    put element tCount of tIcons into mData[mkstr(tCount)]["selectedicon"]
+    put "default" into mData[mkstr(tCount)]["unselectedbuttoncolor"]
+    put "default" into mData[mkstr(tCount)]["selectedbuttoncolor"]
+    put "default" into mData[mkstr(tCount)]["unselectedtextcolor"]
+    put "default" into mData[mkstr(tCount)]["selecttextcolor"]
+    put "default" into mData[mkstr(tCount)]["unselectediconcolor"]
+    put "default" into mData[mkstr(tCount)]["selectediconcolor"]
+    put true into mData[mkstr(tCount)]["show"]
+    put "false" into mData[mkstr(tCount)]["selected"]
+  end repeat
+end handler
+
 private handler useDefaultSwitchesProps()
   put 13 into mControlRadius
   setRadius(13)
@@ -1577,13 +1606,14 @@ public handler OnPaint()
   end if
 
   setCurrentColorSet()
-  drawBaseItems()
-  calcControlSize()
+
   if mControlType is "Dialog Box" then
     paintDialogBox()
-  else if mControlType is "Action Wheel" then
-    paintActionWheel()
+else if mControlType is "Button Wheel" then
+    paintButtonWheel()
   else
+    drawBaseItems()
+    calcControlSize()
     set the top of mControlRect to the top of mCurrentRect + mControlBufferV
     set the left of mControlRect to the left of mCurrentRect + mControlBufferH
 
@@ -1680,6 +1710,7 @@ end handler
 private handler paintDialogBox()
   variable tTextRect as Rectangle
 
+  drawBaseItems()
   set the font of this canvas to font mControlTextFont at size mControlTextSize
   put mCurrentRect into tTextRect
   put borderAdjust(tTextRect,mBorder,1) into tTextRect
@@ -4374,7 +4405,7 @@ descriptiongoeshere
 
 -- SECTION: PAINT ACTION WHEEL
 
-public handler paintActionWheel()
+public handler paintButtonWheel()
    variable tPath as Path
    variable tBigX as Number
    variable tBigY as Number
@@ -4384,23 +4415,11 @@ public handler paintActionWheel()
    variable tLilX as Number
    variable tLilY as Number
    variable tRect as Rectangle
-   variable tLabels as List
-   variable tIcons as List
+
    variable tCount as Number
    variable tIconPath as Path
 
-   put ["Exit", "Add", "Settings", "Filter", "Rubbish", "Help", "Sort", "Move"] into tLabels
-   put ["builtin:ban circle", "builtin:plus", "builtin:cogs", "builtin:filter", "builtin:trash", "builtin:question sign", "builtin:sort by attributes", "builtin:move"] into tIcons
 
-   repeat with tCount from 1 up to 8
-     put the empty array into mData[mkStr(tCount)]
-     put element tCount of tLabels into mData[mkstr(tCount)]["label"]
-     put element tCount of tIcons into mData[mkstr(tCount)]["unselectedicon"]
-     put element tCount of tIcons into mData[mkstr(tCount)]["selectedicon"]
-     put "border" into mData[mkstr(tCount)]["backgroundColor"]
-     put "fore" into mData[mkstr(tCount)]["textColor"]
-     put true into mData[mkstr(tCount)]["show"]
-   end repeat
    if my width > my height then
       put my height/2 into tBigRad
    else
@@ -4411,21 +4430,24 @@ public handler paintActionWheel()
    put my height/2 into tBigY
    put point [(my width/2),(my height/2)] into tCenter
    set the font of this canvas to my font
-   setPaint("back")
+   setPaint(mMainSquareColor)
    fill circle path centered at tCenter with radius tBigRad on this canvas
    if mShowOutputBox then
       setPaint("border")
       put centerRectGen() into tRect
       fill rounded rectangle path of tRect with radius tBigRad on this canvas
-      setPaint("fore")
+      setPaint(mMainSquareColor)
       add tBigRad*.22 to the left of tRect
       add tBigRad*.05 to the top of tRect
       set the width of tRect to (the width of tRect*.5)
       set the height of tRect to (the height of tRect*.5)
-      put getIconPath(mData[mkStr(tCount)]["unselectediconcolor"], mControlIconA) into tIconPath
-      constrainPathToRect(tRect, tIconPath)
-      fill tIconPath on this canvas
-
+      repeat with tCount from 1 up to 8
+         if mData[mkstr(tCount)]["selected"] is "true" then
+           put getIconPath(mData[mkStr(tCount)]["unselectediconcolor"], mControlIconA) into tIconPath
+           constrainPathToRect(tRect, tIconPath)
+           fill tIconPath on this canvas
+         end if
+      end repeat
       set the top of tRect to the bottom of tRect + 5
       set the height of tRect to (the height of tRect*.7)
 
@@ -4468,37 +4490,29 @@ end handler
 
 private handler makeCircle(in pX, in pY, in pRad, in pNum)
    variable tRect as Rectangle
-   addDebugInfo("datacheckMC0",mData)
    put mkStr(pNum) into mCurrentControlKey
-   addDebugInfo("key",mCurrentControlKey)
    if mData[mCurrentControlKey]["show"] then
-      chooseAndSetPaint(mData[mCurrentControlKey]["textColor"],mControlHiliteColor)
-      -- setPaint(mControlHiliteColor)
-      addDebugInfo("datacheckMC1",mData)
-
-      --put the empty array into mData[mCurrentControlKey]
+      -- setPaint("bottom")
       put rectangle [0,0,1,1] into tRect
       set the width of tRect to pRad*2
       set the height of tRect to pRad*2
       set the left of tRect to pX-pRad
       set the top of tRect to pY-pRad
-      addDebugInfo("datacheckMC1",mData)
       drawCircle(tRect,pRad)
    end if
-
-   addDebugInfo("datacheckMCZ",mData)
 end handler
 
 public handler drawCircle(in pRect,in pRad)
    variable tIconPath as Path
-   addDebugInfo("datacheckDC1",mData)
-
+   setButtonPaint(mCurrentControlKey, "button")
    fill rounded rectangle path of pRect with radius pRad on this canvas
-   chooseAndSetPaint(mData[mCurrentControlKey]["textColor"],mControlIconColor)
+   --chooseAndSetPaint(mData[mCurrentControlKey]["unselectedbuttoncolor"],mControlIconColor)
    if mButtonBarStyle is "Text" then
+      setButtonPaint(mCurrentControlKey, "text")
       set the size of the font of this canvas to mControlTextSize
       mpWrapTextinRect(pRect,mData[mCurrentControlKey]["text"],"center center")
    else if mButtonBarStyle is "Icon" then
+      setButtonPaint(mCurrentControlKey, "icon")
       put pRad*.3 into pRad
       add pRad to the top of pRect
       add pRad to the left of pRect
@@ -4508,7 +4522,7 @@ public handler drawCircle(in pRect,in pRad)
       constrainPathToRect(pRect, tIconPath)
       fill tIconPath on this canvas
    else
-      addDebugInfo("datacheckDC2",mData)
+      setButtonPaint(mCurrentControlKey, "icon")
 
       add pRad*.2 to the top of pRect
       add pRad*.41 to the left of pRect
@@ -4519,13 +4533,12 @@ public handler drawCircle(in pRect,in pRad)
       constrainPathToRect(pRect, tIconPath)
       fill tIconPath on this canvas
 
+      setButtonPaint(mCurrentControlKey, "text")
       set the top of pRect to the bottom of pRect+2
       set the size of the font of this canvas to mControlTextSize
       set the height of pRect to (the height of pRect*.5)
       mpWrapTextinRect(pRect,mData[mCurrentControlKey]["label"],"center center")
    end if
-   addDebugInfo("datacheckDCX",mData)
-
 end handler
 
 private handler centerRectGen() returns Rectangle
