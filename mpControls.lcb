@@ -1141,8 +1141,9 @@ public handler OnCreate()
   put the empty array into mAppData["debug"]
   put the empty array into mAppData["props"]
   put the empty array into mAppData["rect"]
-  put the empty array into mAppData["savedprops"]
   put the empty array into mAppData["savedcontrols"]
+  put the empty array into mAppData["savedoutputs"]
+  put the empty array into mAppData["savedprops"]
   put the empty array into mAppData["savedthemes"]
   put the empty array into mAppData["vars"]
   put false into mAppData["vars"]["stilldown"]
@@ -2397,9 +2398,6 @@ handler processOutputCommand(in pData as String, in pCommand as String)
   else if pCommand is "saved" then
     put mAppData["savedoutputs"][pData] into mActionOutput
   else  --SAVE
-    if "savedoutputs" is not(among the keys of mAppData) then
-      put the empty array into mAppData["savedoutputs"]
-    end if
     put pData into mAppData["savedoutputs"][pCommand]
   end if
 end handler
@@ -4374,22 +4372,6 @@ descriptiongoeshere
 
 -- SECTION: PAINT ACTION WHEEL
 
-/*
-put ["Exit", "Add", "Settings", "Filter", "Rubbish", "Help", "Sort", "Move"] into tLabels
-put ["builtin:ban circle", "builtin:plus", "builtin:cogs", "builtin:filter", "builtin:trash", "builtin:question sign", "builtin:sort by attributes", "builtin:move"] into tIcons
-
-repeat with x=1 to 8
-put the empty array into mData[mkStr(x)]
-put element x of tLabels into mData[mkstr(x)]["label"]
-put element x of tIcons into mData[mkstr(x)]["iconA"]
-put element x of tIcons into mData[mkstr(x)]["iconB"]
-put "border" into mData[mkstr(x)]["backgroundColor"]
-put "fore" into mData[mkstr(x)]["textColor"]
-end repeat
-
-*/
-
-/*
 public handler createActionWheel()
    variable tPath as Path
    variable tBigX as Number
@@ -4403,19 +4385,20 @@ public handler createActionWheel()
    variable tLabels as List
    variable tIcons as List
    variable tCount as Number
+   variable tIconPath as Path
 
    put ["Exit", "Add", "Settings", "Filter", "Rubbish", "Help", "Sort", "Move"] into tLabels
    put ["builtin:ban circle", "builtin:plus", "builtin:cogs", "builtin:filter", "builtin:trash", "builtin:question sign", "builtin:sort by attributes", "builtin:move"] into tIcons
 
-   repeat with tCount=1 to 8
+   repeat with tCount from 1 up to 8
      put the empty array into mData[mkStr(tCount)]
      put element tCount of tLabels into mData[mkstr(tCount)]["label"]
-     put element tCount of tIcons into mData[mkstr(tCount)]["iconA"]
-     put element tCount of tIcons into mData[mkstr(tCount)]["iconB"]
+     put element tCount of tIcons into mData[mkstr(tCount)]["unselectedicon"]
+     put element tCount of tIcons into mData[mkstr(tCount)]["selectedicon"]
      put "border" into mData[mkstr(tCount)]["backgroundColor"]
      put "fore" into mData[mkstr(tCount)]["textColor"]
+     put true into mData[mkstr(tCount)]["show"]
    end repeat
-
 
    if my width > my height then
       put my height/2 into tBigRad
@@ -4423,12 +4406,8 @@ public handler createActionWheel()
       put my width/2 into tBigRad
    end if
    put tBigRad/4 into tLilRad
-   put mkStr(tBigRad) into mAppData["vars"]["bigradius"]
-   put mkStr(tLilRad) into mAppData["vars"]["lilradius"]
    put my width/2 into tBigX
    put my height/2 into tBigY
-   put mkStr(my width/2) into mAppData["vars"]["bigx"]
-   put mkStr(my height/2) into mAppData["vars"]["bigy"]
 
    put point [(my width/2),(my height/2)] into tCenter
    set the font of this canvas to my font
@@ -4439,19 +4418,21 @@ public handler createActionWheel()
       setPaint("border")
       put centerRectGen() into tRect
       fill rounded rectangle path of tRect with radius tBigRad on this canvas
-      put the empty array into mAppData["vars"]["center"]
-      put rectToArray(tRect) into mAppData["vars"]["center"]
       setPaint("fore")
       add tBigRad*.22 to the left of tRect
       add tBigRad*.05 to the top of tRect
       set the width of tRect to (the width of tRect*.5)
       set the height of tRect to (the height of tRect*.5)
-      displayIcon(tRect,mData[mButtonSelected]["icon"])
+      put getIconPath(mData[mkStr(tCount)]["unselectediconcolor"], mControlIconA) into tIconPath
+      constrainPathToRect(tRect, tIconPath)
+      fill tIconPath on this canvas
+
       set the top of tRect to the bottom of tRect + 5
       set the height of tRect to (the height of tRect*.7)
-      set the size of the font of this canvas to mTextSizeSelect
-      mpWrapTextinRect(tRect,mData[mButtonSelected]["text"],"center center")
-      put false into mDown
+
+      set the size of the font of this canvas to 13
+      mpWrapTextinRect(tRect,mData[mkStr(tCount)]["text"],"center center")
+      put false into mAppData["vars"]["down"]
    end if
 
    put tBigX into tLilX
@@ -4491,8 +4472,8 @@ private handler makeCircle(in pX, in pY, in pRad, in pNum)
    variable tKey as String
    variable tRect as Rectangle
    put mkStr(pNum) into tKey
-   if mWheelData[tKey]["label"] is not "xxxxx" then
-      pickPaint(tKey,"base")
+   if mData[tKey]["show"] then
+      chooseAndSetPaint(mData[mCurrentControlKey]["selectediconcolor"],mControlHiliteColor)
       put mkStr(pNum) into tKey
       put the empty array into mData[tKey]
       put rectangle [0,0,1,1] into tRect
@@ -4505,95 +4486,38 @@ private handler makeCircle(in pX, in pY, in pRad, in pNum)
 end handler
 
 public handler drawCircle(in pRect,in pKey,in pRad)
+   variable tIconPath as Path
+
    fill rounded rectangle path of pRect with radius pRad on this canvas
    put rectToArray(pRect) into mData[pKey]
-   pickPaint(pKey,"label")
-   if mDisplayType is "text" then
-      set the size of the font of this canvas to mTextSizeBase
-      mpWrapTextinRect(pRect,mWheelData[pKey]["text"],"center center")
-   else if mDisplayType is "icon" then
+   chooseAndSetPaint(mData[pKey]["textColor"],mControlIconColor)
+   if mButtonBarStyle is "Text" then
+      set the size of the font of this canvas to mControlTextSize
+      mpWrapTextinRect(pRect,mData[pKey]["text"],"center center")
+   else if mButtonBarStyle is "Icon" then
       put pRad*.3 into pRad
       add pRad to the top of pRect
       add pRad to the left of pRect
       set the width of pRect to (the width of pRect*.7)
       set the height of pRect to (the height of pRect*.7)
-      displayIcon(pRect,mWheelData[pKey]["icon"],mWheelData[pKey]["type"])
-   else if mDisplayType is "both" then
+      put getIconPath(mData[pKey]["iconA"], mControlIconA) into tIconPath
+      constrainPathToRect(pRect, tIconPath)
+      fill tIconPath on this canvas
+   else
       add pRad*.2 to the top of pRect
       add pRad*.41 to the left of pRect
       set the width of pRect to (the width of pRect*.6)
       set the height of pRect to (the height of pRect*.6)
-      displayIcon(pRect,mWheelData[pKey]["icon"],mWheelData[pKey]["type"])
+
+      put getIconPath(mData[pKey]["iconA"], mControlIconA) into tIconPath
+      constrainPathToRect(pRect, tIconPath)
+      fill tIconPath on this canvas
+
       set the top of pRect to the bottom of pRect+2
-      set the size of the font of this canvas to mTextSizeBase
+      set the size of the font of this canvas to mControlTextSize
       set the height of pRect to (the height of pRect*.5)
-      mpWrapTextinRect(pRect,mWheelData[pKey]["text"],"center center")
+      mpWrapTextinRect(pRect,mData[pKey]["text"],"center center")
    end if
-end handler
-
-private handler centerCircleStat(in pText as String)
-   if pText is "true" then
-      put true into mCenterCircle
-   else
-      put the empty array into mData["center"]
-      put false into mCenterCircle
-   end if
-   put pText into mData["centercircle"]
-end handler
-
-public handler OnMouseDown()
-   variable tCount as Number
-   variable tCurr as String
-   variable tRect as Rectangle
-   variable tPosition as Point
-   variable tAnySelected as Boolean
-   put false into tAnySelected
-   put the mouse position into tPosition
-   repeat with tCount from 1 up to 8
-      put mkStr(tCount) into tCurr
-      put arrayToRect(mData[tCurr]) into tRect
-      if tPosition is within tRect then
-         put tCurr into mButtonSelected
-         put true into mDown
-         put true into tAnySelected
-      else
-         put tAnySelected into mDown
-      end if
-   end repeat
-   redraw all
-   post "mouseDown"
-end handler
-
-public handler OnMouseUp()
-   variable tCount as Number
-   variable tCurr as String
-   variable tRect as Rectangle
-   variable tCenterRect as Rectangle
-   variable tPosition as Point
-   put false into mDown
-   put the mouse position into tPosition
-   --put the empty string into mButtonSelected
-   repeat with tCount from 1 up to 8
-      put mkStr(tCount) into tCurr
-      put arrayToRect(mData[tCurr]) into tRect
-      if tPosition is within tRect then
-         put true into mDown
-         put tCurr into mButtonSelected
-         if mActionStyle is "immediate" then
-
-         else if mActionStyle is "center" then
-            centerCircleStat("true")
-         end if
-         actionPressed()
-      end if
-   end repeat
-   if mCenterCircle then
-      if tPosition is within centerRectGen() then
-         centerPressed()
-      end if
-   end if
-   redraw all
-   post "mouseUp"
 end handler
 
 private handler centerRectGen() returns Rectangle
@@ -4617,6 +4541,74 @@ private handler centerRectGen() returns Rectangle
    set the top of tRect to tBigY-tBigRad/2
    return tRect
 end handler
+
+
+private handler centerCircleStat(in pText as String)
+   if pText is "true" then
+      put true into mShowOutputBox
+   else
+      put the empty array into mData["center"]
+      put false into mShowOutputBox
+   end if
+   put pText into mData["centercircle"]
+end handler
+
+/*
+public handler OnMouseDown()
+   variable tCount as Number
+   variable tCurr as String
+   variable tRect as Rectangle
+   variable tPosition as Point
+   variable tAnySelected as Boolean
+   put false into tAnySelected
+   put the mouse position into tPosition
+   repeat with tCount from 1 up to 8
+      put mkStr(tCount) into tCurr
+      put arrayToRect(mData[tCurr]) into tRect
+      if tPosition is within tRect then
+         put tCurr into mButtonSelected
+         put true into put false into mAppData["vars"]["down"]
+         put true into tAnySelected
+      else
+         put tAnySelected into put false into mAppData["vars"]["down"]
+      end if
+   end repeat
+   redraw all
+   post "mouseDown"
+end handler
+
+public handler OnMouseUp()
+   variable tCount as Number
+   variable tCurr as String
+   variable tRect as Rectangle
+   variable tCenterRect as Rectangle
+   variable tPosition as Point
+   put false into put false into mAppData["vars"]["down"]
+   put the mouse position into tPosition
+   --put the empty string into mButtonSelected
+   repeat with tCount from 1 up to 8
+      put mkStr(tCount) into tCurr
+      put arrayToRect(mData[tCurr]) into tRect
+      if tPosition is within tRect then
+         put true into put false into mAppData["vars"]["down"]
+         put tCurr into mButtonSelected
+         if mActionStyle is "immediate" then
+
+         else if mActionStyle is "center" then
+            centerCircleStat("true")
+         end if
+         actionPressed()
+      end if
+   end repeat
+   if mCenterCircle then
+      if tPosition is within centerRectGen() then
+         centerPressed()
+      end if
+   end if
+   redraw all
+   post "mouseUp"
+end handler
+
 
 */
 end widget
