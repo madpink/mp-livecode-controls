@@ -1522,7 +1522,7 @@ private handler useDefaultButtonWheelProps()
   variable tCount as Number
   variable tLabels as List
   variable tIcons as List
-  
+
   put ["Exit", "Add", "Settings", "Filter", "Rubbish", "Help", "Sort", "Move"] into tLabels
   put ["builtin:ban circle", "builtin:plus", "builtin:cogs", "builtin:filter", "builtin:trash", "builtin:question sign", "builtin:sort by attributes", "builtin:move"] into tIcons
 
@@ -4454,7 +4454,14 @@ public handler paintButtonWheel()
       set the size of the font of this canvas to 13
       -- FIXME: mpWrapTextinRect(tRect,mData[mkStr(tCount)]["text"],"center center")
       put false into mAppData["vars"]["down"]
-   end if
+   end if\
+
+   /*
+   --subtract the approximate center of the circles (little radius) on the ring from the radius of the big circle,
+   --divide the number of buttons into 360
+   --calculate x,y of each circle's center and draw it?
+   https://stackoverflow.com/questions/839899/how-do-i-calculate-a-point-on-a-circle-s-circumference
+   */
    put tBigX into tLilX
    put tBigY-(tLilRad*2.8) into tLilY
    makeCircle(tLilX, tLilY, tLilRad, 1)
