@@ -2,12 +2,12 @@ widget pink.mad.controlpanelbeta
 
 metadata title is "MPUberControlPanel"
 metadata author is "MadPink"
-metadata version is "0.9.52"
+metadata version is "0.9.53"
 metadata description is "Allows for multiple configurable controls that can be dynamically changed"
 metadata preferredSize  is "420,230"
 metadata svgicon is  "M51.3,29.1V24c0-6.1,3.4-11.6,8.9-14.4L57.9,5c-7.2,3.6-11.7,10.9-11.7,19v7.1l1.2,1.2C48.7,31.5,50,30.3,51.3,29.1z M68.1,34.1c0.7,0.4,1.4,0.8,2,1.4c4.4-2.2,8.1-5.6,8.4-9.3c-5.1,2.8-9.3,4.2-12.1,4.9L68.1,34.1  C68.1,34.1,68.1,34.1,68.1,34.1z M28.8,33.3V33c-0.4-1.2-0.7-2.4-0.9-3.6l-8.2-2.7C21.7,28.9,24.9,31.8,28.8,33.3z M43.6,95c2.5,0,4.7-1.3,6-3.2c-0.5-1-0.8-2.2-0.8-3.4c-2.2-0.8-4-2.3-5.1-4.3c-1.5,2.6-4.1,4.4-7.1,4.8  C37.1,92.4,40.1,95,43.6,95z M58.5,95c3.6,0,6.5-2.6,7.1-6c-2.4-0.3-4.5-1.6-6-3.3c-1.8,2.1-4.5,3.4-7.4,3.4c-0.2,0-0.5,0-0.7,0C52,92.4,55,95,58.5,95z  M74.2,79.3c0-0.3,0-0.6-0.1-0.9c-0.3,0-0.5,0-0.8,0c-3.6,0-6.8-2-8.5-4.9c-0.8,1.4-1.9,2.6-3.3,3.4  c0.2,0.8,0.3,1.5,0.3,2.4c0,1.4-0.3,2.8-0.9,4c1.3,1.9,3.5,3.2,6,3.2C71,86.5,74.2,83.3,74.2,79.3z M59.3,79.3c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-3.6,0-6.8-2-8.5-4.9c-0.6,1-1.3,1.9-2.3,2.7  c-0.4,0.9-0.7,2-0.7,3.1c0,4,3.2,7.2,7.2,7.2C56.1,86.5,59.3,83.3,59.3,79.3z M35.1,86.5c4,0,7.2-3.2,7.2-7.2c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-2.4,0-4.7-0.9-6.4-2.4  c-1.4,1.2-3.1,2-5,2.3c0,0.3-0.1,0.6-0.1,0.9C27.9,83.3,31.2,86.5,35.1,86.5z M20.4,65.1c-0.6,1-0.9,2.3-0.9,3.5c0,4,3.2,7.2,7.2,7.2c1.8,0,3.4-0.6,4.7-1.7c-1.1-1.6-1.7-3.5-1.7-5.5  c0-1.2,0.2-2.3,0.6-3.4c-1.3-0.1-2.5-0.4-3.6-0.9c-1.3,0.6-2.7,1-4.2,1C21.7,65.3,21,65.3,20.4,65.1z M38.1,62.1c-1.3,1.4-3,2.5-5,3c-0.6,1.1-1,2.3-1,3.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.2-0.3-2.4-0.8-3.4  c-0.1,0-0.3,0-0.4,0C42.5,65.3,39.9,64.1,38.1,62.1z M80.6,68.7c0-1.5-0.5-2.9-1.3-4.1c-1.2,0.5-2.4,0.8-3.8,0.8c-2.5,0-4.7-0.9-6.4-2.4c-1.8,1.3-2.9,3.4-2.9,5.8  c0,4,3.2,7.2,7.2,7.2C77.3,75.9,80.6,72.7,80.6,68.7z M53.5,62c-2.6,1.1-4.4,3.7-4.4,6.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.3-2.5-0.9-3.5  c-0.6,0.1-1.2,0.2-1.8,0.2C57.9,65.3,55.3,64.1,53.5,62z M22.4,62.8c0.6,0,1.1-0.1,1.7-0.2c-1.8-1.8-3-4.3-3-7c0-1,0.2-2.1,0.5-3c-1.7-0.1-3.3-0.7-4.7-1.7  c-1.1,1.3-1.7,2.9-1.7,4.7C15.2,59.5,18.4,62.8,22.4,62.8z M23.7,55.6c0,4,3.2,7.2,7.2,7.2c2.3,0,4.4-1.1,5.7-2.9c-0.7-1.3-1-2.8-1-4.3c0-1.3,0.3-2.6,0.8-3.8  c-1.2,0.5-2.5,0.8-3.9,0.8c-1.8,0-3.6-0.5-5-1.4c-0.9,0.6-1.9,1-3,1.2C24,53.3,23.7,54.4,23.7,55.6z M82.7,55.6c0-1.4-0.4-2.7-1.1-3.8c-1.2,0.5-2.6,0.9-4,0.9c-2.6,0-4.9-1-6.7-2.6c-0.5,0.4-0.9,0.9-1.3,1.4  c0.6,1.3,1,2.7,1,4.2s-0.4,2.9-1,4.2c1.3,1.8,3.4,3,5.8,3C79.5,62.8,82.7,59.5,82.7,55.6z M54.5,52.1c0.4,1.1,0.6,2.2,0.6,3.4s-0.2,2.4-0.6,3.4c1.2,2.2,3.6,3.8,6.3,3.8c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.5-1-3.6  c-1.1,0.4-2.2,0.6-3.4,0.6c-2.7,0-5.2-1.1-7-2.9C55.8,50.3,55,51.1,54.5,52.1z M38.2,55.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.6-1-3.7c-1.1,0.4-2.3,0.7-3.6,0.7c-2.7,0-5.1-1.1-6.9-2.8  C39.3,51.1,38.2,53.2,38.2,55.6z M22.4,50c1,0,2-0.2,2.9-0.6c-1.6-1.7-2.6-4.1-2.6-6.6s1-4.9,2.6-6.6c-0.9-0.4-1.9-0.6-2.9-0.6c-4,0-7.2,3.2-7.2,7.2  C15.2,46.8,18.4,50,22.4,50z M37.7,37.9c-2.5-0.2-5-0.9-7.3-2c-3,0.9-5.2,3.6-5.2,6.9c0,4,3.2,7.2,7.2,7.2c2.7,0,5.1-1.5,6.3-3.8  c-0.4-1.1-0.6-2.2-0.6-3.4s0.2-2.4,0.6-3.4C38.5,38.8,38.2,38.4,37.7,37.9z M72.2,38.1c0.8,1.4,1.2,3,1.2,4.7s-0.5,3.3-1.2,4.7c1.3,1.5,3.3,2.5,5.4,2.5c4,0,7.2-3.2,7.2-7.2c0-4-3.2-7.2-7.2-7.2  C75.5,35.6,73.5,36.6,72.2,38.1z M63.7,50c4,0,7.2-3.2,7.2-7.2c0-2.9-1.8-5.5-4.3-6.6c-2.7,1-5.4,1.5-8.2,1.7c-0.5,0.5-0.8,1.1-1.1,1.7  c0.3,1,0.5,2.1,0.5,3.2c0,1.1-0.2,2.2-0.5,3.2C58.4,48.4,60.8,50,63.7,50z M47,36.5c-1.3,0.5-2.7,0.9-4.1,1.2c-1.3,1.3-2.2,3.1-2.2,5.1c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.9-0.8-3.7-2-5  C51.1,37.6,49,37.2,47,36.5z M49.1,34.3c0,0.1,0,0.1,0,0.2c5.2,1.4,10.8,1.3,16-0.5l-6.4-11.1C56.8,27.1,53,31.6,49.1,34.3z M45.6,34.3L31.3,19.9c-1.7,4.4-1.5,9.5,0.5,13.8C36.1,35.7,41.2,35.9,45.6,34.3z"
 
-constant kVersion is "0.9.52 beta 2019.10.23.1619"
+constant kVersion is "0.9.53 beta 2019.10.24.0813"
 
 use com.livecode.math
 use com.livecode.canvas
@@ -1025,7 +1025,7 @@ end handler
 
 property buttonBarType get mButtonBarType    set setBarType
 metadata buttonBarType.editor is "com.livecode.pi.enum"
-metadata buttonBarType.options is "Single,Multiple,Action,EntryPad"
+metadata buttonBarType.options is "Single,Multiple,Action"
 metadata buttonBarType.default is "Action"
 metadata buttonBarType.label is "ButtonBar Type"
 metadata buttonBarType.section is "Basic"
@@ -1387,7 +1387,7 @@ private handler outputValues(in pKey as String)
   if pKey is "default" then
     repeat with tKey from 1 up to the number of elements in mData
       if ((mControlType is "Switches") or (mControlType is "Button Bar")) then
-        if mData[mkStr(tKey)]["selected"] is "false" then
+        if mData[mkStr(tKey)]["selected"] is false then
           next repeat
         end if
       end if
@@ -1431,12 +1431,12 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
     if pType is "Button Bar" then
       --basics
       put ["label","show","value","selected"] into tKeys
-      put [randomLabel(),"true",pKey,"false"] into tValues
+      put [randomLabel(),true,pKey,false] into tValues
       --text
-      put tKeys & ["textsize","textfont","selecttextcolor","unselectedtextcolor"] into tKeys
+      put tKeys & ["textsize","textfont","selectedtextcolor","unselectedtextcolor"] into tKeys
       put tValues & ["default","default","default","default"] into tValues
       --button background
-      put tKeys & ["selectbuttoncolor","unselectedbuttoncolor"] into tKeys
+      put tKeys & ["selectedbuttoncolor","unselectedbuttoncolor"] into tKeys
       put tValues & ["default","default"] into tValues
       --icons
       put tKeys & ["selectedicon","unselectedicon","selectediconcolor","unselectediconcolor"] into tKeys
@@ -1444,7 +1444,7 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
     else if pType is "Switches" then
       --Basics
       put ["label","show","selected","value"] into tKeys
-      put [randomLabel(),"true","false",pKey] into tValues
+      put [randomLabel(),true,false,pKey] into tValues
       --text
       put tKeys & ["textcolor","textfont","textsize"] into tKeys
       put tValues & ["default","default","default"] into tValues
@@ -1454,7 +1454,7 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
     else if pType is "Numeric Up/Down" then
       --Basics
       put ["label","show","short"] into tKeys
-      put [randomLabel(),"true","xval" & pKey] into tValues
+      put [randomLabel(),true,"xval" & pKey] into tValues
       --Values
       put tKeys & ["min","max","step","value","prefix","suffix"] into tKeys
       put tValues & ["0","100","10","50","default","default"] into tValues
@@ -1470,7 +1470,7 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
     else if pType is "Sliders" then
       --Label/Fonts
       put ["label","show","textfont","valuefont"] into tKeys
-      put [randomLabel(),"true","default","default"] into tValues
+      put [randomLabel(),true,"default","default"] into tValues
       --Text size
       put tKeys & ["textsize","valuesize","valuesize"] into tKeys
       put tValues & ["default","default","default"] into tValues
@@ -1483,7 +1483,7 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
    else if pType is "Progress Bars" then
       --Label/Fonts
       put ["label","show","textfont","valuefont"] into tKeys
-      put [randomLabel(),"true","default","default"] into tValues
+      put [randomLabel(),true,"default","default"] into tValues
       --Text size
       put tKeys & ["textsize","valuesize","valuesize"] into tKeys
       put tValues & ["default","default","default"] into tValues
@@ -1496,13 +1496,13 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
     else if pType is "Form Backdrop" then
       --Basics
       put ["label","show"] into tKeys
-      put [randomLabel() ,"true"] into tValues
+      put [randomLabel() ,true] into tValues
       --Text
       put tKeys & ["textcolor","textsize","textfont"] into tKeys
       put tValues & ["default","default","default"] into tValues
     else
       put ["show"] into tKeys
-      put ["false"] into tValues
+      put [false] into tValues
     end if
 
     repeat with tCountK from 1 up to the number of elements in tKeys
@@ -1522,7 +1522,7 @@ private handler useDefaultButtonWheelProps()
   variable tCount as Number
   variable tLabels as List
   variable tIcons as List
-  
+
   put ["Exit", "Add", "Settings", "Filter", "Rubbish", "Help", "Sort", "Move"] into tLabels
   put ["builtin:ban circle", "builtin:plus", "builtin:cogs", "builtin:filter", "builtin:trash", "builtin:question sign", "builtin:sort by attributes", "builtin:move"] into tIcons
 
@@ -1534,11 +1534,11 @@ private handler useDefaultButtonWheelProps()
     put "default" into mData[mkstr(tCount)]["unselectedbuttoncolor"]
     put "default" into mData[mkstr(tCount)]["selectedbuttoncolor"]
     put "default" into mData[mkstr(tCount)]["unselectedtextcolor"]
-    put "default" into mData[mkstr(tCount)]["selecttextcolor"]
+    put "default" into mData[mkstr(tCount)]["selectedtextcolor"]
     put "default" into mData[mkstr(tCount)]["unselectediconcolor"]
     put "default" into mData[mkstr(tCount)]["selectediconcolor"]
     put true into mData[mkstr(tCount)]["show"]
-    put "false" into mData[mkstr(tCount)]["selected"]
+    put false into mData[mkstr(tCount)]["selected"]
   end repeat
 end handler
 
@@ -1619,7 +1619,7 @@ else if mControlType is "Button Wheel" then
 
     repeat with tCount from 1 up to mAppData["vars"]["ControlCount"]
      put mkStr(tCount) into mCurrentControlKey
-     if mData[mCurrentControlKey]["show"] is "false" then
+     if mData[mCurrentControlKey]["show"] is false then
         push "skip" onto mLocList
      else
        if mControlType is "Mixed Controls" then
@@ -1813,7 +1813,7 @@ private handler selectionIcon(in pRect as Rectangle)
 
   setButtonPaint(mCurrentControlKey,"unselectedicon")
 
-  if mData[mCurrentControlKey]["selected"] is "true" then
+  if mData[mCurrentControlKey]["selected"] is true then
     chooseAndSetPaint(mData[mCurrentControlKey]["selectediconcolor"],mControlHiliteColor)
     put getIconPath(mData[mCurrentControlKey]["selectedicon"], mControlIconA) into tIconPath
   else
@@ -1850,21 +1850,24 @@ private handler getIconPath(in pIcon as String, in pDefault as String)
 end handler
 
 private handler setButtonPaint(in pKey as String,in pType as String)
+  addDebugInfo("pKey",pKey)
+  addDebugInfo("pType",pType)
+
   if pType is "button" then
-    if mData[pKey]["selected"] is "true" then
-      chooseAndSetPaint(mData[pKey]["selecttextcolor"],mControlValueColor)
+    if mData[pKey]["selected"] is true then
+      chooseAndSetPaint(mData[pKey]["selectedtextcolor"],mControlValueColor)
     else
       chooseAndSetPaint(mData[pKey]["unselectedtextcolor"],mControlObjectColor)
     end if
   else if pType is "icon" then
-    if mData[pKey]["selected"] is "true" then
+    if mData[pKey]["selected"] is true then
       chooseAndSetPaint(mData[pKey]["selectediconcolor"],mControlHiliteColor)
     else
       chooseAndSetPaint(mData[pKey]["unselectediconcolor"],mControlTextColor)
     end if
   else if pType is "text" then
-    if mData[pKey]["selected"] is "true" and mButtonBarType is not "Action" then
-      chooseAndSetPaint(mData[pKey]["selectbuttoncolor"],mControlHiliteColor)
+    if mData[pKey]["selected"] is true and mButtonBarType is not "Action" then
+      chooseAndSetPaint(mData[pKey]["selectedbuttoncolor"],mControlHiliteColor)
     else
       chooseAndSetPaint(mData[pKey]["unselectedbuttoncolor"],mControlTextColor)
     end if
@@ -1896,9 +1899,9 @@ private handler pinPadDefaults()
   put "7" into mData["3"]["value"]
   put "8" into mData["7"]["value"]
   put "9" into mData["11"]["value"]
-  put "false" into mData["4"]["show"]
+  put false into mData["4"]["show"]
   put "0 " into mData["8"]["value"]
-  put "false" into mData["12"]["show"]
+  put false into mData["12"]["show"]
   verifyDataComplete()
 end handler
 
@@ -1991,9 +1994,9 @@ private handler drawButton(in pKey as String,in pType as String,in pRect as Rect
     constrainPathToRect(pRect, tIconPath)
     fill tIconPath on this canvas
     put rectToArray(pRect) into mData[pKey]["loc" & pType]
-    put "false" into mData[pKey]["limit"]
+    put false into mData[pKey]["limit"]
   else
-    put "true" into mData[pKey]["limit"]
+    put true into mData[pKey]["limit"]
   end if
 end handler
 
@@ -2523,6 +2526,7 @@ public handler OnMouseMove()
 end handler
 
 public handler OnMouseDown()
+   addDebugInfo("mousehit","yes")
 
   -- TODO: if bottom buttons are unselected items in control panel, fix here
   -- put false into mAppData["vars"]["stoppoint"]
@@ -2530,11 +2534,14 @@ public handler OnMouseDown()
   put false into mAppData["vars"]["stilldown"]
   put the mouse position into mPosition
   put mControlType into mAppData["vars"]["currentType"]
-
+  addDebugInfo("type",mControlType)
   if mControlType is "Mixed Controls" then
     selectMixed()
   else if mControlType is "Button Bar" then
     selectButtonBar()
+  else if mControlType is "Button Wheel" then
+    addDebugInfo("mousehit","yes")
+    selectButtonWheel()
   else if mControlType is "Switches" then
     selectSwitch()
   else if mControlType is "Sliders" then
@@ -2629,6 +2636,36 @@ private handler selectPINpad()
   */
 end handler
 
+--SECTION USER INTERACTION: BUTTON WHEEL
+
+private handler selectButtonWheel()
+  addDebugInfo("selecthit","yes")
+  variable tCount as Number
+  variable tRect as Rectangle
+  variable tPosition as Point
+  variable tAnySelected as Boolean
+  put false into tAnySelected
+  put the mouse position into tPosition
+  repeat with tCount from 1 up to 8
+    addDebugInfo("count",tCount)
+    put mkStr(tCount) into mCurrentControlKey
+    -- if element tCount of mLocList is "skip" then
+    --   next repeat
+    -- else
+    --   put element tCount of mLocList into tRect
+    -- end if
+    put element tCount of mLocList into tRect
+    if tPosition is within tRect then
+      put mCurrentControlKey into mActionOutput
+      put true into mAppData["vars"]["down"]
+      put true into mData[mCurrentControlKey]["selected"]
+    else
+      put false into mData[mCurrentControlKey]["selected"]
+      put false into mAppData["vars"]["down"]
+    end if
+  end repeat
+end handler
+
 --SECTION USER INTERATION: BUTTON BAR
 
 private handler selectButtonBar()
@@ -2636,7 +2673,7 @@ private handler selectButtonBar()
 
   repeat with tCount from 1 up to the number of elements in mData
     put tCount formatted as string into mCurrentControlKey
-    if mData[mCurrentControlKey]["show"] is "false" then
+    if mData[mCurrentControlKey]["show"] is false then
       next repeat
     end if
     put element tCount of mLocList into mCurrentRect
@@ -2647,33 +2684,33 @@ end handler
 private handler checkButtonBarSelection()
   if mButtonBarType is "Multiple" then
     if mPosition is within mCurrentRect then
-      if mData[mCurrentControlKey]["selected"] is "true" then
-        put "false" into mData[mCurrentControlKey]["selected"]
+      if mData[mCurrentControlKey]["selected"] is true then
+        put false into mData[mCurrentControlKey]["selected"]
       else
         if "exclusive" is among the keys of mData[mCurrentControlKey] then
           resetSelects()
         end if
-        put "true" into mData[mCurrentControlKey]["selected"]
+        put true into mData[mCurrentControlKey]["selected"]
       end if
       outputValues("default")
       userInteraction()
     else
       if "exclusive" is among the keys of mData[mCurrentControlKey] then
-        put "false" into mData[mCurrentControlKey]["selected"]
+        put false into mData[mCurrentControlKey]["selected"]
       end if
     end if
   else if mButtonBarType is "Action" then
     if mPosition is within mCurrentRect then
       put mCurrentControlKey into mActionOutput
-      put "true" into mData[mCurrentControlKey]["selected"]
+      put true into mData[mCurrentControlKey]["selected"]
       userInteraction()
     end if
   else if mButtonBarType is "Single" then
     if mPosition is within mCurrentRect then
       put mCurrentControlKey into mActionOutput
-      put "true" into mData[mCurrentControlKey]["selected"]
+      put true into mData[mCurrentControlKey]["selected"]
     else
-      put "false" into mData[mCurrentControlKey]["selected"]
+      put false into mData[mCurrentControlKey]["selected"]
       userInteraction()
     end if
   end if
@@ -2685,7 +2722,7 @@ private handler resetSelects()
   repeat with tCount from 1 up to the number of elements in mData
     put tCount formatted as string into tKey
     if mControlType is "Button Bar" or mData[tKey]["controltype"] is "Button Bar" then
-      put "false" into mData[tKey]["selected"]
+      put false into mData[tKey]["selected"]
       -- if not(mAppData["vars"]["currentType"] is "Button Bar") then
       --   next repeat
       -- end if
@@ -2811,10 +2848,10 @@ end handler
 
 private handler checkSwitchSelection()
   if mPosition is within mCurrentRect then
-    if mData[mCurrentControlKey]["selected"] is "true" then
-      put "false" into mData[mCurrentControlKey]["selected"]
+    if mData[mCurrentControlKey]["selected"] is true then
+      put false into mData[mCurrentControlKey]["selected"]
     else
-      put "true" into mData[mCurrentControlKey]["selected"]
+      put true into mData[mCurrentControlKey]["selected"]
     end if
     put true into mAppData["vars"]["exit"]
     outputValues("default")
@@ -2835,9 +2872,9 @@ private handler selectUpDown()
 end handler
 
 private handler checkUpDownSelected()
-  put "false" into mData[mCurrentControlKey]["limit"]
+  put false into mData[mCurrentControlKey]["limit"]
 
-  if mData[mCurrentControlKey]["limit"] is not "true" then
+  if mData[mCurrentControlKey]["limit"] is not true then
     if mPosition is within arrayToRect(mData[mCurrentControlKey]["locplus"]) then
       put true into  mAppData["vars"]["stilldown"]
       incrementCount("plus")
@@ -2915,7 +2952,7 @@ private handler selectMixed()
     put mkStr(tCount) into mCurrentControlKey
     put mData[mCurrentControlKey]["controltype"] into tControlType
     put tControlType into mAppData["vars"]["currentType"]
-    if mData[mCurrentControlKey]["show"] is "false" then
+    if mData[mCurrentControlKey]["show"] is false then
       next repeat
     end if
     if tControlType is "Button Bar" then
@@ -4406,99 +4443,146 @@ descriptiongoeshere
 -- SECTION: PAINT ACTION WHEEL
 
 public handler paintButtonWheel()
-   variable tPath as Path
-   variable tBigX as Number
-   variable tBigY as Number
-   variable tCenter as Point
-   variable tBigRad as Number
-   variable tLilRad as Number
-   variable tLilX as Number
-   variable tLilY as Number
-   variable tRect as Rectangle
+  variable tPath as Path
+  variable tBigX as Number
+  variable tBigY as Number
+  variable tCenter as Point
+  variable tBigRad as Number
+  variable tLilRad as Number
+  variable tLilX as Number
+  variable tLilY as Number
+  variable tRect as Rectangle
 
-   variable tCount as Number
-   variable tIconPath as Path
+  variable tCount as Number
+  variable tIconPath as Path
 
 
-   if my width > my height then
-      put my height/2 into tBigRad
-   else
-      put my width/2 into tBigRad
-   end if
-   put tBigRad/4 into tLilRad
-   put my width/2 into tBigX
-   put my height/2 into tBigY
-   put point [(my width/2),(my height/2)] into tCenter
-   set the font of this canvas to my font
-   setPaint(mMainSquareColor)
-   fill circle path centered at tCenter with radius tBigRad on this canvas
-   if mShowOutputBox then
-      setPaint("border")
-      put centerRectGen() into tRect
-      fill rounded rectangle path of tRect with radius tBigRad on this canvas
-      setPaint(mMainSquareColor)
-      add tBigRad*.22 to the left of tRect
-      add tBigRad*.05 to the top of tRect
-      set the width of tRect to (the width of tRect*.5)
-      set the height of tRect to (the height of tRect*.5)
+  if my width > my height then
+    put my height/2 into tBigRad
+  else
+    put my width/2 into tBigRad
+  end if
+  put tBigRad/4 into tLilRad
+  put my width/2 into tBigX
+  put my height/2 into tBigY
+  put point [(my width/2),(my height/2)] into tCenter
+  set the font of this canvas to my font
+  setPaint(mMainSquareColor)
+  fill circle path centered at tCenter with radius tBigRad on this canvas
+  if mShowOutputBox then
+    setPaint("border")
+    put centerRectGen() into tRect
+    fill rounded rectangle path of tRect with radius tBigRad on this canvas
+    setPaint(mMainSquareColor)
+    add tBigRad*.22 to the left of tRect
+    add tBigRad*.05 to the top of tRect
+    set the width of tRect to (the width of tRect*.5)
+    set the height of tRect to (the height of tRect*.5)
       repeat with tCount from 1 up to 8
-         if mData[mkstr(tCount)]["selected"] is "true" then
-           put getIconPath(mData[mkStr(tCount)]["unselectediconcolor"], mControlIconA) into tIconPath
-           constrainPathToRect(tRect, tIconPath)
-           fill tIconPath on this canvas
-         end if
+        if mData[mkstr(tCount)]["selected"] is true then
+          put getIconPath(mData[mkStr(tCount)]["unselectedicon"], mControlIconA) into tIconPath
+          constrainPathToRect(tRect, tIconPath)
+          fill tIconPath on this canvas
+          set the top of tRect to the bottom of tRect + 5
+          set the height of tRect to (the height of tRect*.7)
+
+          set the size of the font of this canvas to mControlValueSize
+          mpWrapTextinRect(tRect,mData[mkStr(tCount)]["label"],"center center")
+          put false into mAppData["vars"]["down"]
+        end if
       end repeat
-      set the top of tRect to the bottom of tRect + 5
-      set the height of tRect to (the height of tRect*.7)
-
-      set the size of the font of this canvas to 13
-      -- FIXME: mpWrapTextinRect(tRect,mData[mkStr(tCount)]["text"],"center center")
-      put false into mAppData["vars"]["down"]
    end if
-   put tBigX into tLilX
-   put tBigY-(tLilRad*2.8) into tLilY
-   makeCircle(tLilX, tLilY, tLilRad, 1)
 
-   put tBigX+(tLilRad*2) into tLilX
-   put tBigY-(tLilRad*2) into tLilY
-   makeCircle(tLilX, tLilY, tLilRad, 2)
+  -- TODO: calculate and draw variable number of buttons
+  /*
+  1. create "inner circle":  subtract radius of button's circle from radius of main circle
+     tRadiusInnerCircle = tRigRad-tLilRad
 
-   put tBigX+(tLilRad*2.8) into tLilX
-   put tBigY into tLilY
-   makeCircle(tLilX, tLilY, tLilRad, 3)
+  2. calculate angle at which the center of each button will be:
+     put the number of elements in mData into tCount
+     tCicleLocation[buttonnum]["angle"] = (tCount)/(2*pi())
 
-   put tBigX+(tLilRad*2) into tLilX
-   put tBigY+(tLilRad*2) into tLilY
-   makeCircle(tLilX, tLilY, tLilRad, 4)
+  3. calcualte x & y for the center of each circle:
+     tCircleLocation[buttonnum]["x"] = tLilRad * (
 
-   put tBigX into tLilX
-   put tBigY+(tLilRad*2.8) into tLilY
-   makeCircle(tLilX, tLilY, tLilRad, 5)
+    -- tBigRad is the radius of the main circle across the widget
+    if my width > my height then
+      put my height/2 into tBigRad
+    else
+      put my width/2 into tBigRad
+    end if
 
-   put tBigX-(tLilRad*2) into tLilX
-   put tBigY+(tLilRad*2) into tLilY
-   makeCircle(tLilX, tLilY, tLilRad, 6)
+    -- tLilRad is the radius of each small button around the edge
+    put tBigRad/4 into tLilRad
 
-   put tBigX-(tLilRad*2.8) into tLilX
-   put tBigY into tLilY
-   makeCircle(tLilX, tLilY, tLilRad, 7)
+    -- finding the corrdinates of the center of the main cirle
+    put my width/2 into tBigX
+    put my height/2 into tBigY
+    put point [(my width/2),(my height/2)] into tCenter
+    fill circle path centered at tCenter with radius tBigRad on this canvas
 
-   put tBigX-(tLilRad*2) into tLilX
-   put tBigY-(tLilRad*2) into tLilY
-   makeCircle(tLilX, tLilY, tLilRad, 8)
+    -- create an "inner circle" by subtracting the radius of a button from the radius of the main circle
+    put tBigRad - tLilRad into tInnerRad
+    -- calculate angle in radians from the for the center of each button
+    put (the number of elements in mData)/(2 * pi()) into tButtonAngles
+
+    repeat with tButtonNumber from 1 up to the number of elements in mData
+      put tInnerRad * (tButtonNumber-1 * tButtonAngles) into tAngle
+      put tBigX * cos(tAngle * pi()) into tButtonX
+      put tBigY * sin(tAngle * pi()) into tButtonY
+      put point [tButtonX, tButtonY] into tButtonCenter
+      fill circle path centered at tButtonCenter with radius tLilRad on this canvas
+    end repeat
+
+  */
+
+
+  put tBigX into tLilX
+  put tBigY-(tLilRad*2.8) into tLilY
+  makeCircle(tLilX, tLilY, tLilRad, 1)
+
+  put tBigX+(tLilRad*2) into tLilX
+  put tBigY-(tLilRad*2) into tLilY
+  makeCircle(tLilX, tLilY, tLilRad, 2)
+
+  put tBigX+(tLilRad*2.8) into tLilX
+  put tBigY into tLilY
+  makeCircle(tLilX, tLilY, tLilRad, 3)
+
+  put tBigX+(tLilRad*2) into tLilX
+  put tBigY+(tLilRad*2) into tLilY
+  makeCircle(tLilX, tLilY, tLilRad, 4)
+
+  put tBigX into tLilX
+  put tBigY+(tLilRad*2.8) into tLilY
+  makeCircle(tLilX, tLilY, tLilRad, 5)
+
+  put tBigX-(tLilRad*2) into tLilX
+  put tBigY+(tLilRad*2) into tLilY
+  makeCircle(tLilX, tLilY, tLilRad, 6)
+
+  put tBigX-(tLilRad*2.8) into tLilX
+  put tBigY into tLilY
+  makeCircle(tLilX, tLilY, tLilRad, 7)
+
+  put tBigX-(tLilRad*2) into tLilX
+  put tBigY-(tLilRad*2) into tLilY
+  makeCircle(tLilX, tLilY, tLilRad, 8)
 end handler
 
 private handler makeCircle(in pX, in pY, in pRad, in pNum)
    variable tRect as Rectangle
    put mkStr(pNum) into mCurrentControlKey
    if mData[mCurrentControlKey]["show"] then
-      -- setPaint("bottom")
       put rectangle [0,0,1,1] into tRect
       set the width of tRect to pRad*2
       set the height of tRect to pRad*2
       set the left of tRect to pX-pRad
       set the top of tRect to pY-pRad
       drawCircle(tRect,pRad)
+      push tRect onto mLocList
+   else
+      push "skip" onto mLocList
    end if
 end handler
 
@@ -4506,7 +4590,6 @@ public handler drawCircle(in pRect,in pRad)
    variable tIconPath as Path
    setButtonPaint(mCurrentControlKey, "button")
    fill rounded rectangle path of pRect with radius pRad on this canvas
-   --chooseAndSetPaint(mData[mCurrentControlKey]["unselectedbuttoncolor"],mControlIconColor)
    if mButtonBarStyle is "Text" then
       setButtonPaint(mCurrentControlKey, "text")
       set the size of the font of this canvas to mControlTextSize
@@ -4523,7 +4606,6 @@ public handler drawCircle(in pRect,in pRad)
       fill tIconPath on this canvas
    else
       setButtonPaint(mCurrentControlKey, "icon")
-
       add pRad*.2 to the top of pRect
       add pRad*.41 to the left of pRect
       set the width of pRect to (the width of pRect*.6)
@@ -4565,7 +4647,7 @@ end handler
 
 
 private handler centerCircleStat(in pText as String)
-   if pText is "true" then
+   if pText is true then
       put true into mShowOutputBox
    else
       put the empty array into mAppData["vars"]["center"]
@@ -4575,28 +4657,6 @@ private handler centerCircleStat(in pText as String)
 end handler
 
 /*
-public handler OnMouseDown()
-   variable tCount as Number
-   variable tCurr as String
-   variable tRect as Rectangle
-   variable tPosition as Point
-   variable tAnySelected as Boolean
-   put false into tAnySelected
-   put the mouse position into tPosition
-   repeat with tCount from 1 up to 8
-      put mkStr(tCount) into tCurr
-      put arrayToRect(mData[tCurr]) into tRect
-      if tPosition is within tRect then
-         put tCurr into mButtonSelected
-         put true into put false into mAppData["vars"]["down"]
-         put true into tAnySelected
-      else
-         put tAnySelected into put false into mAppData["vars"]["down"]
-      end if
-   end repeat
-   redraw all
-   post "mouseDown"
-end handler
 
 public handler OnMouseUp()
    variable tCount as Number
@@ -4616,7 +4676,7 @@ public handler OnMouseUp()
          if mActionStyle is "immediate" then
 
          else if mActionStyle is "center" then
-            centerCircleStat("true")
+            centerCircleStat(true)
          end if
          actionPressed()
       end if
