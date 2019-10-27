@@ -1540,6 +1540,8 @@ private handler useDefaultButtonWheelProps()
     put "default" into mData[mkstr(tCount)]["unselectediconcolor"]
     put "default" into mData[mkstr(tCount)]["selectediconcolor"]
     put true into mData[mkstr(tCount)]["show"]
+    put "default" into mData[mkstr(tCount)]["textsize"]
+    put "default" into mData[mkstr(tCount)]["textfont"]
     put false into mData[mkstr(tCount)]["selected"]
     put mkStr(tCount) into mData[mkstr(tCount)]["value"]
   end repeat
@@ -1746,6 +1748,203 @@ private handler dialogBoxSVG()
   put getIconPath("default", mControlIconA) into tPath
   constrainPathToRect(tIconRect, tPath)
   fill tPath on this canvas
+end handler
+
+-- SECTION: BUTTON WHEEL
+
+public handler paintButtonWheel()
+  variable tPath as Path
+  variable tBigX as Number
+  variable tBigY as Number
+  variable tCenter as Point
+  variable tBigRad as Number
+  variable tLilRad as Number
+  variable tOffset as Number
+  variable tRect as Rectangle
+
+  variable tCount as Number
+  variable tIconPath as Path
+
+
+  if my width > my height then
+    put (my height-mWorkingAreaOffsetH)/2 into tBigRad
+  else
+    put (my width-mWorkingAreaOffsetW)/2 into tBigRad
+  end if
+  if mControlObjectVertical is "Even spacing" then
+    put tBigRad/4 into tLilRad
+    put tBigRad/4 into tOffset
+  else
+    put tBigRad/(4+mControlBufferV) into tLilRad
+    put tBigRad/(4+mControlBufferH) into tOffset
+  end if
+  put my width/2 into tBigX
+  put my height/2 into tBigY
+  put point [(my width/2),(my height/2)] into tCenter
+  set the font of this canvas to my font
+  setPaint(mMainSquareColor)
+  fill circle path centered at tCenter with radius tBigRad on this canvas
+  if mShowOutputBox and not(mButtonBarType is "Multiple") then
+    setPaint("border")  -- TODO: add property to this paint
+    put centerRectGen() into tRect
+    fill rounded rectangle path of tRect with radius tBigRad on this canvas
+    setPaint(mMainSquareColor)
+    add tBigRad*.22 to the left of tRect
+    add tBigRad*.05 to the top of tRect
+    set the width of tRect to (the width of tRect*.5)
+    set the height of tRect to (the height of tRect*.5)
+      repeat with tCount from 1 up to 8
+        if mData[mkstr(tCount)]["selected"] is true then
+          put getIconPath(mData[mkStr(tCount)]["unselectedicon"], mControlIconA) into tIconPath
+          constrainPathToRect(tRect, tIconPath)
+          fill tIconPath on this canvas
+          set the top of tRect to the bottom of tRect + 5
+          set the height of tRect to (the height of tRect*.7)
+
+          set the size of the font of this canvas to mControlValueSize
+          mpWrapTextinRect(tRect,mData[mkStr(tCount)]["label"],"center center")
+          put false into mAppData["vars"]["down"]
+        end if
+      end repeat
+   end if
+
+  -- TODO: calculate and draw variable number of buttons
+  /*
+  1. create "inner circle":  subtract radius of button's circle from radius of main circle
+     tRadiusInnerCircle = tRigRad-tLilRad
+
+  2. calculate angle at which the center of each button will be:
+     put the number of elements in mData into tCount
+     tCicleLocation[buttonnum]["angle"] = (tCount)/(2*pi())
+
+  3. calcualte x & y for the center of each circle:
+     tCircleLocation[buttonnum]["x"] = tLilRad * (
+
+    -- tBigRad is the radius of the main circle across the widget
+    if my width > my height then
+      put my height/2 into tBigRad
+    else
+      put my width/2 into tBigRad
+    end if
+
+    -- tLilRad is the radius of each small button around the edge
+    put tBigRad/4 into tLilRad
+
+    -- finding the corrdinates of the center of the main cirle
+    put my width/2 into tBigX
+    put my height/2 into tBigY
+    put point [(my width/2),(my height/2)] into tCenter
+    fill circle path centered at tCenter with radius tBigRad on this canvas
+
+    -- create an "inner circle" by subtracting the radius of a button from the radius of the main circle
+    put tBigRad - tLilRad into tInnerRad
+    -- calculate angle in radians from the for the center of each button
+    put (the number of elements in mData)/(2 * pi()) into tButtonAngles
+
+    repeat with tButtonNumber from 1 up to the number of elements in mData
+      put tInnerRad * (tButtonNumber-1 * tButtonAngles) into tAngle
+      put tBigX * cos(tAngle * pi()) into tButtonX
+      put tBigY * sin(tAngle * pi()) into tButtonY
+      put point [tButtonX, tButtonY] into tButtonCenter
+      fill circle path centered at tButtonCenter with radius tLilRad on this canvas
+    end repeat
+
+  */
+
+  makeCircle(tBigX, tBigY-(tOffset*2.8), tLilRad, 1)
+  makeCircle(tBigX+(tOffset*2), tBigY-(tOffset*2), tLilRad, 2)
+  makeCircle(tBigX+(tOffset*2.8), tBigY, tLilRad, 3)
+  makeCircle(tBigX+(tOffset*2), tBigY+(tOffset*2), tLilRad, 4)
+  makeCircle(tBigX, tBigY+(tOffset*2.8), tLilRad, 5)
+  makeCircle(tBigX-(tOffset*2), tBigY+(tOffset*2), tLilRad, 6)
+  makeCircle(tBigX-(tOffset*2.8), tBigY, tLilRad, 7)
+  makeCircle(tBigX-(tOffset*2), tBigY-(tOffset*2), tLilRad, 8)
+end handler
+
+private handler makeCircle(in pX, in pY, in pRad, in pNum)
+  variable tRect as Rectangle
+  put mkStr(pNum) into mCurrentControlKey
+  if mData[mCurrentControlKey]["show"] then
+    put rectangle [0,0,1,1] into tRect
+    set the width of tRect to pRad*2
+    set the height of tRect to pRad*2
+    set the left of tRect to pX-pRad
+    set the top of tRect to pY-pRad
+    drawCircle(tRect,pRad)
+    push tRect onto mLocList
+  else
+    push "skip" onto mLocList
+  end if
+end handler
+
+public handler drawCircle(in pRect,in pRad)
+   variable tIconPath as Path
+   setButtonPaint(mCurrentControlKey, "button")
+   fill rounded rectangle path of pRect with radius pRad on this canvas
+   if mButtonBarStyle is "Text" then
+      setButtonPaint(mCurrentControlKey, "text")
+      set the size of the font of this canvas to mControlTextSize
+      mpWrapTextinRect(pRect,mData[mCurrentControlKey]["label"],"center center")
+   else if mButtonBarStyle is "Icon" then
+      setButtonPaint(mCurrentControlKey, "icon")
+      put pRad*.3 into pRad
+      add pRad to the top of pRect
+      add pRad to the left of pRect
+      set the width of pRect to (the width of pRect*.7)
+      set the height of pRect to (the height of pRect*.7)
+      put getIconPath(mData[mCurrentControlKey]["iconA"], mControlIconA) into tIconPath
+      constrainPathToRect(pRect, tIconPath)
+      fill tIconPath on this canvas
+   else
+      setButtonPaint(mCurrentControlKey, "icon")
+      add pRad*.2 to the top of pRect
+      add pRad*.41 to the left of pRect
+      set the width of pRect to (the width of pRect*.6)
+      set the height of pRect to (the height of pRect*.6)
+
+      put getIconPath(mData[mCurrentControlKey]["selectedicon"], mControlIconA) into tIconPath
+      constrainPathToRect(pRect, tIconPath)
+      fill tIconPath on this canvas
+
+      setButtonPaint(mCurrentControlKey, "text")
+      set the top of pRect to the bottom of pRect+2
+      set the size of the font of this canvas to mControlTextSize
+      set the height of pRect to (the height of pRect*.5)
+      mpWrapTextinRect(pRect,mData[mCurrentControlKey]["label"],"center center")
+   end if
+end handler
+
+private handler centerRectGen() returns Rectangle
+   variable tBigX as Number
+   variable tBigY as Number
+   variable tBigRad as Number
+   variable tRect as Rectangle
+   if my width > my height then
+      put my height/2 into tBigRad
+   else
+      put my width/2 into tBigRad
+   end if
+   put my width/2 into tBigX
+   put my height/2 into tBigY
+
+   put rectangle [0,0,1,1] into tRect
+   put tBigRad*.85 into tBigRad
+   set the width of tRect to tBigRad
+   set the height of tRect to tBigRad
+   set the left of tRect to tBigX-tBigRad/2
+   set the top of tRect to tBigY-tBigRad/2
+   return tRect
+end handler
+
+
+private handler centerCircleStat(in pText as String)
+   if pText is true then
+      put true into mShowOutputBox
+   else
+      put the empty array into mAppData["vars"]["center"]
+      put false into mShowOutputBox
+   end if
+   put pText into mAppData["vars"]["centercircle"]
 end handler
 
 --SECTION:  BUTTON BAR
@@ -2399,7 +2598,7 @@ handler executeDataCommand()
   variable tAction as String
   variable tType as String
   variable tName as String
-
+  variable tOut as String
   split mDataCommand by ":" into tCommands
   put element 1 of tCommands into tAction
   put element 2 of tCommands into tType
@@ -2412,15 +2611,13 @@ handler executeDataCommand()
   else if char 1 of tAction is "d" then
     deleteDataSets(tType, tName)
   else if char 1 of tAction is "t" then
-    put mkStr(thymeStamp(tType,tName)) into mActionOutput
-    post "qzq" with [mActionOutput]
+    post "qzq" with [mkStr(thymeStamp(tType,tName))]
   else if char 1 to 4 of tAction is "icon" then
     addIconToLibrary(tType, tName, element 4 of tCommands)
   else if char 1 of tAction is "i" then
     incrementProgress()
   else if char 1 of tAction is "q" then
-    put quazQua(tName,tType) into mActionOutput
-    post "qzq" with [mActionOutput]
+    post "qzq" with [quazQua(tName,tType)]
   else if char 1 of tAction is "o" then
     -- QZQZ:  add output commands and output data command handler
     processOutputCommand(tName, tType)
@@ -2431,9 +2628,14 @@ handler processOutputCommand(in pData as String, in pCommand as String)
   variable tData
   if pCommand is "value" then
     put pData into mActionOutput
+    redraw all
   else if pCommand is "saved" then
     put mAppData["savedoutputs"][pData] into mActionOutput
-  else  --SAVE
+  else if pCommand is "use" then
+    put mAppData["savedoutputs"]pData into mActionOutput
+  else if tCommand begins with "auto" then -- use this other than "value"?
+    put pData into mAppData["savedoutputs"][tCommand]
+  else  --Defaults to SAVING output
     put pData into mAppData["savedoutputs"][pCommand]
   end if
 end handler
@@ -4431,237 +4633,4 @@ descriptiongoeshere
 
 */
 
--- SECTION: PAINT ACTION WHEEL
-
-public handler paintButtonWheel()
-  variable tPath as Path
-  variable tBigX as Number
-  variable tBigY as Number
-  variable tCenter as Point
-  variable tBigRad as Number
-  variable tLilRad as Number
-  variable tOffset as Number
-  variable tRect as Rectangle
-
-  variable tCount as Number
-  variable tIconPath as Path
-
-
-  if my width > my height then
-    put my height/2 into tBigRad
-  else
-    put my width/2 into tBigRad
-  end if
-  if mControlObjectVertical is "Even spacing" then
-    put tBigRad/4 into tLilRad
-    put tBigRad/4 into tOffset
-  else
-    put tBigRad/(4+mControlBufferV) into tLilRad
-    put tBigRad/(4+mControlBufferH) into tOffset
-  end if
-  put my width/2 into tBigX
-  put my height/2 into tBigY
-  put point [(my width/2),(my height/2)] into tCenter
-  set the font of this canvas to my font
-  setPaint(mMainSquareColor)
-  fill circle path centered at tCenter with radius tBigRad on this canvas
-  if mShowOutputBox and not(mButtonBarType is "Multiple") then
-    setPaint("border")
-    put centerRectGen() into tRect
-    fill rounded rectangle path of tRect with radius tBigRad on this canvas
-    setPaint(mMainSquareColor)
-    add tBigRad*.22 to the left of tRect
-    add tBigRad*.05 to the top of tRect
-    set the width of tRect to (the width of tRect*.5)
-    set the height of tRect to (the height of tRect*.5)
-      repeat with tCount from 1 up to 8
-        if mData[mkstr(tCount)]["selected"] is true then
-          put getIconPath(mData[mkStr(tCount)]["unselectedicon"], mControlIconA) into tIconPath
-          constrainPathToRect(tRect, tIconPath)
-          fill tIconPath on this canvas
-          set the top of tRect to the bottom of tRect + 5
-          set the height of tRect to (the height of tRect*.7)
-
-          set the size of the font of this canvas to mControlValueSize
-          mpWrapTextinRect(tRect,mData[mkStr(tCount)]["label"],"center center")
-          put false into mAppData["vars"]["down"]
-        end if
-      end repeat
-   end if
-
-  -- TODO: calculate and draw variable number of buttons
-  /*
-  1. create "inner circle":  subtract radius of button's circle from radius of main circle
-     tRadiusInnerCircle = tRigRad-tLilRad
-
-  2. calculate angle at which the center of each button will be:
-     put the number of elements in mData into tCount
-     tCicleLocation[buttonnum]["angle"] = (tCount)/(2*pi())
-
-  3. calcualte x & y for the center of each circle:
-     tCircleLocation[buttonnum]["x"] = tLilRad * (
-
-    -- tBigRad is the radius of the main circle across the widget
-    if my width > my height then
-      put my height/2 into tBigRad
-    else
-      put my width/2 into tBigRad
-    end if
-
-    -- tLilRad is the radius of each small button around the edge
-    put tBigRad/4 into tLilRad
-
-    -- finding the corrdinates of the center of the main cirle
-    put my width/2 into tBigX
-    put my height/2 into tBigY
-    put point [(my width/2),(my height/2)] into tCenter
-    fill circle path centered at tCenter with radius tBigRad on this canvas
-
-    -- create an "inner circle" by subtracting the radius of a button from the radius of the main circle
-    put tBigRad - tLilRad into tInnerRad
-    -- calculate angle in radians from the for the center of each button
-    put (the number of elements in mData)/(2 * pi()) into tButtonAngles
-
-    repeat with tButtonNumber from 1 up to the number of elements in mData
-      put tInnerRad * (tButtonNumber-1 * tButtonAngles) into tAngle
-      put tBigX * cos(tAngle * pi()) into tButtonX
-      put tBigY * sin(tAngle * pi()) into tButtonY
-      put point [tButtonX, tButtonY] into tButtonCenter
-      fill circle path centered at tButtonCenter with radius tLilRad on this canvas
-    end repeat
-
-  */
-
-  makeCircle(tBigX, tBigY-(tOffset*2.8), tLilRad, 1)
-  makeCircle(tBigX+(tOffset*2), tBigY-(tOffset*2), tLilRad, 2)
-  makeCircle(tBigX+(tOffset*2.8), tBigY, tLilRad, 3)
-  makeCircle(tBigX+(tOffset*2), tBigY+(tOffset*2), tLilRad, 4)
-  makeCircle(tBigX, tBigY+(tOffset*2.8), tLilRad, 5)
-  makeCircle(tBigX-(tOffset*2), tBigY+(tOffset*2), tLilRad, 6)
-  makeCircle(tBigX-(tOffset*2.8), tBigY, tLilRad, 7)
-  makeCircle(tBigX-(tOffset*2), tBigY-(tOffset*2), tLilRad, 8)
-end handler
-
-private handler makeCircle(in pX, in pY, in pRad, in pNum)
-  variable tRect as Rectangle
-  put mkStr(pNum) into mCurrentControlKey
-  if mData[mCurrentControlKey]["show"] then
-    put rectangle [0,0,1,1] into tRect
-    set the width of tRect to pRad*2
-    set the height of tRect to pRad*2
-    set the left of tRect to pX-pRad
-    set the top of tRect to pY-pRad
-    drawCircle(tRect,pRad)
-    push tRect onto mLocList
-  else
-    push "skip" onto mLocList
-  end if
-end handler
-
-public handler drawCircle(in pRect,in pRad)
-   variable tIconPath as Path
-   setButtonPaint(mCurrentControlKey, "button")
-   fill rounded rectangle path of pRect with radius pRad on this canvas
-   if mButtonBarStyle is "Text" then
-      setButtonPaint(mCurrentControlKey, "text")
-      set the size of the font of this canvas to mControlTextSize
-      mpWrapTextinRect(pRect,mData[mCurrentControlKey]["label"],"center center")
-   else if mButtonBarStyle is "Icon" then
-      setButtonPaint(mCurrentControlKey, "icon")
-      put pRad*.3 into pRad
-      add pRad to the top of pRect
-      add pRad to the left of pRect
-      set the width of pRect to (the width of pRect*.7)
-      set the height of pRect to (the height of pRect*.7)
-      put getIconPath(mData[mCurrentControlKey]["iconA"], mControlIconA) into tIconPath
-      constrainPathToRect(pRect, tIconPath)
-      fill tIconPath on this canvas
-   else
-      setButtonPaint(mCurrentControlKey, "icon")
-      add pRad*.2 to the top of pRect
-      add pRad*.41 to the left of pRect
-      set the width of pRect to (the width of pRect*.6)
-      set the height of pRect to (the height of pRect*.6)
-
-      put getIconPath(mData[mCurrentControlKey]["selectedicon"], mControlIconA) into tIconPath
-      constrainPathToRect(pRect, tIconPath)
-      fill tIconPath on this canvas
-
-      setButtonPaint(mCurrentControlKey, "text")
-      set the top of pRect to the bottom of pRect+2
-      set the size of the font of this canvas to mControlTextSize
-      set the height of pRect to (the height of pRect*.5)
-      mpWrapTextinRect(pRect,mData[mCurrentControlKey]["label"],"center center")
-   end if
-end handler
-
-private handler centerRectGen() returns Rectangle
-   variable tBigX as Number
-   variable tBigY as Number
-   variable tBigRad as Number
-   variable tRect as Rectangle
-   if my width > my height then
-      put my height/2 into tBigRad
-   else
-      put my width/2 into tBigRad
-   end if
-   put my width/2 into tBigX
-   put my height/2 into tBigY
-
-   put rectangle [0,0,1,1] into tRect
-   put tBigRad*.85 into tBigRad
-   set the width of tRect to tBigRad
-   set the height of tRect to tBigRad
-   set the left of tRect to tBigX-tBigRad/2
-   set the top of tRect to tBigY-tBigRad/2
-   return tRect
-end handler
-
-
-private handler centerCircleStat(in pText as String)
-   if pText is true then
-      put true into mShowOutputBox
-   else
-      put the empty array into mAppData["vars"]["center"]
-      put false into mShowOutputBox
-   end if
-   put pText into mAppData["vars"]["centercircle"]
-end handler
-
-/*
-
-public handler OnMouseUp()
-   variable tCount as Number
-   variable tCurr as String
-   variable tRect as Rectangle
-   variable tCenterRect as Rectangle
-   variable tPosition as Point
-   put false into put false into mAppData["vars"]["down"]
-   put the mouse position into tPosition
-   --put the empty string into mButtonSelected
-   repeat with tCount from 1 up to 8
-      put mkStr(tCount) into tCurr
-      put arrayToRect(mData[tCurr]) into tRect
-      if tPosition is within tRect then
-         put true into put false into mAppData["vars"]["down"]
-         put tCurr into mButtonSelected
-         if mActionStyle is "immediate" then
-
-         else if mActionStyle is "center" then
-            centerCircleStat(true)
-         end if
-         actionPressed()
-      end if
-   end repeat
-   if mCenterCircle then
-      if tPosition is within centerRectGen() then
-         centerPressed()
-      end if
-   end if
-   redraw all
-   post "mouseUp"
-end handler
-
-
-*/
 end widget
