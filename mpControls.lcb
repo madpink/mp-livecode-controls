@@ -566,16 +566,16 @@ private handler setTabPagesAlign(in pVal as String)
   redraw all
 end handler
 
-property tabPagesSizeType  get mTabPagesSizeType  set setTabPagesSizeType
-metadata tabPagesSizeType.editor  is "com.livecode.pi.enum"
-metadata tabPagesSizeType.options  is "Percent/Percent, Fixed/Fixed, Percent/Fixed, Fixed/Percent"
-metadata tabPagesSizeType.default  is "Percent"
-metadata tabPagesSizeType.label  is "Tab Bar Sizer H/W"
-metadata tabPagesSizeType.section  is "Table"
-private variable mTabPagesSizeType as String
-private handler setTabPagesSizeType(in pVal as String)
-  put pVal into mAppData["props"]["tabPagesSizeType"]
-  put pVal into mTabPagesSizeType
+property tabPagesSizeMods  get mTabPagesSizeMods  set setTabPagesSizeMods
+metadata tabPagesSizeMods.editor  is "com.livecode.pi.enum"
+metadata tabPagesSizeMods.options  is "Percent/Percent, Fixed/Fixed, Percent/Fixed, Fixed/Percent"
+metadata tabPagesSizeMods.default  is "Percent"
+metadata tabPagesSizeMods.label  is "Tab Bar Sizer H/W"
+metadata tabPagesSizeMods.section  is "Table"
+private variable mTabPagesSizeMods as String
+private handler setTabPagesSizeMods(in pVal as String)
+  put pVal into mAppData["props"]["tabPagesSizeMods"]
+  put pVal into mTabPagesSizeMods
   redraw all
 end handler
 
@@ -2677,19 +2677,41 @@ private handler bottomButtons(in pColorFore, in pColorBack)
 end handler
 
 private handler displayTabPages()
+
+  put mCurrentRect into tTabRect
+  split mTabPagesSizeMods by "/" into tSizeMods
+  if element 1 of tSizeMods is "Percent" then
+     set the height of tTabRect to the height of tTabRect*(mTabPagesHeight/100)
+  else if element 1 of tSizeMods is "Fixed" then
+     set the height of tTabRect to mTabPagesHeight
+  end if
+
+  if element 2 of tSizeMods is "Percent" then
+     set the width of tTabRect to the width of tTabRect*(mTabPagesWidth/100)
+  else if element 2 of tSizeMods is "Fixed" then
+     set the width of tTabRect to mTabPagesWidth
+  end if
+
+  if mPageAlign is "top" then
+
+  else if mPageAlign is "bottom" then
+
+  else if mPageAlign is "left" then
+    
+  else if mPageAlign is "right" then
+
+  end if
+
+
   --QZQ draw tabs
   /*
 calculate size of tabpanel
 subtract from mCurrentRect
 
-mTabPagesAlign
-mTabPagesSizeType
-  Percent/Percent, Fixed/Fixed, Percent/Fixed, Fixed/Percent
-mTabPagesHeight
-mTabPagesWidth
 mTabPagesBuffer
 mTabData
 
+create each individual tab
   */
 end handler
 
