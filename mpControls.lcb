@@ -540,6 +540,97 @@ private handler setOutputBoxTextFont(in pVal as String)
 end handler
 -- So it goes
 
+property showTabPages  get mShowTabPages  set setShowTabPages
+metadata showTabPages.editor  is "com.livecode.pi.boolean"
+metadata showTabPages.default  is "false"
+metadata showTabPages.label  is "Displays a Panel With Tabs"
+metadata showTabPages.section  is "Table"
+private variable mShowTabPages as Boolean
+private handler setShowTabPages(in pVal as Boolean)
+  put pVal into mAppData["props"]["showTabPages"]
+  put pVal into mShowTabPages
+  setTabData(mTabData)
+  redraw all
+end handler
+
+property tabPagesAlign  get mTabPagesAlign  set setTabPagesAlign
+metadata tabPagesAlign.editor  is "com.livecode.pi.enum"
+metadata tabPagesAlign.options  is "left,top,right, bottom"
+metadata tabPagesAlign.default  is "left"
+metadata tabPagesAlign.label  is "Tab Bar Alignment"
+metadata tabPagesAlign.section  is "Table"
+private variable mTabPagesAlign as String
+private handler setTabPagesAlign(in pVal as String)
+  put pVal into mAppData["props"]["tabPagesAlign"]
+  put pVal into mTabPagesAlign
+  redraw all
+end handler
+
+property tabPagesSizeType  get mTabPagesSizeType  set setTabPagesSizeType
+metadata tabPagesSizeType.editor  is "com.livecode.pi.enum"
+metadata tabPagesSizeType.options  is "Percent/Percent, Fixed/Fixed, Percent/Fixed, Fixed/Percent"
+metadata tabPagesSizeType.default  is "Percent"
+metadata tabPagesSizeType.label  is "Tab Bar Sizer H/W"
+metadata tabPagesSizeType.section  is "Table"
+private variable mTabPagesSizeType as String
+private handler setTabPagesSizeType(in pVal as String)
+  put pVal into mAppData["props"]["tabPagesSizeType"]
+  put pVal into mTabPagesSizeType
+  redraw all
+end handler
+
+property tabPagesHeight  get mTabPagesHeight  set setTabPagesHeight
+metadata tabPagesHeight.editor  is "com.livecode.pi.number"
+metadata tabPagesHeight.default  is "100"
+metadata tabPagesHeight.label  is "Tab Bar Height"
+metadata tabPagesHeight.section  is "Table"
+private variable mTabPagesHeight as Number
+private handler setTabPagesHeight(in pVal as Number)
+  put pVal into mAppData["props"]["tabPagesHeight"]
+  put pVal into mTabPagesHeight
+  redraw all
+end handler
+
+property tabPagesWidth  get mTabPagesWidth  set setTabPagesWidth
+metadata tabPagesWidth.editor  is "com.livecode.pi.number"
+metadata tabPagesWidth.default  is "20"
+metadata tabPagesWidth.label  is "Tab Bar Width"
+metadata tabPagesWidth.section  is "Table"
+private variable mTabPagesWidth as Number
+private handler setTabPagesWidth(in pVal as Number)
+  put pVal into mAppData["props"]["tabPagesWidth"]
+  put pVal into mTabPagesWidth
+  redraw all
+end handler
+
+property tabPagesBuffer  get mTabPagesBuffer  set setTabPagesBuffer
+metadata tabPagesBuffer.editor  is "com.livecode.pi.number"
+metadata tabPagesBuffer.default  is "3"
+metadata tabPagesBuffer.label  is "Tab Bar Edge Buffer"
+metadata tabPagesBuffer.section  is "Table"
+private variable mTabPagesBuffer as Number
+private handler setTabPagesBuffer(in pVal as Number)
+  put pVal into mAppData["props"]["tabPagesBuffer"]
+  put pVal into mTabPagesBuffer
+  redraw all
+end handler
+
+property tabData  get mTabData  set setTabData
+metadata tabData.editor  is "com.livecode.pi.array"
+metadata tabData.label  is "Tab Bar Configuration"
+metadata tabData.section  is "Table"
+private variable mTabData as Array
+private handler setTabData(in pVal as Array)
+  variable tCount as Number
+  put pVal into mTabData
+  repeat with tCount from 1 up to the number of elements in mTabData
+    verifyTabDataComplete(mkStr(tCount))
+  end repeat
+  saveDataSets("control", "current")
+  saveDataSets("theme", "current")
+  put pVal into mAppData["tabData"]
+end handler
+
 --SECTION: myData/AppData
 
 property appData  get mAppData  set setAppData
@@ -1131,6 +1222,7 @@ end handler
 private variable mCurrentRect as Rectangle
 private variable mBottomButtonLoc as List
 private variable mLocList as List
+private variable mTabList as List
 private variable mControlRect as Rectangle
 private variable mHandles as List
 private variable mItemOrder as List
@@ -1514,6 +1606,37 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
     end repeat
 end handler
 
+private handler verifyTabDataComplete(in pKey as String)
+  variable tCountK as Number
+  variable tKeys as List
+  variable tValues as List
+  variable tData as Array
+
+  if mTabData[pKey] is empty then
+    put the empty array into mTabData[pKey]
+  end if
+
+  --Basics
+  put tKeys & ["label","selected","controlset","themeset"] into tKeys
+  put tValues & ["tab"& pKey,false,"current","current"] into tValues
+  --text
+  put tKeys & ["textsize","textfont","selectedtextcolor","unselectedtextcolor"] into tKeys
+  put tValues & ["default","default","default","default"] into tValues
+  --button background
+  put tKeys & ["selectedbuttoncolor","unselectedbuttoncolor"] into tKeys
+  put tValues & ["default","default"] into tValues
+  --icons
+  put tKeys & ["selectedicon","unselectedicon","selectediconcolor","unselectediconcolor"] into tKeys
+  put tValues & ["default","default","default","default"] into tValues
+
+  repeat with tCountK from 1 up to the number of elements in tKeys
+  if element tCountK of tKeys is not among the keys of mTabData[pKey] then
+    put element tCountK of tValues into mTabData[pKey][element tCountK of tKeys]
+  end if
+end repeat
+
+end handler
+
 private handler useDefaultButtonBarProps()
   setRadius(23)
   setControlIconA("builtin:bullseye")
@@ -1603,6 +1726,7 @@ public handler OnPaint()
   variable tCount as Number
   variable tControlType as String
   put [] into mLocList
+  put [] into mTabList
   put [] into mHandles
   put 1 into mAppData["vars"]["CurrentColumn"]
   put 1 into mAppData["vars"]["ControlInColumn"]
@@ -2368,6 +2492,10 @@ private handler drawBaseItems()
     bottomButtons(mBottomButtonTextColor,mBottomButtonBackColor)
   end if
 
+  if mShowTabPages then
+    displayTabPages()
+  end if
+
   add mWorkingAreaOffsetH to the top of mCurrentRect
   subtract mWorkingAreaOffsetH*2 from the height of mCurrentRect
   add mWorkingAreaOffsetW to the left of mCurrentRect
@@ -2546,6 +2674,23 @@ private handler bottomButtons(in pColorFore, in pColorBack)
   push tOkayRect onto mBottomButtonLoc
   push tCancelRect onto mBottomButtonLoc
   push tThirdRect onto mBottomButtonLoc
+end handler
+
+private handler displayTabPages()
+  --QZQ draw tabs
+  /*
+calculate size of tabpanel
+subtract from mCurrentRect
+
+mTabPagesAlign
+mTabPagesSizeType
+  Percent/Percent, Fixed/Fixed, Percent/Fixed, Fixed/Percent
+mTabPagesHeight
+mTabPagesWidth
+mTabPagesBuffer
+mTabData
+
+  */
 end handler
 
 private handler displayOutputBox()
