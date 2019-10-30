@@ -1878,6 +1878,7 @@ end handler
 
 -- SECTION: BUTTON WHEEL
 
+
 public handler paintButtonWheel()
   variable tPath as Path
   variable tBigX as Number
@@ -1887,7 +1888,7 @@ public handler paintButtonWheel()
   variable tLilRad as Number
   variable tOffset as Number
   variable tRect as Rectangle
-
+  variable tInnerRad as Number
   variable tCount as Number
   variable tIconPath as Path
 
@@ -1919,73 +1920,147 @@ public handler paintButtonWheel()
     add tBigRad*.05 to the top of tRect
     set the width of tRect to (the width of tRect*.5)
     set the height of tRect to (the height of tRect*.5)
-      repeat with tCount from 1 up to 8
-        if mData[mkstr(tCount)]["selected"] is true then
-          put getIconPath(mData[mkStr(tCount)]["unselectedicon"], mControlIconA) into tIconPath
-          constrainPathToRect(tRect, tIconPath)
-          fill tIconPath on this canvas
-          set the top of tRect to the bottom of tRect + 5
-          set the height of tRect to (the height of tRect*.7)
+end if
+variable tBNum as Number
+variable tBCenters as List
+variable tButtonNumber as Number
 
-          set the size of the font of this canvas to mControlValueSize
-          mpWrapTextinRect(tRect,mData[mkStr(tCount)]["label"],"center center")
-          put false into mAppData["vars"]["down"]
-        end if
-      end repeat
-   end if
+put tBigRad - tLilRad into tInnerRad
+put the number of elements in mData into tBNum
+put regularPoints([tBNum,tInnerRad,tBigX,tBigY]) into tBCenters
+repeat with tButtonNumber from 1 up to tBNum
+   setPaint("fore")
+   fill circle path centered at tBCenters[tButtonNumber] with radius tLilRad on this canvas
+end repeat
 
-  -- TODO: calculate and draw variable number of buttons
-  /*
-  1. create "inner circle":  subtract radius of button's circle from radius of main circle
-     tRadiusInnerCircle = tRigRad-tLilRad
-
-  2. calculate angle at which the center of each button will be:
-     put the number of elements in mData into tCount
-     tCicleLocation[buttonnum]["angle"] = (tCount)/(2*pi())
-
-  3. calcualte x & y for the center of each circle:
-     tCircleLocation[buttonnum]["x"] = tLilRad * (
-
-    -- tBigRad is the radius of the main circle across the widget
-    if my width > my height then
-      put my height/2 into tBigRad
-    else
-      put my width/2 into tBigRad
-    end if
-
-    -- tLilRad is the radius of each small button around the edge
-    put tBigRad/4 into tLilRad
-
-    -- finding the corrdinates of the center of the main cirle
-    put my width/2 into tBigX
-    put my height/2 into tBigY
-    put point [(my width/2),(my height/2)] into tCenter
-    fill circle path centered at tCenter with radius tBigRad on this canvas
-
-    -- create an "inner circle" by subtracting the radius of a button from the radius of the main circle
-    put tBigRad - tLilRad into tInnerRad
-    -- calculate angle in radians from the for the center of each button
-    put (the number of elements in mData)/(2 * pi()) into tButtonAngles
-
-    repeat with tButtonNumber from 1 up to the number of elements in mData
-      put tInnerRad * (tButtonNumber-1 * tButtonAngles) into tAngle
-      put tBigX * cos(tAngle * pi()) into tButtonX
-      put tBigY * sin(tAngle * pi()) into tButtonY
-      put point [tButtonX, tButtonY] into tButtonCenter
-      fill circle path centered at tButtonCenter with radius tLilRad on this canvas
-    end repeat
-
-  */
-
-  makeCircle(tBigX, tBigY-(tOffset*2.8), tLilRad, 1)
-  makeCircle(tBigX+(tOffset*2), tBigY-(tOffset*2), tLilRad, 2)
-  makeCircle(tBigX+(tOffset*2.8), tBigY, tLilRad, 3)
-  makeCircle(tBigX+(tOffset*2), tBigY+(tOffset*2), tLilRad, 4)
-  makeCircle(tBigX, tBigY+(tOffset*2.8), tLilRad, 5)
-  makeCircle(tBigX-(tOffset*2), tBigY+(tOffset*2), tLilRad, 6)
-  makeCircle(tBigX-(tOffset*2.8), tBigY, tLilRad, 7)
-  makeCircle(tBigX-(tOffset*2), tBigY-(tOffset*2), tLilRad, 8)
 end handler
+
+
+-- THANKS HERMANN!
+-- returns list of N regular (=evenly spaced) circle points
+-- starting at high noon, turning clockwise
+-- pL = [numOfPoints,radius,centerX,centerY]
+handler regularPoints (in pL as List) returns List
+  variable tI as Number
+  variable tPi as Number
+  variable tPts as List
+  put 2*pi/pL[1] into tPi
+  put [] into tPts
+  repeat with tI from 0 up to pL[1]-1
+    push point \
+    [pL[3]+pL[2]*sin(tI*tPi), pL[4]-pL[2]*cos(tI*tPi)] onto tPts
+  end repeat
+  return tPts
+end handler
+
+-- public handler paintButtonWheel()
+--   variable tPath as Path
+--   variable tBigX as Number
+--   variable tBigY as Number
+--   variable tCenter as Point
+--   variable tBigRad as Number
+--   variable tLilRad as Number
+--   variable tOffset as Number
+--   variable tRect as Rectangle
+--
+--   variable tCount as Number
+--   variable tIconPath as Path
+--
+--
+--   if my width > my height then
+--     put (my height-mWorkingAreaOffsetH)/2 into tBigRad
+--   else
+--     put (my width-mWorkingAreaOffsetW)/2 into tBigRad
+--   end if
+--   if mControlObjectVertical is "Even spacing" then
+--     put tBigRad/4 into tLilRad
+--     put tBigRad/4 into tOffset
+--   else
+--     put tBigRad/(4+mControlBufferV) into tLilRad
+--     put tBigRad/(4+mControlBufferH) into tOffset
+--   end if
+--   put my width/2 into tBigX
+--   put my height/2 into tBigY
+--   put point [(my width/2),(my height/2)] into tCenter
+--   set the font of this canvas to my font
+--   setPaint(mMainSquareColor)
+--   fill circle path centered at tCenter with radius tBigRad on this canvas
+--   if mShowOutputBox and not(mButtonBarType is "Multiple") then
+--     setPaint("border")  -- TODO: add property to this paint
+--     put centerRectGen() into tRect
+--     fill rounded rectangle path of tRect with radius tBigRad on this canvas
+--     setPaint(mMainSquareColor)
+--     add tBigRad*.22 to the left of tRect
+--     add tBigRad*.05 to the top of tRect
+--     set the width of tRect to (the width of tRect*.5)
+--     set the height of tRect to (the height of tRect*.5)
+--       repeat with tCount from 1 up to 8
+--         if mData[mkstr(tCount)]["selected"] is true then
+--           put getIconPath(mData[mkStr(tCount)]["unselectedicon"], mControlIconA) into tIconPath
+--           constrainPathToRect(tRect, tIconPath)
+--           fill tIconPath on this canvas
+--           set the top of tRect to the bottom of tRect + 5
+--           set the height of tRect to (the height of tRect*.7)
+--
+--           set the size of the font of this canvas to mControlValueSize
+--           mpWrapTextinRect(tRect,mData[mkStr(tCount)]["label"],"center center")
+--           put false into mAppData["vars"]["down"]
+--         end if
+--       end repeat
+--    end if
+--
+--   -- TODO: calculate and draw variable number of buttons
+--   /*
+--   1. create "inner circle":  subtract radius of button's circle from radius of main circle
+--      tRadiusInnerCircle = tRigRad-tLilRad
+--
+--   2. calculate angle at which the center of each button will be:
+--      put the number of elements in mData into tCount
+--      tCicleLocation[buttonnum]["angle"] = (tCount)/(2*pi())
+--
+--   3. calcualte x & y for the center of each circle:
+--      tCircleLocation[buttonnum]["x"] = tLilRad * (
+--
+--     -- tBigRad is the radius of the main circle across the widget
+--     if my width > my height then
+--       put my height/2 into tBigRad
+--     else
+--       put my width/2 into tBigRad
+--     end if
+--
+--     -- tLilRad is the radius of each small button around the edge
+--     put tBigRad/4 into tLilRad
+--
+--     -- finding the corrdinates of the center of the main cirle
+--     put my width/2 into tBigX
+--     put my height/2 into tBigY
+--     put point [(my width/2),(my height/2)] into tCenter
+--     fill circle path centered at tCenter with radius tBigRad on this canvas
+--
+--     -- create an "inner circle" by subtracting the radius of a button from the radius of the main circle
+--     put tBigRad - tLilRad into tInnerRad
+--     -- calculate angle in radians from the for the center of each button
+--     put (the number of elements in mData)/(2 * pi()) into tButtonAngles
+--
+--     repeat with tButtonNumber from 1 up to the number of elements in mData
+--       put tInnerRad * (tButtonNumber-1 * tButtonAngles) into tAngle
+--       put tBigX * cos(tAngle * pi()) into tButtonX
+--       put tBigY * sin(tAngle * pi()) into tButtonY
+--       put point [tButtonX, tButtonY] into tButtonCenter
+--       fill circle path centered at tButtonCenter with radius tLilRad on this canvas
+--     end repeat
+--
+--   */
+--
+--   makeCircle(tBigX, tBigY-(tOffset*2.8), tLilRad, 1)
+--   makeCircle(tBigX+(tOffset*2), tBigY-(tOffset*2), tLilRad, 2)
+--   makeCircle(tBigX+(tOffset*2.8), tBigY, tLilRad, 3)
+--   makeCircle(tBigX+(tOffset*2), tBigY+(tOffset*2), tLilRad, 4)
+--   makeCircle(tBigX, tBigY+(tOffset*2.8), tLilRad, 5)
+--   makeCircle(tBigX-(tOffset*2), tBigY+(tOffset*2), tLilRad, 6)
+--   makeCircle(tBigX-(tOffset*2.8), tBigY, tLilRad, 7)
+--   makeCircle(tBigX-(tOffset*2), tBigY-(tOffset*2), tLilRad, 8)
+-- end handler
 
 private handler makeCircle(in pX, in pY, in pRad, in pNum)
   variable tRect as Rectangle
