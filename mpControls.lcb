@@ -1123,9 +1123,9 @@ metadata buttonBarType.section is "Basic"
 private variable mButtonBarType as String
 private handler setBarType(in pText as String)
   put pText into mButtonBarType
-  if pText is "EntryPad" then
-    pinPadDefaults()
-  end if
+  -- if pText is "EntryPad" then
+  --   pinPadDefaults()
+  -- end if
   redraw all
 end handler
 
@@ -2190,51 +2190,51 @@ private handler setButtonPaint(in pKey as String,in pType as String)
     else
       chooseAndSetPaint(mData[pKey]["unselectediconcolor"],mControlTextColor)
     end if
-  else if pType is "tabtext" or pType is "tabicon" then
+  else if pType is "tabbutton" then
+    if mTabData[pKey]["selected"] is true then
+      chooseAndSetPaint(mTabData[pKey]["selectedbuttoncolor"],mControlValueColor)
+    else
+      chooseAndSetPaint(mTabData[pKey]["unselectedbuttoncolor"],mControlObjectColor)
+    end if
+else if pType is "tabtext" then
     if mTabData[pKey]["selected"] is true then
       chooseAndSetPaint(mTabData[pKey]["selectedtextcolor"],mControlHiliteColor)
     else
       chooseAndSetPaint(mTabData[pKey]["unselectedtextcolor"],mControlTextColor)
     end if
-  else if pType is "tabbutton" then
-    if mData[pKey]["selected"] is true then
-      chooseAndSetPaint(mTabData[pKey]["selectedbuttoncolor"],mControlValueColor)
-    else
-      chooseAndSetPaint(mTabData[pKey]["unselectedbuttoncolor"],mControlObjectColor)
-    end if
   end if
 end handler
 
-private handler pinPadDefaults()
-  put 3 into mColumns
-  put "" into mAppData["vars"]["entryvalue"]
-  put "Even Spacing" into mControlObjectVertical
-  put the empty array into mData
-  put "1\n " into mData["1"]["label"]
-  put "2\nABC" into mData["5"]["label"]
-  put "3\nDEF" into mData["9"]["label"]
-  put "4\nGHI" into mData["2"]["label"]
-  put "5\nJKL" into mData["6"]["label"]
-  put "6\nMNO" into mData["10"]["label"]
-  put "7\nPQRS" into mData["3"]["label"]
-  put "8\nTUV" into mData["7"]["label"]
-  put "9\nWXYZ" into mData["11"]["label"]
-  put "0\n " into mData["8"]["label"]
-
-  put "1 " into mData["1"]["value"]
-  put "2" into mData["5"]["value"]
-  put "3" into mData["9"]["value"]
-  put "4" into mData["2"]["value"]
-  put "5" into mData["6"]["value"]
-  put "6" into mData["10"]["value"]
-  put "7" into mData["3"]["value"]
-  put "8" into mData["7"]["value"]
-  put "9" into mData["11"]["value"]
-  put false into mData["4"]["show"]
-  put "0 " into mData["8"]["value"]
-  put false into mData["12"]["show"]
-  verifyDataComplete()
-end handler
+-- private handler pinPadDefaults()
+--   put 3 into mColumns
+--   put "" into mAppData["vars"]["entryvalue"]
+--   put "Even Spacing" into mControlObjectVertical
+--   put the empty array into mData
+--   put "1\n " into mData["1"]["label"]
+--   put "2\nABC" into mData["5"]["label"]
+--   put "3\nDEF" into mData["9"]["label"]
+--   put "4\nGHI" into mData["2"]["label"]
+--   put "5\nJKL" into mData["6"]["label"]
+--   put "6\nMNO" into mData["10"]["label"]
+--   put "7\nPQRS" into mData["3"]["label"]
+--   put "8\nTUV" into mData["7"]["label"]
+--   put "9\nWXYZ" into mData["11"]["label"]
+--   put "0\n " into mData["8"]["label"]
+--
+--   put "1 " into mData["1"]["value"]
+--   put "2" into mData["5"]["value"]
+--   put "3" into mData["9"]["value"]
+--   put "4" into mData["2"]["value"]
+--   put "5" into mData["6"]["value"]
+--   put "6" into mData["10"]["value"]
+--   put "7" into mData["3"]["value"]
+--   put "8" into mData["7"]["value"]
+--   put "9" into mData["11"]["value"]
+--   put false into mData["4"]["show"]
+--   put "0 " into mData["8"]["value"]
+--   put false into mData["12"]["show"]
+--   verifyDataComplete()
+-- end handler
 
 --SECTION:  SWITCHES
 
@@ -2685,7 +2685,11 @@ end handler
 private handler displayTabPages()
   variable tTabRect as Rectangle
   variable tSizeMods as List
-
+  variable tCount as Number
+  variable tHeight as Number
+  variable tWidth as Number
+  --qzqz
+  put [] into mTabList
   put mCurrentRect into tTabRect
   split mTabPagesSizeMods by "/" into tSizeMods
   if element 1 of tSizeMods is "Percent" then
@@ -2728,30 +2732,28 @@ private handler displayTabPages()
     subtract the width of tTabRect from the width of mCurrentRect
   end if
 
---  if the number of elements in mTabData > 0 then
-
-  variable tCount as Number
-  variable tHeight as Number
-  variable tWidth as Number
-
-    if mTabPagesAlign is "left" or mTabPagesAlign is "right" then
-      set the height of tTabRect to the height of tTabRect/the number of elements in mTabData
-      repeat with tCount from 1 up to the number of elements in mTabData
-        setButtonPaint(mkStr(tCount),"tabbutton")
-        fill rectangle path of tTabRect on this canvas
-        setButtonPaint(mkStr(tCount),"tabtext")
-      end repeat
-    else if mTabPagesAlign is "left" or mTabPagesAlign is "right" then
-
-    end if
-
-
---  end if
-  --QZQ draw tabs
-  /*
-create each individual tab
-------> then work on interaction
-  */
+  if mTabPagesAlign is "left" or mTabPagesAlign is "right" then
+    set the height of tTabRect to the height of tTabRect/the number of elements in mTabData
+    repeat with tCount from 1 up to the number of elements in mTabData
+      setButtonPaint(mkStr(tCount),"tabbutton")
+      fill rectangle path of tTabRect on this canvas
+      setButtonPaint(mkStr(tCount),"tabtext")
+      fill text mTabData[mkStr(tCount)]["label"] at center of tTabRect on this canvas
+      set the top of tTabRect to the bottom of tTabRect
+      push tTabRect onto mTabList
+    end repeat
+  else if mTabPagesAlign is "top" or mTabPagesAlign is "bottom" then
+    set the width of tTabRect to the width of tTabRect/the number of elements in mTabData
+    repeat with tCount from 1 up to the number of elements in mTabData
+      setButtonPaint(mkStr(tCount),"tabbutton")
+      fill rectangle path of tTabRect on this canvas
+      setButtonPaint(mkStr(tCount),"tabtext")
+      fill text mTabData[mkStr(tCount)]["label"] at center of tTabRect on this canvas
+      set the left of tTabRect to the right of tTabRect
+      push tTabRect onto mTabList
+    end repeat
+  end if
+  addDebugInfo("tablist",the number of elements in mTabList)
 end handler
 
 private handler displayOutputBox()
@@ -2909,13 +2911,14 @@ public handler OnMouseUp()
   variable tPosition as Point
   put the mouse position into tPosition
 
-  bottomButtonPressed(tPosition)
+  bottomButtonPressed()
+  tabButtonPressed()
   if mAppData["vars"]["currentType"] begins with "Button" then
     if mButtonBarType is "Action" then
       schedule timer in .1 seconds
     end if
-  else if mAppData["vars"]["currentType"] is "PIN Pad" then
-    selectPINpad()
+  -- else if mAppData["vars"]["currentType"] is "PIN Pad" then
+  --   selectPINpad()
   end if
   put false into mAppData["vars"]["stilldown"]
   redraw all
@@ -2990,22 +2993,35 @@ end handler
 public handler OnStartEditing()
 end handler
 
---SECTION USER INTERATION: BOTTOM BUTTONS
+--SECTION USER INTERATION: TAB/BOTTOM BUTTONS
 
-public handler bottomButtonPressed(in pPosition as Point)
+public handler tabButtonPressed()
+  variable tCount as Number
+
+  --FIXME: position in rect not working
+  if the mouse position is within element tCount of mTabList then
+    put true into mTabData[mkStr(tCount)]["selected"]
+    --QZQ
+    --TODO: change data etc...
+  else
+    put false into mTabData[mkStr(tCount)]["selected"]
+  end if
+end handler
+
+public handler bottomButtonPressed()
 
   if mShowBottomButtons then
-    if mPosition is within element 1 of mBottomButtonLoc then
+    if the mouse position is within element 1 of mBottomButtonLoc then
       post "buttonPressed" to my script object with [1]
     end if
   end if
   if mShowBottomButtons and mShowButtons >= 2 then
-    if mPosition is within element 2 of mBottomButtonLoc then
+    if the mouse position is within element 2 of mBottomButtonLoc then
       post "buttonPressed" to my script object with [2]
     end if
   end if
   if mShowBottomButtons and mShowButtons = 3 then
-    if mPosition is within element 3 of mBottomButtonLoc then
+    if the mouse position is within element 3 of mBottomButtonLoc then
       post "buttonPressed" to my script object with [3]
     end if
   end if
@@ -3013,31 +3029,31 @@ end handler
 
 --SECTION USER INTERACTION:  PIN PAD
 
-private handler selectPINpad()
-  /*
-  variable tZ as Number
-  variable tRect as Rectangle
-  variable tPosition as Point
-
-  put the mouse position into tPosition
-  repeat with tZ from 1 up to 12
-   put arrayToRect(mData["buttonrect"][mkStr(tZ)]) into tRect
-   if tPosition is within tRect then
-     if tZ is 10 then
-      put "" into mAppData["vars"]["entryvalue"]
-     else if tZ is 12 then
-      post "enterPressed" to my script object with [mAppData["vars"]["entryvalue"]]
-     else if tZ is 10 then
-      put "0" after mAppData["vars"]["entryvalue"]
-     else
-      put mkStr(tZ) after mAppData["vars"]["entryvalue"]
-     end if
-     redraw all
-     exit repeat
-   end if
-  end repeat
-  */
-end handler
+-- private handler selectPINpad()
+--
+--   variable tZ as Number
+--   variable tRect as Rectangle
+--   variable tPosition as Point
+--
+--   put the mouse position into tPosition
+--   repeat with tZ from 1 up to 12
+--    put arrayToRect(mData["buttonrect"][mkStr(tZ)]) into tRect
+--    if tPosition is within tRect then
+--      if tZ is 10 then
+--       put "" into mAppData["vars"]["entryvalue"]
+--      else if tZ is 12 then
+--       post "enterPressed" to my script object with [mAppData["vars"]["entryvalue"]]
+--      else if tZ is 10 then
+--       put "0" after mAppData["vars"]["entryvalue"]
+--      else
+--       put mkStr(tZ) after mAppData["vars"]["entryvalue"]
+--      end if
+--      redraw all
+--      exit repeat
+--    end if
+--   end repeat
+--
+-- end handler
 
 --SECTION USER INTERACTION: BUTTON WHEEL
 
@@ -3049,7 +3065,7 @@ end handler
 --   variable tAnySelected as Boolean
 --   put false into tAnySelected
 --   put the mouse position into tPosition
---   repeat with tCount from 1 up to 8
+--   repeat with tCount from 1 up to the number of elements in mData
 --     addDebugInfo("count",tCount)
 --     put mkStr(tCount) into mCurrentControlKey
 --     -- if element tCount of mLocList is "skip" then

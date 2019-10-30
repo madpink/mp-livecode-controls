@@ -85,14 +85,26 @@ command buttonAction pType
       case "F"
          -- set the xxx of widget 1 of stack testStack to zzz
          --testType "Progress Bars",3,5
-         set the controlType of widget 1 of stack testStack to "Mixed Controls"
-         put "Button Bar" into testData[1]["controltype"]
-         put "Button Bar" into testData[3]["controltype"]
-         put "Numeric Up/Down" into testData[2]["controltype"]
-         put "Sliders" into testData[4]["controltype"]
-         put "Switches" into testData[5]["controltype"]
-         put "Button Bar" into testData[6]["controltype"]
-         set the myData of widget 1 of stack testStack to testData
+         --         set the controlType of widget 1 of stack testStack to "Mixed Controls"
+         --         put "Button Bar" into testData[1]["controltype"]
+         --         put "Button Bar" into testData[3]["controltype"]
+         --         put "Numeric Up/Down" into testData[2]["controltype"]
+         --         put "Sliders" into testData[4]["controltype"]
+         --         put "Switches" into testData[5]["controltype"]
+         --         put "Button Bar" into testData[6]["controltype"]
+         --         set the myData of widget 1 of stack testStack to testData
+         
+         put "ABC" into tData["1"]["label"]
+         put "DEF" into tData["2"]["label"]
+         put "GHI" into tData["3"]["label"]
+         put "JKL" into tData["4"]["label"]
+         put false into tData["1"]["selected"]
+         put false into tData["2"]["selected"]
+         put true into tData["3"]["selected"]
+         put false into tData["4"]["selected"]
+         set the tabData of widget 1 of stack testStack to tData
+         set the showTabPages of widget 1 of stack testStack to true
+         
          break
       case "G"
          set the columnCount of widget 1 of stack testStack to 2
