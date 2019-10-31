@@ -659,9 +659,7 @@ private handler setData(in pVal as Array)
   put pVal into mAppData["props"]["myData"]
   put pVal into mData
 
-  if mControlType is "Button Wheel" then
-
-  else if mControlType is not "Dialog Box" then
+  if mControlType is not "Dialog Box" then
     verifyDataComplete()
   end if
 
@@ -747,11 +745,8 @@ private handler setControlType(in pVal as String)
   setData(mData)
   put pVal into mAppData["props"]["controlType"]
   put pVal into mControlType
-  if mControlType is "Button Wheel" then
-    useDefaultButtonWheelProps()
-  end if
   if mDefaultChangeType then
-    if mControlType is "Button Bar" then
+    if mControlType is "Button Bar" or mControlType is "Button Wheel" then
       useDefaultButtonBarProps()
     else if mControlType is "Switches" then
       useDefaultSwitchesProps()
@@ -1522,7 +1517,7 @@ private handler verifyControlComplete(in pType as String, in pKey as String)
   variable tKeys as List
   variable tValues as List
 
-    if pType is "Button Bar" then
+    if pType is "Button Bar" or pType is "Button Wheel" then
       --basics
       put ["label","show","value","selected"] into tKeys
       put [randomLabel(),true,pKey,false] into tValues
@@ -1641,35 +1636,6 @@ private handler useDefaultButtonBarProps()
   setRadius(23)
   setControlIconA("builtin:bullseye")
   setControlIconB("builtin:circle blank")
-end handler
-
-private handler useDefaultButtonWheelProps()
-  variable tCount as Number
-  variable tLabels as List
-  variable tIcons as List
-
-  setControlBufferH(0)
-
-  put ["Exit", "Add", "Settings", "Filter", "Rubbish", "Help", "Sort", "Move"] into tLabels
-  put ["ban circle", "plus", "cogs", "filter", "trash", "question sign", "sort by attributes", "move"] into tIcons
-
-  repeat with tCount from 1 up to 8
-    put the empty array into mData[mkStr(tCount)]
-    put element tCount of tLabels into mData[mkstr(tCount)]["label"]
-    put "builtin:" & element tCount of tIcons into mData[mkstr(tCount)]["unselectedicon"]
-    put "builtin:" & element tCount of tIcons into mData[mkstr(tCount)]["selectedicon"]
-    put "default" into mData[mkstr(tCount)]["unselectedbuttoncolor"]
-    put "default" into mData[mkstr(tCount)]["selectedbuttoncolor"]
-    put "default" into mData[mkstr(tCount)]["unselectedtextcolor"]
-    put "default" into mData[mkstr(tCount)]["selectedtextcolor"]
-    put "default" into mData[mkstr(tCount)]["unselectediconcolor"]
-    put "default" into mData[mkstr(tCount)]["selectediconcolor"]
-    put true into mData[mkstr(tCount)]["show"]
-    put "default" into mData[mkstr(tCount)]["textsize"]
-    put "default" into mData[mkstr(tCount)]["textfont"]
-    put false into mData[mkstr(tCount)]["selected"]
-    put mkStr(tCount) into mData[mkstr(tCount)]["value"]
-  end repeat
 end handler
 
 private handler useDefaultSwitchesProps()
