@@ -14,6 +14,7 @@ end mouseUp
 command getDataFromWidget
    put the appData of widget 1 of stack testStack into tArray["appData"]
    put the myData of widget 1 of stack testStack into tArray["myData"]
+   put the tabData of widget 1 of stack testStack into tArray["tabData"]
    set the arrayData of widget "controlData" to tArray
 end getDataFromWidget
 
@@ -67,27 +68,49 @@ command buttonAction pType
       set the showOutputBox of widget 1 of stack testStack to true
       break
     case "D"
+      resizeTestStack
       -- set the controlItemSpacing of widget 1 of stack testStack to 13
-      put the myData of widget 1 of stack testStack into tData
-      put true into tData[2]["selected"]
-      set the myData of widget 1 of stack testStack to tData
+      
+      --         put the myData of widget 1 of stack testStack into tData
+      --         put true into tData[2]["selected"]
+      --         set the myData of widget 1 of stack testStack to tData
+      
+      set the controlType of widget 1 of stack testStack to "Button Wheel"
+      set the controlObjectSize of widget 1 of stack testStack to 42
+      
       break
     case "E"
       -- set the xxx of widget 1 of stack testStack to zzz
-      put "icon:thisfamily/thisname:thisIsATest" into tIcon
-      set the dataCommand of widget 1 of stack testStack to tIcon
+      -- put "icon:thisfamily/thisname:thisIsATest" into tIcon
+      -- set the dataCommand of widget 1 of stack testStack to tIcon
+      
+      --         put empty into tData["1"]
+      --         put empty into tData["2"]
+      --         set the tabData of widget 1 of stack testStack to tData
       break
     case "F"
       -- set the xxx of widget 1 of stack testStack to zzz
       --testType "Progress Bars",3,5
-      set the controlType of widget 1 of stack testStack to "Mixed Controls"
-      put "Button Bar" into testData[1]["controltype"]
-      put "Button Bar" into testData[3]["controltype"]
-      put "Numeric Up/Down" into testData[2]["controltype"]
-      put "Sliders" into testData[4]["controltype"]
-      put "Switches" into testData[5]["controltype"]
-      put "Button Bar" into testData[6]["controltype"]
-      set the myData of widget 1 of stack testStack to testData
+      --         set the controlType of widget 1 of stack testStack to "Mixed Controls"
+      --         put "Button Bar" into testData[1]["controltype"]
+      --         put "Button Bar" into testData[3]["controltype"]
+      --         put "Numeric Up/Down" into testData[2]["controltype"]
+      --         put "Sliders" into testData[4]["controltype"]
+      --         put "Switches" into testData[5]["controltype"]
+      --         put "Button Bar" into testData[6]["controltype"]
+      --         set the myData of widget 1 of stack testStack to testData
+      
+      put "ABC" into tData["1"]["label"]
+      put "DEF" into tData["2"]["label"]
+      put "GHI" into tData["3"]["label"]
+      put "JKL" into tData["4"]["label"]
+      put false into tData["1"]["selected"]
+      put false into tData["2"]["selected"]
+      put true into tData["3"]["selected"]
+      put false into tData["4"]["selected"]
+      set the tabData of widget 1 of stack testStack to tData
+      set the showTabPages of widget 1 of stack testStack to true
+      
       break
     case "G"
       set the columnCount of widget 1 of stack testStack to 2
