@@ -19,120 +19,121 @@ command getDataFromWidget
 end getDataFromWidget
 
 command buttonAction pType
-   put random(8)+2 into controlCount
-   switch pType
-      case "1"
-         set the controlType of widget 1 of stack testStack to "Dialog Box"
-         set the titleText of widget 1 of stack testStack to "Test: Dialog Box"
-         break
-      case "2"
-         testType "Button Bar",controlCount,5
-         break
-      case "3"
-         testType "Sliders",controlCount,5
-         break
-      case "4"
-         testType "Numeric Up/Down",controlCount,5
-         break
-      case "5"
-         testType "Progress Bars",controlCount,5
-         break
-      case "6"
-         testType "Switches",controlCount,5
-         break
-      case "7"
-         testType "Form Backdrop",controlCount,5
-         break
-      case "8"
-         edit the script of stack "ControlTestButtons.lcs"
-         break
-      case "9"
-         set the arrayData of widget "controlData" to empty
-         exit to top
-         break
-      case "A"
-         set the columnCount of widget 1 of stack testStack to 2
-         set the controlObjectVertical of widget 1 of stack testStack to "Fixed spacing"
-         testType "Button Bar",5,5
-         
-         break
-      case "B"
-         -- set the controlBufferV of widget 1 of stack testStack to 13
-         --set the controlObjectVertical of widget 1 of stack testStack to "Fixed spacing"
-         resizeTestStack
-         set the controlType of widget 1 of stack testStack to "Button Wheel"
-         break
-      case "C"
-         -- set the controlItemSpacing of widget 1 of stack testStack to 1
-         -- set the controlObjectVertical of widget 1 of stack testStack to "Even spacing"
-         set the showOutputBox of widget 1 of stack testStack to true
-         break
-      case "D"
-         resizeTestStack
-         -- set the controlItemSpacing of widget 1 of stack testStack to 13
-         
-         --         put the myData of widget 1 of stack testStack into tData
-         --         put true into tData[2]["selected"]
-         --         set the myData of widget 1 of stack testStack to tData
-         
-         set the controlType of widget 1 of stack testStack to "Button Wheel"
-         set the controlObjectSize of widget 1 of stack testStack to 42
-         break
-      case "E"
-         -- set the xxx of widget 1 of stack testStack to zzz
-         -- put "icon:thisfamily/thisname:thisIsATest" into tIcon
-         -- set the dataCommand of widget 1 of stack testStack to tIcon
-         
-         put empty into tData["1"]
-         put empty into tData["2"]
-         set the tabData of widget 1 of stack testStack to tData
-         break
-      case "F"
-         -- set the xxx of widget 1 of stack testStack to zzz
-         --testType "Progress Bars",3,5
-         --         set the controlType of widget 1 of stack testStack to "Mixed Controls"
-         --         put "Button Bar" into testData[1]["controltype"]
-         --         put "Button Bar" into testData[3]["controltype"]
-         --         put "Numeric Up/Down" into testData[2]["controltype"]
-         --         put "Sliders" into testData[4]["controltype"]
-         --         put "Switches" into testData[5]["controltype"]
-         --         put "Button Bar" into testData[6]["controltype"]
-         --         set the myData of widget 1 of stack testStack to testData
-         
-         put "ABC" into tData["1"]["label"]
-         put "DEF" into tData["2"]["label"]
-         put "GHI" into tData["3"]["label"]
-         put "JKL" into tData["4"]["label"]
-         put false into tData["1"]["selected"]
-         put false into tData["2"]["selected"]
-         put true into tData["3"]["selected"]
-         put false into tData["4"]["selected"]
-         set the tabData of widget 1 of stack testStack to tData
-         set the showTabPages of widget 1 of stack testStack to true
-         
-         break
-      case "G"
-         set the columnCount of widget 1 of stack testStack to 2
-         set the controlObjectVertical of widget 1 of stack testStack to "Fixed Spacing"
-         put "2col/fixed" into addToTitle
-         cycleTest
-         set the controlObjectVertical of widget 1 of stack testStack to "Even Spacing"
-         put "2col/Even" into addToTitle
-         cycleTest
-         set the columnCount of widget 1 of stack testStack to 1
-         set the controlObjectVertical of widget 1 of stack testStack to "Fixed Spacing"
-         put "1col/Fixed" into addToTitle
-         cycleTest
-         set the controlObjectVertical of widget 1 of stack testStack to "Even Spacing"
-         put "1col/Even" into addToTitle
-         cycleTest
-         put empty into addToTitle
-         break
-      case "H"
-         resizeTestStack
-         break
-   end switch
-   getDataFromWidget
+  put random(8)+2 into controlCount
+  switch pType
+    case "1"
+      set the controlType of widget 1 of stack testStack to "Dialog Box"
+      set the titleText of widget 1 of stack testStack to "Test: Dialog Box"
+      break
+    case "2"
+      testType "Button Bar",controlCount,5
+      break
+    case "3"
+      testType "Sliders",controlCount,5
+      break
+    case "4"
+      testType "Numeric Up/Down",controlCount,5
+      break
+    case "5"
+      testType "Progress Bars",controlCount,5
+      break
+    case "6"
+      testType "Switches",controlCount,5
+      break
+    case "7"
+      testType "Form Backdrop",controlCount,5
+      break
+    case "8"
+      edit the script of stack "ControlTestButtons.lcs"
+      break
+    case "9"
+      set the arrayData of widget "controlData" to empty
+      exit to top
+      break
+    case "A"
+      set the columnCount of widget 1 of stack testStack to 2
+      set the controlObjectVertical of widget 1 of stack testStack to "Fixed spacing"
+      testType "Button Bar",5,5
+      
+      break
+    case "B"
+      -- set the controlBufferV of widget 1 of stack testStack to 13
+      --set the controlObjectVertical of widget 1 of stack testStack to "Fixed spacing"
+      resizeTestStack
+      set the controlType of widget 1 of stack testStack to "Button Wheel"
+      break
+    case "C"
+      -- set the controlItemSpacing of widget 1 of stack testStack to 1
+      -- set the controlObjectVertical of widget 1 of stack testStack to "Even spacing"
+      set the showOutputBox of widget 1 of stack testStack to true
+      break
+    case "D"
+      resizeTestStack
+      -- set the controlItemSpacing of widget 1 of stack testStack to 13
+      
+      --         put the myData of widget 1 of stack testStack into tData
+      --         put true into tData[2]["selected"]
+      --         set the myData of widget 1 of stack testStack to tData
+      
+      set the controlType of widget 1 of stack testStack to "Button Wheel"
+      set the controlObjectSize of widget 1 of stack testStack to 42
+      
+      break
+    case "E"
+      -- set the xxx of widget 1 of stack testStack to zzz
+      -- put "icon:thisfamily/thisname:thisIsATest" into tIcon
+      -- set the dataCommand of widget 1 of stack testStack to tIcon
+      
+      --         put empty into tData["1"]
+      --         put empty into tData["2"]
+      --         set the tabData of widget 1 of stack testStack to tData
+      break
+    case "F"
+      -- set the xxx of widget 1 of stack testStack to zzz
+      --testType "Progress Bars",3,5
+      --         set the controlType of widget 1 of stack testStack to "Mixed Controls"
+      --         put "Button Bar" into testData[1]["controltype"]
+      --         put "Button Bar" into testData[3]["controltype"]
+      --         put "Numeric Up/Down" into testData[2]["controltype"]
+      --         put "Sliders" into testData[4]["controltype"]
+      --         put "Switches" into testData[5]["controltype"]
+      --         put "Button Bar" into testData[6]["controltype"]
+      --         set the myData of widget 1 of stack testStack to testData
+      
+      put "ABC" into tData["1"]["label"]
+      put "DEF" into tData["2"]["label"]
+      put "GHI" into tData["3"]["label"]
+      put "JKL" into tData["4"]["label"]
+      put false into tData["1"]["selected"]
+      put false into tData["2"]["selected"]
+      put true into tData["3"]["selected"]
+      put false into tData["4"]["selected"]
+      set the tabData of widget 1 of stack testStack to tData
+      set the showTabPages of widget 1 of stack testStack to true
+      
+      break
+    case "G"
+      set the columnCount of widget 1 of stack testStack to 2
+      set the controlObjectVertical of widget 1 of stack testStack to "Fixed Spacing"
+      put "2col/fixed" into addToTitle
+      cycleTest
+      set the controlObjectVertical of widget 1 of stack testStack to "Even Spacing"
+      put "2col/Even" into addToTitle
+      cycleTest
+      set the columnCount of widget 1 of stack testStack to 1
+      set the controlObjectVertical of widget 1 of stack testStack to "Fixed Spacing"
+      put "1col/Fixed" into addToTitle
+      cycleTest
+      set the controlObjectVertical of widget 1 of stack testStack to "Even Spacing"
+      put "1col/Even" into addToTitle
+      cycleTest
+      put empty into addToTitle
+      break
+    case "H"
+      resizeTestStack
+      break
+  end switch
+  getDataFromWidget
 end buttonAction
 
 command testType pType pCount pWait
