@@ -68,10 +68,15 @@ command buttonAction pType
          set the showOutputBox of widget 1 of stack testStack to true
          break
       case "D"
+         resizeTestStack
          -- set the controlItemSpacing of widget 1 of stack testStack to 13
-         put the myData of widget 1 of stack testStack into tData
-         put true into tData[2]["selected"]
-         set the myData of widget 1 of stack testStack to tData
+         
+         --         put the myData of widget 1 of stack testStack into tData
+         --         put true into tData[2]["selected"]
+         --         set the myData of widget 1 of stack testStack to tData
+         
+         set the controlType of widget 1 of stack testStack to "Button Wheel"
+         set the controlObjectSize of widget 1 of stack testStack to 42
          break
       case "E"
          -- set the xxx of widget 1 of stack testStack to zzz
