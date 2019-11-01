@@ -2609,6 +2609,11 @@ private handler displayTabPages()
   variable tHeight as Number
   variable tWidth as Number
 
+  -- TODO: make tab buttons prettier
+  -- TODO: fix spacing (left orientation is not buffering correctly)
+  -- TODO: center mTabRect in the span of mCurrentRect
+  -- TODO: add
+
   put [] into mTabList
   put mCurrentRect into tTabRect
   split mTabPagesSizeMods by "/" into tSizeMods
@@ -2657,22 +2662,22 @@ private handler displayTabPages()
   if mTabPagesAlign is "left" or mTabPagesAlign is "right" then
     set the height of tTabRect to the height of tTabRect/the number of elements in mTabData
     repeat with tCount from 1 up to the number of elements in mTabData
+      push tTabRect onto mTabList
       setButtonPaint(mkStr(tCount),"tabbutton")
       fill rectangle path of tTabRect on this canvas
       setButtonPaint(mkStr(tCount),"tabtext")
       fill text mTabData[mkStr(tCount)]["label"] at center of tTabRect on this canvas
       set the top of tTabRect to the bottom of tTabRect
-      push tTabRect onto mTabList
     end repeat
   else if mTabPagesAlign is "top" or mTabPagesAlign is "bottom" then
     set the width of tTabRect to the width of tTabRect/the number of elements in mTabData
     repeat with tCount from 1 up to the number of elements in mTabData
+      push tTabRect onto mTabList
       setButtonPaint(mkStr(tCount),"tabbutton")
       fill rectangle path of tTabRect on this canvas
       setButtonPaint(mkStr(tCount),"tabtext")
       fill text mTabData[mkStr(tCount)]["label"] at center of tTabRect on this canvas
       set the left of tTabRect to the right of tTabRect
-      push tTabRect onto mTabList
     end repeat
   end if
   addDebugInfo("tablist",the number of elements in mTabList)
@@ -2924,14 +2929,20 @@ end handler
 
 public handler tabButtonPressed()
   variable tCount as Number
-  --FIXME: position in rect not working
+  variable tControls as String
+  variable tData as Array
+
   repeat with tCount from 1 up to the number of elements in mTabData
-    addDebugInfo("tab"&mkStr(tCount),the width of element tCount of mTabList)
-    if the mouse position is within element tCount of mTabList then
+    if mPosition is within element tCount of mTabList then
       put true into mTabData[mkStr(tCount)]["selected"]
-    --TODO: change data etc...
+      put mTabData[mkStr(tCount)]["controlset"] into tControls
+      put mAppData["savedcontrols"][tControls] into tData
+      put tData["controltype"] into mControlType
+      delete tData["controltype"]
+      setData(tData)
     else
       put false into mTabData[mkStr(tCount)]["selected"]
+      addDebugInfo("tab"&mkStr(tCount),"unselect")
     end if
   end repeat
 end handler
