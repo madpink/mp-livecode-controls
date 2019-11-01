@@ -1215,16 +1215,18 @@ end handler
 
 --SECTION:  SCRIPT VARIABLES
 private variable mCurrentRect as Rectangle
+private variable mControlRect as Rectangle
+private variable mTabRect as Rectangle
+private variable mBottomRect as Rectangle
 private variable mBottomButtonLoc as List
 private variable mLocList as List
 private variable mTabList as List
-private variable mControlRect as Rectangle
 private variable mHandles as List
 private variable mItemOrder as List
 private variable mCurrentTheme as String
-private variable mUseColorThemes as Boolean
 private variable mCurrentControlKey as String
 private variable mPosition as Point
+private variable mUseColorThemes as Boolean
 
 --SECTION:  EVENT HANDLERS
 public handler OnCreate()
@@ -1892,6 +1894,8 @@ public handler paintButtonWheel()
 end handler
 
 public handler drawWheelButton(in pRect as Rectangle)
+   -- TODO: add in text size/font subkeys
+
    variable tIconPath as Path
    if mButtonBarStyle is "Text" then
       setButtonPaint(mCurrentControlKey, "text")
@@ -2409,7 +2413,7 @@ private handler drawBaseItems()
   end if
 
   if mShowBottomButtons then
-    bottomButtons(mBottomButtonTextColor,mBottomButtonBackColor)
+    bottomButtons()
   end if
 
   if mShowTabPages then
@@ -2506,7 +2510,7 @@ private handler displayTitle()
   subtract the height of tTitleRect from the height of mCurrentRect
 end handler
 
-private handler bottomButtons(in pColorFore, in pColorBack)
+private handler bottomButtons()
   variable tFont as Font
   variable tAdjust as Number
   variable tAdjustH as Number
@@ -2533,6 +2537,8 @@ private handler bottomButtons(in pColorFore, in pColorBack)
   put the bottom of mCurrentRect into tBottom
   put the left of mCurrentRect into tLeft
   put the right of mCurrentRect into tRight
+
+  put rectangle [0,tBottom-mBottomButtonHeight-tAdjustH,my width,tBottom-tAdjustH] into mBottomRect
 
   put rectangle [0,0,0,0] into tOkayRect
   if mBottomButtonAlignment is "Right" then
@@ -2573,21 +2579,21 @@ private handler bottomButtons(in pColorFore, in pColorBack)
   end if
 
   if mShowButtons >=1 then
-    setPaint(pColorBack)
+    setPaint(mBottomButtonBackColor)
     fill rounded rectangle path of tOkayRect with radius 23 on this canvas
-    setPaint(pColorFore)
+    setPaint(mBottomButtonTextColor)
     fill text mButton1Text at center of tOkayRect on this canvas
   end if
   if mShowButtons >=2 then
-    setPaint(pColorBack)
+    setPaint(mBottomButtonBackColor)
     fill rounded rectangle path of tCancelRect with radius 23 on this canvas
-    setPaint(pColorFore)
+    setPaint(mBottomButtonTextColor)
     fill text mButton2Text at center of tCancelRect on this canvas
   end if
   if mShowButtons = 3 then
-    setPaint(pColorBack)
+    setPaint(mBottomButtonBackColor)
     fill rounded rectangle path of tThirdRect with radius 23 on this canvas
-    setPaint(pColorFore)
+    setPaint(mBottomButtonTextColor)
     fill text mButton3Text at center of tThirdRect on this canvas
   end if
   subtract the height of tBottomRect from the height of mCurrentRect
@@ -2602,7 +2608,7 @@ private handler displayTabPages()
   variable tCount as Number
   variable tHeight as Number
   variable tWidth as Number
-  --qzqz
+
   put [] into mTabList
   put mCurrentRect into tTabRect
   split mTabPagesSizeMods by "/" into tSizeMods
@@ -2618,6 +2624,8 @@ private handler displayTabPages()
      set the width of tTabRect to mTabPagesWidth
   end if
 
+  put tTabRect into mTabRect
+
   if mTabPagesAlign is "top" then
     subtract mTabPagesBuffer*2 from the width of tTabRect
     add mTabPagesBuffer to the left of tTabRect
@@ -2630,19 +2638,19 @@ private handler displayTabPages()
     subtract the height of tTabRect from the height of mCurrentRect
   else if mTabPagesAlign is "left" then
     add mTabPagesBuffer to the top of tTabRect
-    add mTabPagesBuffer to the left of tTabRect
     subtract mTabPagesBuffer*2 from the height of tTabRect
     subtract mTabPagesBuffer*2 from the width of tTabRect
     subtract mTabPagesBuffer*2 from the width of mCurrentRect
-    subtract the width of tTabRect from the width of mCurrentRect
     set the left of mCurrentRect to the right of tTabRect+mTabPagesBuffer
+    add mTabPagesBuffer to the left of tTabRect
+    subtract the width of tTabRect from the width of mCurrentRect
   else if mTabPagesAlign is "right" then
     add mTabPagesBuffer to the top of tTabRect
     subtract mTabPagesBuffer*2 from the height of tTabRect
     subtract mTabPagesBuffer*2 from the width of tTabRect
+    subtract mTabPagesBuffer*2 from the width of mCurrentRect
     set the right of tTabRect to the right of mCurrentRect
     add mTabPagesBuffer to the right of tTabRect
-    subtract mTabPagesBuffer*2 from the width of mCurrentRect
     subtract the width of tTabRect from the width of mCurrentRect
   end if
 
@@ -2822,14 +2830,13 @@ end handler
 
 --SECTION:  USER INTERATION
 public handler OnMouseUp()
-  variable tPosition as Point
-  put the mouse position into tPosition
+  put the mouse position into mPosition
 
-  if mShowBottomButtons then
+  if mShowBottomButtons and mPosition is within mBottomRect then
     bottomButtonPressed()
   end if
 
-  if mShowTabPages then
+   if mShowTabPages and mPosition is within mTabRect then
     tabButtonPressed()
   end if
 
@@ -2917,15 +2924,16 @@ end handler
 
 public handler tabButtonPressed()
   variable tCount as Number
-
   --FIXME: position in rect not working
-  if the mouse position is within element tCount of mTabList then
-    put true into mTabData[mkStr(tCount)]["selected"]
-    --QZQ
+  repeat with tCount from 1 up to the number of elements in mTabData
+    addDebugInfo("tab"&mkStr(tCount),the width of element tCount of mTabList)
+    if the mouse position is within element tCount of mTabList then
+      put true into mTabData[mkStr(tCount)]["selected"]
     --TODO: change data etc...
-  else
-    put false into mTabData[mkStr(tCount)]["selected"]
-  end if
+    else
+      put false into mTabData[mkStr(tCount)]["selected"]
+    end if
+  end repeat
 end handler
 
 public handler bottomButtonPressed()
