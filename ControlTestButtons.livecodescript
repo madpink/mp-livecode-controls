@@ -68,6 +68,7 @@ command buttonAction pType
          put "numerics" into tData[3]["controlset"]
          set the tabData of widget 1 of stack testStack to tData
          set the showTabPages of widget 1 of stack testStack to true      
+         -- set the tabButtonRound of widget 1 of stack testStack to 222     
          
          quickData   
          break
