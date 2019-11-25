@@ -2,12 +2,12 @@ widget pink.mad.controlpanelbeta
 
 metadata title is "MPUberControlPanel"
 metadata author is "MadPink"
-metadata version is "0.9.56"
+metadata version is "0.9.57"
 metadata description is "Allows for multiple configurable controls that can be dynamically changed"
 metadata preferredSize  is "420,230"
 metadata svgicon is  "M51.3,29.1V24c0-6.1,3.4-11.6,8.9-14.4L57.9,5c-7.2,3.6-11.7,10.9-11.7,19v7.1l1.2,1.2C48.7,31.5,50,30.3,51.3,29.1z M68.1,34.1c0.7,0.4,1.4,0.8,2,1.4c4.4-2.2,8.1-5.6,8.4-9.3c-5.1,2.8-9.3,4.2-12.1,4.9L68.1,34.1  C68.1,34.1,68.1,34.1,68.1,34.1z M28.8,33.3V33c-0.4-1.2-0.7-2.4-0.9-3.6l-8.2-2.7C21.7,28.9,24.9,31.8,28.8,33.3z M43.6,95c2.5,0,4.7-1.3,6-3.2c-0.5-1-0.8-2.2-0.8-3.4c-2.2-0.8-4-2.3-5.1-4.3c-1.5,2.6-4.1,4.4-7.1,4.8  C37.1,92.4,40.1,95,43.6,95z M58.5,95c3.6,0,6.5-2.6,7.1-6c-2.4-0.3-4.5-1.6-6-3.3c-1.8,2.1-4.5,3.4-7.4,3.4c-0.2,0-0.5,0-0.7,0C52,92.4,55,95,58.5,95z  M74.2,79.3c0-0.3,0-0.6-0.1-0.9c-0.3,0-0.5,0-0.8,0c-3.6,0-6.8-2-8.5-4.9c-0.8,1.4-1.9,2.6-3.3,3.4  c0.2,0.8,0.3,1.5,0.3,2.4c0,1.4-0.3,2.8-0.9,4c1.3,1.9,3.5,3.2,6,3.2C71,86.5,74.2,83.3,74.2,79.3z M59.3,79.3c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-3.6,0-6.8-2-8.5-4.9c-0.6,1-1.3,1.9-2.3,2.7  c-0.4,0.9-0.7,2-0.7,3.1c0,4,3.2,7.2,7.2,7.2C56.1,86.5,59.3,83.3,59.3,79.3z M35.1,86.5c4,0,7.2-3.2,7.2-7.2c0-0.4,0-0.8-0.1-1.3c-0.9,0.3-1.9,0.4-2.8,0.4c-2.4,0-4.7-0.9-6.4-2.4  c-1.4,1.2-3.1,2-5,2.3c0,0.3-0.1,0.6-0.1,0.9C27.9,83.3,31.2,86.5,35.1,86.5z M20.4,65.1c-0.6,1-0.9,2.3-0.9,3.5c0,4,3.2,7.2,7.2,7.2c1.8,0,3.4-0.6,4.7-1.7c-1.1-1.6-1.7-3.5-1.7-5.5  c0-1.2,0.2-2.3,0.6-3.4c-1.3-0.1-2.5-0.4-3.6-0.9c-1.3,0.6-2.7,1-4.2,1C21.7,65.3,21,65.3,20.4,65.1z M38.1,62.1c-1.3,1.4-3,2.5-5,3c-0.6,1.1-1,2.3-1,3.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.2-0.3-2.4-0.8-3.4  c-0.1,0-0.3,0-0.4,0C42.5,65.3,39.9,64.1,38.1,62.1z M80.6,68.7c0-1.5-0.5-2.9-1.3-4.1c-1.2,0.5-2.4,0.8-3.8,0.8c-2.5,0-4.7-0.9-6.4-2.4c-1.8,1.3-2.9,3.4-2.9,5.8  c0,4,3.2,7.2,7.2,7.2C77.3,75.9,80.6,72.7,80.6,68.7z M53.5,62c-2.6,1.1-4.4,3.7-4.4,6.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.3-2.5-0.9-3.5  c-0.6,0.1-1.2,0.2-1.8,0.2C57.9,65.3,55.3,64.1,53.5,62z M22.4,62.8c0.6,0,1.1-0.1,1.7-0.2c-1.8-1.8-3-4.3-3-7c0-1,0.2-2.1,0.5-3c-1.7-0.1-3.3-0.7-4.7-1.7  c-1.1,1.3-1.7,2.9-1.7,4.7C15.2,59.5,18.4,62.8,22.4,62.8z M23.7,55.6c0,4,3.2,7.2,7.2,7.2c2.3,0,4.4-1.1,5.7-2.9c-0.7-1.3-1-2.8-1-4.3c0-1.3,0.3-2.6,0.8-3.8  c-1.2,0.5-2.5,0.8-3.9,0.8c-1.8,0-3.6-0.5-5-1.4c-0.9,0.6-1.9,1-3,1.2C24,53.3,23.7,54.4,23.7,55.6z M82.7,55.6c0-1.4-0.4-2.7-1.1-3.8c-1.2,0.5-2.6,0.9-4,0.9c-2.6,0-4.9-1-6.7-2.6c-0.5,0.4-0.9,0.9-1.3,1.4  c0.6,1.3,1,2.7,1,4.2s-0.4,2.9-1,4.2c1.3,1.8,3.4,3,5.8,3C79.5,62.8,82.7,59.5,82.7,55.6z M54.5,52.1c0.4,1.1,0.6,2.2,0.6,3.4s-0.2,2.4-0.6,3.4c1.2,2.2,3.6,3.8,6.3,3.8c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.5-1-3.6  c-1.1,0.4-2.2,0.6-3.4,0.6c-2.7,0-5.2-1.1-7-2.9C55.8,50.3,55,51.1,54.5,52.1z M38.2,55.6c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.3-0.4-2.6-1-3.7c-1.1,0.4-2.3,0.7-3.6,0.7c-2.7,0-5.1-1.1-6.9-2.8  C39.3,51.1,38.2,53.2,38.2,55.6z M22.4,50c1,0,2-0.2,2.9-0.6c-1.6-1.7-2.6-4.1-2.6-6.6s1-4.9,2.6-6.6c-0.9-0.4-1.9-0.6-2.9-0.6c-4,0-7.2,3.2-7.2,7.2  C15.2,46.8,18.4,50,22.4,50z M37.7,37.9c-2.5-0.2-5-0.9-7.3-2c-3,0.9-5.2,3.6-5.2,6.9c0,4,3.2,7.2,7.2,7.2c2.7,0,5.1-1.5,6.3-3.8  c-0.4-1.1-0.6-2.2-0.6-3.4s0.2-2.4,0.6-3.4C38.5,38.8,38.2,38.4,37.7,37.9z M72.2,38.1c0.8,1.4,1.2,3,1.2,4.7s-0.5,3.3-1.2,4.7c1.3,1.5,3.3,2.5,5.4,2.5c4,0,7.2-3.2,7.2-7.2c0-4-3.2-7.2-7.2-7.2  C75.5,35.6,73.5,36.6,72.2,38.1z M63.7,50c4,0,7.2-3.2,7.2-7.2c0-2.9-1.8-5.5-4.3-6.6c-2.7,1-5.4,1.5-8.2,1.7c-0.5,0.5-0.8,1.1-1.1,1.7  c0.3,1,0.5,2.1,0.5,3.2c0,1.1-0.2,2.2-0.5,3.2C58.4,48.4,60.8,50,63.7,50z M47,36.5c-1.3,0.5-2.7,0.9-4.1,1.2c-1.3,1.3-2.2,3.1-2.2,5.1c0,4,3.2,7.2,7.2,7.2c4,0,7.2-3.2,7.2-7.2c0-1.9-0.8-3.7-2-5  C51.1,37.6,49,37.2,47,36.5z M49.1,34.3c0,0.1,0,0.1,0,0.2c5.2,1.4,10.8,1.3,16-0.5l-6.4-11.1C56.8,27.1,53,31.6,49.1,34.3z M45.6,34.3L31.3,19.9c-1.7,4.4-1.5,9.5,0.5,13.8C36.1,35.7,41.2,35.9,45.6,34.3z"
 
-constant kVersion is "0.9.56 beta 2019.10.31.1342"
+constant kVersion is "0.9.57 beta 2019.11.24.1405"
 
 use com.livecode.math
 use com.livecode.canvas
@@ -317,34 +317,34 @@ end handler
 
 --SECTION: BOTTOM BUTTON PROPS
 
-property showBottomButtons  get mShowBottomButtons  set setShowBottonButtons
-metadata showBottomButtons.editor  is "com.livecode.pi.boolean"
-metadata showBottomButtons.default  is "true"
-metadata showBottomButtons.label  is "Show Bottom Buttons"
-metadata showBottomButtons.section  is "Table"
-private variable mShowBottomButtons as Boolean
+property showConfirmButtons  get mShowConfirmButtons  set setShowBottonButtons
+metadata showConfirmButtons.editor  is "com.livecode.pi.boolean"
+metadata showConfirmButtons.default  is "true"
+metadata showConfirmButtons.label  is "Show Confirm Buttons"
+metadata showConfirmButtons.section  is "Table"
+private variable mShowConfirmButtons as Boolean
 private handler setShowBottonButtons(in pVal as Boolean)
-  put pVal into mAppData["props"]["showBottomButtons"]
-  put pVal into mShowBottomButtons
+  put pVal into mAppData["props"]["showConfirmButtons"]
+  put pVal into mShowConfirmButtons
   redraw all
 end handler
 
-property bottomButtonTextSize  get mBottomButtonTextSize  set setBottomButtonTextSize
-metadata bottomButtonTextSize.editor  is "com.livecode.pi.number"
-metadata bottomButtonTextSize.default  is "13"
-metadata bottomButtonTextSize.label  is "Bottom Button Text Size"
-metadata bottomButtonTextSize.section  is "Text"
-private variable mBottomButtonTextSize as Number
-private handler setBottomButtonTextSize(in pVal as Number)
-  put pVal into mAppData["props"]["bottomButtonTextSize"]
-  put pVal into mBottomButtonTextSize
+property confirmButtonTextSize  get mConfirmButtonTextSize  set setConfirmButtonTextSize
+metadata confirmButtonTextSize.editor  is "com.livecode.pi.number"
+metadata confirmButtonTextSize.default  is "13"
+metadata confirmButtonTextSize.label  is "Confirm Button Text Size"
+metadata confirmButtonTextSize.section  is "Text"
+private variable mConfirmButtonTextSize as Number
+private handler setConfirmButtonTextSize(in pVal as Number)
+  put pVal into mAppData["props"]["confirmButtonTextSize"]
+  put pVal into mConfirmButtonTextSize
   redraw all
 end handler
 
 property button1Text  get mButton1Text  set setButtonOne
 metadata button1Text.editor  is "com.livecode.pi.text"
 metadata button1Text.default  is "OK"
-metadata button1Text.label  is "Bottom Button 1 Text"
+metadata button1Text.label  is "Confirm Button 1 Text"
 metadata button1Text.section  is "Table"
 private variable mButton1Text as String
 private handler setButtonOne(in pVal as String)
@@ -356,7 +356,7 @@ end handler
 property button2Text  get mButton2Text  set setButtonTwo
 metadata button2Text.editor  is "com.livecode.pi.text"
 metadata button2Text.default  is "Cancel"
-metadata button2Text.label  is "Bottom Button 2 Text"
+metadata button2Text.label  is "Confirm Button 2 Text"
 metadata button2Text.section  is "Table"
 private variable mButton2Text as String
 private handler setButtonTwo(in pVal as String)
@@ -368,7 +368,7 @@ end handler
 property button3Text  get mButton3Text  set setButtonThree
 metadata button3Text.editor  is "com.livecode.pi.text"
 metadata button3Text.default  is "Other"
-metadata button3Text.label  is "Bottom Button 3 Text"
+metadata button3Text.label  is "Confirm Button 3 Text"
 metadata button3Text.section  is "Table"
 private variable mButton3Text as String
 private handler setButtonThree(in pVal as String)
@@ -381,7 +381,7 @@ property showButtons  get mShowButtons  set setShowButtons
 metadata showButtons.editor  is "com.livecode.pi.enum"
 metadata showButtons.options  is "1,2,3"
 metadata showButtons.default  is "2"
-metadata showButtons.label  is "Bottom Buttons-Number"
+metadata showButtons.label  is "Confirm Buttons-Number"
 metadata showButtons.section  is "Table"
 private variable mShowButtons as Number
 private handler setShowButtons(in pVal as Number)
@@ -390,78 +390,78 @@ private handler setShowButtons(in pVal as Number)
   redraw all
 end handler
 
-property bottomButtonAlignment  get mBottomButtonAlignment  set setBottomButtonAlignment
-metadata bottomButtonAlignment.editor  is "com.livecode.pi.enum"
-metadata bottomButtonAlignment.options  is "Left,Right,Center"
-metadata bottomButtonAlignment.default  is "Right"
-metadata bottomButtonAlignment.label  is "Bottom Button Alignment"
-metadata bottomButtonAlignment.section  is "Table"
-private variable mBottomButtonAlignment as String
-private handler setBottomButtonAlignment(in pVal as String)
-  put pVal into mAppData["props"]["bottomButtonAlignment"]
-  put pVal into mBottomButtonAlignment
+property confirmButtonAlignment  get mConfirmButtonAlignment  set setConfirmButtonAlignment
+metadata confirmButtonAlignment.editor  is "com.livecode.pi.enum"
+metadata confirmButtonAlignment.options  is "Left,Right,Center"
+metadata confirmButtonAlignment.default  is "Right"
+metadata confirmButtonAlignment.label  is "Confirm Button Alignment"
+metadata confirmButtonAlignment.section  is "Table"
+private variable mConfirmButtonAlignment as String
+private handler setConfirmButtonAlignment(in pVal as String)
+  put pVal into mAppData["props"]["ConfirmButtonAlignment"]
+  put pVal into mConfirmButtonAlignment
   redraw all
 end handler
 
-property bottomButtonWidth  get mBottomButtonWidth  set setBottomButtonWidth
-metadata bottomButtonWidth.editor  is "com.livecode.pi.number"
-metadata bottomButtonWidth.default  is "60"
-metadata bottomButtonWidth.label  is "Bottom Button Width"
-metadata bottomButtonWidth.section  is "Table"
-private variable mBottomButtonWidth as Number
-private handler setBottomButtonWidth(in pVal as Number)
-  put pVal into mAppData["props"]["bottomButtonWidth"]
-  put pVal into mBottomButtonWidth
+property confirmButtonWidth  get mConfirmButtonWidth  set setConfirmButtonWidth
+metadata confirmButtonWidth.editor  is "com.livecode.pi.number"
+metadata confirmButtonWidth.default  is "60"
+metadata confirmButtonWidth.label  is "Confirm Button Width"
+metadata confirmButtonWidth.section  is "Table"
+private variable mConfirmButtonWidth as Number
+private handler setConfirmButtonWidth(in pVal as Number)
+  put pVal into mAppData["props"]["ConfirmButtonWidth"]
+  put pVal into mConfirmButtonWidth
   redraw all
 end handler
 
-property bottomButtonHeight  get mBottomButtonHeight  set setBottomButtonHeight
-metadata bottomButtonHeight.editor  is "com.livecode.pi.number"
-metadata bottomButtonHeight.default  is "30"
-metadata bottomButtonHeight.label  is "Bottom Button Height"
-metadata bottomButtonHeight.section  is "Table"
-private variable mBottomButtonHeight as Number
-private handler setBottomButtonHeight(in pVal as Number)
-  put pVal into mAppData["props"]["bottomButtonHeight"]
-  put pVal into mBottomButtonHeight
+property confirmButtonHeight  get mConfirmButtonHeight  set setConfirmButtonHeight
+metadata confirmButtonHeight.editor  is "com.livecode.pi.number"
+metadata confirmButtonHeight.default  is "30"
+metadata confirmButtonHeight.label  is "Confirm Button Height"
+metadata confirmButtonHeight.section  is "Table"
+private variable mConfirmButtonHeight as Number
+private handler setConfirmButtonHeight(in pVal as Number)
+  put pVal into mAppData["props"]["ConfirmButtonHeight"]
+  put pVal into mConfirmButtonHeight
   redraw all
 end handler
 
-property bottomButtonBuffer  get mBottomButtonBuffer  set setBottomButtonBuffer
-metadata bottomButtonBuffer.editor  is "com.livecode.pi.number"
-metadata bottomButtonBuffer.default  is "3"
-metadata bottomButtonBuffer.label  is "Bottom Button Buffer/Offset"
-metadata bottomButtonBuffer.section  is "Table"
-private variable mBottomButtonBuffer as Number
-private handler setBottomButtonBuffer(in pVal as Number)
-  put pVal into mAppData["props"]["bottomButtonBuffer"]
-  put pVal into mBottomButtonBuffer
+property confirmButtonBuffer  get mConfirmButtonBuffer  set setConfirmButtonBuffer
+metadata confirmButtonBuffer.editor  is "com.livecode.pi.number"
+metadata confirmButtonBuffer.default  is "3"
+metadata confirmButtonBuffer.label  is "Confirm Button Buffer/Offset"
+metadata confirmButtonBuffer.section  is "Table"
+private variable mConfirmButtonBuffer as Number
+private handler setConfirmButtonBuffer(in pVal as Number)
+  put pVal into mAppData["props"]["ConfirmButtonBuffer"]
+  put pVal into mConfirmButtonBuffer
   redraw all
 end handler
 
-property bottomButtonBackColor  get mBottomButtonBackColor  set setBottomButtonBackColor
-metadata bottomButtonBackColor.editor  is "com.livecode.pi.enum"
-metadata bottomButtonBackColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
-metadata bottomButtonBackColor.default  is "fore"
-metadata bottomButtonBackColor.label  is "Bottom Button Background Color"
-metadata bottomButtonBackColor.section  is "Colors"
-private variable mBottomButtonBackColor as String
-private handler setBottomButtonBackColor(in pVal as String)
-  put pVal into mAppData["props"]["bottomButtonBackColor"]
-  put pVal into mBottomButtonBackColor
+property confirmButtonBackColor  get mConfirmButtonBackColor  set setConfirmButtonBackColor
+metadata confirmButtonBackColor.editor  is "com.livecode.pi.enum"
+metadata confirmButtonBackColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata confirmButtonBackColor.default  is "fore"
+metadata confirmButtonBackColor.label  is "Confirm Button Background Color"
+metadata confirmButtonBackColor.section  is "Colors"
+private variable mConfirmButtonBackColor as String
+private handler setConfirmButtonBackColor(in pVal as String)
+  put pVal into mAppData["props"]["ConfirmButtonBackColor"]
+  put pVal into mConfirmButtonBackColor
   redraw all
 end handler
 
-property bottomButtonTextColor  get mBottomButtonTextColor  set setBottomButtonTextColor
-metadata bottomButtonTextColor.editor  is "com.livecode.pi.enum"
-metadata bottomButtonTextColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
-metadata bottomButtonTextColor.default  is "back"
-metadata bottomButtonTextColor.label  is "Bottom Button Text Color"
-metadata bottomButtonTextColor.section  is "Colors"
-private variable mBottomButtonTextColor as String
-private handler setBottomButtonTextColor(in pVal as String)
-  put pVal into mAppData["props"]["bottomButtonTextColor"]
-  put pVal into mBottomButtonTextColor
+property confirmButtonTextColor  get mConfirmButtonTextColor  set setConfirmButtonTextColor
+metadata confirmButtonTextColor.editor  is "com.livecode.pi.enum"
+metadata confirmButtonTextColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite,clear"
+metadata confirmButtonTextColor.default  is "border"
+metadata confirmButtonTextColor.label  is "Confirm Button Text Color"
+metadata confirmButtonTextColor.section  is "Colors"
+private variable mConfirmButtonTextColor as String
+private handler setConfirmButtonTextColor(in pVal as String)
+  put pVal into mAppData["props"]["ConfirmButtonTextColor"]
+  put pVal into mConfirmButtonTextColor
   redraw all
 end handler
 
@@ -1058,6 +1058,18 @@ private handler setControlIconB(in pVal as String)
   redraw all
 end handler
 
+property controlIconC    get mControlIconC   set setControlIconC
+metadata controlIconC.editor   is "com.livecode.pi.text"
+metadata controlIconC.default   is "builtin:check"
+metadata controlIconC.label    is "Control - Icon C"
+metadata controlIconC.section   is "Basic"
+private variable mControlIconC as String
+private handler setControlIconC(in pVal as String)
+  put pVal into mAppData["props"]["controlIconC"]
+  put pVal into mControlIconC
+  redraw all
+end handler
+
 property controlIconColor  get mControlIconColor  set setControlIconColor
 metadata controlIconColor.editor  is "com.livecode.pi.enum"
 metadata controlIconColor.options  is "fore,back,top,bottom,shadow,focus,border,hilite"
@@ -1117,6 +1129,7 @@ metadata buttonBarType.label is "ButtonBar Type"
 metadata buttonBarType.section is "Basic"
 private variable mButtonBarType as String
 private handler setBarType(in pText as String)
+  put pText into mAppData["props"]["buttonBarType"]
   put pText into mButtonBarType
   -- if pText is "EntryPad" then
   --   pinPadDefaults()
@@ -1215,7 +1228,7 @@ end handler
 
 --SECTION:  SCRIPT VARIABLES
 private variable mCurrentRect as Rectangle
-private variable mBottomButtonLoc as List
+private variable mConfirmButtonLoc as List
 private variable mLocList as List
 private variable mTabList as List
 private variable mControlRect as Rectangle
@@ -1279,19 +1292,19 @@ public handler OnSave(out rProperties as Array)
   put mTitleTextFont into rProperties["titleTextFont"]
   put mTitleTextColor into rProperties["titleTextColor"]
 
-  --Bottom Buttons
-  put mShowBottomButtons into rProperties["showBottomButtons"]
+  --Confirm Buttons
+  put mShowConfirmButtons into rProperties["showConfirmButtons"]
   put mShowButtons into rProperties["showButtons"]
-  put mBottomButtonTextSize into rProperties["bottomButtonTextSize"]
+  put mConfirmButtonTextSize into rProperties["confirmButtonTextSize"]
   put mButton1Text into rProperties["buttonOne"]
   put mButton2Text into rProperties["buttonTwo"]
   put mButton3Text into rProperties["buttonThree"]
-  put mBottomButtonAlignment into rProperties["bottomButtonAlignment"]
-  put mBottomButtonWidth into rProperties["bottomButtonWidth"]
-  put mBottomButtonHeight into rProperties["bottomButtonHeight"]
-  put mBottomButtonBuffer into rProperties["bottomButtonBuffer"]
-  put mBottomButtonBackColor into rProperties["bottomButtonBackColor"]
-  put mBottomButtonTextColor into rProperties["bottomButtonTextColor"]
+  put mConfirmButtonAlignment into rProperties["confirmButtonAlignment"]
+  put mConfirmButtonWidth into rProperties["confirmButtonWidth"]
+  put mConfirmButtonHeight into rProperties["confirmButtonHeight"]
+  put mConfirmButtonBuffer into rProperties["confirmButtonBuffer"]
+  put mConfirmButtonBackColor into rProperties["confirmButtonBackColor"]
+  put mConfirmButtonTextColor into rProperties["confirmButtonTextColor"]
 
   --Overlay
   put mOverlay into rProperties["overlayMode"]
@@ -1316,6 +1329,7 @@ public handler OnSave(out rProperties as Array)
   put mControlHiliteColor into rProperties["controlHiliteColor"]
   put mControlIconA into rProperties["controlIconA"]
   put mControlIconB into rProperties["controlIconB"]
+  put mControlIconC into rProperties["controlIconC"]
   put mControlIconColor into rProperties["controlIconColor"]
   put mControlItemSpacing into rProperties["controlItemSpacing"]
   put mControlObjectColor into rProperties["controlObjectColor"]
@@ -1385,19 +1399,19 @@ private handler loadPropsFromAppData()
   put pickProp("titleTextFont","Arial") into mTitleTextFont
   put pickProp("titleTextColor","border") into mTitleTextColor
 
-  --Bottom Buttons
-  put pickProp("showBottomButtons",true) into mShowBottomButtons
+  --Confirm Buttons
+  put pickProp("showConfirmButtons",true) into mShowConfirmButtons
   put pickProp("showButtons","2Buttons") into mShowButtons
-  put pickProp("bottomButtonTextSize",15) into mBottomButtonTextSize
+  put pickProp("ConfirmButtonTextSize",15) into mConfirmButtonTextSize
   put pickProp("buttonOne","Okay") into mButton1Text
   put pickProp("buttonTwo","Cancel") into mButton2Text
   put pickProp("buttonThree","Other") into mButton3Text
-  put pickProp("bottomButtonAlignment","Right") into mBottomButtonAlignment
-  put pickProp("bottomButtonWidth",60) into mBottomButtonWidth
-  put pickProp("bottomButtonHeight",30) into mBottomButtonHeight
-  put pickProp("bottomButtonBuffer",3) into mBottomButtonBuffer
-  put pickProp("bottomButtonBackColor","fore") into mBottomButtonBackColor
-  put pickProp("bottomButtonTextColor","back") into mBottomButtonTextColor
+  put pickProp("ConfirmButtonAlignment","Right") into mConfirmButtonAlignment
+  put pickProp("ConfirmButtonWidth",60) into mConfirmButtonWidth
+  put pickProp("ConfirmButtonHeight",30) into mConfirmButtonHeight
+  put pickProp("ConfirmButtonBuffer",3) into mConfirmButtonBuffer
+  put pickProp("ConfirmButtonBackColor","fore") into mConfirmButtonBackColor
+  put pickProp("ConfirmButtonTextColor","back") into mConfirmButtonTextColor
 
   --Overlay
   put pickProp("overlayMode",false) into mOverlay
@@ -1405,7 +1419,7 @@ private handler loadPropsFromAppData()
   put pickProp("overlayWidth",300) into mBoxWidth
   put pickProp("overlayAlign","center center") into mOverlayAlign
   put pickProp("overlayOffset",13) into mBoxOffset
-  put pickProp("overlayColor","bottom") into mOverlayColor
+  put pickProp("overlayColor","Confirm") into mOverlayColor
   put pickProp("overlayOpacity",0) into mOverlayOpacity
 
   --OUTPUT BOX
@@ -1422,6 +1436,7 @@ private handler loadPropsFromAppData()
   put pickProp("controlHiliteColor","hilite") into mControlHiliteColor
   put pickProp("controlIconA","iconfam1:updown:plus") into mControlIconA
   put pickProp("controlIconB","iconfam1:updown:minus") into mControlIconB
+  put pickProp("controlIconC","builtin:check") into mControlIconC
   put pickProp("controlIconColor","fore") into mControlIconColor
   put pickProp("controlItemSpacing",8) into mControlItemSpacing
   put pickProp("controlObjectColor","fore") into mControlObjectColor
@@ -1827,7 +1842,7 @@ private handler dialogBoxSVG()
   put rectangle [mBorder*2,mBorder*2,mBorder*2+mControlObjectSize,mBorder*2+mControlObjectSize] into tIconRect
   set the left of tIconRect to the left of mCurrentRect+(mBorder*2)
 
-  if mDialogIconAlign is "bottom" then
+  if mDialogIconAlign is "Confirm" then
     set the bottom of tIconRect to the bottom of mCurrentRect - (mBorder*2)
   else if mDialogIconAlign is "center" then
     set the top of tIconRect to (the top of mCurrentRect + (the height of mCurrentRect/2) - (mControlObjectSize/2))
@@ -1848,12 +1863,27 @@ end handler
 public handler paintButtonWheel()
   variable tCenter as Point
   variable tBigRad as Number
+  variable tCenterRad as Number
   variable tRect as Rectangle
+  variable tCenterRect as Rectangle
   variable tInnerRad as Number
   variable tIconPath as Path
   variable tBNum as Number
   variable tBCenters as List
   variable tButtonNumber as Number
+  variable tFont as Font
+
+  -- TODO: Update how Button Wheel functions...
+  /*
+  Current method acts like action bar
+
+  use buttonBarType
+  DONE 1. add single hilite response
+  DONE 2. add multiple hilite responses
+  DONE 3. add center circle for action and single responses (or just single?)
+  DONE 4. post some sort of action if center button is pressed (possibly just use the bottom button #1)
+
+  */
 
   put [] into mLocList
 
@@ -1867,59 +1897,88 @@ public handler paintButtonWheel()
   setPaint(mMainSquareColor)
   fill circle path centered at point [(my width/2),(my height/2)] with radius tBigRad on this canvas
 
-  if mShowOutputBox and not(mButtonBarType is "Multiple") then
-    setPaint("border")  -- TODO: add property to this paint
-    put centerRectGen() into tRect
-    fill rounded rectangle path of tRect with radius tBigRad on this canvas
-    setPaint(mMainSquareColor)
-  end if
-
   put tBigRad - tBigRad/4 - mControlItemSpacing into tInnerRad
   put the number of elements in mData into tBNum
   put regularPoints([tBNum,tInnerRad,my width/2,my height/2]) into tBCenters
-
+  put [] into mConfirmButtonLoc
+  push rectangle [0,0,0,0] onto mConfirmButtonLoc
   repeat with tButtonNumber from 1 up to tBNum
+    put 1 into mShowButtons
     put mkStr(tButtonNumber) into mCurrentControlKey
     setButtonPaint(mCurrentControlKey, "button")
     put tBCenters[tButtonNumber] into tCenter
     fill circle path centered at tBCenters[tButtonNumber] with radius mControlObjectSize on this canvas
     setPaint("back")
     put buttonRect(tBCenters[tButtonNumber]) into tRect
-
     drawWheelButton(tRect)
+
+    if mShowConfirmButtons and mData[mCurrentControlKey]["selected"] then
+      put mData[mCurrentControlKey] into mData[mkStr(tBNum + 1)]
+      put mkStr(tBNum + 1) into mCurrentControlKey
+      put true into mData[mkStr(tBNum + 1)]["selected"]
+      put mConfirmButtonBackColor into mData[mCurrentControlKey]["selectedbuttoncolor"]
+      put mConfirmButtonTextColor into mData[mCurrentControlKey]["selectediconcolor"]
+      put mTitleTextColor into mData[mCurrentControlKey]["selectedtextcolor"]
+      put mTitleTextFont into mData[mCurrentControlKey]["textfont"]
+      put mTitleTextSize into mData[mCurrentControlKey]["textsize"]
+      put 1 into mShowButtons
+      setPaint(mConfirmButtonBackColor)  -- TODO: add property to this paint
+      put [] into mConfirmButtonLoc
+      put centerRectGen() into tCenterRect
+      push tCenterRect onto mConfirmButtonLoc
+      fill rounded rectangle path of tCenterRect with radius tBigRad on this canvas
+
+      if mShowOutputBox then
+        put mControlIconC into mData[mCurrentControlKey]["selectedicon"]
+        put mButton1Text into mData[mCurrentControlKey]["label"]
+      end if
+
+      drawWheelButton(tCenterRect)
+      -- TODO: add an option to use a static "OK option"
+      -- TODO: add an "OK icon"      drawWheelButton(tCenterRect)
+      delete mData[mCurrentControlKey]
+    end if
     push tRect onto mLocList
   end repeat
+
 end handler
 
 public handler drawWheelButton(in pRect as Rectangle)
-   variable tIconPath as Path
-   if mButtonBarStyle is "Text" then
-      setButtonPaint(mCurrentControlKey, "text")
-      set the size of the font of this canvas to mControlTextSize
-      mpWrapTextinRect(pRect,mData[mCurrentControlKey]["label"],"center center")
-   else if mButtonBarStyle is "Icon" then
-      add the width of pRect*(mControlValueWidth/200) to the top of pRect
-      add the height of pRect*(mControlValueWidth/200) to the left of pRect
-      subtract the width of pRect*(mControlValueWidth/100) from the width of pRect
-      subtract the height of pRect*(mControlValueWidth/100) from the height of pRect
-      setButtonPaint(mCurrentControlKey, "icon")
-      put getIconPath(mData[mCurrentControlKey]["selectedicon"], mControlIconA) into tIconPath
-      constrainPathToRect(pRect, tIconPath)
-      fill tIconPath on this canvas
+  variable tIcon as String
+  variable tIconPath as Path
+
+  -- TODO: add fonts
+
+  if mData[mCurrentControlKey]["textsize"] is a number then
+    set the size of the font of this canvas to mData[mCurrentControlKey]["textsize"]
+  else
+    set the size of the font of this canvas to mControlTextSize
+  end if
+
+  add the height of pRect*(mControlValueWidth/200) to the top of pRect
+  add the width of pRect*(mControlValueWidth/200) to the left of pRect
+  subtract the width of pRect*(mControlValueWidth/100) from the width of pRect
+  subtract the height of pRect*(mControlValueWidth/100) from the height of pRect
+
+  if mButtonBarStyle is "Text" then
+    setButtonPaint(mCurrentControlKey, "text")
+    mpWrapTextinRect(pRect,mData[mCurrentControlKey]["label"],"center center")
+  else if mButtonBarStyle is "Icon" then
+    setButtonPaint(mCurrentControlKey, "icon")
+    put selectIcon() into tIconPath
+    constrainPathToRect(pRect, tIconPath)
+    fill tIconPath on this canvas
    else  -- icon and text
-      setButtonPaint(mCurrentControlKey, "icon")
-      add 5 to the top of pRect
-      set the height of pRect to (the height of pRect*.6)
-
-      put getIconPath(mData[mCurrentControlKey]["selectedicon"], mControlIconA) into tIconPath
-      constrainPathToRect(pRect, tIconPath)
-      fill tIconPath on this canvas
-
-      setButtonPaint(mCurrentControlKey, "text")
-      set the top of pRect to the bottom of pRect+2
-      set the size of the font of this canvas to mControlTextSize
-      set the height of pRect to (the height of pRect*.5)
-      mpWrapTextinRect(pRect,mData[mCurrentControlKey]["label"],"center center")
+     setButtonPaint(mCurrentControlKey, "icon")
+     add 5 to the top of pRect
+     set the height of pRect to (the height of pRect*.7)
+     put selectIcon() into tIconPath
+     constrainPathToRect(pRect, tIconPath)
+     fill tIconPath on this canvas
+     setButtonPaint(mCurrentControlKey, "text")
+     set the top of pRect to the bottom of pRect+2
+     set the height of pRect to (the height of pRect*.5)
+     mpWrapTextinRect(pRect,mData[mCurrentControlKey]["label"],"center center")
    end if
 end handler
 
@@ -1954,6 +2013,14 @@ handler regularPoints (in pL as List) returns List
   return tPts
 end handler
 
+private handler drawCenterButton()
+  if mData[mCurrentControlKey]["selected"] is true then
+    chooseAndSetPaint(mData[mCurrentControlKey]["selectedbuttoncolor"],mControlValueColor)
+  else
+    chooseAndSetPaint(mData[mCurrentControlKey]["unselectedbuttoncolor"],mControlObjectColor)
+  end if
+end handler
+
 private handler centerRectGen() returns Rectangle
    variable tBigX as Number
    variable tBigY as Number
@@ -1969,6 +2036,7 @@ private handler centerRectGen() returns Rectangle
 
    put rectangle [0,0,1,1] into tRect
    put tBigRad*.85 into tBigRad
+   subtract mConfirmButtonBuffer from tBigRad
    set the width of tRect to tBigRad
    set the height of tRect to tBigRad
    set the left of tRect to tBigX-tBigRad/2
@@ -2066,6 +2134,16 @@ private handler selectionIcon(in pRect as Rectangle)
   fill tIconPath on this canvas
 end handler
 
+private handler selectIcon()
+  variable tPath as Path
+  if mData[mCurrentControlKey]["selected"] then
+    put getIconPath(mData[mCurrentControlKey]["selectedicon"], mControlIconA) into tPath
+  else
+    put getIconPath(mData[mCurrentControlKey]["unselectedicon"], mControlIconB) into tPath
+  end if
+  return tPath
+end handler
+
 private handler getIconPath(in pIcon as String, in pDefault as String)
   variable tPath as Path
   variable tList as List
@@ -2098,11 +2176,17 @@ private handler setButtonPaint(in pKey as String,in pType as String)
     else
       chooseAndSetPaint(mData[pKey]["unselectedbuttoncolor"],mControlObjectColor)
     end if
-  else if pType is "icon" or pType is "text" then
+  else if pType is "icon" then
     if mData[pKey]["selected"] is true then
       chooseAndSetPaint(mData[pKey]["selectediconcolor"],mControlHiliteColor)
     else
       chooseAndSetPaint(mData[pKey]["unselectediconcolor"],mControlTextColor)
+    end if
+  else if pType is "text" then
+    if mData[pKey]["selected"] is true then
+      chooseAndSetPaint(mData[pKey]["selectedtextcolor"],mControlHiliteColor)
+    else
+      chooseAndSetPaint(mData[pKey]["unselectedtextcolor"],mControlTextColor)
     end if
   else if pType is "tabbutton" then
     if mTabData[pKey]["selected"] is true then
@@ -2110,7 +2194,7 @@ private handler setButtonPaint(in pKey as String,in pType as String)
     else
       chooseAndSetPaint(mTabData[pKey]["unselectedbuttoncolor"],mControlObjectColor)
     end if
-else if pType is "tabtext" then
+  else if pType is "tabtext" then
     if mTabData[pKey]["selected"] is true then
       chooseAndSetPaint(mTabData[pKey]["selectedtextcolor"],mControlHiliteColor)
     else
@@ -2384,13 +2468,13 @@ private handler paintColors(in pType as String)
   put mCurrentRect into tColorRect
   set the height of tColorRect to tHeight
   put removeRectFromRect(mCurrentRect,tColorRect,"above") into mCurrentRect
-  setPaint("bottom")
+  setPaint("Confirm")
   fill rounded rectangle path of tColorRect with radius mRadius on this canvas
   setPaint("top")
   fill text mControlText at center of tColorRect on this canvas
 end handler
 
---SECTION: DRAW BASE, TITLE, BOTTOM BUTTONS, OVERLAY, OUTPUT BOX
+--SECTION: DRAW BASE, TITLE, CONFIRM BUTTONS, OVERLAY, OUTPUT BOX
 private handler drawBaseItems()
   put rectangle [0,0,my width,my height] into mCurrentRect
 
@@ -2401,19 +2485,19 @@ private handler drawBaseItems()
   put mpDrawBase("border","back",mBorder,mRadius,mCurrentRect) into mCurrentRect
 
   if mShowTitle then
-    displayTitle()
+    drawTitle()
   end if
 
   if mShowOutputBox then
-    displayOutputBox()
+    drawOutputBox()
   end if
 
-  if mShowBottomButtons then
-    bottomButtons(mBottomButtonTextColor,mBottomButtonBackColor)
+  if mShowConfirmButtons then
+    drawConfirmButtons(mConfirmButtonTextColor,mConfirmButtonBackColor)
   end if
 
   if mShowTabPages then
-    displayTabPages()
+    drawTabPages()
   end if
 
   add mWorkingAreaOffsetH to the top of mCurrentRect
@@ -2456,7 +2540,7 @@ private handler overlayAdjust()
   split mOverlayAlign by " " into tAlign
   if element 1 of tAlign is "center" then
     set the top of mCurrentRect to (my height/2)-(mBoxHeight/2)
-  else if element 1 of tAlign is "bottom" then
+  else if element 1 of tAlign is "Confirm" then
     set the bottom of mCurrentRect to my height
     subtract mBoxOffset from the bottom of mCurrentRect
   else if element 1 of tAlign is "top" then
@@ -2492,7 +2576,7 @@ private handler mpDrawBase(in pFore as String, in pBack as String, in pBorder as
   return tRect
 end handler
 
-private handler displayTitle()
+private handler drawTitle()
   variable tTitleRect as Rectangle
 
   setPaint(mTitleTextColor)
@@ -2506,7 +2590,7 @@ private handler displayTitle()
   subtract the height of tTitleRect from the height of mCurrentRect
 end handler
 
-private handler bottomButtons(in pColorFore, in pColorBack)
+private handler drawConfirmButtons(in pColorFore, in pColorBack)
   variable tFont as Font
   variable tAdjust as Number
   variable tAdjustH as Number
@@ -2521,13 +2605,13 @@ private handler bottomButtons(in pColorFore, in pColorBack)
   variable tCancelRect as Rectangle
   variable tThirdRect as Rectangle
 
-  put [] into mBottomButtonLoc
+  put [] into mConfirmButtonLoc
 
   put mBorder into tAdjustH
   put mBorder+7 into tAdjust
 
   put my font into tFont
-  set the size of tFont to mBottomButtonTextSize
+  set the size of tFont to mConfirmButtonTextSize
   set the font of this canvas to tFont
 
   put the bottom of mCurrentRect into tBottom
@@ -2535,14 +2619,14 @@ private handler bottomButtons(in pColorFore, in pColorBack)
   put the right of mCurrentRect into tRight
 
   put rectangle [0,0,0,0] into tOkayRect
-  if mBottomButtonAlignment is "Right" then
-  put rectangle [tRight-mBottomButtonWidth,tBottom-mBottomButtonHeight-tAdjustH,tRight,tBottom-tAdjustH] into tOkayRect
-  else if mBottomButtonAlignment is "Left" then
-  put rectangle [tLeft,tBottom-mBottomButtonHeight-tAdjustH,tLeft+mBottomButtonWidth,tBottom-tAdjustH] into tOkayRect
-  else if mBottomButtonAlignment is "Center" then
+  if mConfirmButtonAlignment is "Right" then
+  put rectangle [tRight-mConfirmButtonWidth,tBottom-mConfirmButtonHeight-tAdjustH,tRight,tBottom-tAdjustH] into tOkayRect
+  else if mConfirmButtonAlignment is "Left" then
+  put rectangle [tLeft,tBottom-mConfirmButtonHeight-tAdjustH,tLeft+mConfirmButtonWidth,tBottom-tAdjustH] into tOkayRect
+  else if mConfirmButtonAlignment is "Center" then
     put the width of mCurrentRect/2 + tLeft into tCenter
-    put tCenter - mBottomButtonWidth/2 into tLeftOfCenter
-    put rectangle [tLeftOfCenter,tBottom-mBottomButtonHeight-tAdjustH,tLeftOfCenter+mBottomButtonWidth,tBottom-tAdjustH] into tOkayRect
+    put tCenter - mConfirmButtonWidth/2 into tLeftOfCenter
+    put rectangle [tLeftOfCenter,tBottom-mConfirmButtonHeight-tAdjustH,tLeftOfCenter+mConfirmButtonWidth,tBottom-tAdjustH] into tOkayRect
   end if
 
   put tOkayRect into tCancelRect
@@ -2550,26 +2634,26 @@ private handler bottomButtons(in pColorFore, in pColorBack)
   put mCurrentRect into tBottomRect
   set the height of tBottomRect to the height of tOkayRect+tAdjust
 
-  if mBottomButtonAlignment is "Right" then
-    set the right of tCancelRect to the left of tOkayRect-mBottomButtonBuffer
-  else if mBottomButtonAlignment is "Left" then
-    set the left of tCancelRect to the right of tOkayRect+mBottomButtonBuffer
+  if mConfirmButtonAlignment is "Right" then
+    set the right of tCancelRect to the left of tOkayRect-mConfirmButtonBuffer
+  else if mConfirmButtonAlignment is "Left" then
+    set the left of tCancelRect to the right of tOkayRect+mConfirmButtonBuffer
   end if
 
   put tCancelRect into tThirdRect
 
-  if mBottomButtonAlignment is "Right" then
-  set the right of tThirdRect to the left of tCancelRect-mBottomButtonBuffer
-  else if mBottomButtonAlignment is "Left" then
-  set the left of tThirdRect to the right of tCancelRect+mBottomButtonBuffer
+  if mConfirmButtonAlignment is "Right" then
+  set the right of tThirdRect to the left of tCancelRect-mConfirmButtonBuffer
+  else if mConfirmButtonAlignment is "Left" then
+  set the left of tThirdRect to the right of tCancelRect+mConfirmButtonBuffer
   end if
 
-  if mBottomButtonAlignment is "Center" and mShowButtons = 2 then
-    set the right of tOkayRect to tCenter - mBottomButtonBuffer/2
-    set the left of tCancelRect to the right of tOkayRect + mBottomButtonBuffer
-  else if mBottomButtonAlignment is "Center" and mShowButtons = 3 then
-    set the right of tOkayRect to the left of tCancelRect - mBottomButtonBuffer
-    set the left of tThirdRect to the right of tCancelRect + mBottomButtonBuffer
+  if mConfirmButtonAlignment is "Center" and mShowButtons = 2 then
+    set the right of tOkayRect to tCenter - mConfirmButtonBuffer/2
+    set the left of tCancelRect to the right of tOkayRect + mConfirmButtonBuffer
+  else if mConfirmButtonAlignment is "Center" and mShowButtons = 3 then
+    set the right of tOkayRect to the left of tCancelRect - mConfirmButtonBuffer
+    set the left of tThirdRect to the right of tCancelRect + mConfirmButtonBuffer
   end if
 
   if mShowButtons >=1 then
@@ -2591,12 +2675,12 @@ private handler bottomButtons(in pColorFore, in pColorBack)
     fill text mButton3Text at center of tThirdRect on this canvas
   end if
   subtract the height of tBottomRect from the height of mCurrentRect
-  push tOkayRect onto mBottomButtonLoc
-  push tCancelRect onto mBottomButtonLoc
-  push tThirdRect onto mBottomButtonLoc
+  push tOkayRect onto mConfirmButtonLoc
+  push tCancelRect onto mConfirmButtonLoc
+  push tThirdRect onto mConfirmButtonLoc
 end handler
 
-private handler displayTabPages()
+private handler drawTabPages()
   variable tTabRect as Rectangle
   variable tSizeMods as List
   variable tCount as Number
@@ -2624,7 +2708,7 @@ private handler displayTabPages()
     subtract mTabPagesBuffer*2 from the height of mCurrentRect
     subtract the height of tTabRect from the height of mCurrentRect
     set the top of mCurrentRect to the bottom of tTabRect+mTabPagesBuffer
-  else if mTabPagesAlign is "bottom" then
+  else if mTabPagesAlign is "Confirm" then
     add mTabPagesBuffer to the left of tTabRect
     subtract mTabPagesBuffer*2 from the height of mCurrentRect
     subtract the height of tTabRect from the height of mCurrentRect
@@ -2656,7 +2740,7 @@ private handler displayTabPages()
       set the top of tTabRect to the bottom of tTabRect
       push tTabRect onto mTabList
     end repeat
-  else if mTabPagesAlign is "top" or mTabPagesAlign is "bottom" then
+  else if mTabPagesAlign is "top" or mTabPagesAlign is "Confirm" then
     set the width of tTabRect to the width of tTabRect/the number of elements in mTabData
     repeat with tCount from 1 up to the number of elements in mTabData
       setButtonPaint(mkStr(tCount),"tabbutton")
@@ -2670,7 +2754,7 @@ private handler displayTabPages()
   addDebugInfo("tablist",the number of elements in mTabList)
 end handler
 
-private handler displayOutputBox()
+private handler drawOutputBox()
   variable tOutputRect as Rectangle
 
   setPaint(mTitleTextColor)
@@ -2825,8 +2909,8 @@ public handler OnMouseUp()
   variable tPosition as Point
   put the mouse position into tPosition
 
-  if mShowBottomButtons then
-    bottomButtonPressed()
+  if mShowConfirmButtons then
+    confirmButtonPressed()
   end if
 
   if mShowTabPages then
@@ -2928,20 +3012,20 @@ public handler tabButtonPressed()
   end if
 end handler
 
-public handler bottomButtonPressed()
+public handler confirmButtonPressed()
 
-  if mShowBottomButtons then
-    if the mouse position is within element 1 of mBottomButtonLoc then
+  if mShowConfirmButtons then
+    if the mouse position is within element 1 of mConfirmButtonLoc then
       post "buttonPressed" to my script object with [1]
     end if
   end if
-  if mShowBottomButtons and mShowButtons >= 2 then
-    if the mouse position is within element 2 of mBottomButtonLoc then
+  if mShowConfirmButtons and mShowButtons >= 2 then
+    if the mouse position is within element 2 of mConfirmButtonLoc then
       post "buttonPressed" to my script object with [2]
     end if
   end if
-  if mShowBottomButtons and mShowButtons = 3 then
-    if the mouse position is within element 3 of mBottomButtonLoc then
+  if mShowConfirmButtons and mShowButtons = 3 then
+    if the mouse position is within element 3 of mConfirmButtonLoc then
       post "buttonPressed" to my script object with [3]
     end if
   end if
@@ -3343,7 +3427,7 @@ private handler captureCurrentColors()
   put colorToString(the color of my highlight paint) into tColors["hilite"]
   put colorToString(the color of my border paint) into tColors["border"]
   put colorToString(the color of my top paint) into tColors["top"]
-  put colorToString(the color of my bottom paint) into tColors["bottom"]
+  put colorToString(the color of my bottom paint) into tColors["Confirm"]
   put colorToString(the color of my focus paint) into tColors["focus"]
   put colorToString(the color of my shadow paint) into tColors["shadow"]
 
@@ -3416,7 +3500,7 @@ private handler rectToArray(in pRect as Rectangle) returns Array
   variable tData as Array
 
   put mkStr(the top of pRect) into tData["top"]
-  put mkStr(the bottom of pRect) into tData["bottom"]
+  put mkStr(the bottom of pRect) into tData["Confirm"]
   put mkStr(the left of pRect) into tData["left"]
   put mkStr(the right of pRect) into tData["right"]
   put mkStr(the height of pRect) into tData["height"]
@@ -3437,7 +3521,7 @@ private handler rectToFlatLine(in pRect as Rectangle) returns String
 end handler
 
 private handler arrayToRect(in pArray as Array) returns Rectangle
-  return rectangle [mkNum(pArray["left"]),mkNum(pArray["top"]),mkNum(pArray["right"]),mkNum(pArray["bottom"])]
+  return rectangle [mkNum(pArray["left"]),mkNum(pArray["top"]),mkNum(pArray["right"]),mkNum(pArray["Confirm"])]
 end handler
 
 private handler drawSVG(in pName as String, in pRect as Rectangle)
@@ -3502,7 +3586,7 @@ private handler setPaint(in pString as String)
   variable tColor as Color
   variable tBuiltinColors as List
 
-  put ["back", "fore", "border", "hilite", "shadow", "focus", "top", "bottom"] into tBuiltinColors
+  put ["back", "fore", "border", "hilite", "shadow", "focus", "top", "Confirm"] into tBuiltinColors
   if pString is in tBuiltinColors then
     put stringToColor(mAppData["colors"][pString]) into tColor
   else if pString is "clear" then
@@ -3577,7 +3661,7 @@ private handler mpWrapTextinRect(in pTextBox as Rectangle,in pText as String,in 
 
   if element 1 of tAlign is "center" then
     add ((the height of pTextBox)-(tMaxRows*tTextH) + (tMaxRows-tRow)*tTextH)/2 to the top of pTextBox
-  else if element 1 of tAlign is "bottom" then
+  else if element 1 of tAlign is "Confirm" then
     add ((the height of pTextBox)-(tMaxRows*tTextH) + (tMaxRows-tRow)*tTextH) to the top of pTextBox
   end if
 
@@ -3863,7 +3947,7 @@ Syntax: get the showMainSquare of <widget>
 Summary: Show Working Area
 
 Description:
-The working area is the section of the widget after the title and bottom buttons are drawn (assuming they're shown chosen).
+The working area is the section of the widget after the title and confirm buttons are drawn (assuming they're shown chosen).
 When true, a solid box is drawn around the working area of the canvas with the same radius as the back square.
 
 Name: workingAreaOffsetW
@@ -4054,12 +4138,12 @@ Description:
 Sets how opaque or transparent the overlay area is (the alpha value of the color).
 When set to zero, the overlay area is not visible.
 
-Name: showBottomButtons
+Name: showConfirmButtons
 Type: Property
-Syntax: set the showBottomButtons of <widget> to <boolean>
-Syntax: get the showBottomButtons of <widget>
+Syntax: set the showConfirmButtons of <widget> to <boolean>
+Syntax: get the showConfirmButtons of <widget>
 
-Summary: Show Bottom Buttons
+Summary: Show Confirm Buttons
 
 Description:
 Shows 1-3 buttons at the bottom of the box.
@@ -4068,12 +4152,12 @@ on buttonPressed pNum
 
 end buttonPressed
 
-Name: bottomButtonTextSize
+Name: confirmButtonTextSize
 Type: Property
-Syntax: set the bottomButtonTextSize of <widget> to <number>
-Syntax: get the bottomButtonTextSize of <widget>
+Syntax: set the confirmButtonTextSize of <widget> to <number>
+Syntax: get the confirmButtonTextSize of <widget>
 
-Summary: Bottom Button Text Size
+Summary: Confirm Button Text Size
 
 Description:
 Sets the text size of the text in the bottom buttons.
@@ -4083,7 +4167,7 @@ Type: Property
 Syntax: set the button1Text of <widget> to <string>
 Syntax: get the button1Text of <widget>
 
-Summary: Bottom Button 1 Text
+Summary: Confirm Button 1 Text
 
 Description:
 Set the text that appears in the first button. Default is "OK".
@@ -4093,7 +4177,7 @@ Type: Property
 Syntax: set the button2Text of <widget> to <string>
 Syntax: get the button2Text of <widget>
 
-Summary: Bottom Button 2 Text
+Summary: Confirm Button 2 Text
 
 Description:
 Set the text that appears in the second button. Default is "Cancel".
@@ -4101,7 +4185,7 @@ Set the text that appears in the second button. Default is "Cancel".
 Name: button3Text
 Type: Property
 Syntax: set the button3Text of <widget> to <string>
-Summary: Bottom Button 3 Text
+Summary: Confirm Button 3 Text
 
 Description:
 Set the text that appears in the third button.
@@ -4111,71 +4195,71 @@ Type: Property
 Syntax: set the showButtons of <widget> to <number>
 Syntax: get the showButtons of <widget>
 
-Summary: Bottom Buttons-Number to show
+Summary: Confirm Buttons-Number to show
 
 Description:
 Sets how many buttons (1-3) will appear at the bottom of the
 
-Name: bottomButtonAlignment
+Name: confirmButtonAlignment
 Type: Property
-Syntax: set the bottomButtonAlignment of <widget> to <string from list>
-Syntax: get the bottomButtonAlignment of <widget>
+Syntax: set the confirmButtonAlignment of <widget> to <string from list>
+Syntax: get the confirmButtonAlignment of <widget>
 
-Summary: Bottom Button Alignment
+Summary: Confirm Button Alignment
 
 Description:
 Sets where in the box the bottom buttons will be displayed.
 
-Name: bottomButtonWidth
+Name: confirmButtonWidth
 Type: Property
-Syntax: set the bottomButtonWidth of <widget> to <number>
-Syntax: get the bottomButtonWidth of <widget>
+Syntax: set the confirmButtonWidth of <widget> to <number>
+Syntax: get the confirmButtonWidth of <widget>
 
-Summary: Bottom Button Width
+Summary: Confirm Button Width
 
 Description:
 Sets how wide each bottom button will be.
 
-Name: bottomButtonHeight
+Name: confirmButtonHeight
 Type: Property
-Syntax: set the bottomButtonHeight of <widget> to <number>
-Syntax: get the bottomButtonHeight of <widget>
+Syntax: set the confirmButtonHeight of <widget> to <number>
+Syntax: get the confirmButtonHeight of <widget>
 
-Summary: Bottom Button Height
+Summary: Confirm Button Height
 
 Description:
 Sets how tall each bottom button will be.
 
-Name: bottomButtonBuffer
+Name: confirmButtonBuffer
 Type: Property
-Syntax: set the bottomButtonBuffer of <widget> to <number>
-Syntax: get the bottomButtonBuffer of <widget>
+Syntax: set the confirmButtonBuffer of <widget> to <number>
+Syntax: get the confirmButtonBuffer of <widget>
 
-Summary: Bottom Button Buffer/Offset
+Summary: Confirm Button Buffer/Offset
 
 Description:
 Adjusts the spacing in pixels between the buttons.
 
 Name: bottomButtonBackColor
 Type: Property
-Syntax: set the bottomButtonBackColor of <widget> to <built_in_color>
-Syntax: get the bottomButtonBackColor of <widget>
+Syntax: set the confirmButtonBackColor of <widget> to <built_in_color>
+Syntax: get the confirmButtonBackColor of <widget>
 
-Summary: Bottom Button Background Color
+Summary: confirm Button Background Color
 
 Description:
-Sets the color of the background of the bottom buttons.
+Sets the color of the background of the confirm buttons.
 Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite,clear."
 
-Name: bottomButtonTextColor
+Name: confirmButtonTextColor
 Type: Property
-Syntax: set the bottomButtonTextColor of <widget> to <built_in_color>
-Syntax: get the bottomButtonTextColor of <widget>
+Syntax: set the confirmButtonTextColor of <widget> to <built_in_color>
+Syntax: get the confirmButtonTextColor of <widget>
 
-Summary: Bottom Button Text Color
+Summary: Confirm Button Text Color
 
 Description:
-Sets the color of the text that is displayed in the bottom buttons.
+Sets the color of the text that is displayed in the confirm buttons.
 Options are based on the builtin colors: "fore,back,top,bottom,shadow,focus,border,hilite,clear."
 
 Name: showOutputBox

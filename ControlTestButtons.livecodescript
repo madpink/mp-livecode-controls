@@ -76,8 +76,10 @@ command buttonAction pType
       --         set the myData of widget 1 of stack testStack to tData
       
       set the controlType of widget 1 of stack testStack to "Button Wheel"
-      set the controlObjectSize of widget 1 of stack testStack to 42
-      
+      set the controlObjectSize of widget 1 of stack testStack to 51
+      set the buttonBarType of widget 1 of stack testStack to "single"
+      --set the showOutputBox of widget 1 of stack testStack to true
+      quickData 5
       break
     case "E"
       -- set the xxx of widget 1 of stack testStack to zzz
