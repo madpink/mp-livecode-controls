@@ -77,7 +77,7 @@ command buttonAction pType
       
       set the controlType of widget 1 of stack testStack to "Button Wheel"
       set the controlObjectSize of widget 1 of stack testStack to 51
-      set the buttonBarType of widget 1 of stack testStack to "single"
+      set the buttonBarType of widget 1 of stack testStack to "Single"
       --set the showOutputBox of widget 1 of stack testStack to true
       quickData 5
       break

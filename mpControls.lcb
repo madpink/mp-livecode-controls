@@ -1849,9 +1849,6 @@ private handler dialogBoxSVG()
   else if mDialogIconAlign is "top" then
     set the top of tIconRect to (the top of mCurrentRect + (mBorder*2))
   end if
-
-  --displayIcon(tIconRect,mControlIconA)
-
   put getIconPath("default", mControlIconA) into tPath
   constrainPathToRect(tIconRect, tPath)
   fill tPath on this canvas
@@ -1872,18 +1869,6 @@ public handler paintButtonWheel()
   variable tBCenters as List
   variable tButtonNumber as Number
   variable tFont as Font
-
-  -- TODO: Update how Button Wheel functions...
-  /*
-  Current method acts like action bar
-
-  use buttonBarType
-  DONE 1. add single hilite response
-  DONE 2. add multiple hilite responses
-  DONE 3. add center circle for action and single responses (or just single?)
-  DONE 4. post some sort of action if center button is pressed (possibly just use the bottom button #1)
-
-  */
 
   put [] into mLocList
 
@@ -1934,8 +1919,6 @@ public handler paintButtonWheel()
       end if
 
       drawWheelButton(tCenterRect)
-      -- TODO: add an option to use a static "OK option"
-      -- TODO: add an "OK icon"      drawWheelButton(tCenterRect)
       delete mData[mCurrentControlKey]
     end if
     push tRect onto mLocList
@@ -2000,6 +1983,7 @@ end handler
 -- returns list of N regular (=evenly spaced) circle points
 -- starting at high noon, turning clockwise
 -- pL = [numOfPoints,radius,centerX,centerY]
+
 handler regularPoints (in pL as List) returns List
   variable tI as Number
   variable tPi as Number
@@ -2319,7 +2303,6 @@ private handler drawButton(in pKey as String,in pType as String,in pRect as Rect
   end if
 
   if tShowButton then
-    --put getIconPath(tIcon) into tIconPath
     constrainPathToRect(pRect, tIconPath)
     fill tIconPath on this canvas
     put rectToArray(pRect) into mData[pKey]["loc" & pType]
@@ -2686,7 +2669,7 @@ private handler drawTabPages()
   variable tCount as Number
   variable tHeight as Number
   variable tWidth as Number
-  --qzqz
+
   put [] into mTabList
   put mCurrentRect into tTabRect
   split mTabPagesSizeMods by "/" into tSizeMods
@@ -2766,8 +2749,6 @@ private handler drawOutputBox()
   mpWrapTextinRect(tOutputRect,mActionOutput,"center center")
   set the top of mCurrentRect to the bottom of tOutputRect
   subtract the height of tOutputRect from the height of mCurrentRect
-
-  -- TODO: Work on outuput
 end handler
 
 private handler calcControlSize()
@@ -2828,7 +2809,6 @@ handler executeDataCommand()
   else if char 1 of tAction is "q" then
     post "qzq" with [quazQua(tName,tType)]
   else if char 1 of tAction is "o" then
-    -- QZQZ:  add output commands and output data command handler
     processOutputCommand(tName, tType)
   end if
 end handler
@@ -2942,9 +2922,6 @@ public handler OnMouseMove()
 end handler
 
 public handler OnMouseDown()
-  -- TODO: if bottom buttons are unselected items in control panel, fix here
-  -- put false into mAppData["vars"]["stoppoint"]
-
   put false into mAppData["vars"]["stilldown"]
   put the mouse position into mPosition
   put mControlType into mAppData["vars"]["currentType"]
@@ -2982,7 +2959,7 @@ public handler OnTimer()
   if mAppData["vars"]["currentType"] begins with "Button" then
     resetSelects()
   else if mAppData["vars"]["currentType"] is "Numeric Up/Down" then
-    -- incrementCount
+    -- TODO: incrementCount
   end if
 
   redraw all
@@ -3002,11 +2979,8 @@ end handler
 public handler tabButtonPressed()
   variable tCount as Number
 
-  --FIXME: position in rect not working
   if the mouse position is within element tCount of mTabList then
     put true into mTabData[mkStr(tCount)]["selected"]
-    --QZQ
-    --TODO: change data etc...
   else
     put false into mTabData[mkStr(tCount)]["selected"]
   end if
@@ -3057,36 +3031,6 @@ end handler
 --    end if
 --   end repeat
 --
--- end handler
-
---SECTION USER INTERACTION: BUTTON WHEEL
-
--- private handler selectButtonWheel()
---   addDebugInfo("selecthit","yes")
---   variable tCount as Number
---   variable tRect as Rectangle
---   variable tPosition as Point
---   variable tAnySelected as Boolean
---   put false into tAnySelected
---   put the mouse position into tPosition
---   repeat with tCount from 1 up to the number of elements in mData
---     addDebugInfo("count",tCount)
---     put mkStr(tCount) into mCurrentControlKey
---     -- if element tCount of mLocList is "skip" then
---     --   next repeat
---     -- else
---     --   put element tCount of mLocList into tRect
---     -- end if
---     put element tCount of mLocList into tRect
---     if tPosition is within tRect then
---       put mCurrentControlKey into mActionOutput
---       put true into mAppData["vars"]["down"]
---       put true into mData[mCurrentControlKey]["selected"]
---     else
---       put false into mData[mCurrentControlKey]["selected"]
---       put false into mAppData["vars"]["down"]
---     end if
---   end repeat
 -- end handler
 
 --SECTION USER INTERATION: BUTTON BAR
